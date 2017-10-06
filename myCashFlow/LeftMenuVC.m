@@ -22,6 +22,8 @@
 #import "UserProfileVC.h"
 #import "TaxFolderVC.h"
 #import "MessageVC.h"
+#import "VENTouchLock.h"
+
 @interface LeftMenuVC ()
 {
     NSString *newsID;
@@ -56,8 +58,8 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.allowsMultipleSelection = NO;
     //self.view.backgroundColor = theme_color;
-    _titleArry = [NSArray arrayWithObjects:@"Home", @"Finance Folder", @"Taxes Folder", @"Budget & Save-Rate", @"Message Notification", @"Consultur Profile", @"Recommandation",@"Contracts Appointments",@"Videos",@"Accident Reporting",@"Numbers",@"Product Solutions",@"Discounts",@"My Accounts", nil];
-    _imageArry = [NSArray arrayWithObjects:@"Home",@"Finance", @"Tax", @"Budget",@"Message", @"User", @"Recommandation",@"Contracts", @"Videos", @"heart",@"User", @"User", @"Recommandation",@"User",  nil];
+    _titleArry = [NSArray arrayWithObjects:@"Home", @"Finance Folder", @"Taxes Folder", @"Budget & Save-Rate", @"Message Notification", @"Consultur Profile", @"Recommandation",@"Contracts Appointments",@"Videos",@"Accident Reporting",@"Numbers",@"Product Solutions",@"Discounts",@"My Accounts",@"Setting",@"Signout", nil];
+    _imageArry = [NSArray arrayWithObjects:@"Home",@"Finance", @"Tax", @"Budget",@"Message", @"User", @"Recommandation",@"Contracts", @"Videos", @"heart",@"User", @"User", @"Recommandation",@"User",@"User",@"User", nil];
     [self.tableView reloadData];
     
     
@@ -208,6 +210,39 @@
         [self.sideMenuController setRootViewController:profile];
         [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
     }
+    
+    if(indexPath.row == 15)
+    {
+        [self logout];
+    }
+
+}
+-(void)logout
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    LGSideMenuController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"LGSideMenuController"];
+    UINavigationController *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginNC"];
+    UIViewController *leftMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"LeftMenuVC"];
+    [rootViewController setRootViewController:homeVC];
+    [rootViewController setLeftViewController:leftMenuVC];
+    [rootViewController setLeftViewDisabled:FALSE];
+    CGFloat screenWidth = 0.0;
+    if ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height)
+    {
+        screenWidth=[UIScreen mainScreen].bounds.size.height/3;
+    }
+    else
+    {
+        screenWidth=[UIScreen mainScreen].bounds.size.width/3;
+    }
+    rootViewController.leftViewWidth = screenWidth *2.4;
+    
+    rootViewController.leftViewPresentationStyle = LGSideMenuPresentationStyleSlideAbove;
+    [[UIApplication sharedApplication].keyWindow setRootViewController:rootViewController];
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"setpwd"];
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userInfo"];
+    [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"isLogin"];
+    [[VENTouchLock sharedInstance] deletePasscode];
 
 }
 -(void)home

@@ -27,6 +27,10 @@
         height=[UIScreen mainScreen].bounds.size.height;
     }
     self.viewHeight.constant=height-64;
+    NSDictionary *userInfo = (NSDictionary*)[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+    
+    self.lblProfileTitle.text = [NSString stringWithFormat:@"%@ %@",[userInfo valueForKey:@"Firstname"],[userInfo valueForKey:@"Lastname"]];
+
     // Do any additional setup after loading the view.
     
 }

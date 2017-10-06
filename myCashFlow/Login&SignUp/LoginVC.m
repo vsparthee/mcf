@@ -7,6 +7,8 @@
 //
 
 #import "LoginVC.h"
+#import "VENTouchLock.h"
+
 @interface LoginVC ()
 
 @end
@@ -28,6 +30,33 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
+
+    if ([[userDefaults valueForKey:@"setpwd"]boolValue] == YES)
+    {
+        [userDefaults setBool:TRUE forKey:@"isLogin"];
+
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        LGSideMenuController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"LGSideMenuController"];
+        UINavigationController *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"DashboardNC"];
+        UIViewController *leftMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"LeftMenuVC"];
+        [rootViewController setRootViewController:homeVC];
+        [rootViewController setLeftViewController:leftMenuVC];
+        [rootViewController setLeftViewDisabled:FALSE];
+        CGFloat screenWidth = 0.0;
+        if ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height)
+        {
+            screenWidth=[UIScreen mainScreen].bounds.size.height/3;
+        }
+        else
+        {
+            screenWidth=[UIScreen mainScreen].bounds.size.width/3;
+        }
+        rootViewController.leftViewWidth = screenWidth *2.4;
+        
+        rootViewController.leftViewPresentationStyle = LGSideMenuPresentationStyleSlideAbove;
+        [[UIApplication sharedApplication].keyWindow setRootViewController:rootViewController];
+    }
 }
 /*
 #pragma mark - Navigation
@@ -58,9 +87,6 @@
              {
                  NSMutableDictionary *dic=[result valueForKey:@"data"];
                  
-                 NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
-                 [userDefaults setBool:TRUE forKey:@"isLogin"];
-                 
                  NSMutableDictionary *temp=[[NSMutableDictionary alloc]init];
                  //[temp setObject:[NSNumber numberWithInt:[[dic valueForKey:@"CustomerID"] intValue]]  forKey:@"CustomerID"];
                  [temp setObject:[NSNumber numberWithInt:4]  forKey:@"CustomerID"];
@@ -69,28 +95,11 @@
                  [temp setObject:[dic valueForKey:@"Emailid"]  forKey:@"Emailid"];
                  [temp setObject:[dic valueForKey:@"Phoneno"]  forKey:@"Phoneno"];
                  [temp setObject:[dic valueForKey:@"Password"]  forKey:@"Password"];
-                 [userDefaults setValue:temp forKey:@"userInfo"];
-                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-                 LGSideMenuController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"LGSideMenuController"];
-                 UINavigationController *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"DashboardNC"];
-                 UIViewController *leftMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"LeftMenuVC"];
-                 [rootViewController setRootViewController:homeVC];
-                 [rootViewController setLeftViewController:leftMenuVC];
-                 [rootViewController setLeftViewDisabled:FALSE];
-                 CGFloat screenWidth = 0.0;
-                 if ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height)
-                 {
-                     screenWidth=[UIScreen mainScreen].bounds.size.height/3;
-                 }
-                 else
-                 {
-                     screenWidth=[UIScreen mainScreen].bounds.size.width/3;
-                 }
-                 rootViewController.leftViewWidth = screenWidth *2.4;
-                 
-                 rootViewController.leftViewPresentationStyle = LGSideMenuPresentationStyleSlideAbove;
-                 [[UIApplication sharedApplication].keyWindow setRootViewController:rootViewController];
-                 
+                 NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
+
+                 [userDefaults setValue:[self CheckDictionary:[dic mutableCopy]] forKey:@"userInfo"];
+                
+                 [self setPasscode];
                  
              }
              else
@@ -103,9 +112,44 @@
          } failure:^(NSURLSessionTask *operation, NSError *error) {
              
          }];
-        
-        
     }
+}
+
+-(NSMutableDictionary*)CheckDictionary:(NSMutableDictionary *)dic
+{
+    NSArray *Arr = [dic allKeys];
+    for (int i = 0; i<Arr.count; i++)
+    {
+        if ([[dic valueForKey:[Arr objectAtIndex:i]] isKindOfClass:[NSNull class]])
+        {
+            [dic setObject:@"" forKey:[Arr objectAtIndex:i]];
+        }
+        else if ([[dic valueForKey:[Arr objectAtIndex:i]] isKindOfClass:[NSDictionary class]])
+        {
+            NSMutableDictionary *dict = [[dic valueForKey:[Arr objectAtIndex:i]] mutableCopy];
+            [dic setObject:dict forKey:[Arr objectAtIndex:i]];
+            [self CheckDictionary:dict];
+        }
+        else if ([[dic valueForKey:[Arr objectAtIndex:i]] isKindOfClass:[NSMutableArray class]])
+        {
+            NSMutableArray *Arr12 = [dic valueForKey:[Arr objectAtIndex:i]];
+            for (int j = 0; j<Arr12.count; j++)
+            {
+                if ([[Arr12 objectAtIndex:j] isKindOfClass:[NSDictionary class]])
+                {
+                    NSDictionary *dict123 = [Arr12 objectAtIndex:j];
+                    NSLog(@"dict123 : %@",dict123);
+                    NSMutableDictionary *dict = [dict123 mutableCopy];
+                    NSLog(@"dict123 Mutable copy : %@",dict);
+                    [Arr12 replaceObjectAtIndex:j withObject:dict];
+                    NSLog(@"dict123 replace : %@",[Arr12 objectAtIndex:j]);
+                    [self CheckDictionary:dict];
+                }
+            }
+        }
+    }
+    NSLog(@"Dic:%@",dic);
+    return dic;
 }
 
 -(BOOL)validateRequest
@@ -143,6 +187,15 @@
     return [emailTest evaluateWithObject:email];
 }
 
+-(void)setPasscode
+{
+    [VENTouchLock setShouldUseTouchID:YES];
+    
+    VENTouchLockCreatePasscodeViewController *createPasscodeVC = [[VENTouchLockCreatePasscodeViewController alloc] init];
+    [self presentViewController:[createPasscodeVC embeddedInNavigationController] animated:YES completion:nil];
+    
+    
+}
 
 - (IBAction)action_Forget:(UIButton *)sender {
 }

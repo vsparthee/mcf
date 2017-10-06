@@ -10,10 +10,11 @@
 #import "MySavingsCell.h"
 #import "ExpenseCell.h"
 #import "LTHMonthYearPickerView.h"
+#import "MyBudgetCell.h"
 @interface BudgetAndSaveRateVC ()<UITextFieldDelegate,LTHMonthYearPickerViewDelegate>
 {
     CGRect baseViewRect;
-    NSMutableArray *mySavingArr,*pieChartArr,*budgetArr,*myExpenseArr;
+    NSMutableArray *mySavingArr,*pieChartArr,*budgetArr,*myExpenseArr,*newArr;
     NSMutableDictionary *settingDic;
     UILabel *nodata;
     int total;
@@ -28,6 +29,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tblBudget.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tblExpense.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tblSavings.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+    [self.tblBudget setContentOffset:self.tblBudget.contentOffset animated:NO];
     
     baseViewRect=CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height-124);
     self.budgetView.frame=baseViewRect;
@@ -62,11 +69,9 @@
                                                          andMaxDate: maxDate];
     _monthYearPicker.delegate = self;
     _txtSelectMonth.delegate = self;
-    [self.txtSelectMonth setInputAccessoryView:_monthYearPicker];
+    [self.txtSelectMonth setInputView:_monthYearPicker];
     [_txtSelectMonth becomeFirstResponder];
     _monthYearPicker.backgroundColor=BG_COLOR;
-  //  [self setupBudgetView:dateStr];
-  //  [self setupExpenseApi:dateStr];
     [self setupSettingsApi];
 }
 
@@ -94,8 +99,8 @@
      {
          budgetArr=[[NSMutableArray alloc]init];
          mySavingArr=[[NSMutableArray alloc]init];
-         budgetArr = [result valueForKey:@"MyBudget"];
-         mySavingArr = [result valueForKey:@"MySaving"];
+         budgetArr = [[result valueForKey:@"MyBudget"] mutableCopy];
+         mySavingArr = [[result valueForKey:@"MySaving"] mutableCopy];
          [self setupBudgetPieView];
          [General stopLoader];
      }
@@ -108,16 +113,23 @@
 
 -(void)setupBudgetPieView
 {
+    newArr = [[NSMutableArray alloc]init];
     if (budgetArr.count>0)
     {
         for (NSDictionary *dic in budgetArr)
         {
+            NSMutableDictionary *temp = [[NSMutableDictionary alloc]init];
+            temp = [dic mutableCopy];
             NSString *amt = [dic valueForKey:@"amount"];
             NSString * newString = [amt stringByReplacingOccurrencesOfString:@"CHF" withString:@""];
             amt=[newString stringByReplacingOccurrencesOfString:@"-" withString:@""];
             total += [amt intValue];
-            PNPieChartDataItem *item=[PNPieChartDataItem dataItemWithValue:[amt intValue] color:[self test] description:[dic valueForKey:@"CategoryName"]];
+            NSString *color = [NSString stringWithFormat:@"%@",[self test]];
+            PNPieChartDataItem *item=[PNPieChartDataItem dataItemWithValue:[amt intValue] color:[self colorFromHexString:color] description:[dic valueForKey:@"CategoryName"]];
+            [temp setObject:color forKey:@"color"];
             [pieChartArr addObject:item];
+            [newArr addObject:temp];
+
         }
         [self.pieChartbase setHidden:NO];
         [self.legendbase setHidden:NO];
@@ -140,14 +152,16 @@
         
         self.pieChart.legendStyle = PNLegendItemStyleStacked;
         self.pieChart.legendFont = [UIFont fontWithName:@"Century Gothic" size:15];
-        UIView *legend;
+       /* UIView *legend;
         [legend removeFromSuperview];
         legend=[[UIView alloc]init];
         legend = [self.pieChart getLegendWithMaxWidth:SCREEN_WIDTH-60];
         [legend setFrame:CGRectMake(24, 0, SCREEN_WIDTH-48, legend.frame.size.height)];
-        [self.legendbase addSubview:legend];
+        [self.legendbase addSubview:legend];*/
         
-        self.budgetheight.constant = legend.frame.size.height+360;
+        [self.tblBudget reloadData];
+        
+        self.budgetheight.constant = newArr.count*60+360;
         
         [self.pieChartbase addSubview:self.pieChart];
         
@@ -172,6 +186,14 @@
     [self.tblSavings reloadData];
     [General stopLoader];
 
+}
+
+- (UIColor *)colorFromHexString:(NSString *)hexString {
+    unsigned rgbValue = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexString];
+    [scanner setScanLocation:1]; // bypass '#' character
+    [scanner scanHexInt:&rgbValue];
+    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
 }
 
 -(void)setupExpenseApi:(NSString*)datestr
@@ -228,13 +250,24 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(UIColor*)test
+-(NSString*)test
 {
     CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
     CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
     CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
     UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
-    return color;
+    
+    const CGFloat *components = CGColorGetComponents(color.CGColor);
+    
+    CGFloat r = components[0];
+    CGFloat g = components[1];
+    CGFloat b = components[2];
+    
+    return [NSString stringWithFormat:@"#%02lX%02lX%02lX",
+            lroundf(r * 255),
+            lroundf(g * 255),
+            lroundf(b * 255)];
+   // return color;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -273,6 +306,10 @@
     {
         return mySavingArr.count;
     }
+    else if (tableView.tag==300)
+    {
+        return newArr.count;
+    }
     else
     {
         return myExpenseArr.count;
@@ -290,6 +327,19 @@
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
         return cell;
 
+    }
+    else if (tableView.tag==300)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyBudgetCell" owner:self options:nil];
+        MyBudgetCell *cell = [nib objectAtIndex:0];
+        NSDictionary *budget = [newArr objectAtIndex:indexPath.row];
+        
+        cell.lblTitle.text = [NSString stringWithFormat:@"%@",[budget valueForKey:@"CategoryName"]];
+        cell.lblAmount.text = [NSString stringWithFormat:@"%@",[budget valueForKey:@"amount"]];
+        cell.lblPercentage.text = [NSString stringWithFormat:@"%@%%",[budget valueForKey:@"Percentage"]];
+        cell.lblPercentage.backgroundColor = [self colorFromHexString:[budget valueForKey:@"color"]];
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+        return cell;
     }
     else
     {
@@ -315,6 +365,10 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView.tag==100)
+    {
+        return 60;
+    }
+    else if (tableView.tag==300)
     {
         return 60;
     }

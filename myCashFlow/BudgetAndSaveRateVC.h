@@ -39,6 +39,7 @@
 - (IBAction)action_SettingCancel:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnSettingCancel;
 
+@property (weak, nonatomic) IBOutlet UITableView *tblBudget;
 @property (weak, nonatomic) IBOutlet UITableView *tblSavings;
 @property (weak, nonatomic) IBOutlet UIView *mySavingView;
 @property (weak, nonatomic) IBOutlet UIView *myBudgetView;

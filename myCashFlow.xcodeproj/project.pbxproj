@@ -7,7 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EDBEB46568E1B80A0B14B23 /* Pods_myCashFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3BBA537CD17D08C54549EB /* Pods_myCashFlow.framework */; };
+		28FFAFE4C365621B77B91D64 /* libPods-myCashFlow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43AB9928CC482C2064040461 /* libPods-myCashFlow.a */; };
+		5B349D2D1F87D91A00D884D2 /* UIViewController+VENTouchLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D171F87D91A00D884D2 /* UIViewController+VENTouchLock.m */; };
+		5B349D2E1F87D91A00D884D2 /* VENTouchLockCreatePasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D1A1F87D91A00D884D2 /* VENTouchLockCreatePasscodeViewController.m */; };
+		5B349D2F1F87D91A00D884D2 /* VENTouchLockEnterPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D1C1F87D91A00D884D2 /* VENTouchLockEnterPasscodeViewController.m */; };
+		5B349D301F87D91A00D884D2 /* VENTouchLockPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D1E1F87D91A00D884D2 /* VENTouchLockPasscodeViewController.m */; };
+		5B349D311F87D91A00D884D2 /* VENTouchLockSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D201F87D91A00D884D2 /* VENTouchLockSplashViewController.m */; };
+		5B349D321F87D91A00D884D2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B349D211F87D91A00D884D2 /* Info.plist */; };
+		5B349D331F87D91A00D884D2 /* VENTouchLockAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D241F87D91A00D884D2 /* VENTouchLockAppearance.m */; };
+		5B349D341F87D91A00D884D2 /* VENTouchLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D261F87D91A00D884D2 /* VENTouchLock.m */; };
+		5B349D351F87D91A00D884D2 /* VENTouchLockPasscodeCharacterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D291F87D91A00D884D2 /* VENTouchLockPasscodeCharacterView.m */; };
+		5B349D361F87D91A00D884D2 /* VENTouchLockPasscodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D2B1F87D91A00D884D2 /* VENTouchLockPasscodeView.m */; };
+		5B349D371F87D91A00D884D2 /* VENTouchLockPasscodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B349D2C1F87D91A00D884D2 /* VENTouchLockPasscodeView.xib */; };
+		5B349D3B1F87D9FB00D884D2 /* SampleLockSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D391F87D9FB00D884D2 /* SampleLockSplashViewController.m */; };
+		5B349D3C1F87D9FB00D884D2 /* SampleLockSplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B349D3A1F87D9FB00D884D2 /* SampleLockSplashViewController.xib */; };
 		5B9A80411F77696B00671F3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80401F77696B00671F3B /* main.m */; };
 		5B9A80441F77696B00671F3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80431F77696B00671F3B /* AppDelegate.m */; };
 		5B9A80471F77696B00671F3B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80461F77696B00671F3B /* ViewController.m */; };
@@ -16,6 +29,7 @@
 		5B9A804F1F77696B00671F3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9A804D1F77696B00671F3B /* LaunchScreen.storyboard */; };
 		5B9A805A1F77696B00671F3B /* myCashFlowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80591F77696B00671F3B /* myCashFlowTests.m */; };
 		5B9A80651F77696B00671F3B /* myCashFlowUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80641F77696B00671F3B /* myCashFlowUITests.m */; };
+		8C585E5F69E6BB82A63E4C9A /* libPods-myCashFlowUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B0796C3E1ABAD4AB7AB492 /* libPods-myCashFlowUITests.a */; };
 		EF7C149E1F87424600624670 /* AccidentReportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C14161F87424600624670 /* AccidentReportVC.m */; };
 		EF7C149F1F87424600624670 /* AddCarAccident.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C14181F87424600624670 /* AddCarAccident.m */; };
 		EF7C14C31F87424600624670 /* 1100_1950.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14641F87424600624670 /* 1100_1950.JPG */; };
@@ -175,6 +189,8 @@
 		EF7C16301F87447D00624670 /* ACFloatingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C162B1F87447D00624670 /* ACFloatingTextField.m */; };
 		EF7C16311F87447D00624670 /* HVTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C162D1F87447D00624670 /* HVTableView.m */; };
 		EF7C16321F87447D00624670 /* LTHMonthYearPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C162F1F87447D00624670 /* LTHMonthYearPickerView.m */; };
+		EF7C16481F875B8700624670 /* MyBudgetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C16461F875B8700624670 /* MyBudgetCell.m */; };
+		EF7C16491F875B8700624670 /* MyBudgetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7C16471F875B8700624670 /* MyBudgetCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +212,31 @@
 
 /* Begin PBXFileReference section */
 		321AC9A98572C8C275A853D5 /* Pods-myCashFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myCashFlow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myCashFlow/Pods-myCashFlow.debug.xcconfig"; sourceTree = "<group>"; };
+		43AB9928CC482C2064040461 /* libPods-myCashFlow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myCashFlow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49B0796C3E1ABAD4AB7AB492 /* libPods-myCashFlowUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myCashFlowUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B349D161F87D91A00D884D2 /* UIViewController+VENTouchLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+VENTouchLock.h"; sourceTree = "<group>"; };
+		5B349D171F87D91A00D884D2 /* UIViewController+VENTouchLock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+VENTouchLock.m"; sourceTree = "<group>"; };
+		5B349D191F87D91A00D884D2 /* VENTouchLockCreatePasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENTouchLockCreatePasscodeViewController.h; sourceTree = "<group>"; };
+		5B349D1A1F87D91A00D884D2 /* VENTouchLockCreatePasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENTouchLockCreatePasscodeViewController.m; sourceTree = "<group>"; };
+		5B349D1B1F87D91A00D884D2 /* VENTouchLockEnterPasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENTouchLockEnterPasscodeViewController.h; sourceTree = "<group>"; };
+		5B349D1C1F87D91A00D884D2 /* VENTouchLockEnterPasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENTouchLockEnterPasscodeViewController.m; sourceTree = "<group>"; };
+		5B349D1D1F87D91A00D884D2 /* VENTouchLockPasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENTouchLockPasscodeViewController.h; sourceTree = "<group>"; };
+		5B349D1E1F87D91A00D884D2 /* VENTouchLockPasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENTouchLockPasscodeViewController.m; sourceTree = "<group>"; };
+		5B349D1F1F87D91A00D884D2 /* VENTouchLockSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENTouchLockSplashViewController.h; sourceTree = "<group>"; };
+		5B349D201F87D91A00D884D2 /* VENTouchLockSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENTouchLockSplashViewController.m; sourceTree = "<group>"; };
+		5B349D211F87D91A00D884D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B349D231F87D91A00D884D2 /* VENTouchLockAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENTouchLockAppearance.h; sourceTree = "<group>"; };
+		5B349D241F87D91A00D884D2 /* VENTouchLockAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENTouchLockAppearance.m; sourceTree = "<group>"; };
+		5B349D251F87D91A00D884D2 /* VENTouchLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENTouchLock.h; sourceTree = "<group>"; };
+		5B349D261F87D91A00D884D2 /* VENTouchLock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENTouchLock.m; sourceTree = "<group>"; };
+		5B349D281F87D91A00D884D2 /* VENTouchLockPasscodeCharacterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENTouchLockPasscodeCharacterView.h; sourceTree = "<group>"; };
+		5B349D291F87D91A00D884D2 /* VENTouchLockPasscodeCharacterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENTouchLockPasscodeCharacterView.m; sourceTree = "<group>"; };
+		5B349D2A1F87D91A00D884D2 /* VENTouchLockPasscodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENTouchLockPasscodeView.h; sourceTree = "<group>"; };
+		5B349D2B1F87D91A00D884D2 /* VENTouchLockPasscodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENTouchLockPasscodeView.m; sourceTree = "<group>"; };
+		5B349D2C1F87D91A00D884D2 /* VENTouchLockPasscodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VENTouchLockPasscodeView.xib; sourceTree = "<group>"; };
+		5B349D381F87D9FB00D884D2 /* SampleLockSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleLockSplashViewController.h; sourceTree = "<group>"; };
+		5B349D391F87D9FB00D884D2 /* SampleLockSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleLockSplashViewController.m; sourceTree = "<group>"; };
+		5B349D3A1F87D9FB00D884D2 /* SampleLockSplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleLockSplashViewController.xib; sourceTree = "<group>"; };
 		5B9A803C1F77696B00671F3B /* myCashFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCashFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9A80401F77696B00671F3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5B9A80421F77696B00671F3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -213,7 +254,8 @@
 		5B9A80641F77696B00671F3B /* myCashFlowUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myCashFlowUITests.m; sourceTree = "<group>"; };
 		5B9A80661F77696B00671F3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		648722BC1DCFAD0FCBFE99D5 /* Pods-myCashFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myCashFlow.release.xcconfig"; path = "Pods/Target Support Files/Pods-myCashFlow/Pods-myCashFlow.release.xcconfig"; sourceTree = "<group>"; };
-		CA3BBA537CD17D08C54549EB /* Pods_myCashFlow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myCashFlow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EA573630E7C975F46B83748 /* Pods-myCashFlowUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myCashFlowUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-myCashFlowUITests/Pods-myCashFlowUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CE53ED2FFB869B17EF9EBB10 /* Pods-myCashFlowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myCashFlowUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myCashFlowUITests/Pods-myCashFlowUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF7C14151F87424600624670 /* AccidentReportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccidentReportVC.h; sourceTree = "<group>"; };
 		EF7C14161F87424600624670 /* AccidentReportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccidentReportVC.m; sourceTree = "<group>"; };
 		EF7C14171F87424600624670 /* AddCarAccident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddCarAccident.h; path = AccidentReport/AddCarAccident.h; sourceTree = "<group>"; };
@@ -470,6 +512,9 @@
 		EF7C162D1F87447D00624670 /* HVTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HVTableView.m; path = ../HVTableView.m; sourceTree = "<group>"; };
 		EF7C162E1F87447D00624670 /* LTHMonthYearPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTHMonthYearPickerView.h; path = ../LTHMonthYearPickerView.h; sourceTree = "<group>"; };
 		EF7C162F1F87447D00624670 /* LTHMonthYearPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTHMonthYearPickerView.m; path = ../LTHMonthYearPickerView.m; sourceTree = "<group>"; };
+		EF7C16451F875B8700624670 /* MyBudgetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBudgetCell.h; sourceTree = "<group>"; };
+		EF7C16461F875B8700624670 /* MyBudgetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBudgetCell.m; sourceTree = "<group>"; };
+		EF7C16471F875B8700624670 /* MyBudgetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBudgetCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -477,7 +522,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EDBEB46568E1B80A0B14B23 /* Pods_myCashFlow.framework in Frameworks */,
+				28FFAFE4C365621B77B91D64 /* libPods-myCashFlow.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +537,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C585E5F69E6BB82A63E4C9A /* libPods-myCashFlowUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,9 +547,69 @@
 		408C0305527A34905CC9D0D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CA3BBA537CD17D08C54549EB /* Pods_myCashFlow.framework */,
+				43AB9928CC482C2064040461 /* libPods-myCashFlow.a */,
+				49B0796C3E1ABAD4AB7AB492 /* libPods-myCashFlowUITests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B349D141F87D91A00D884D2 /* VENTouchLock */ = {
+			isa = PBXGroup;
+			children = (
+				5B349D151F87D91A00D884D2 /* Categories */,
+				5B349D181F87D91A00D884D2 /* Controllers */,
+				5B349D211F87D91A00D884D2 /* Info.plist */,
+				5B349D221F87D91A00D884D2 /* Models */,
+				5B349D251F87D91A00D884D2 /* VENTouchLock.h */,
+				5B349D261F87D91A00D884D2 /* VENTouchLock.m */,
+				5B349D271F87D91A00D884D2 /* Views */,
+			);
+			path = VENTouchLock;
+			sourceTree = "<group>";
+		};
+		5B349D151F87D91A00D884D2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5B349D161F87D91A00D884D2 /* UIViewController+VENTouchLock.h */,
+				5B349D171F87D91A00D884D2 /* UIViewController+VENTouchLock.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		5B349D181F87D91A00D884D2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5B349D191F87D91A00D884D2 /* VENTouchLockCreatePasscodeViewController.h */,
+				5B349D1A1F87D91A00D884D2 /* VENTouchLockCreatePasscodeViewController.m */,
+				5B349D1B1F87D91A00D884D2 /* VENTouchLockEnterPasscodeViewController.h */,
+				5B349D1C1F87D91A00D884D2 /* VENTouchLockEnterPasscodeViewController.m */,
+				5B349D1D1F87D91A00D884D2 /* VENTouchLockPasscodeViewController.h */,
+				5B349D1E1F87D91A00D884D2 /* VENTouchLockPasscodeViewController.m */,
+				5B349D1F1F87D91A00D884D2 /* VENTouchLockSplashViewController.h */,
+				5B349D201F87D91A00D884D2 /* VENTouchLockSplashViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5B349D221F87D91A00D884D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B349D231F87D91A00D884D2 /* VENTouchLockAppearance.h */,
+				5B349D241F87D91A00D884D2 /* VENTouchLockAppearance.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5B349D271F87D91A00D884D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5B349D281F87D91A00D884D2 /* VENTouchLockPasscodeCharacterView.h */,
+				5B349D291F87D91A00D884D2 /* VENTouchLockPasscodeCharacterView.m */,
+				5B349D2A1F87D91A00D884D2 /* VENTouchLockPasscodeView.h */,
+				5B349D2B1F87D91A00D884D2 /* VENTouchLockPasscodeView.m */,
+				5B349D2C1F87D91A00D884D2 /* VENTouchLockPasscodeView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5B9A80331F77696A00671F3B = {
@@ -586,6 +692,8 @@
 			children = (
 				321AC9A98572C8C275A853D5 /* Pods-myCashFlow.debug.xcconfig */,
 				648722BC1DCFAD0FCBFE99D5 /* Pods-myCashFlow.release.xcconfig */,
+				CE53ED2FFB869B17EF9EBB10 /* Pods-myCashFlowUITests.debug.xcconfig */,
+				8EA573630E7C975F46B83748 /* Pods-myCashFlowUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -695,6 +803,7 @@
 		EF7C15021F87435500624670 /* ThirdPartyLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				5B349D141F87D91A00D884D2 /* VENTouchLock */,
 				EF7C162A1F87447D00624670 /* ACFloatingTextField.h */,
 				EF7C162B1F87447D00624670 /* ACFloatingTextField.m */,
 				EF7C162C1F87447D00624670 /* HVTableView.h */,
@@ -821,6 +930,9 @@
 		EF7C15851F8743A600624670 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				5B349D381F87D9FB00D884D2 /* SampleLockSplashViewController.h */,
+				5B349D391F87D9FB00D884D2 /* SampleLockSplashViewController.m */,
+				5B349D3A1F87D9FB00D884D2 /* SampleLockSplashViewController.xib */,
 				EF7C16331F8745E600624670 /* DashBoard */,
 				EF7C163F1F87481700624670 /* FinanceFolder */,
 				EF7C16411F87485200624670 /* Appoinment */,
@@ -1011,16 +1123,19 @@
 		EF7C16401F87483C00624670 /* BudgetAndSaving */ = {
 			isa = PBXGroup;
 			children = (
-				EF7C15C31F87443A00624670 /* MySavingsCell.h */,
-				EF7C15C41F87443A00624670 /* MySavingsCell.m */,
-				EF7C15C51F87443A00624670 /* MySavingsCell.xib */,
-				EF7C15861F87443A00624670 /* AddExpenseVC.h */,
-				EF7C15871F87443A00624670 /* AddExpenseVC.m */,
 				EF7C15911F87443A00624670 /* BudgetAndSaveRateVC.h */,
 				EF7C15921F87443A00624670 /* BudgetAndSaveRateVC.m */,
+				EF7C15861F87443A00624670 /* AddExpenseVC.h */,
+				EF7C15871F87443A00624670 /* AddExpenseVC.m */,
 				EF7C15A01F87443A00624670 /* ExpenseCell.h */,
 				EF7C15A11F87443A00624670 /* ExpenseCell.m */,
 				EF7C15A21F87443A00624670 /* ExpenseCell.xib */,
+				EF7C15C31F87443A00624670 /* MySavingsCell.h */,
+				EF7C15C41F87443A00624670 /* MySavingsCell.m */,
+				EF7C15C51F87443A00624670 /* MySavingsCell.xib */,
+				EF7C16451F875B8700624670 /* MyBudgetCell.h */,
+				EF7C16461F875B8700624670 /* MyBudgetCell.m */,
+				EF7C16471F875B8700624670 /* MyBudgetCell.xib */,
 			);
 			name = BudgetAndSaving;
 			sourceTree = "<group>";
@@ -1113,9 +1228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B9A806F1F77696B00671F3B /* Build configuration list for PBXNativeTarget "myCashFlowUITests" */;
 			buildPhases = (
+				E5BBE13BF744263216761F0A /* [CP] Check Pods Manifest.lock */,
 				5B9A805C1F77696B00671F3B /* Sources */,
 				5B9A805D1F77696B00671F3B /* Frameworks */,
 				5B9A805E1F77696B00671F3B /* Resources */,
+				35D7739E5A2048E65124E9BC /* [CP] Embed Pods Frameworks */,
+				FBC0A86222DCF3B000CE09F2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1138,7 +1256,7 @@
 				TargetAttributes = {
 					5B9A803B1F77696A00671F3B = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = BJBHRS3L78;
+						DevelopmentTeam = JENKDMBQBJ;
 						ProvisioningStyle = Automatic;
 					};
 					5B9A80541F77696B00671F3B = {
@@ -1210,6 +1328,7 @@
 				5B9A804F1F77696B00671F3B /* LaunchScreen.storyboard in Resources */,
 				EF7C14DF1F87424600624670 /* Profile.PNG in Resources */,
 				EF7C14F11F87424600624670 /* tax.json in Resources */,
+				5B349D3C1F87D9FB00D884D2 /* SampleLockSplashViewController.xib in Resources */,
 				EF7C14E21F87424600624670 /* Report Health 144_144.png in Resources */,
 				EF7C16211F87443A00624670 /* TaxFolderCell.xib in Resources */,
 				EF7C14F01F87424600624670 /* recommand.json in Resources */,
@@ -1222,10 +1341,13 @@
 				EF7C15011F87427900624670 /* GOTHICI.TTF in Resources */,
 				EF7C14E81F87424600624670 /* consultant.json in Resources */,
 				EF7C14D81F87424600624670 /* Logo 510_300.PNG in Resources */,
+				EF7C16491F875B8700624670 /* MyBudgetCell.xib in Resources */,
 				EF7C16091F87443A00624670 /* InsuranceReportCell.xib in Resources */,
 				EF7C14ED1F87424600624670 /* message.json in Resources */,
 				EF7C15F31F87443A00624670 /* AppoinmentCell.xib in Resources */,
+				5B349D321F87D91A00D884D2 /* Info.plist in Resources */,
 				EF7C16011F87443A00624670 /* FinanceFolderCell.xib in Resources */,
+				5B349D371F87D91A00D884D2 /* VENTouchLockPasscodeView.xib in Resources */,
 				EF7C14C81F87424600624670 /* Appointment.png in Resources */,
 				EF7C14FF1F87427900624670 /* GOTHICB.TTF in Resources */,
 				EF7C161D1F87443A00624670 /* ProductSolutionsCell.xib in Resources */,
@@ -1272,16 +1394,19 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-myCashFlow-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A3130753B4D9A10CE5A60673 /* [CP] Embed Pods Frameworks */ = {
+		35D7739E5A2048E65124E9BC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1290,6 +1415,36 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myCashFlowUITests/Pods-myCashFlowUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3130753B4D9A10CE5A60673 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-myCashFlow/Pods-myCashFlow-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/PNChart/PNChart.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/UICountingLabel/UICountingLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/XCDYouTubeKit/XCDYouTubeKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PNChart.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICountingLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCDYouTubeKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1302,13 +1457,49 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-myCashFlow/Pods-myCashFlow-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myCashFlow/Pods-myCashFlow-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5BBE13BF744263216761F0A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-myCashFlowUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBC0A86222DCF3B000CE09F2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myCashFlow/Pods-myCashFlow-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myCashFlowUITests/Pods-myCashFlowUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1331,6 +1522,7 @@
 				EF7C160B1F87443A00624670 /* LeftMenuCell.m in Sources */,
 				EF7C15FB1F87443A00624670 /* DocListCell.m in Sources */,
 				EF7C155E1F87435500624670 /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
+				5B349D2F1F87D91A00D884D2 /* VENTouchLockEnterPasscodeViewController.m in Sources */,
 				EF7C15721F87435500624670 /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
 				EF7C155C1F87435500624670 /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
 				EF7C15641F87435500624670 /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
@@ -1354,15 +1546,20 @@
 				EF7C15F91F87443A00624670 /* DashboardNC.m in Sources */,
 				EF7C16021F87443A00624670 /* FinanceFolderVC.m in Sources */,
 				EF7C161E1F87443A00624670 /* ProductSolutionsVC.m in Sources */,
+				5B349D2D1F87D91A00D884D2 /* UIViewController+VENTouchLock.m in Sources */,
 				EF7C15791F87435500624670 /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
 				EF7C15FF1F87443A00624670 /* FinanceDetailsVC.m in Sources */,
+				5B349D2E1F87D91A00D884D2 /* VENTouchLockCreatePasscodeViewController.m in Sources */,
 				EF7C155F1F87435500624670 /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
 				EF7C161A1F87443A00624670 /* OffersVC.m in Sources */,
 				EF7C157B1F87435500624670 /* LGSideMenuController.m in Sources */,
 				EF7C156B1F87435500624670 /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
+				5B349D351F87D91A00D884D2 /* VENTouchLockPasscodeCharacterView.m in Sources */,
 				EF7C15711F87435500624670 /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
+				5B349D341F87D91A00D884D2 /* VENTouchLock.m in Sources */,
 				EF7C15651F87435500624670 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				EF7C15631F87435500624670 /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
+				5B349D331F87D91A00D884D2 /* VENTouchLockAppearance.m in Sources */,
 				EF7C149F1F87424600624670 /* AddCarAccident.m in Sources */,
 				EF7C15EF1F87443A00624670 /* AddExpenseVC.m in Sources */,
 				EF7C15F61F87443A00624670 /* ChangePinVC.m in Sources */,
@@ -1374,11 +1571,13 @@
 				EF7C16151F87443A00624670 /* NumberListVC.m in Sources */,
 				EF7C16101F87443A00624670 /* MPMoviePlayerController+BackgroundPlayback.m in Sources */,
 				5B9A80471F77696B00671F3B /* ViewController.m in Sources */,
+				EF7C16481F875B8700624670 /* MyBudgetCell.m in Sources */,
 				EF7C16291F87443A00624670 /* ViewHomeInsVC.m in Sources */,
 				EF7C15751F87435500624670 /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				EF7C15591F87435500624670 /* DGActivityIndicatorBallBeatAnimation.m in Sources */,
 				EF7C15661F87435500624670 /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
 				EF7C15FA1F87443A00624670 /* DashboardVC.m in Sources */,
+				5B349D3B1F87D9FB00D884D2 /* SampleLockSplashViewController.m in Sources */,
 				EF7C15F41F87443A00624670 /* AppointmentVC.m in Sources */,
 				EF7C16261F87443A00624670 /* VideoVC.m in Sources */,
 				EF7C149E1F87424600624670 /* AccidentReportVC.m in Sources */,
@@ -1410,11 +1609,14 @@
 				5B9A80441F77696B00671F3B /* AppDelegate.m in Sources */,
 				EF7C15671F87435500624670 /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
 				EF7C15FD1F87443A00624670 /* ExpenseCell.m in Sources */,
+				5B349D361F87D91A00D884D2 /* VENTouchLockPasscodeView.m in Sources */,
 				EF7C15581F87435500624670 /* DGActivityIndicatorAnimation.m in Sources */,
 				EF7C160D1F87443A00624670 /* MessageCell.m in Sources */,
 				EF7C156E1F87435500624670 /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
 				5B9A80411F77696B00671F3B /* main.m in Sources */,
 				EF7C16111F87443A00624670 /* MySavingsCell.m in Sources */,
+				5B349D301F87D91A00D884D2 /* VENTouchLockPasscodeViewController.m in Sources */,
+				5B349D311F87D91A00D884D2 /* VENTouchLockSplashViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1566,12 +1768,12 @@
 			baseConfigurationReference = 321AC9A98572C8C275A853D5 /* Pods-myCashFlow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = BJBHRS3L78;
-				GCC_PREFIX_HEADER = "/Users/parthiban/Desktop/WorkSpace/Parthi-master/myCashFlow/PrefixHeader.pch";
+				DEVELOPMENT_TEAM = JENKDMBQBJ;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/myCashFlow/PrefixHeader.pch";
 				INFOPLIST_FILE = myCashFlow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.demoPjt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myCashflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1581,12 +1783,12 @@
 			baseConfigurationReference = 648722BC1DCFAD0FCBFE99D5 /* Pods-myCashFlow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = BJBHRS3L78;
-				GCC_PREFIX_HEADER = "/Users/parthiban/Desktop/WorkSpace/Parthi-master/myCashFlow/PrefixHeader.pch";
+				DEVELOPMENT_TEAM = JENKDMBQBJ;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/myCashFlow/PrefixHeader.pch";
 				INFOPLIST_FILE = myCashFlow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.demoPjt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myCashflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -1617,6 +1819,7 @@
 		};
 		5B9A80701F77696B00671F3B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE53ED2FFB869B17EF9EBB10 /* Pods-myCashFlowUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = myCashFlowUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1628,6 +1831,7 @@
 		};
 		5B9A80711F77696B00671F3B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EA573630E7C975F46B83748 /* Pods-myCashFlowUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = myCashFlowUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

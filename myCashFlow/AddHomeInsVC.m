@@ -8,9 +8,10 @@
 
 #import "AddHomeInsVC.h"
 
-@interface AddHomeInsVC ()
+@interface AddHomeInsVC ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
 {
     float height;
+    int cameraTag;
 }
 @end
 
@@ -76,9 +77,126 @@
 }
 */
 
-- (IBAction)action_img1:(id)sender {
+- (IBAction)action_img1:(id)sender
+{
+    cameraTag=1;
+    [self changePhoto];
 }
 
-- (IBAction)action_img2:(UIButton *)sender {
+- (IBAction)action_img2:(UIButton *)sender
+{
+    cameraTag=2;
+    [self changePhoto];
+
+
 }
+
+- (void)changePhoto{
+    
+    NSLog(@"Inside Image Change...");
+    UIActionSheet  *webSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Albums", nil),NSLocalizedString(@"Take a Photo", nil), nil];
+    [webSheet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        UIImagePickerController* picker = [[UIImagePickerController alloc] init];
+        picker.delegate   = self;
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:picker animated:YES completion:nil];
+        
+        
+    } else if (buttonIndex == 1) {
+        BOOL hasCamera = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
+        
+        UIImagePickerController* picker = [[UIImagePickerController alloc] init];
+        picker.delegate   = self;
+        picker.sourceType = hasCamera ? UIImagePickerControllerSourceTypeCamera : UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:picker animated:YES completion:nil];
+        
+        
+    }
+}
+
+
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController*)picker
+{
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+-(UIImage *)normalizedImage:(UIImage *) thisImage
+{
+    if (thisImage.imageOrientation == UIImageOrientationUp) return thisImage;
+    
+    UIGraphicsBeginImageContextWithOptions(thisImage.size, NO, thisImage.scale);
+    [thisImage drawInRect:(CGRect){0, 0, thisImage.size}];
+    UIImage *normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return normalizedImage;
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *imagee =  [self normalizedImage:chosenImage];
+    
+    float imgheight = 512;
+    float width = 512;
+    
+    if (cameraTag==1)
+    {
+        self.imgDoc1.image = [self imageWithImage:imagee scaledToFillSize:CGSizeMake(width, imgheight)];
+    }
+    else
+    {
+        self.imgDoc2.image = [self imageWithImage:imagee scaledToFillSize:CGSizeMake(width, imgheight)];
+    }
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+
+- (UIImage *)imageWithImage:(UIImage *)image scaledToFillSize:(CGSize)size
+{
+    CGFloat scale = MAX(size.width/image.size.width, size.height/image.size.height);
+    CGFloat imgwidth = image.size.width * scale;
+    CGFloat imgheight = image.size.height * scale;
+    CGRect imageRect = CGRectMake((size.width - imgwidth)/2.0f,
+                                  (size.height - imgheight)/2.0f,
+                                  imgwidth,
+                                  imgheight);
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+    [image drawInRect:imageRect];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+
+
+-(NSData*)compressImage:(UIImage *)yourImage
+{
+    yourImage = [UIImage imageWithCGImage:yourImage.CGImage scale:0.3 orientation:yourImage.imageOrientation];
+    
+    CGFloat compression = 0.9f;
+    CGFloat maxCompression = 0.1f;
+    int maxFileSize = 200*1024;
+    
+    NSData *imageData = UIImageJPEGRepresentation(yourImage, compression);
+    
+    while ([imageData length] > maxFileSize && compression > maxCompression)
+    {
+        compression -= 0.1;
+        imageData = UIImageJPEGRepresentation(yourImage, compression);
+    }
+    return imageData;
+}
+
 @end

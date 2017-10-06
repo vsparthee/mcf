@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHICB.TTF">
+            <string>CenturyGothic-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SampleLockSplashViewController">
+            <connections>
+                <outlet property="btnpasscode" destination="r3T-9G-ag3" id="Liw-i0-uKb"/>
+                <outlet property="touchIDButton" destination="tPD-HN-DF3" id="TEu-Wz-eiP"/>
+                <outlet property="view" destination="Cdx-57-LM8" id="uqQ-U1-gFM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Cdx-57-LM8">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1100_1950.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="vE6-UH-6kW">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login with TouchID/Passcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjY-U8-sjd">
+                    <rect key="frame" x="40" y="150" width="240" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="vLK-79-D1P"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="17"/>
+                    <color key="textColor" red="0.96470588239999999" green="0.94901960780000005" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3T-9G-ag3">
+                    <rect key="frame" x="135" y="195" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="FZu-AY-l7k"/>
+                        <constraint firstAttribute="width" constant="50" id="UOn-CR-fbi"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="passcode"/>
+                    <connections>
+                        <action selector="userTappedEnterPasscode:" destination="-1" eventType="touchUpInside" id="jc6-1B-yhb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPD-HN-DF3">
+                    <rect key="frame" x="135" y="269" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="F5C-JU-HSI"/>
+                        <constraint firstAttribute="height" constant="50" id="ax9-2C-ahe"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="touchid"/>
+                    <connections>
+                        <action selector="userTappedShowTouchID:" destination="-1" eventType="touchUpInside" id="0Tx-4S-5WU"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="LjY-U8-sjd" firstAttribute="centerX" secondItem="Cdx-57-LM8" secondAttribute="centerX" id="6hV-CE-egP"/>
+                <constraint firstAttribute="trailing" secondItem="vE6-UH-6kW" secondAttribute="trailing" id="D9c-qY-JSN"/>
+                <constraint firstItem="vE6-UH-6kW" firstAttribute="top" secondItem="Cdx-57-LM8" secondAttribute="top" id="KBD-lC-a9x"/>
+                <constraint firstItem="tPD-HN-DF3" firstAttribute="top" secondItem="r3T-9G-ag3" secondAttribute="bottom" constant="24" id="S9f-gB-tXx"/>
+                <constraint firstItem="tPD-HN-DF3" firstAttribute="centerX" secondItem="Cdx-57-LM8" secondAttribute="centerX" id="iCr-6R-AX0"/>
+                <constraint firstAttribute="bottom" secondItem="vE6-UH-6kW" secondAttribute="bottom" id="rYl-dm-dc7"/>
+                <constraint firstItem="r3T-9G-ag3" firstAttribute="top" secondItem="LjY-U8-sjd" secondAttribute="bottom" constant="24" id="sfM-Jb-UVB"/>
+                <constraint firstItem="r3T-9G-ag3" firstAttribute="centerX" secondItem="Cdx-57-LM8" secondAttribute="centerX" id="v7c-HS-qmn"/>
+                <constraint firstItem="vE6-UH-6kW" firstAttribute="leading" secondItem="Cdx-57-LM8" secondAttribute="leading" id="wjD-xa-2OT"/>
+                <constraint firstItem="r3T-9G-ag3" firstAttribute="centerY" secondItem="Cdx-57-LM8" secondAttribute="centerY" constant="-20" id="wnB-es-UPj"/>
+            </constraints>
+            <point key="canvasLocation" x="318" y="277"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="1100_1950.JPG" width="1100" height="1950"/>
+        <image name="passcode" width="200" height="200"/>
+        <image name="touchid" width="128" height="128"/>
+    </resources>
+</document>

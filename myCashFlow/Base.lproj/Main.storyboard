@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jfY-V3-zAI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="chO-n6-2qn">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -2177,7 +2177,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                         <color key="value" red="0.96470588239999999" green="0.94901960780000005" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2213,7 +2213,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholder">
                                                         <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -2359,7 +2359,7 @@
         <!--Navigation Controller-->
         <scene sceneID="VaL-I2-8JT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jfY-V3-zAI" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNC" automaticallyAdjustsScrollViewInsets="NO" id="jfY-V3-zAI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yyc-Yn-pBq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -2429,7 +2429,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S6v-5K-SoQ" id="zTg-sA-LuY">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wT-nW-1Cj">
@@ -2874,6 +2874,7 @@
                         <outlet property="mySavingView" destination="5Ky-ou-cJs" id="Gtw-a4-kDp"/>
                         <outlet property="pieChartbase" destination="Xkf-Nh-zwa" id="0kv-EJ-Zzx"/>
                         <outlet property="settingsView" destination="ttc-wm-kTJ" id="ljq-It-esx"/>
+                        <outlet property="tblBudget" destination="Xmn-fO-dos" id="7wt-HS-wkU"/>
                         <outlet property="tblExpense" destination="qPL-49-kNK" id="ffF-I3-Wx6"/>
                         <outlet property="tblSavings" destination="rGs-gg-nQl" id="F0J-KN-KeP"/>
                         <outlet property="txtDailyExpense" destination="xa2-3e-m9F" id="Rk9-vl-kh9"/>
@@ -2972,7 +2973,23 @@
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRk-Gk-Qpo">
                                                             <rect key="frame" x="0.0" y="268" width="320" height="140"/>
+                                                            <subviews>
+                                                                <tableView clipsSubviews="YES" tag="300" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xmn-fO-dos">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                    <connections>
+                                                                        <outlet property="dataSource" destination="VX1-qV-5Kg" id="nFJ-OL-QLD"/>
+                                                                        <outlet property="delegate" destination="VX1-qV-5Kg" id="ZOI-Ut-3Lb"/>
+                                                                    </connections>
+                                                                </tableView>
+                                                            </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="Xmn-fO-dos" secondAttribute="trailing" id="BFr-eo-5V2"/>
+                                                                <constraint firstItem="Xmn-fO-dos" firstAttribute="leading" secondItem="IRk-Gk-Qpo" secondAttribute="leading" id="FeC-yt-HaJ"/>
+                                                                <constraint firstItem="Xmn-fO-dos" firstAttribute="top" secondItem="IRk-Gk-Qpo" secondAttribute="top" id="U8b-5t-Lg7"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Xmn-fO-dos" secondAttribute="bottom" id="tpA-d3-TW5"/>
+                                                            </constraints>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -5905,7 +5922,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -6412,14 +6429,14 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="74" height="50"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checked" translatesAutoresizingMaskIntoConstraints="NO" id="xGf-HM-JyN">
-                                                                <rect key="frame" x="11.5" y="15" width="21" height="21"/>
+                                                                <rect key="frame" x="9.5" y="15" width="21" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="5Qb-Dq-mOm"/>
                                                                     <constraint firstAttribute="width" constant="21" id="nv5-90-9q0"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z11-s5-Zq2">
-                                                                <rect key="frame" x="36.5" y="15" width="30.5" height="21"/>
+                                                                <rect key="frame" x="34.5" y="15" width="34.5" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="cwp-aV-d6w"/>
                                                                 </constraints>
@@ -6451,14 +6468,14 @@
                                                         <rect key="frame" x="74" y="0.0" width="74" height="50"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="AWo-DD-gVV">
-                                                                <rect key="frame" x="4.5" y="15" width="21" height="21"/>
+                                                                <rect key="frame" x="2" y="15" width="21" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="1Zt-SU-g6B"/>
                                                                     <constraint firstAttribute="width" constant="21" id="5jz-ar-AWu"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Female" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nV-j0-fTI">
-                                                                <rect key="frame" x="29.5" y="15" width="46" height="21"/>
+                                                                <rect key="frame" x="27" y="15" width="50.5" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="oIV-YT-MZV"/>
                                                                 </constraints>
@@ -6566,7 +6583,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                         <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -7171,14 +7188,14 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="74" height="50"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checked" translatesAutoresizingMaskIntoConstraints="NO" id="Kp5-lN-b9m">
-                                                                <rect key="frame" x="12" y="15" width="21" height="21"/>
+                                                                <rect key="frame" x="10" y="15" width="21" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="Ilm-p5-gS3"/>
                                                                     <constraint firstAttribute="width" constant="21" id="e94-y0-Eix"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhl-RL-Ucx">
-                                                                <rect key="frame" x="37" y="15" width="30.5" height="21"/>
+                                                                <rect key="frame" x="35" y="15" width="34.5" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="68y-pI-fe4"/>
                                                                 </constraints>
@@ -7210,14 +7227,14 @@
                                                         <rect key="frame" x="74" y="0.0" width="74" height="50"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="yma-0W-mLK">
-                                                                <rect key="frame" x="4.5" y="15" width="21" height="21"/>
+                                                                <rect key="frame" x="2" y="15" width="21" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="21" id="d2m-AU-h8V"/>
                                                                     <constraint firstAttribute="height" constant="21" id="v6C-Lp-dnw"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Female" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7p7-w6-s4i">
-                                                                <rect key="frame" x="29.5" y="15" width="46" height="21"/>
+                                                                <rect key="frame" x="27" y="15" width="50.5" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="TPH-4z-wT1"/>
                                                                 </constraints>
@@ -7325,7 +7342,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                         <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -7503,7 +7520,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                         <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -7532,7 +7549,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                         <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

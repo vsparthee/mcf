@@ -15,29 +15,37 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - IQKeyboardManager (5.0.3)
+  - KIF (3.6.0):
+    - KIF/Core (= 3.6.0)
+  - KIF/Core (3.6.0)
   - PNChart (0.8.9):
     - UICountingLabel (~> 1.2.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - SSKeychain (1.2.3)
   - UICountingLabel (1.2.0)
   - XCDYouTubeKit (2.5.6)
 
 DEPENDENCIES:
   - AFNetworking
   - IQKeyboardManager
+  - KIF (~> 3.0)
   - PNChart
   - SDWebImage (~> 3.7)
+  - SSKeychain (~> 1.2.2)
   - XCDYouTubeKit (~> 2.5)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   IQKeyboardManager: dc5b18b47e5170e4d150bb86dbee8c8a2fc48997
+  KIF: bd770edd8ce49bc7308501e4871e58a02d137be3
   PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
   XCDYouTubeKit: dccfe0c17dd5c5187969ec27e93069573badb08f
 
-PODFILE CHECKSUM: 78ec5b282dc06b2fbd5d72a72e329c189750c4d7
+PODFILE CHECKSUM: 2e66517795ad512abf76059e2acac0a0dfb33c01
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.3.1
