@@ -1,0 +1,41 @@
+[
+   {
+      "PolicyType":"LifeInsurance",
+      "Contacts":[
+         {
+            "Name":"HDFC Life",
+            "PhoneNo":"87687689689"
+         },
+         {
+            "Name":"HDFC Life",
+            "PhoneNo":"87687689689"
+         }
+      ]
+   },
+   {
+      "PolicyType":"LifeInsurance",
+      "Contacts":[
+         {
+            "Name":"HDFC Life",
+            "PhoneNo":"87687689689"
+         },
+         {
+            "Name":"HDFC Life",
+            "PhoneNo":"87687689689"
+         }
+      ]
+   },
+   {
+      "PolicyType":"LifeInsurance",
+      "Contacts":[
+         {
+            "Name":"HDFC Life",
+            "PhoneNo":"87687689689"
+         },
+         {
+            "Name":"HDFC Life",
+            "PhoneNo":"87687689689"
+         }
+      ]
+   }
+]

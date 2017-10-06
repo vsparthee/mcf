@@ -1,0 +1,77 @@
+//
+//  DashboardVC.m
+//  myCashflow
+//
+//  Created by Rishi on 9/24/17.
+//  Copyright © 2017 Parthiban. All rights reserved.
+//
+
+#import "DashboardVC.h"
+@interface DashboardVC ()
+{
+    float height;
+}
+@end
+
+@implementation DashboardVC
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    if ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height)
+    {
+        height=[UIScreen mainScreen].bounds.size.width;
+    }
+    else
+    {
+        height=[UIScreen mainScreen].bounds.size.height;
+    }
+    self.viewHeight.constant=height-64;
+    // Do any additional setup after loading the view.
+    
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+
+}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+- (IBAction)menuAction:(id)sender
+{
+    [self.sideMenuController showLeftViewAnimated:YES completionHandler:nil];
+}
+
+
+- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
+    {
+        self.viewHeight.constant=height;
+    }
+    else if(toInterfaceOrientation == UIInterfaceOrientationPortrait || toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
+    {
+        self.viewHeight.constant=height-64;
+
+    }
+}
+
+
+
+
+
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

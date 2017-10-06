@@ -1,0 +1,1682 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1EDBEB46568E1B80A0B14B23 /* Pods_myCashFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3BBA537CD17D08C54549EB /* Pods_myCashFlow.framework */; };
+		5B9A80411F77696B00671F3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80401F77696B00671F3B /* main.m */; };
+		5B9A80441F77696B00671F3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80431F77696B00671F3B /* AppDelegate.m */; };
+		5B9A80471F77696B00671F3B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80461F77696B00671F3B /* ViewController.m */; };
+		5B9A804A1F77696B00671F3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9A80481F77696B00671F3B /* Main.storyboard */; };
+		5B9A804C1F77696B00671F3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9A804B1F77696B00671F3B /* Assets.xcassets */; };
+		5B9A804F1F77696B00671F3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9A804D1F77696B00671F3B /* LaunchScreen.storyboard */; };
+		5B9A805A1F77696B00671F3B /* myCashFlowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80591F77696B00671F3B /* myCashFlowTests.m */; };
+		5B9A80651F77696B00671F3B /* myCashFlowUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80641F77696B00671F3B /* myCashFlowUITests.m */; };
+		EF7C149E1F87424600624670 /* AccidentReportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C14161F87424600624670 /* AccidentReportVC.m */; };
+		EF7C149F1F87424600624670 /* AddCarAccident.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C14181F87424600624670 /* AddCarAccident.m */; };
+		EF7C14C31F87424600624670 /* 1100_1950.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14641F87424600624670 /* 1100_1950.JPG */; };
+		EF7C14C41F87424600624670 /* 1500_2600.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14651F87424600624670 /* 1500_2600.JPG */; };
+		EF7C14C51F87424600624670 /* 750_1300.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14661F87424600624670 /* 750_1300.JPG */; };
+		EF7C14C61F87424600624670 /* Accident.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14671F87424600624670 /* Accident.png */; };
+		EF7C14C71F87424600624670 /* Addres gray 32_32.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14681F87424600624670 /* Addres gray 32_32.PNG */; };
+		EF7C14C81F87424600624670 /* Appointment.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14691F87424600624670 /* Appointment.png */; };
+		EF7C14C91F87424600624670 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF7C146A1F87424600624670 /* bg.jpg */; };
+		EF7C14CA1F87424600624670 /* Budget 72_72.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C146B1F87424600624670 /* Budget 72_72.PNG */; };
+		EF7C14CB1F87424600624670 /* Calendar 32_32.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C146C1F87424600624670 /* Calendar 32_32.PNG */; };
+		EF7C14CC1F87424600624670 /* Camera 32_32.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C146D1F87424600624670 /* Camera 32_32.PNG */; };
+		EF7C14CD1F87424600624670 /* Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7C146E1F87424600624670 /* Cancel.png */; };
+		EF7C14CE1F87424600624670 /* Car Back 70_60.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C146F1F87424600624670 /* Car Back 70_60.PNG */; };
+		EF7C14CF1F87424600624670 /* Car front 70_60.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14701F87424600624670 /* Car front 70_60.PNG */; };
+		EF7C14D01F87424600624670 /* Car Left 150_90.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14711F87424600624670 /* Car Left 150_90.PNG */; };
+		EF7C14D11F87424600624670 /* Car right 150_90.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14721F87424600624670 /* Car right 150_90.PNG */; };
+		EF7C14D21F87424600624670 /* Consultor Image 384_384.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14731F87424600624670 /* Consultor Image 384_384.PNG */; };
+		EF7C14D31F87424600624670 /* Daily Expenses 72_72.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14741F87424600624670 /* Daily Expenses 72_72.PNG */; };
+		EF7C14D41F87424600624670 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14751F87424600624670 /* demo.png */; };
+		EF7C14D51F87424600624670 /* Download 32_32.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14761F87424600624670 /* Download 32_32.PNG */; };
+		EF7C14D61F87424600624670 /* Email gray 32_32.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14771F87424600624670 /* Email gray 32_32.PNG */; };
+		EF7C14D71F87424600624670 /* Financefolder.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14781F87424600624670 /* Financefolder.png */; };
+		EF7C14D81F87424600624670 /* Logo 510_300.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14791F87424600624670 /* Logo 510_300.PNG */; };
+		EF7C14D91F87424600624670 /* Numbers.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7C147A1F87424600624670 /* Numbers.png */; };
+		EF7C14DA1F87424600624670 /* Offers.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7C147B1F87424600624670 /* Offers.png */; };
+		EF7C14DB1F87424600624670 /* PDF 64_64.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C147C1F87424600624670 /* PDF 64_64.PNG */; };
+		EF7C14DC1F87424600624670 /* Phone 64_64.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7C147D1F87424600624670 /* Phone 64_64.png */; };
+		EF7C14DD1F87424600624670 /* Phone gray 32_32.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C147E1F87424600624670 /* Phone gray 32_32.PNG */; };
+		EF7C14DE1F87424600624670 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7C147F1F87424600624670 /* Play.png */; };
+		EF7C14DF1F87424600624670 /* Profile.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14801F87424600624670 /* Profile.PNG */; };
+		EF7C14E01F87424600624670 /* Remar gray 32_32.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14811F87424600624670 /* Remar gray 32_32.PNG */; };
+		EF7C14E11F87424600624670 /* Report Car 144_144.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14821F87424600624670 /* Report Car 144_144.PNG */; };
+		EF7C14E21F87424600624670 /* Report Health 144_144.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14831F87424600624670 /* Report Health 144_144.png */; };
+		EF7C14E31F87424600624670 /* Report Home 144_144.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14841F87424600624670 /* Report Home 144_144.png */; };
+		EF7C14E41F87424600624670 /* Settings 72_72.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14851F87424600624670 /* Settings 72_72.PNG */; };
+		EF7C14E51F87424600624670 /* Taxfolder.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14861F87424600624670 /* Taxfolder.png */; };
+		EF7C14E61F87424600624670 /* User gray 32_32.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14871F87424600624670 /* User gray 32_32.PNG */; };
+		EF7C14E71F87424600624670 /* appointment.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14891F87424600624670 /* appointment.json */; };
+		EF7C14E81F87424600624670 /* consultant.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7C148A1F87424600624670 /* consultant.json */; };
+		EF7C14E91F87424600624670 /* discount.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7C148B1F87424600624670 /* discount.json */; };
+		EF7C14EA1F87424600624670 /* doc.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7C148C1F87424600624670 /* doc.json */; };
+		EF7C14EB1F87424600624670 /* financefolder.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7C148D1F87424600624670 /* financefolder.json */; };
+		EF7C14EC1F87424600624670 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7C148E1F87424600624670 /* login.json */; };
+		EF7C14ED1F87424600624670 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7C148F1F87424600624670 /* message.json */; };
+		EF7C14EE1F87424600624670 /* number.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14901F87424600624670 /* number.json */; };
+		EF7C14EF1F87424600624670 /* product.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14911F87424600624670 /* product.json */; };
+		EF7C14F01F87424600624670 /* recommand.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14921F87424600624670 /* recommand.json */; };
+		EF7C14F11F87424600624670 /* tax.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14931F87424600624670 /* tax.json */; };
+		EF7C14F21F87424600624670 /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14941F87424600624670 /* video.json */; };
+		EF7C14F71F87424600624670 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C149B1F87424600624670 /* LoginVC.m */; };
+		EF7C14F81F87424600624670 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C149D1F87424600624670 /* RegisterVC.m */; };
+		EF7C14FE1F87427900624670 /* GOTHIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14FA1F87427900624670 /* GOTHIC.TTF */; };
+		EF7C14FF1F87427900624670 /* GOTHICB.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14FB1F87427900624670 /* GOTHICB.TTF */; };
+		EF7C15001F87427900624670 /* GOTHICBI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14FC1F87427900624670 /* GOTHICBI.TTF */; };
+		EF7C15011F87427900624670 /* GOTHICI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14FD1F87427900624670 /* GOTHICI.TTF */; };
+		EF7C15581F87435500624670 /* DGActivityIndicatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15061F87435500624670 /* DGActivityIndicatorAnimation.m */; };
+		EF7C15591F87435500624670 /* DGActivityIndicatorBallBeatAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15081F87435500624670 /* DGActivityIndicatorBallBeatAnimation.m */; };
+		EF7C155A1F87435500624670 /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C150A1F87435500624670 /* DGActivityIndicatorBallClipRotateAnimation.m */; };
+		EF7C155B1F87435500624670 /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C150C1F87435500624670 /* DGActivityIndicatorBallClipRotateMultipleAnimation.m */; };
+		EF7C155C1F87435500624670 /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C150E1F87435500624670 /* DGActivityIndicatorBallClipRotatePulseAnimation.m */; };
+		EF7C155D1F87435500624670 /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15101F87435500624670 /* DGActivityIndicatorBallGridBeatAnimation.m */; };
+		EF7C155E1F87435500624670 /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15121F87435500624670 /* DGActivityIndicatorBallGridPulseAnimation.m */; };
+		EF7C155F1F87435500624670 /* DGActivityIndicatorBallPulseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15141F87435500624670 /* DGActivityIndicatorBallPulseAnimation.m */; };
+		EF7C15601F87435500624670 /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15161F87435500624670 /* DGActivityIndicatorBallPulseSyncAnimation.m */; };
+		EF7C15611F87435500624670 /* DGActivityIndicatorBallRotateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15181F87435500624670 /* DGActivityIndicatorBallRotateAnimation.m */; };
+		EF7C15621F87435500624670 /* DGActivityIndicatorBallScaleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C151A1F87435500624670 /* DGActivityIndicatorBallScaleAnimation.m */; };
+		EF7C15631F87435500624670 /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C151C1F87435500624670 /* DGActivityIndicatorBallScaleMultipleAnimation.m */; };
+		EF7C15641F87435500624670 /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C151E1F87435500624670 /* DGActivityIndicatorBallScaleRippleAnimation.m */; };
+		EF7C15651F87435500624670 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15201F87435500624670 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m */; };
+		EF7C15661F87435500624670 /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15221F87435500624670 /* DGActivityIndicatorBallSpinFadeLoader.m */; };
+		EF7C15671F87435500624670 /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15241F87435500624670 /* DGActivityIndicatorBallTrianglePathAnimation.m */; };
+		EF7C15681F87435500624670 /* DGActivityIndicatorBallZigZagAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15261F87435500624670 /* DGActivityIndicatorBallZigZagAnimation.m */; };
+		EF7C15691F87435500624670 /* DGActivityIndicatorBallZigZagDeflectAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15281F87435500624670 /* DGActivityIndicatorBallZigZagDeflectAnimation.m */; };
+		EF7C156A1F87435500624670 /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C152A1F87435500624670 /* DGActivityIndicatorCookieTerminatorAnimation.m */; };
+		EF7C156B1F87435500624670 /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C152C1F87435500624670 /* DGActivityIndicatorDoubleBounceAnimation.m */; };
+		EF7C156C1F87435500624670 /* DGActivityIndicatorFiveDotsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C152E1F87435500624670 /* DGActivityIndicatorFiveDotsAnimation.m */; };
+		EF7C156D1F87435500624670 /* DGActivityIndicatorLineScaleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15301F87435500624670 /* DGActivityIndicatorLineScaleAnimation.m */; };
+		EF7C156E1F87435500624670 /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15321F87435500624670 /* DGActivityIndicatorLineScalePartyAnimation.m */; };
+		EF7C156F1F87435500624670 /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15341F87435500624670 /* DGActivityIndicatorLineScalePulseOutAnimation.m */; };
+		EF7C15701F87435500624670 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15361F87435500624670 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m */; };
+		EF7C15711F87435500624670 /* DGActivityIndicatorNineDotsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15381F87435500624670 /* DGActivityIndicatorNineDotsAnimation.m */; };
+		EF7C15721F87435500624670 /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C153A1F87435500624670 /* DGActivityIndicatorRotatingSandglassAnimation.m */; };
+		EF7C15731F87435500624670 /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C153C1F87435500624670 /* DGActivityIndicatorRotatingSquaresAnimation.m */; };
+		EF7C15741F87435500624670 /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C153E1F87435500624670 /* DGActivityIndicatorRotatingTrigonAnimation.m */; };
+		EF7C15751F87435500624670 /* DGActivityIndicatorThreeDotsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15401F87435500624670 /* DGActivityIndicatorThreeDotsAnimation.m */; };
+		EF7C15761F87435500624670 /* DGActivityIndicatorTriangleSkewSpinAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15421F87435500624670 /* DGActivityIndicatorTriangleSkewSpinAnimation.m */; };
+		EF7C15771F87435500624670 /* DGActivityIndicatorTriplePulseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15441F87435500624670 /* DGActivityIndicatorTriplePulseAnimation.m */; };
+		EF7C15781F87435500624670 /* DGActivityIndicatorTripleRingsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15461F87435500624670 /* DGActivityIndicatorTripleRingsAnimation.m */; };
+		EF7C15791F87435500624670 /* DGActivityIndicatorTwoDotsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15481F87435500624670 /* DGActivityIndicatorTwoDotsAnimation.m */; };
+		EF7C157A1F87435500624670 /* DGActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C154B1F87435500624670 /* DGActivityIndicatorView.m */; };
+		EF7C157B1F87435500624670 /* LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C154E1F87435500624670 /* LGSideMenuController.m */; };
+		EF7C157C1F87435500624670 /* LGSideMenuControllerGesturesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15501F87435500624670 /* LGSideMenuControllerGesturesHandler.m */; };
+		EF7C157D1F87435500624670 /* LGSideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15521F87435500624670 /* LGSideMenuView.m */; };
+		EF7C157E1F87435500624670 /* UIViewController+LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15541F87435500624670 /* UIViewController+LGSideMenuController.m */; };
+		EF7C157F1F87435500624670 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15571F87435500624670 /* UIView+Toast.m */; };
+		EF7C15841F87437D00624670 /* APIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15811F87437D00624670 /* APIHandler.m */; };
+		EF7C15EF1F87443A00624670 /* AddExpenseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15871F87443A00624670 /* AddExpenseVC.m */; };
+		EF7C15F01F87443A00624670 /* AddHealthInsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15891F87443A00624670 /* AddHealthInsVC.m */; };
+		EF7C15F11F87443A00624670 /* AddHomeInsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C158B1F87443A00624670 /* AddHomeInsVC.m */; };
+		EF7C15F21F87443A00624670 /* AppoinmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C158D1F87443A00624670 /* AppoinmentCell.m */; };
+		EF7C15F31F87443A00624670 /* AppoinmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7C158E1F87443A00624670 /* AppoinmentCell.xib */; };
+		EF7C15F41F87443A00624670 /* AppointmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15901F87443A00624670 /* AppointmentVC.m */; };
+		EF7C15F51F87443A00624670 /* BudgetAndSaveRateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15921F87443A00624670 /* BudgetAndSaveRateVC.m */; };
+		EF7C15F61F87443A00624670 /* ChangePinVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15941F87443A00624670 /* ChangePinVC.m */; };
+		EF7C15F71F87443A00624670 /* ChangePwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15961F87443A00624670 /* ChangePwdVC.m */; };
+		EF7C15F81F87443A00624670 /* ConsultorProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15981F87443A00624670 /* ConsultorProfileVC.m */; };
+		EF7C15F91F87443A00624670 /* DashboardNC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C159A1F87443A00624670 /* DashboardNC.m */; };
+		EF7C15FA1F87443A00624670 /* DashboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C159C1F87443A00624670 /* DashboardVC.m */; };
+		EF7C15FB1F87443A00624670 /* DocListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C159E1F87443A00624670 /* DocListCell.m */; };
+		EF7C15FC1F87443A00624670 /* DocListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7C159F1F87443A00624670 /* DocListCell.xib */; };
+		EF7C15FD1F87443A00624670 /* ExpenseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15A11F87443A00624670 /* ExpenseCell.m */; };
+		EF7C15FE1F87443A00624670 /* ExpenseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7C15A21F87443A00624670 /* ExpenseCell.xib */; };
+		EF7C15FF1F87443A00624670 /* FinanceDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15A41F87443A00624670 /* FinanceDetailsVC.m */; };
+		EF7C16001F87443A00624670 /* FinanceFolderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15A61F87443A00624670 /* FinanceFolderCell.m */; };
+		EF7C16011F87443A00624670 /* FinanceFolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7C15A71F87443A00624670 /* FinanceFolderCell.xib */; };
+		EF7C16021F87443A00624670 /* FinanceFolderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15A91F87443A00624670 /* FinanceFolderVC.m */; };
+		EF7C16031F87443A00624670 /* FinanceFurtherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15AB1F87443A00624670 /* FinanceFurtherInfo.m */; };
+		EF7C16041F87443A00624670 /* ForgotPwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15AD1F87443A00624670 /* ForgotPwdVC.m */; };
+		EF7C16051F87443A00624670 /* FurterInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15AF1F87443A00624670 /* FurterInfoCell.m */; };
+		EF7C16061F87443A00624670 /* FurterInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7C15B01F87443A00624670 /* FurterInfoCell.xib */; };
+		EF7C16071F87443A00624670 /* General.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15B21F87443A00624670 /* General.m */; };
+		EF7C16081F87443A00624670 /* InsuranceReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15B41F87443A00624670 /* InsuranceReportCell.m */; };
+		EF7C16091F87443A00624670 /* InsuranceReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7C15B51F87443A00624670 /* InsuranceReportCell.xib */; };
+		EF7C160A1F87443A00624670 /* InsuranceReportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15B71F87443A00624670 /* InsuranceReportVC.m */; };
+		EF7C160B1F87443A00624670 /* LeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15B91F87443A00624670 /* LeftMenuCell.m */; };
+		EF7C160C1F87443A00624670 /* LeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15BB1F87443A00624670 /* LeftMenuVC.m */; };
+		EF7C160D1F87443A00624670 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15BD1F87443A00624670 /* MessageCell.m */; };
+		EF7C160E1F87443A00624670 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7C15BE1F87443A00624670 /* MessageCell.xib */; };
+		EF7C160F1F87443A00624670 /* MessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15C01F87443A00624670 /* MessageVC.m */; };
+		EF7C16101F87443A00624670 /* MPMoviePlayerController+BackgroundPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15C21F87443A00624670 /* MPMoviePlayerController+BackgroundPlayback.m */; };
+		EF7C16111F87443A00624670 /* MySavingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15C41F87443A00624670 /* MySavingsCell.m */; };
+		EF7C16121F87443A00624670 /* MySavingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7C15C51F87443A00624670 /* MySavingsCell.xib */; };
+		EF7C16131F87443A00624670 /* NumberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15C71F87443A00624670 /* NumberListCell.m */; };
+		EF7C16141F87443A00624670 /* NumberListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7C15C81F87443A00624670 /* NumberListCell.xib */; };
+		EF7C16151F87443A00624670 /* NumberListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15CA1F87443A00624670 /* NumberListVC.m */; };
+		EF7C16161F87443A00624670 /* NumbersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15CC1F87443A00624670 /* NumbersCell.m */; };
+		EF7C16171F87443A00624670 /* NumbersVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15CE1F87443A00624670 /* NumbersVC.m */; };
+		EF7C16181F87443A00624670 /* OffersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15D01F87443A00624670 /* OffersCell.m */; };
+		EF7C16191F87443A00624670 /* OffersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7C15D11F87443A00624670 /* OffersCell.xib */; };
+		EF7C161A1F87443A00624670 /* OffersVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15D31F87443A00624670 /* OffersVC.m */; };
+		EF7C161B1F87443A00624670 /* PdfViewerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15D51F87443A00624670 /* PdfViewerVC.m */; };
+		EF7C161C1F87443A00624670 /* ProductSolutionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15D71F87443A00624670 /* ProductSolutionsCell.m */; };
+		EF7C161D1F87443A00624670 /* ProductSolutionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7C15D81F87443A00624670 /* ProductSolutionsCell.xib */; };
+		EF7C161E1F87443A00624670 /* ProductSolutionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15DA1F87443A00624670 /* ProductSolutionsVC.m */; };
+		EF7C161F1F87443A00624670 /* RecommandationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15DC1F87443A00624670 /* RecommandationVC.m */; };
+		EF7C16201F87443A00624670 /* TaxFolderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15DE1F87443A00624670 /* TaxFolderCell.m */; };
+		EF7C16211F87443A00624670 /* TaxFolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7C15DF1F87443A00624670 /* TaxFolderCell.xib */; };
+		EF7C16221F87443A00624670 /* TaxFolderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15E11F87443A00624670 /* TaxFolderVC.m */; };
+		EF7C16231F87443A00624670 /* UserProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15E31F87443A00624670 /* UserProfileVC.m */; };
+		EF7C16241F87443A00624670 /* VideosCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15E51F87443A00624670 /* VideosCell.m */; };
+		EF7C16251F87443A00624670 /* VideosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF7C15E61F87443A00624670 /* VideosCell.xib */; };
+		EF7C16261F87443A00624670 /* VideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15E81F87443A00624670 /* VideoVC.m */; };
+		EF7C16271F87443A00624670 /* ViewCarAccident.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15EA1F87443A00624670 /* ViewCarAccident.m */; };
+		EF7C16281F87443A00624670 /* ViewHealthInsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15EC1F87443A00624670 /* ViewHealthInsVC.m */; };
+		EF7C16291F87443A00624670 /* ViewHomeInsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C15EE1F87443A00624670 /* ViewHomeInsVC.m */; };
+		EF7C16301F87447D00624670 /* ACFloatingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C162B1F87447D00624670 /* ACFloatingTextField.m */; };
+		EF7C16311F87447D00624670 /* HVTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C162D1F87447D00624670 /* HVTableView.m */; };
+		EF7C16321F87447D00624670 /* LTHMonthYearPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C162F1F87447D00624670 /* LTHMonthYearPickerView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B9A80561F77696B00671F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B9A80341F77696A00671F3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B9A803B1F77696A00671F3B;
+			remoteInfo = myCashFlow;
+		};
+		5B9A80611F77696B00671F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B9A80341F77696A00671F3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B9A803B1F77696A00671F3B;
+			remoteInfo = myCashFlow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		321AC9A98572C8C275A853D5 /* Pods-myCashFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myCashFlow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myCashFlow/Pods-myCashFlow.debug.xcconfig"; sourceTree = "<group>"; };
+		5B9A803C1F77696B00671F3B /* myCashFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCashFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B9A80401F77696B00671F3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5B9A80421F77696B00671F3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5B9A80431F77696B00671F3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5B9A80451F77696B00671F3B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5B9A80461F77696B00671F3B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5B9A80491F77696B00671F3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5B9A804B1F77696B00671F3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B9A804E1F77696B00671F3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5B9A80501F77696B00671F3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B9A80551F77696B00671F3B /* myCashFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myCashFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B9A80591F77696B00671F3B /* myCashFlowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myCashFlowTests.m; sourceTree = "<group>"; };
+		5B9A805B1F77696B00671F3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B9A80601F77696B00671F3B /* myCashFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myCashFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B9A80641F77696B00671F3B /* myCashFlowUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myCashFlowUITests.m; sourceTree = "<group>"; };
+		5B9A80661F77696B00671F3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		648722BC1DCFAD0FCBFE99D5 /* Pods-myCashFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myCashFlow.release.xcconfig"; path = "Pods/Target Support Files/Pods-myCashFlow/Pods-myCashFlow.release.xcconfig"; sourceTree = "<group>"; };
+		CA3BBA537CD17D08C54549EB /* Pods_myCashFlow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myCashFlow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF7C14151F87424600624670 /* AccidentReportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccidentReportVC.h; sourceTree = "<group>"; };
+		EF7C14161F87424600624670 /* AccidentReportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccidentReportVC.m; sourceTree = "<group>"; };
+		EF7C14171F87424600624670 /* AddCarAccident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddCarAccident.h; path = AccidentReport/AddCarAccident.h; sourceTree = "<group>"; };
+		EF7C14181F87424600624670 /* AddCarAccident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddCarAccident.m; path = AccidentReport/AddCarAccident.m; sourceTree = "<group>"; };
+		EF7C14641F87424600624670 /* 1100_1950.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1100_1950.JPG; sourceTree = "<group>"; };
+		EF7C14651F87424600624670 /* 1500_2600.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1500_2600.JPG; sourceTree = "<group>"; };
+		EF7C14661F87424600624670 /* 750_1300.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 750_1300.JPG; sourceTree = "<group>"; };
+		EF7C14671F87424600624670 /* Accident.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Accident.png; sourceTree = "<group>"; };
+		EF7C14681F87424600624670 /* Addres gray 32_32.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Addres gray 32_32.PNG"; sourceTree = "<group>"; };
+		EF7C14691F87424600624670 /* Appointment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Appointment.png; sourceTree = "<group>"; };
+		EF7C146A1F87424600624670 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		EF7C146B1F87424600624670 /* Budget 72_72.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Budget 72_72.PNG"; sourceTree = "<group>"; };
+		EF7C146C1F87424600624670 /* Calendar 32_32.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar 32_32.PNG"; sourceTree = "<group>"; };
+		EF7C146D1F87424600624670 /* Camera 32_32.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera 32_32.PNG"; sourceTree = "<group>"; };
+		EF7C146E1F87424600624670 /* Cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cancel.png; sourceTree = "<group>"; };
+		EF7C146F1F87424600624670 /* Car Back 70_60.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Car Back 70_60.PNG"; sourceTree = "<group>"; };
+		EF7C14701F87424600624670 /* Car front 70_60.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Car front 70_60.PNG"; sourceTree = "<group>"; };
+		EF7C14711F87424600624670 /* Car Left 150_90.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Car Left 150_90.PNG"; sourceTree = "<group>"; };
+		EF7C14721F87424600624670 /* Car right 150_90.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Car right 150_90.PNG"; sourceTree = "<group>"; };
+		EF7C14731F87424600624670 /* Consultor Image 384_384.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Consultor Image 384_384.PNG"; sourceTree = "<group>"; };
+		EF7C14741F87424600624670 /* Daily Expenses 72_72.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Daily Expenses 72_72.PNG"; sourceTree = "<group>"; };
+		EF7C14751F87424600624670 /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
+		EF7C14761F87424600624670 /* Download 32_32.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Download 32_32.PNG"; sourceTree = "<group>"; };
+		EF7C14771F87424600624670 /* Email gray 32_32.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email gray 32_32.PNG"; sourceTree = "<group>"; };
+		EF7C14781F87424600624670 /* Financefolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Financefolder.png; sourceTree = "<group>"; };
+		EF7C14791F87424600624670 /* Logo 510_300.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo 510_300.PNG"; sourceTree = "<group>"; };
+		EF7C147A1F87424600624670 /* Numbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Numbers.png; sourceTree = "<group>"; };
+		EF7C147B1F87424600624670 /* Offers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Offers.png; sourceTree = "<group>"; };
+		EF7C147C1F87424600624670 /* PDF 64_64.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PDF 64_64.PNG"; sourceTree = "<group>"; };
+		EF7C147D1F87424600624670 /* Phone 64_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Phone 64_64.png"; sourceTree = "<group>"; };
+		EF7C147E1F87424600624670 /* Phone gray 32_32.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Phone gray 32_32.PNG"; sourceTree = "<group>"; };
+		EF7C147F1F87424600624670 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
+		EF7C14801F87424600624670 /* Profile.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile.PNG; sourceTree = "<group>"; };
+		EF7C14811F87424600624670 /* Remar gray 32_32.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Remar gray 32_32.PNG"; sourceTree = "<group>"; };
+		EF7C14821F87424600624670 /* Report Car 144_144.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Report Car 144_144.PNG"; sourceTree = "<group>"; };
+		EF7C14831F87424600624670 /* Report Health 144_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Report Health 144_144.png"; sourceTree = "<group>"; };
+		EF7C14841F87424600624670 /* Report Home 144_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Report Home 144_144.png"; sourceTree = "<group>"; };
+		EF7C14851F87424600624670 /* Settings 72_72.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings 72_72.PNG"; sourceTree = "<group>"; };
+		EF7C14861F87424600624670 /* Taxfolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Taxfolder.png; sourceTree = "<group>"; };
+		EF7C14871F87424600624670 /* User gray 32_32.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "User gray 32_32.PNG"; sourceTree = "<group>"; };
+		EF7C14891F87424600624670 /* appointment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appointment.json; sourceTree = "<group>"; };
+		EF7C148A1F87424600624670 /* consultant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = consultant.json; sourceTree = "<group>"; };
+		EF7C148B1F87424600624670 /* discount.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = discount.json; sourceTree = "<group>"; };
+		EF7C148C1F87424600624670 /* doc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = doc.json; sourceTree = "<group>"; };
+		EF7C148D1F87424600624670 /* financefolder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = financefolder.json; sourceTree = "<group>"; };
+		EF7C148E1F87424600624670 /* login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
+		EF7C148F1F87424600624670 /* message.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
+		EF7C14901F87424600624670 /* number.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = number.json; sourceTree = "<group>"; };
+		EF7C14911F87424600624670 /* product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = product.json; sourceTree = "<group>"; };
+		EF7C14921F87424600624670 /* recommand.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommand.json; sourceTree = "<group>"; };
+		EF7C14931F87424600624670 /* tax.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tax.json; sourceTree = "<group>"; };
+		EF7C14941F87424600624670 /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
+		EF7C149A1F87424600624670 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		EF7C149B1F87424600624670 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		EF7C149C1F87424600624670 /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
+		EF7C149D1F87424600624670 /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
+		EF7C14FA1F87427900624670 /* GOTHIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOTHIC.TTF; sourceTree = "<group>"; };
+		EF7C14FB1F87427900624670 /* GOTHICB.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOTHICB.TTF; sourceTree = "<group>"; };
+		EF7C14FC1F87427900624670 /* GOTHICBI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOTHICBI.TTF; sourceTree = "<group>"; };
+		EF7C14FD1F87427900624670 /* GOTHICI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOTHICI.TTF; sourceTree = "<group>"; };
+		EF7C15051F87435500624670 /* DGActivityIndicatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorAnimation.h; sourceTree = "<group>"; };
+		EF7C15061F87435500624670 /* DGActivityIndicatorAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorAnimation.m; sourceTree = "<group>"; };
+		EF7C15071F87435500624670 /* DGActivityIndicatorBallBeatAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallBeatAnimation.h; sourceTree = "<group>"; };
+		EF7C15081F87435500624670 /* DGActivityIndicatorBallBeatAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallBeatAnimation.m; sourceTree = "<group>"; };
+		EF7C15091F87435500624670 /* DGActivityIndicatorBallClipRotateAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallClipRotateAnimation.h; sourceTree = "<group>"; };
+		EF7C150A1F87435500624670 /* DGActivityIndicatorBallClipRotateAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallClipRotateAnimation.m; sourceTree = "<group>"; };
+		EF7C150B1F87435500624670 /* DGActivityIndicatorBallClipRotateMultipleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallClipRotateMultipleAnimation.h; sourceTree = "<group>"; };
+		EF7C150C1F87435500624670 /* DGActivityIndicatorBallClipRotateMultipleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallClipRotateMultipleAnimation.m; sourceTree = "<group>"; };
+		EF7C150D1F87435500624670 /* DGActivityIndicatorBallClipRotatePulseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallClipRotatePulseAnimation.h; sourceTree = "<group>"; };
+		EF7C150E1F87435500624670 /* DGActivityIndicatorBallClipRotatePulseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallClipRotatePulseAnimation.m; sourceTree = "<group>"; };
+		EF7C150F1F87435500624670 /* DGActivityIndicatorBallGridBeatAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallGridBeatAnimation.h; sourceTree = "<group>"; };
+		EF7C15101F87435500624670 /* DGActivityIndicatorBallGridBeatAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallGridBeatAnimation.m; sourceTree = "<group>"; };
+		EF7C15111F87435500624670 /* DGActivityIndicatorBallGridPulseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallGridPulseAnimation.h; sourceTree = "<group>"; };
+		EF7C15121F87435500624670 /* DGActivityIndicatorBallGridPulseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallGridPulseAnimation.m; sourceTree = "<group>"; };
+		EF7C15131F87435500624670 /* DGActivityIndicatorBallPulseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallPulseAnimation.h; sourceTree = "<group>"; };
+		EF7C15141F87435500624670 /* DGActivityIndicatorBallPulseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallPulseAnimation.m; sourceTree = "<group>"; };
+		EF7C15151F87435500624670 /* DGActivityIndicatorBallPulseSyncAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallPulseSyncAnimation.h; sourceTree = "<group>"; };
+		EF7C15161F87435500624670 /* DGActivityIndicatorBallPulseSyncAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallPulseSyncAnimation.m; sourceTree = "<group>"; };
+		EF7C15171F87435500624670 /* DGActivityIndicatorBallRotateAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallRotateAnimation.h; sourceTree = "<group>"; };
+		EF7C15181F87435500624670 /* DGActivityIndicatorBallRotateAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallRotateAnimation.m; sourceTree = "<group>"; };
+		EF7C15191F87435500624670 /* DGActivityIndicatorBallScaleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallScaleAnimation.h; sourceTree = "<group>"; };
+		EF7C151A1F87435500624670 /* DGActivityIndicatorBallScaleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallScaleAnimation.m; sourceTree = "<group>"; };
+		EF7C151B1F87435500624670 /* DGActivityIndicatorBallScaleMultipleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallScaleMultipleAnimation.h; sourceTree = "<group>"; };
+		EF7C151C1F87435500624670 /* DGActivityIndicatorBallScaleMultipleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallScaleMultipleAnimation.m; sourceTree = "<group>"; };
+		EF7C151D1F87435500624670 /* DGActivityIndicatorBallScaleRippleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallScaleRippleAnimation.h; sourceTree = "<group>"; };
+		EF7C151E1F87435500624670 /* DGActivityIndicatorBallScaleRippleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallScaleRippleAnimation.m; sourceTree = "<group>"; };
+		EF7C151F1F87435500624670 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallScaleRippleMultipleAnimation.h; sourceTree = "<group>"; };
+		EF7C15201F87435500624670 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallScaleRippleMultipleAnimation.m; sourceTree = "<group>"; };
+		EF7C15211F87435500624670 /* DGActivityIndicatorBallSpinFadeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallSpinFadeLoader.h; sourceTree = "<group>"; };
+		EF7C15221F87435500624670 /* DGActivityIndicatorBallSpinFadeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallSpinFadeLoader.m; sourceTree = "<group>"; };
+		EF7C15231F87435500624670 /* DGActivityIndicatorBallTrianglePathAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallTrianglePathAnimation.h; sourceTree = "<group>"; };
+		EF7C15241F87435500624670 /* DGActivityIndicatorBallTrianglePathAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallTrianglePathAnimation.m; sourceTree = "<group>"; };
+		EF7C15251F87435500624670 /* DGActivityIndicatorBallZigZagAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallZigZagAnimation.h; sourceTree = "<group>"; };
+		EF7C15261F87435500624670 /* DGActivityIndicatorBallZigZagAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallZigZagAnimation.m; sourceTree = "<group>"; };
+		EF7C15271F87435500624670 /* DGActivityIndicatorBallZigZagDeflectAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorBallZigZagDeflectAnimation.h; sourceTree = "<group>"; };
+		EF7C15281F87435500624670 /* DGActivityIndicatorBallZigZagDeflectAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorBallZigZagDeflectAnimation.m; sourceTree = "<group>"; };
+		EF7C15291F87435500624670 /* DGActivityIndicatorCookieTerminatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorCookieTerminatorAnimation.h; sourceTree = "<group>"; };
+		EF7C152A1F87435500624670 /* DGActivityIndicatorCookieTerminatorAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorCookieTerminatorAnimation.m; sourceTree = "<group>"; };
+		EF7C152B1F87435500624670 /* DGActivityIndicatorDoubleBounceAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorDoubleBounceAnimation.h; sourceTree = "<group>"; };
+		EF7C152C1F87435500624670 /* DGActivityIndicatorDoubleBounceAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorDoubleBounceAnimation.m; sourceTree = "<group>"; };
+		EF7C152D1F87435500624670 /* DGActivityIndicatorFiveDotsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorFiveDotsAnimation.h; sourceTree = "<group>"; };
+		EF7C152E1F87435500624670 /* DGActivityIndicatorFiveDotsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorFiveDotsAnimation.m; sourceTree = "<group>"; };
+		EF7C152F1F87435500624670 /* DGActivityIndicatorLineScaleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorLineScaleAnimation.h; sourceTree = "<group>"; };
+		EF7C15301F87435500624670 /* DGActivityIndicatorLineScaleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorLineScaleAnimation.m; sourceTree = "<group>"; };
+		EF7C15311F87435500624670 /* DGActivityIndicatorLineScalePartyAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorLineScalePartyAnimation.h; sourceTree = "<group>"; };
+		EF7C15321F87435500624670 /* DGActivityIndicatorLineScalePartyAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorLineScalePartyAnimation.m; sourceTree = "<group>"; };
+		EF7C15331F87435500624670 /* DGActivityIndicatorLineScalePulseOutAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorLineScalePulseOutAnimation.h; sourceTree = "<group>"; };
+		EF7C15341F87435500624670 /* DGActivityIndicatorLineScalePulseOutAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorLineScalePulseOutAnimation.m; sourceTree = "<group>"; };
+		EF7C15351F87435500624670 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorLineScalePulseOutRapidAnimation.h; sourceTree = "<group>"; };
+		EF7C15361F87435500624670 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorLineScalePulseOutRapidAnimation.m; sourceTree = "<group>"; };
+		EF7C15371F87435500624670 /* DGActivityIndicatorNineDotsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorNineDotsAnimation.h; sourceTree = "<group>"; };
+		EF7C15381F87435500624670 /* DGActivityIndicatorNineDotsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorNineDotsAnimation.m; sourceTree = "<group>"; };
+		EF7C15391F87435500624670 /* DGActivityIndicatorRotatingSandglassAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorRotatingSandglassAnimation.h; sourceTree = "<group>"; };
+		EF7C153A1F87435500624670 /* DGActivityIndicatorRotatingSandglassAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorRotatingSandglassAnimation.m; sourceTree = "<group>"; };
+		EF7C153B1F87435500624670 /* DGActivityIndicatorRotatingSquaresAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorRotatingSquaresAnimation.h; sourceTree = "<group>"; };
+		EF7C153C1F87435500624670 /* DGActivityIndicatorRotatingSquaresAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorRotatingSquaresAnimation.m; sourceTree = "<group>"; };
+		EF7C153D1F87435500624670 /* DGActivityIndicatorRotatingTrigonAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorRotatingTrigonAnimation.h; sourceTree = "<group>"; };
+		EF7C153E1F87435500624670 /* DGActivityIndicatorRotatingTrigonAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorRotatingTrigonAnimation.m; sourceTree = "<group>"; };
+		EF7C153F1F87435500624670 /* DGActivityIndicatorThreeDotsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorThreeDotsAnimation.h; sourceTree = "<group>"; };
+		EF7C15401F87435500624670 /* DGActivityIndicatorThreeDotsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorThreeDotsAnimation.m; sourceTree = "<group>"; };
+		EF7C15411F87435500624670 /* DGActivityIndicatorTriangleSkewSpinAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorTriangleSkewSpinAnimation.h; sourceTree = "<group>"; };
+		EF7C15421F87435500624670 /* DGActivityIndicatorTriangleSkewSpinAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorTriangleSkewSpinAnimation.m; sourceTree = "<group>"; };
+		EF7C15431F87435500624670 /* DGActivityIndicatorTriplePulseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorTriplePulseAnimation.h; sourceTree = "<group>"; };
+		EF7C15441F87435500624670 /* DGActivityIndicatorTriplePulseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorTriplePulseAnimation.m; sourceTree = "<group>"; };
+		EF7C15451F87435500624670 /* DGActivityIndicatorTripleRingsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorTripleRingsAnimation.h; sourceTree = "<group>"; };
+		EF7C15461F87435500624670 /* DGActivityIndicatorTripleRingsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorTripleRingsAnimation.m; sourceTree = "<group>"; };
+		EF7C15471F87435500624670 /* DGActivityIndicatorTwoDotsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorTwoDotsAnimation.h; sourceTree = "<group>"; };
+		EF7C15481F87435500624670 /* DGActivityIndicatorTwoDotsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorTwoDotsAnimation.m; sourceTree = "<group>"; };
+		EF7C15491F87435500624670 /* DGActivityIndicatorAnimationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorAnimationProtocol.h; sourceTree = "<group>"; };
+		EF7C154A1F87435500624670 /* DGActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorView.h; sourceTree = "<group>"; };
+		EF7C154B1F87435500624670 /* DGActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorView.m; sourceTree = "<group>"; };
+		EF7C154D1F87435500624670 /* LGSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuController.h; sourceTree = "<group>"; };
+		EF7C154E1F87435500624670 /* LGSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuController.m; sourceTree = "<group>"; };
+		EF7C154F1F87435500624670 /* LGSideMenuControllerGesturesHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuControllerGesturesHandler.h; sourceTree = "<group>"; };
+		EF7C15501F87435500624670 /* LGSideMenuControllerGesturesHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuControllerGesturesHandler.m; sourceTree = "<group>"; };
+		EF7C15511F87435500624670 /* LGSideMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuView.h; sourceTree = "<group>"; };
+		EF7C15521F87435500624670 /* LGSideMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuView.m; sourceTree = "<group>"; };
+		EF7C15531F87435500624670 /* UIViewController+LGSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LGSideMenuController.h"; sourceTree = "<group>"; };
+		EF7C15541F87435500624670 /* UIViewController+LGSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LGSideMenuController.m"; sourceTree = "<group>"; };
+		EF7C15561F87435500624670 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		EF7C15571F87435500624670 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		EF7C15801F87437D00624670 /* APIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIHandler.h; sourceTree = "<group>"; };
+		EF7C15811F87437D00624670 /* APIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIHandler.m; sourceTree = "<group>"; };
+		EF7C15821F87437D00624670 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		EF7C15831F87437D00624670 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		EF7C15861F87443A00624670 /* AddExpenseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExpenseVC.h; sourceTree = "<group>"; };
+		EF7C15871F87443A00624670 /* AddExpenseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExpenseVC.m; sourceTree = "<group>"; };
+		EF7C15881F87443A00624670 /* AddHealthInsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddHealthInsVC.h; sourceTree = "<group>"; };
+		EF7C15891F87443A00624670 /* AddHealthInsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddHealthInsVC.m; sourceTree = "<group>"; };
+		EF7C158A1F87443A00624670 /* AddHomeInsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddHomeInsVC.h; sourceTree = "<group>"; };
+		EF7C158B1F87443A00624670 /* AddHomeInsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddHomeInsVC.m; sourceTree = "<group>"; };
+		EF7C158C1F87443A00624670 /* AppoinmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentCell.h; sourceTree = "<group>"; };
+		EF7C158D1F87443A00624670 /* AppoinmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinmentCell.m; sourceTree = "<group>"; };
+		EF7C158E1F87443A00624670 /* AppoinmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppoinmentCell.xib; sourceTree = "<group>"; };
+		EF7C158F1F87443A00624670 /* AppointmentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentVC.h; sourceTree = "<group>"; };
+		EF7C15901F87443A00624670 /* AppointmentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentVC.m; sourceTree = "<group>"; };
+		EF7C15911F87443A00624670 /* BudgetAndSaveRateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BudgetAndSaveRateVC.h; sourceTree = "<group>"; };
+		EF7C15921F87443A00624670 /* BudgetAndSaveRateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BudgetAndSaveRateVC.m; sourceTree = "<group>"; };
+		EF7C15931F87443A00624670 /* ChangePinVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePinVC.h; sourceTree = "<group>"; };
+		EF7C15941F87443A00624670 /* ChangePinVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePinVC.m; sourceTree = "<group>"; };
+		EF7C15951F87443A00624670 /* ChangePwdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePwdVC.h; sourceTree = "<group>"; };
+		EF7C15961F87443A00624670 /* ChangePwdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePwdVC.m; sourceTree = "<group>"; };
+		EF7C15971F87443A00624670 /* ConsultorProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsultorProfileVC.h; sourceTree = "<group>"; };
+		EF7C15981F87443A00624670 /* ConsultorProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsultorProfileVC.m; sourceTree = "<group>"; };
+		EF7C15991F87443A00624670 /* DashboardNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardNC.h; sourceTree = "<group>"; };
+		EF7C159A1F87443A00624670 /* DashboardNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardNC.m; sourceTree = "<group>"; };
+		EF7C159B1F87443A00624670 /* DashboardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardVC.h; sourceTree = "<group>"; };
+		EF7C159C1F87443A00624670 /* DashboardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardVC.m; sourceTree = "<group>"; };
+		EF7C159D1F87443A00624670 /* DocListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocListCell.h; sourceTree = "<group>"; };
+		EF7C159E1F87443A00624670 /* DocListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocListCell.m; sourceTree = "<group>"; };
+		EF7C159F1F87443A00624670 /* DocListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocListCell.xib; sourceTree = "<group>"; };
+		EF7C15A01F87443A00624670 /* ExpenseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseCell.h; sourceTree = "<group>"; };
+		EF7C15A11F87443A00624670 /* ExpenseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseCell.m; sourceTree = "<group>"; };
+		EF7C15A21F87443A00624670 /* ExpenseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseCell.xib; sourceTree = "<group>"; };
+		EF7C15A31F87443A00624670 /* FinanceDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceDetailsVC.h; sourceTree = "<group>"; };
+		EF7C15A41F87443A00624670 /* FinanceDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceDetailsVC.m; sourceTree = "<group>"; };
+		EF7C15A51F87443A00624670 /* FinanceFolderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceFolderCell.h; sourceTree = "<group>"; };
+		EF7C15A61F87443A00624670 /* FinanceFolderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceFolderCell.m; sourceTree = "<group>"; };
+		EF7C15A71F87443A00624670 /* FinanceFolderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinanceFolderCell.xib; sourceTree = "<group>"; };
+		EF7C15A81F87443A00624670 /* FinanceFolderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceFolderVC.h; sourceTree = "<group>"; };
+		EF7C15A91F87443A00624670 /* FinanceFolderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceFolderVC.m; sourceTree = "<group>"; };
+		EF7C15AA1F87443A00624670 /* FinanceFurtherInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceFurtherInfo.h; sourceTree = "<group>"; };
+		EF7C15AB1F87443A00624670 /* FinanceFurtherInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceFurtherInfo.m; sourceTree = "<group>"; };
+		EF7C15AC1F87443A00624670 /* ForgotPwdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgotPwdVC.h; path = ../ForgotPwdVC.h; sourceTree = "<group>"; };
+		EF7C15AD1F87443A00624670 /* ForgotPwdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgotPwdVC.m; path = ../ForgotPwdVC.m; sourceTree = "<group>"; };
+		EF7C15AE1F87443A00624670 /* FurterInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FurterInfoCell.h; sourceTree = "<group>"; };
+		EF7C15AF1F87443A00624670 /* FurterInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FurterInfoCell.m; sourceTree = "<group>"; };
+		EF7C15B01F87443A00624670 /* FurterInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FurterInfoCell.xib; sourceTree = "<group>"; };
+		EF7C15B11F87443A00624670 /* General.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = General.h; sourceTree = "<group>"; };
+		EF7C15B21F87443A00624670 /* General.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = General.m; sourceTree = "<group>"; };
+		EF7C15B31F87443A00624670 /* InsuranceReportCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InsuranceReportCell.h; path = ../InsuranceReportCell.h; sourceTree = "<group>"; };
+		EF7C15B41F87443A00624670 /* InsuranceReportCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InsuranceReportCell.m; path = ../InsuranceReportCell.m; sourceTree = "<group>"; };
+		EF7C15B51F87443A00624670 /* InsuranceReportCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InsuranceReportCell.xib; path = ../InsuranceReportCell.xib; sourceTree = "<group>"; };
+		EF7C15B61F87443A00624670 /* InsuranceReportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InsuranceReportVC.h; path = ../InsuranceReportVC.h; sourceTree = "<group>"; };
+		EF7C15B71F87443A00624670 /* InsuranceReportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InsuranceReportVC.m; path = ../InsuranceReportVC.m; sourceTree = "<group>"; };
+		EF7C15B81F87443A00624670 /* LeftMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuCell.h; sourceTree = "<group>"; };
+		EF7C15B91F87443A00624670 /* LeftMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuCell.m; sourceTree = "<group>"; };
+		EF7C15BA1F87443A00624670 /* LeftMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuVC.h; sourceTree = "<group>"; };
+		EF7C15BB1F87443A00624670 /* LeftMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuVC.m; sourceTree = "<group>"; };
+		EF7C15BC1F87443A00624670 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		EF7C15BD1F87443A00624670 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		EF7C15BE1F87443A00624670 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		EF7C15BF1F87443A00624670 /* MessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageVC.h; sourceTree = "<group>"; };
+		EF7C15C01F87443A00624670 /* MessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
+		EF7C15C11F87443A00624670 /* MPMoviePlayerController+BackgroundPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPMoviePlayerController+BackgroundPlayback.h"; sourceTree = "<group>"; };
+		EF7C15C21F87443A00624670 /* MPMoviePlayerController+BackgroundPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPMoviePlayerController+BackgroundPlayback.m"; sourceTree = "<group>"; };
+		EF7C15C31F87443A00624670 /* MySavingsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySavingsCell.h; sourceTree = "<group>"; };
+		EF7C15C41F87443A00624670 /* MySavingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySavingsCell.m; sourceTree = "<group>"; };
+		EF7C15C51F87443A00624670 /* MySavingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySavingsCell.xib; sourceTree = "<group>"; };
+		EF7C15C61F87443A00624670 /* NumberListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberListCell.h; sourceTree = "<group>"; };
+		EF7C15C71F87443A00624670 /* NumberListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberListCell.m; sourceTree = "<group>"; };
+		EF7C15C81F87443A00624670 /* NumberListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumberListCell.xib; sourceTree = "<group>"; };
+		EF7C15C91F87443A00624670 /* NumberListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberListVC.h; sourceTree = "<group>"; };
+		EF7C15CA1F87443A00624670 /* NumberListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberListVC.m; sourceTree = "<group>"; };
+		EF7C15CB1F87443A00624670 /* NumbersCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumbersCell.h; sourceTree = "<group>"; };
+		EF7C15CC1F87443A00624670 /* NumbersCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumbersCell.m; sourceTree = "<group>"; };
+		EF7C15CD1F87443A00624670 /* NumbersVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumbersVC.h; sourceTree = "<group>"; };
+		EF7C15CE1F87443A00624670 /* NumbersVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumbersVC.m; sourceTree = "<group>"; };
+		EF7C15CF1F87443A00624670 /* OffersCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersCell.h; sourceTree = "<group>"; };
+		EF7C15D01F87443A00624670 /* OffersCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersCell.m; sourceTree = "<group>"; };
+		EF7C15D11F87443A00624670 /* OffersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersCell.xib; sourceTree = "<group>"; };
+		EF7C15D21F87443A00624670 /* OffersVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersVC.h; sourceTree = "<group>"; };
+		EF7C15D31F87443A00624670 /* OffersVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersVC.m; sourceTree = "<group>"; };
+		EF7C15D41F87443A00624670 /* PdfViewerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdfViewerVC.h; sourceTree = "<group>"; };
+		EF7C15D51F87443A00624670 /* PdfViewerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdfViewerVC.m; sourceTree = "<group>"; };
+		EF7C15D61F87443A00624670 /* ProductSolutionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSolutionsCell.h; sourceTree = "<group>"; };
+		EF7C15D71F87443A00624670 /* ProductSolutionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSolutionsCell.m; sourceTree = "<group>"; };
+		EF7C15D81F87443A00624670 /* ProductSolutionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductSolutionsCell.xib; sourceTree = "<group>"; };
+		EF7C15D91F87443A00624670 /* ProductSolutionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSolutionsVC.h; sourceTree = "<group>"; };
+		EF7C15DA1F87443A00624670 /* ProductSolutionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSolutionsVC.m; sourceTree = "<group>"; };
+		EF7C15DB1F87443A00624670 /* RecommandationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommandationVC.h; sourceTree = "<group>"; };
+		EF7C15DC1F87443A00624670 /* RecommandationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommandationVC.m; sourceTree = "<group>"; };
+		EF7C15DD1F87443A00624670 /* TaxFolderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaxFolderCell.h; sourceTree = "<group>"; };
+		EF7C15DE1F87443A00624670 /* TaxFolderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaxFolderCell.m; sourceTree = "<group>"; };
+		EF7C15DF1F87443A00624670 /* TaxFolderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaxFolderCell.xib; sourceTree = "<group>"; };
+		EF7C15E01F87443A00624670 /* TaxFolderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaxFolderVC.h; sourceTree = "<group>"; };
+		EF7C15E11F87443A00624670 /* TaxFolderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaxFolderVC.m; sourceTree = "<group>"; };
+		EF7C15E21F87443A00624670 /* UserProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileVC.h; sourceTree = "<group>"; };
+		EF7C15E31F87443A00624670 /* UserProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileVC.m; sourceTree = "<group>"; };
+		EF7C15E41F87443A00624670 /* VideosCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosCell.h; sourceTree = "<group>"; };
+		EF7C15E51F87443A00624670 /* VideosCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosCell.m; sourceTree = "<group>"; };
+		EF7C15E61F87443A00624670 /* VideosCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideosCell.xib; sourceTree = "<group>"; };
+		EF7C15E71F87443A00624670 /* VideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoVC.h; sourceTree = "<group>"; };
+		EF7C15E81F87443A00624670 /* VideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoVC.m; sourceTree = "<group>"; };
+		EF7C15E91F87443A00624670 /* ViewCarAccident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewCarAccident.h; path = ../ViewCarAccident.h; sourceTree = "<group>"; };
+		EF7C15EA1F87443A00624670 /* ViewCarAccident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewCarAccident.m; path = ../ViewCarAccident.m; sourceTree = "<group>"; };
+		EF7C15EB1F87443A00624670 /* ViewHealthInsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewHealthInsVC.h; path = ../ViewHealthInsVC.h; sourceTree = "<group>"; };
+		EF7C15EC1F87443A00624670 /* ViewHealthInsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewHealthInsVC.m; path = ../ViewHealthInsVC.m; sourceTree = "<group>"; };
+		EF7C15ED1F87443A00624670 /* ViewHomeInsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewHomeInsVC.h; path = ../ViewHomeInsVC.h; sourceTree = "<group>"; };
+		EF7C15EE1F87443A00624670 /* ViewHomeInsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewHomeInsVC.m; path = ../ViewHomeInsVC.m; sourceTree = "<group>"; };
+		EF7C162A1F87447D00624670 /* ACFloatingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ACFloatingTextField.h; path = ../ACFloatingTextField.h; sourceTree = "<group>"; };
+		EF7C162B1F87447D00624670 /* ACFloatingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ACFloatingTextField.m; path = ../ACFloatingTextField.m; sourceTree = "<group>"; };
+		EF7C162C1F87447D00624670 /* HVTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HVTableView.h; path = ../HVTableView.h; sourceTree = "<group>"; };
+		EF7C162D1F87447D00624670 /* HVTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HVTableView.m; path = ../HVTableView.m; sourceTree = "<group>"; };
+		EF7C162E1F87447D00624670 /* LTHMonthYearPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTHMonthYearPickerView.h; path = ../LTHMonthYearPickerView.h; sourceTree = "<group>"; };
+		EF7C162F1F87447D00624670 /* LTHMonthYearPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTHMonthYearPickerView.m; path = ../LTHMonthYearPickerView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B9A80391F77696A00671F3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EDBEB46568E1B80A0B14B23 /* Pods_myCashFlow.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9A80521F77696B00671F3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9A805D1F77696B00671F3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		408C0305527A34905CC9D0D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA3BBA537CD17D08C54549EB /* Pods_myCashFlow.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B9A80331F77696A00671F3B = {
+			isa = PBXGroup;
+			children = (
+				5B9A803E1F77696B00671F3B /* myCashFlow */,
+				5B9A80581F77696B00671F3B /* myCashFlowTests */,
+				5B9A80631F77696B00671F3B /* myCashFlowUITests */,
+				5B9A803D1F77696B00671F3B /* Products */,
+				931DA447071F84341C5DC501 /* Pods */,
+				408C0305527A34905CC9D0D2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5B9A803D1F77696B00671F3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B9A803C1F77696B00671F3B /* myCashFlow.app */,
+				5B9A80551F77696B00671F3B /* myCashFlowTests.xctest */,
+				5B9A80601F77696B00671F3B /* myCashFlowUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B9A803E1F77696B00671F3B /* myCashFlow */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C14F91F87427900624670 /* Font */,
+				EF7C14631F87424600624670 /* Image */,
+				EF7C14881F87424600624670 /* JSON */,
+				EF7C15851F8743A600624670 /* VC */,
+				5B9A80421F77696B00671F3B /* AppDelegate.h */,
+				5B9A80431F77696B00671F3B /* AppDelegate.m */,
+				5B9A80451F77696B00671F3B /* ViewController.h */,
+				5B9A80461F77696B00671F3B /* ViewController.m */,
+				5B9A80481F77696B00671F3B /* Main.storyboard */,
+				5B9A804B1F77696B00671F3B /* Assets.xcassets */,
+				5B9A804D1F77696B00671F3B /* LaunchScreen.storyboard */,
+				5B9A80501F77696B00671F3B /* Info.plist */,
+				5B9A803F1F77696B00671F3B /* Supporting Files */,
+			);
+			path = myCashFlow;
+			sourceTree = "<group>";
+		};
+		5B9A803F1F77696B00671F3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15801F87437D00624670 /* APIHandler.h */,
+				EF7C15811F87437D00624670 /* APIHandler.m */,
+				EF7C15821F87437D00624670 /* Constant.h */,
+				EF7C15831F87437D00624670 /* PrefixHeader.pch */,
+				EF7C15B11F87443A00624670 /* General.h */,
+				EF7C15B21F87443A00624670 /* General.m */,
+				EF7C15021F87435500624670 /* ThirdPartyLibrary */,
+				5B9A80401F77696B00671F3B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5B9A80581F77696B00671F3B /* myCashFlowTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B9A80591F77696B00671F3B /* myCashFlowTests.m */,
+				5B9A805B1F77696B00671F3B /* Info.plist */,
+			);
+			path = myCashFlowTests;
+			sourceTree = "<group>";
+		};
+		5B9A80631F77696B00671F3B /* myCashFlowUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5B9A80641F77696B00671F3B /* myCashFlowUITests.m */,
+				5B9A80661F77696B00671F3B /* Info.plist */,
+			);
+			path = myCashFlowUITests;
+			sourceTree = "<group>";
+		};
+		931DA447071F84341C5DC501 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				321AC9A98572C8C275A853D5 /* Pods-myCashFlow.debug.xcconfig */,
+				648722BC1DCFAD0FCBFE99D5 /* Pods-myCashFlow.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EF7C14141F87424600624670 /* AccidentReport */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15B31F87443A00624670 /* InsuranceReportCell.h */,
+				EF7C15B41F87443A00624670 /* InsuranceReportCell.m */,
+				EF7C15B51F87443A00624670 /* InsuranceReportCell.xib */,
+				EF7C15B61F87443A00624670 /* InsuranceReportVC.h */,
+				EF7C15B71F87443A00624670 /* InsuranceReportVC.m */,
+				EF7C14151F87424600624670 /* AccidentReportVC.h */,
+				EF7C14161F87424600624670 /* AccidentReportVC.m */,
+				EF7C16371F87472300624670 /* ADD */,
+				EF7C16381F87477A00624670 /* View */,
+			);
+			path = AccidentReport;
+			sourceTree = "<group>";
+		};
+		EF7C14631F87424600624670 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C14641F87424600624670 /* 1100_1950.JPG */,
+				EF7C14651F87424600624670 /* 1500_2600.JPG */,
+				EF7C14661F87424600624670 /* 750_1300.JPG */,
+				EF7C14671F87424600624670 /* Accident.png */,
+				EF7C14681F87424600624670 /* Addres gray 32_32.PNG */,
+				EF7C14691F87424600624670 /* Appointment.png */,
+				EF7C146A1F87424600624670 /* bg.jpg */,
+				EF7C146B1F87424600624670 /* Budget 72_72.PNG */,
+				EF7C146C1F87424600624670 /* Calendar 32_32.PNG */,
+				EF7C146D1F87424600624670 /* Camera 32_32.PNG */,
+				EF7C146E1F87424600624670 /* Cancel.png */,
+				EF7C146F1F87424600624670 /* Car Back 70_60.PNG */,
+				EF7C14701F87424600624670 /* Car front 70_60.PNG */,
+				EF7C14711F87424600624670 /* Car Left 150_90.PNG */,
+				EF7C14721F87424600624670 /* Car right 150_90.PNG */,
+				EF7C14731F87424600624670 /* Consultor Image 384_384.PNG */,
+				EF7C14741F87424600624670 /* Daily Expenses 72_72.PNG */,
+				EF7C14751F87424600624670 /* demo.png */,
+				EF7C14761F87424600624670 /* Download 32_32.PNG */,
+				EF7C14771F87424600624670 /* Email gray 32_32.PNG */,
+				EF7C14781F87424600624670 /* Financefolder.png */,
+				EF7C14791F87424600624670 /* Logo 510_300.PNG */,
+				EF7C147A1F87424600624670 /* Numbers.png */,
+				EF7C147B1F87424600624670 /* Offers.png */,
+				EF7C147C1F87424600624670 /* PDF 64_64.PNG */,
+				EF7C147D1F87424600624670 /* Phone 64_64.png */,
+				EF7C147E1F87424600624670 /* Phone gray 32_32.PNG */,
+				EF7C147F1F87424600624670 /* Play.png */,
+				EF7C14801F87424600624670 /* Profile.PNG */,
+				EF7C14811F87424600624670 /* Remar gray 32_32.PNG */,
+				EF7C14821F87424600624670 /* Report Car 144_144.PNG */,
+				EF7C14831F87424600624670 /* Report Health 144_144.png */,
+				EF7C14841F87424600624670 /* Report Home 144_144.png */,
+				EF7C14851F87424600624670 /* Settings 72_72.PNG */,
+				EF7C14861F87424600624670 /* Taxfolder.png */,
+				EF7C14871F87424600624670 /* User gray 32_32.PNG */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		EF7C14881F87424600624670 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C14891F87424600624670 /* appointment.json */,
+				EF7C148A1F87424600624670 /* consultant.json */,
+				EF7C148B1F87424600624670 /* discount.json */,
+				EF7C148C1F87424600624670 /* doc.json */,
+				EF7C148D1F87424600624670 /* financefolder.json */,
+				EF7C148E1F87424600624670 /* login.json */,
+				EF7C148F1F87424600624670 /* message.json */,
+				EF7C14901F87424600624670 /* number.json */,
+				EF7C14911F87424600624670 /* product.json */,
+				EF7C14921F87424600624670 /* recommand.json */,
+				EF7C14931F87424600624670 /* tax.json */,
+				EF7C14941F87424600624670 /* video.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		EF7C14951F87424600624670 /* Login&SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15AC1F87443A00624670 /* ForgotPwdVC.h */,
+				EF7C15AD1F87443A00624670 /* ForgotPwdVC.m */,
+				EF7C149A1F87424600624670 /* LoginVC.h */,
+				EF7C149B1F87424600624670 /* LoginVC.m */,
+				EF7C149C1F87424600624670 /* RegisterVC.h */,
+				EF7C149D1F87424600624670 /* RegisterVC.m */,
+			);
+			path = "Login&SignUp";
+			sourceTree = "<group>";
+		};
+		EF7C14F91F87427900624670 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C14FA1F87427900624670 /* GOTHIC.TTF */,
+				EF7C14FB1F87427900624670 /* GOTHICB.TTF */,
+				EF7C14FC1F87427900624670 /* GOTHICBI.TTF */,
+				EF7C14FD1F87427900624670 /* GOTHICI.TTF */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		EF7C15021F87435500624670 /* ThirdPartyLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C162A1F87447D00624670 /* ACFloatingTextField.h */,
+				EF7C162B1F87447D00624670 /* ACFloatingTextField.m */,
+				EF7C162C1F87447D00624670 /* HVTableView.h */,
+				EF7C162D1F87447D00624670 /* HVTableView.m */,
+				EF7C162E1F87447D00624670 /* LTHMonthYearPickerView.h */,
+				EF7C162F1F87447D00624670 /* LTHMonthYearPickerView.m */,
+				EF7C15031F87435500624670 /* DGActivityIndicatorView */,
+				EF7C154C1F87435500624670 /* LGSlideMenu */,
+				EF7C15551F87435500624670 /* Toast */,
+			);
+			path = ThirdPartyLibrary;
+			sourceTree = "<group>";
+		};
+		EF7C15031F87435500624670 /* DGActivityIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15041F87435500624670 /* Animations */,
+				EF7C15491F87435500624670 /* DGActivityIndicatorAnimationProtocol.h */,
+				EF7C154A1F87435500624670 /* DGActivityIndicatorView.h */,
+				EF7C154B1F87435500624670 /* DGActivityIndicatorView.m */,
+			);
+			path = DGActivityIndicatorView;
+			sourceTree = "<group>";
+		};
+		EF7C15041F87435500624670 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15051F87435500624670 /* DGActivityIndicatorAnimation.h */,
+				EF7C15061F87435500624670 /* DGActivityIndicatorAnimation.m */,
+				EF7C15071F87435500624670 /* DGActivityIndicatorBallBeatAnimation.h */,
+				EF7C15081F87435500624670 /* DGActivityIndicatorBallBeatAnimation.m */,
+				EF7C15091F87435500624670 /* DGActivityIndicatorBallClipRotateAnimation.h */,
+				EF7C150A1F87435500624670 /* DGActivityIndicatorBallClipRotateAnimation.m */,
+				EF7C150B1F87435500624670 /* DGActivityIndicatorBallClipRotateMultipleAnimation.h */,
+				EF7C150C1F87435500624670 /* DGActivityIndicatorBallClipRotateMultipleAnimation.m */,
+				EF7C150D1F87435500624670 /* DGActivityIndicatorBallClipRotatePulseAnimation.h */,
+				EF7C150E1F87435500624670 /* DGActivityIndicatorBallClipRotatePulseAnimation.m */,
+				EF7C150F1F87435500624670 /* DGActivityIndicatorBallGridBeatAnimation.h */,
+				EF7C15101F87435500624670 /* DGActivityIndicatorBallGridBeatAnimation.m */,
+				EF7C15111F87435500624670 /* DGActivityIndicatorBallGridPulseAnimation.h */,
+				EF7C15121F87435500624670 /* DGActivityIndicatorBallGridPulseAnimation.m */,
+				EF7C15131F87435500624670 /* DGActivityIndicatorBallPulseAnimation.h */,
+				EF7C15141F87435500624670 /* DGActivityIndicatorBallPulseAnimation.m */,
+				EF7C15151F87435500624670 /* DGActivityIndicatorBallPulseSyncAnimation.h */,
+				EF7C15161F87435500624670 /* DGActivityIndicatorBallPulseSyncAnimation.m */,
+				EF7C15171F87435500624670 /* DGActivityIndicatorBallRotateAnimation.h */,
+				EF7C15181F87435500624670 /* DGActivityIndicatorBallRotateAnimation.m */,
+				EF7C15191F87435500624670 /* DGActivityIndicatorBallScaleAnimation.h */,
+				EF7C151A1F87435500624670 /* DGActivityIndicatorBallScaleAnimation.m */,
+				EF7C151B1F87435500624670 /* DGActivityIndicatorBallScaleMultipleAnimation.h */,
+				EF7C151C1F87435500624670 /* DGActivityIndicatorBallScaleMultipleAnimation.m */,
+				EF7C151D1F87435500624670 /* DGActivityIndicatorBallScaleRippleAnimation.h */,
+				EF7C151E1F87435500624670 /* DGActivityIndicatorBallScaleRippleAnimation.m */,
+				EF7C151F1F87435500624670 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.h */,
+				EF7C15201F87435500624670 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m */,
+				EF7C15211F87435500624670 /* DGActivityIndicatorBallSpinFadeLoader.h */,
+				EF7C15221F87435500624670 /* DGActivityIndicatorBallSpinFadeLoader.m */,
+				EF7C15231F87435500624670 /* DGActivityIndicatorBallTrianglePathAnimation.h */,
+				EF7C15241F87435500624670 /* DGActivityIndicatorBallTrianglePathAnimation.m */,
+				EF7C15251F87435500624670 /* DGActivityIndicatorBallZigZagAnimation.h */,
+				EF7C15261F87435500624670 /* DGActivityIndicatorBallZigZagAnimation.m */,
+				EF7C15271F87435500624670 /* DGActivityIndicatorBallZigZagDeflectAnimation.h */,
+				EF7C15281F87435500624670 /* DGActivityIndicatorBallZigZagDeflectAnimation.m */,
+				EF7C15291F87435500624670 /* DGActivityIndicatorCookieTerminatorAnimation.h */,
+				EF7C152A1F87435500624670 /* DGActivityIndicatorCookieTerminatorAnimation.m */,
+				EF7C152B1F87435500624670 /* DGActivityIndicatorDoubleBounceAnimation.h */,
+				EF7C152C1F87435500624670 /* DGActivityIndicatorDoubleBounceAnimation.m */,
+				EF7C152D1F87435500624670 /* DGActivityIndicatorFiveDotsAnimation.h */,
+				EF7C152E1F87435500624670 /* DGActivityIndicatorFiveDotsAnimation.m */,
+				EF7C152F1F87435500624670 /* DGActivityIndicatorLineScaleAnimation.h */,
+				EF7C15301F87435500624670 /* DGActivityIndicatorLineScaleAnimation.m */,
+				EF7C15311F87435500624670 /* DGActivityIndicatorLineScalePartyAnimation.h */,
+				EF7C15321F87435500624670 /* DGActivityIndicatorLineScalePartyAnimation.m */,
+				EF7C15331F87435500624670 /* DGActivityIndicatorLineScalePulseOutAnimation.h */,
+				EF7C15341F87435500624670 /* DGActivityIndicatorLineScalePulseOutAnimation.m */,
+				EF7C15351F87435500624670 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.h */,
+				EF7C15361F87435500624670 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m */,
+				EF7C15371F87435500624670 /* DGActivityIndicatorNineDotsAnimation.h */,
+				EF7C15381F87435500624670 /* DGActivityIndicatorNineDotsAnimation.m */,
+				EF7C15391F87435500624670 /* DGActivityIndicatorRotatingSandglassAnimation.h */,
+				EF7C153A1F87435500624670 /* DGActivityIndicatorRotatingSandglassAnimation.m */,
+				EF7C153B1F87435500624670 /* DGActivityIndicatorRotatingSquaresAnimation.h */,
+				EF7C153C1F87435500624670 /* DGActivityIndicatorRotatingSquaresAnimation.m */,
+				EF7C153D1F87435500624670 /* DGActivityIndicatorRotatingTrigonAnimation.h */,
+				EF7C153E1F87435500624670 /* DGActivityIndicatorRotatingTrigonAnimation.m */,
+				EF7C153F1F87435500624670 /* DGActivityIndicatorThreeDotsAnimation.h */,
+				EF7C15401F87435500624670 /* DGActivityIndicatorThreeDotsAnimation.m */,
+				EF7C15411F87435500624670 /* DGActivityIndicatorTriangleSkewSpinAnimation.h */,
+				EF7C15421F87435500624670 /* DGActivityIndicatorTriangleSkewSpinAnimation.m */,
+				EF7C15431F87435500624670 /* DGActivityIndicatorTriplePulseAnimation.h */,
+				EF7C15441F87435500624670 /* DGActivityIndicatorTriplePulseAnimation.m */,
+				EF7C15451F87435500624670 /* DGActivityIndicatorTripleRingsAnimation.h */,
+				EF7C15461F87435500624670 /* DGActivityIndicatorTripleRingsAnimation.m */,
+				EF7C15471F87435500624670 /* DGActivityIndicatorTwoDotsAnimation.h */,
+				EF7C15481F87435500624670 /* DGActivityIndicatorTwoDotsAnimation.m */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		EF7C154C1F87435500624670 /* LGSlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C154D1F87435500624670 /* LGSideMenuController.h */,
+				EF7C154E1F87435500624670 /* LGSideMenuController.m */,
+				EF7C154F1F87435500624670 /* LGSideMenuControllerGesturesHandler.h */,
+				EF7C15501F87435500624670 /* LGSideMenuControllerGesturesHandler.m */,
+				EF7C15511F87435500624670 /* LGSideMenuView.h */,
+				EF7C15521F87435500624670 /* LGSideMenuView.m */,
+				EF7C15531F87435500624670 /* UIViewController+LGSideMenuController.h */,
+				EF7C15541F87435500624670 /* UIViewController+LGSideMenuController.m */,
+			);
+			path = LGSlideMenu;
+			sourceTree = "<group>";
+		};
+		EF7C15551F87435500624670 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15561F87435500624670 /* UIView+Toast.h */,
+				EF7C15571F87435500624670 /* UIView+Toast.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		EF7C15851F8743A600624670 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C16331F8745E600624670 /* DashBoard */,
+				EF7C163F1F87481700624670 /* FinanceFolder */,
+				EF7C16411F87485200624670 /* Appoinment */,
+				EF7C16401F87483C00624670 /* BudgetAndSaving */,
+				EF7C16421F8748EA00624670 /* ConsultorProfile */,
+				EF7C163B1F8747AA00624670 /* Numbers */,
+				EF7C163A1F87479D00624670 /* Offers */,
+				EF7C163E1F8747E000624670 /* PDFView */,
+				EF7C16341F8746D200624670 /* ProductSolutions */,
+				EF7C163D1F8747D900624670 /* Recommand */,
+				EF7C16351F8746E300624670 /* TaxFolder */,
+				EF7C16391F87479000624670 /* Profile */,
+				EF7C16361F8746F200624670 /* Videos */,
+				EF7C14141F87424600624670 /* AccidentReport */,
+				EF7C14951F87424600624670 /* Login&SignUp */,
+				EF7C163C1F8747C700624670 /* Message */,
+				EF7C16431F87490C00624670 /* Setting */,
+				EF7C16441F874E1300624670 /* LeftMenu */,
+			);
+			name = VC;
+			sourceTree = "<group>";
+		};
+		EF7C16331F8745E600624670 /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15991F87443A00624670 /* DashboardNC.h */,
+				EF7C159A1F87443A00624670 /* DashboardNC.m */,
+				EF7C159B1F87443A00624670 /* DashboardVC.h */,
+				EF7C159C1F87443A00624670 /* DashboardVC.m */,
+			);
+			name = DashBoard;
+			sourceTree = "<group>";
+		};
+		EF7C16341F8746D200624670 /* ProductSolutions */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15D61F87443A00624670 /* ProductSolutionsCell.h */,
+				EF7C15D71F87443A00624670 /* ProductSolutionsCell.m */,
+				EF7C15D81F87443A00624670 /* ProductSolutionsCell.xib */,
+				EF7C15D91F87443A00624670 /* ProductSolutionsVC.h */,
+				EF7C15DA1F87443A00624670 /* ProductSolutionsVC.m */,
+			);
+			name = ProductSolutions;
+			sourceTree = "<group>";
+		};
+		EF7C16351F8746E300624670 /* TaxFolder */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15DD1F87443A00624670 /* TaxFolderCell.h */,
+				EF7C15DE1F87443A00624670 /* TaxFolderCell.m */,
+				EF7C15DF1F87443A00624670 /* TaxFolderCell.xib */,
+				EF7C15E01F87443A00624670 /* TaxFolderVC.h */,
+				EF7C15E11F87443A00624670 /* TaxFolderVC.m */,
+			);
+			name = TaxFolder;
+			sourceTree = "<group>";
+		};
+		EF7C16361F8746F200624670 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15C11F87443A00624670 /* MPMoviePlayerController+BackgroundPlayback.h */,
+				EF7C15C21F87443A00624670 /* MPMoviePlayerController+BackgroundPlayback.m */,
+				EF7C15E41F87443A00624670 /* VideosCell.h */,
+				EF7C15E51F87443A00624670 /* VideosCell.m */,
+				EF7C15E61F87443A00624670 /* VideosCell.xib */,
+				EF7C15E71F87443A00624670 /* VideoVC.h */,
+				EF7C15E81F87443A00624670 /* VideoVC.m */,
+			);
+			name = Videos;
+			sourceTree = "<group>";
+		};
+		EF7C16371F87472300624670 /* ADD */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15881F87443A00624670 /* AddHealthInsVC.h */,
+				EF7C15891F87443A00624670 /* AddHealthInsVC.m */,
+				EF7C158A1F87443A00624670 /* AddHomeInsVC.h */,
+				EF7C158B1F87443A00624670 /* AddHomeInsVC.m */,
+				EF7C14171F87424600624670 /* AddCarAccident.h */,
+				EF7C14181F87424600624670 /* AddCarAccident.m */,
+			);
+			name = ADD;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		EF7C16381F87477A00624670 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15E91F87443A00624670 /* ViewCarAccident.h */,
+				EF7C15EA1F87443A00624670 /* ViewCarAccident.m */,
+				EF7C15EB1F87443A00624670 /* ViewHealthInsVC.h */,
+				EF7C15EC1F87443A00624670 /* ViewHealthInsVC.m */,
+				EF7C15ED1F87443A00624670 /* ViewHomeInsVC.h */,
+				EF7C15EE1F87443A00624670 /* ViewHomeInsVC.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		EF7C16391F87479000624670 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15E21F87443A00624670 /* UserProfileVC.h */,
+				EF7C15E31F87443A00624670 /* UserProfileVC.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		EF7C163A1F87479D00624670 /* Offers */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15CF1F87443A00624670 /* OffersCell.h */,
+				EF7C15D01F87443A00624670 /* OffersCell.m */,
+				EF7C15D11F87443A00624670 /* OffersCell.xib */,
+				EF7C15D21F87443A00624670 /* OffersVC.h */,
+				EF7C15D31F87443A00624670 /* OffersVC.m */,
+			);
+			name = Offers;
+			sourceTree = "<group>";
+		};
+		EF7C163B1F8747AA00624670 /* Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15C61F87443A00624670 /* NumberListCell.h */,
+				EF7C15C71F87443A00624670 /* NumberListCell.m */,
+				EF7C15C81F87443A00624670 /* NumberListCell.xib */,
+				EF7C15C91F87443A00624670 /* NumberListVC.h */,
+				EF7C15CA1F87443A00624670 /* NumberListVC.m */,
+				EF7C15CB1F87443A00624670 /* NumbersCell.h */,
+				EF7C15CC1F87443A00624670 /* NumbersCell.m */,
+				EF7C15CD1F87443A00624670 /* NumbersVC.h */,
+				EF7C15CE1F87443A00624670 /* NumbersVC.m */,
+			);
+			name = Numbers;
+			sourceTree = "<group>";
+		};
+		EF7C163C1F8747C700624670 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15BC1F87443A00624670 /* MessageCell.h */,
+				EF7C15BD1F87443A00624670 /* MessageCell.m */,
+				EF7C15BE1F87443A00624670 /* MessageCell.xib */,
+				EF7C15BF1F87443A00624670 /* MessageVC.h */,
+				EF7C15C01F87443A00624670 /* MessageVC.m */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		EF7C163D1F8747D900624670 /* Recommand */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15DB1F87443A00624670 /* RecommandationVC.h */,
+				EF7C15DC1F87443A00624670 /* RecommandationVC.m */,
+			);
+			name = Recommand;
+			sourceTree = "<group>";
+		};
+		EF7C163E1F8747E000624670 /* PDFView */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15D41F87443A00624670 /* PdfViewerVC.h */,
+				EF7C15D51F87443A00624670 /* PdfViewerVC.m */,
+			);
+			name = PDFView;
+			sourceTree = "<group>";
+		};
+		EF7C163F1F87481700624670 /* FinanceFolder */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C159D1F87443A00624670 /* DocListCell.h */,
+				EF7C159E1F87443A00624670 /* DocListCell.m */,
+				EF7C159F1F87443A00624670 /* DocListCell.xib */,
+				EF7C15AE1F87443A00624670 /* FurterInfoCell.h */,
+				EF7C15AF1F87443A00624670 /* FurterInfoCell.m */,
+				EF7C15B01F87443A00624670 /* FurterInfoCell.xib */,
+				EF7C15A31F87443A00624670 /* FinanceDetailsVC.h */,
+				EF7C15A41F87443A00624670 /* FinanceDetailsVC.m */,
+				EF7C15A51F87443A00624670 /* FinanceFolderCell.h */,
+				EF7C15A61F87443A00624670 /* FinanceFolderCell.m */,
+				EF7C15A71F87443A00624670 /* FinanceFolderCell.xib */,
+				EF7C15A81F87443A00624670 /* FinanceFolderVC.h */,
+				EF7C15A91F87443A00624670 /* FinanceFolderVC.m */,
+				EF7C15AA1F87443A00624670 /* FinanceFurtherInfo.h */,
+				EF7C15AB1F87443A00624670 /* FinanceFurtherInfo.m */,
+			);
+			name = FinanceFolder;
+			sourceTree = "<group>";
+		};
+		EF7C16401F87483C00624670 /* BudgetAndSaving */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15C31F87443A00624670 /* MySavingsCell.h */,
+				EF7C15C41F87443A00624670 /* MySavingsCell.m */,
+				EF7C15C51F87443A00624670 /* MySavingsCell.xib */,
+				EF7C15861F87443A00624670 /* AddExpenseVC.h */,
+				EF7C15871F87443A00624670 /* AddExpenseVC.m */,
+				EF7C15911F87443A00624670 /* BudgetAndSaveRateVC.h */,
+				EF7C15921F87443A00624670 /* BudgetAndSaveRateVC.m */,
+				EF7C15A01F87443A00624670 /* ExpenseCell.h */,
+				EF7C15A11F87443A00624670 /* ExpenseCell.m */,
+				EF7C15A21F87443A00624670 /* ExpenseCell.xib */,
+			);
+			name = BudgetAndSaving;
+			sourceTree = "<group>";
+		};
+		EF7C16411F87485200624670 /* Appoinment */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C158C1F87443A00624670 /* AppoinmentCell.h */,
+				EF7C158D1F87443A00624670 /* AppoinmentCell.m */,
+				EF7C158E1F87443A00624670 /* AppoinmentCell.xib */,
+				EF7C158F1F87443A00624670 /* AppointmentVC.h */,
+				EF7C15901F87443A00624670 /* AppointmentVC.m */,
+			);
+			name = Appoinment;
+			sourceTree = "<group>";
+		};
+		EF7C16421F8748EA00624670 /* ConsultorProfile */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15971F87443A00624670 /* ConsultorProfileVC.h */,
+				EF7C15981F87443A00624670 /* ConsultorProfileVC.m */,
+			);
+			name = ConsultorProfile;
+			sourceTree = "<group>";
+		};
+		EF7C16431F87490C00624670 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15931F87443A00624670 /* ChangePinVC.h */,
+				EF7C15941F87443A00624670 /* ChangePinVC.m */,
+				EF7C15951F87443A00624670 /* ChangePwdVC.h */,
+				EF7C15961F87443A00624670 /* ChangePwdVC.m */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		EF7C16441F874E1300624670 /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15B81F87443A00624670 /* LeftMenuCell.h */,
+				EF7C15B91F87443A00624670 /* LeftMenuCell.m */,
+				EF7C15BA1F87443A00624670 /* LeftMenuVC.h */,
+				EF7C15BB1F87443A00624670 /* LeftMenuVC.m */,
+			);
+			name = LeftMenu;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B9A803B1F77696A00671F3B /* myCashFlow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B9A80691F77696B00671F3B /* Build configuration list for PBXNativeTarget "myCashFlow" */;
+			buildPhases = (
+				020CA82822B873818E19D39F /* [CP] Check Pods Manifest.lock */,
+				5B9A80381F77696A00671F3B /* Sources */,
+				5B9A80391F77696A00671F3B /* Frameworks */,
+				5B9A803A1F77696A00671F3B /* Resources */,
+				A3130753B4D9A10CE5A60673 /* [CP] Embed Pods Frameworks */,
+				C69DFB0DE7E0698DEE9D961D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = myCashFlow;
+			productName = myCashFlow;
+			productReference = 5B9A803C1F77696B00671F3B /* myCashFlow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5B9A80541F77696B00671F3B /* myCashFlowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B9A806C1F77696B00671F3B /* Build configuration list for PBXNativeTarget "myCashFlowTests" */;
+			buildPhases = (
+				5B9A80511F77696B00671F3B /* Sources */,
+				5B9A80521F77696B00671F3B /* Frameworks */,
+				5B9A80531F77696B00671F3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B9A80571F77696B00671F3B /* PBXTargetDependency */,
+			);
+			name = myCashFlowTests;
+			productName = myCashFlowTests;
+			productReference = 5B9A80551F77696B00671F3B /* myCashFlowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5B9A805F1F77696B00671F3B /* myCashFlowUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B9A806F1F77696B00671F3B /* Build configuration list for PBXNativeTarget "myCashFlowUITests" */;
+			buildPhases = (
+				5B9A805C1F77696B00671F3B /* Sources */,
+				5B9A805D1F77696B00671F3B /* Frameworks */,
+				5B9A805E1F77696B00671F3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B9A80621F77696B00671F3B /* PBXTargetDependency */,
+			);
+			name = myCashFlowUITests;
+			productName = myCashFlowUITests;
+			productReference = 5B9A80601F77696B00671F3B /* myCashFlowUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B9A80341F77696A00671F3B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Parthiban;
+				TargetAttributes = {
+					5B9A803B1F77696A00671F3B = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = BJBHRS3L78;
+						ProvisioningStyle = Automatic;
+					};
+					5B9A80541F77696B00671F3B = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5B9A803B1F77696A00671F3B;
+					};
+					5B9A805F1F77696B00671F3B = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5B9A803B1F77696A00671F3B;
+					};
+				};
+			};
+			buildConfigurationList = 5B9A80371F77696A00671F3B /* Build configuration list for PBXProject "myCashFlow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5B9A80331F77696A00671F3B;
+			productRefGroup = 5B9A803D1F77696B00671F3B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B9A803B1F77696A00671F3B /* myCashFlow */,
+				5B9A80541F77696B00671F3B /* myCashFlowTests */,
+				5B9A805F1F77696B00671F3B /* myCashFlowUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B9A803A1F77696A00671F3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF7C14FE1F87427900624670 /* GOTHIC.TTF in Resources */,
+				EF7C16251F87443A00624670 /* VideosCell.xib in Resources */,
+				EF7C14C91F87424600624670 /* bg.jpg in Resources */,
+				EF7C14D21F87424600624670 /* Consultor Image 384_384.PNG in Resources */,
+				EF7C16191F87443A00624670 /* OffersCell.xib in Resources */,
+				EF7C14E11F87424600624670 /* Report Car 144_144.PNG in Resources */,
+				EF7C14E41F87424600624670 /* Settings 72_72.PNG in Resources */,
+				EF7C14E91F87424600624670 /* discount.json in Resources */,
+				EF7C14EF1F87424600624670 /* product.json in Resources */,
+				EF7C14D91F87424600624670 /* Numbers.png in Resources */,
+				EF7C16141F87443A00624670 /* NumberListCell.xib in Resources */,
+				EF7C14D51F87424600624670 /* Download 32_32.PNG in Resources */,
+				EF7C14D31F87424600624670 /* Daily Expenses 72_72.PNG in Resources */,
+				EF7C14E51F87424600624670 /* Taxfolder.png in Resources */,
+				EF7C14D11F87424600624670 /* Car right 150_90.PNG in Resources */,
+				EF7C14DA1F87424600624670 /* Offers.png in Resources */,
+				EF7C15001F87427900624670 /* GOTHICBI.TTF in Resources */,
+				EF7C14CF1F87424600624670 /* Car front 70_60.PNG in Resources */,
+				EF7C14C31F87424600624670 /* 1100_1950.JPG in Resources */,
+				EF7C14C41F87424600624670 /* 1500_2600.JPG in Resources */,
+				EF7C14E01F87424600624670 /* Remar gray 32_32.PNG in Resources */,
+				EF7C14CA1F87424600624670 /* Budget 72_72.PNG in Resources */,
+				EF7C160E1F87443A00624670 /* MessageCell.xib in Resources */,
+				EF7C14DC1F87424600624670 /* Phone 64_64.png in Resources */,
+				EF7C14EA1F87424600624670 /* doc.json in Resources */,
+				EF7C14CE1F87424600624670 /* Car Back 70_60.PNG in Resources */,
+				EF7C15FE1F87443A00624670 /* ExpenseCell.xib in Resources */,
+				EF7C16061F87443A00624670 /* FurterInfoCell.xib in Resources */,
+				EF7C14CB1F87424600624670 /* Calendar 32_32.PNG in Resources */,
+				5B9A804F1F77696B00671F3B /* LaunchScreen.storyboard in Resources */,
+				EF7C14DF1F87424600624670 /* Profile.PNG in Resources */,
+				EF7C14F11F87424600624670 /* tax.json in Resources */,
+				EF7C14E21F87424600624670 /* Report Health 144_144.png in Resources */,
+				EF7C16211F87443A00624670 /* TaxFolderCell.xib in Resources */,
+				EF7C14F01F87424600624670 /* recommand.json in Resources */,
+				EF7C14D71F87424600624670 /* Financefolder.png in Resources */,
+				EF7C14CC1F87424600624670 /* Camera 32_32.PNG in Resources */,
+				EF7C14DD1F87424600624670 /* Phone gray 32_32.PNG in Resources */,
+				5B9A804C1F77696B00671F3B /* Assets.xcassets in Resources */,
+				EF7C14C51F87424600624670 /* 750_1300.JPG in Resources */,
+				EF7C14E31F87424600624670 /* Report Home 144_144.png in Resources */,
+				EF7C15011F87427900624670 /* GOTHICI.TTF in Resources */,
+				EF7C14E81F87424600624670 /* consultant.json in Resources */,
+				EF7C14D81F87424600624670 /* Logo 510_300.PNG in Resources */,
+				EF7C16091F87443A00624670 /* InsuranceReportCell.xib in Resources */,
+				EF7C14ED1F87424600624670 /* message.json in Resources */,
+				EF7C15F31F87443A00624670 /* AppoinmentCell.xib in Resources */,
+				EF7C16011F87443A00624670 /* FinanceFolderCell.xib in Resources */,
+				EF7C14C81F87424600624670 /* Appointment.png in Resources */,
+				EF7C14FF1F87427900624670 /* GOTHICB.TTF in Resources */,
+				EF7C161D1F87443A00624670 /* ProductSolutionsCell.xib in Resources */,
+				EF7C14EC1F87424600624670 /* login.json in Resources */,
+				EF7C14D01F87424600624670 /* Car Left 150_90.PNG in Resources */,
+				EF7C14DB1F87424600624670 /* PDF 64_64.PNG in Resources */,
+				5B9A804A1F77696B00671F3B /* Main.storyboard in Resources */,
+				EF7C14D41F87424600624670 /* demo.png in Resources */,
+				EF7C14DE1F87424600624670 /* Play.png in Resources */,
+				EF7C16121F87443A00624670 /* MySavingsCell.xib in Resources */,
+				EF7C14D61F87424600624670 /* Email gray 32_32.PNG in Resources */,
+				EF7C14E61F87424600624670 /* User gray 32_32.PNG in Resources */,
+				EF7C14C61F87424600624670 /* Accident.png in Resources */,
+				EF7C14EE1F87424600624670 /* number.json in Resources */,
+				EF7C15FC1F87443A00624670 /* DocListCell.xib in Resources */,
+				EF7C14C71F87424600624670 /* Addres gray 32_32.PNG in Resources */,
+				EF7C14CD1F87424600624670 /* Cancel.png in Resources */,
+				EF7C14EB1F87424600624670 /* financefolder.json in Resources */,
+				EF7C14F21F87424600624670 /* video.json in Resources */,
+				EF7C14E71F87424600624670 /* appointment.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9A80531F77696B00671F3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9A805E1F77696B00671F3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		020CA82822B873818E19D39F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A3130753B4D9A10CE5A60673 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myCashFlow/Pods-myCashFlow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C69DFB0DE7E0698DEE9D961D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myCashFlow/Pods-myCashFlow-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B9A80381F77696A00671F3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF7C16081F87443A00624670 /* InsuranceReportCell.m in Sources */,
+				EF7C16231F87443A00624670 /* UserProfileVC.m in Sources */,
+				EF7C15621F87435500624670 /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
+				EF7C16221F87443A00624670 /* TaxFolderVC.m in Sources */,
+				EF7C16161F87443A00624670 /* NumbersCell.m in Sources */,
+				EF7C155D1F87435500624670 /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
+				EF7C160A1F87443A00624670 /* InsuranceReportVC.m in Sources */,
+				EF7C16051F87443A00624670 /* FurterInfoCell.m in Sources */,
+				EF7C161C1F87443A00624670 /* ProductSolutionsCell.m in Sources */,
+				EF7C16311F87447D00624670 /* HVTableView.m in Sources */,
+				EF7C160B1F87443A00624670 /* LeftMenuCell.m in Sources */,
+				EF7C15FB1F87443A00624670 /* DocListCell.m in Sources */,
+				EF7C155E1F87435500624670 /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
+				EF7C15721F87435500624670 /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
+				EF7C155C1F87435500624670 /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
+				EF7C15641F87435500624670 /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
+				EF7C15701F87435500624670 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
+				EF7C156D1F87435500624670 /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
+				EF7C156A1F87435500624670 /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
+				EF7C156C1F87435500624670 /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
+				EF7C15F51F87443A00624670 /* BudgetAndSaveRateVC.m in Sources */,
+				EF7C15761F87435500624670 /* DGActivityIndicatorTriangleSkewSpinAnimation.m in Sources */,
+				EF7C15F11F87443A00624670 /* AddHomeInsVC.m in Sources */,
+				EF7C160F1F87443A00624670 /* MessageVC.m in Sources */,
+				EF7C156F1F87435500624670 /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
+				EF7C16041F87443A00624670 /* ForgotPwdVC.m in Sources */,
+				EF7C15F81F87443A00624670 /* ConsultorProfileVC.m in Sources */,
+				EF7C161B1F87443A00624670 /* PdfViewerVC.m in Sources */,
+				EF7C16131F87443A00624670 /* NumberListCell.m in Sources */,
+				EF7C155B1F87435500624670 /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
+				EF7C157C1F87435500624670 /* LGSideMenuControllerGesturesHandler.m in Sources */,
+				EF7C157D1F87435500624670 /* LGSideMenuView.m in Sources */,
+				EF7C155A1F87435500624670 /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
+				EF7C15F91F87443A00624670 /* DashboardNC.m in Sources */,
+				EF7C16021F87443A00624670 /* FinanceFolderVC.m in Sources */,
+				EF7C161E1F87443A00624670 /* ProductSolutionsVC.m in Sources */,
+				EF7C15791F87435500624670 /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
+				EF7C15FF1F87443A00624670 /* FinanceDetailsVC.m in Sources */,
+				EF7C155F1F87435500624670 /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
+				EF7C161A1F87443A00624670 /* OffersVC.m in Sources */,
+				EF7C157B1F87435500624670 /* LGSideMenuController.m in Sources */,
+				EF7C156B1F87435500624670 /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
+				EF7C15711F87435500624670 /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
+				EF7C15651F87435500624670 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
+				EF7C15631F87435500624670 /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
+				EF7C149F1F87424600624670 /* AddCarAccident.m in Sources */,
+				EF7C15EF1F87443A00624670 /* AddExpenseVC.m in Sources */,
+				EF7C15F61F87443A00624670 /* ChangePinVC.m in Sources */,
+				EF7C161F1F87443A00624670 /* RecommandationVC.m in Sources */,
+				EF7C15781F87435500624670 /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
+				EF7C157A1F87435500624670 /* DGActivityIndicatorView.m in Sources */,
+				EF7C16171F87443A00624670 /* NumbersVC.m in Sources */,
+				EF7C15F01F87443A00624670 /* AddHealthInsVC.m in Sources */,
+				EF7C16151F87443A00624670 /* NumberListVC.m in Sources */,
+				EF7C16101F87443A00624670 /* MPMoviePlayerController+BackgroundPlayback.m in Sources */,
+				5B9A80471F77696B00671F3B /* ViewController.m in Sources */,
+				EF7C16291F87443A00624670 /* ViewHomeInsVC.m in Sources */,
+				EF7C15751F87435500624670 /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
+				EF7C15591F87435500624670 /* DGActivityIndicatorBallBeatAnimation.m in Sources */,
+				EF7C15661F87435500624670 /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
+				EF7C15FA1F87443A00624670 /* DashboardVC.m in Sources */,
+				EF7C15F41F87443A00624670 /* AppointmentVC.m in Sources */,
+				EF7C16261F87443A00624670 /* VideoVC.m in Sources */,
+				EF7C149E1F87424600624670 /* AccidentReportVC.m in Sources */,
+				EF7C160C1F87443A00624670 /* LeftMenuVC.m in Sources */,
+				EF7C15841F87437D00624670 /* APIHandler.m in Sources */,
+				EF7C16241F87443A00624670 /* VideosCell.m in Sources */,
+				EF7C15741F87435500624670 /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
+				EF7C15691F87435500624670 /* DGActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
+				EF7C15681F87435500624670 /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
+				EF7C15F21F87443A00624670 /* AppoinmentCell.m in Sources */,
+				EF7C16071F87443A00624670 /* General.m in Sources */,
+				EF7C15F71F87443A00624670 /* ChangePwdVC.m in Sources */,
+				EF7C16001F87443A00624670 /* FinanceFolderCell.m in Sources */,
+				EF7C16301F87447D00624670 /* ACFloatingTextField.m in Sources */,
+				EF7C16281F87443A00624670 /* ViewHealthInsVC.m in Sources */,
+				EF7C16181F87443A00624670 /* OffersCell.m in Sources */,
+				EF7C14F81F87424600624670 /* RegisterVC.m in Sources */,
+				EF7C14F71F87424600624670 /* LoginVC.m in Sources */,
+				EF7C15771F87435500624670 /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
+				EF7C16031F87443A00624670 /* FinanceFurtherInfo.m in Sources */,
+				EF7C16201F87443A00624670 /* TaxFolderCell.m in Sources */,
+				EF7C157E1F87435500624670 /* UIViewController+LGSideMenuController.m in Sources */,
+				EF7C16321F87447D00624670 /* LTHMonthYearPickerView.m in Sources */,
+				EF7C15731F87435500624670 /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
+				EF7C16271F87443A00624670 /* ViewCarAccident.m in Sources */,
+				EF7C15601F87435500624670 /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
+				EF7C157F1F87435500624670 /* UIView+Toast.m in Sources */,
+				EF7C15611F87435500624670 /* DGActivityIndicatorBallRotateAnimation.m in Sources */,
+				5B9A80441F77696B00671F3B /* AppDelegate.m in Sources */,
+				EF7C15671F87435500624670 /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
+				EF7C15FD1F87443A00624670 /* ExpenseCell.m in Sources */,
+				EF7C15581F87435500624670 /* DGActivityIndicatorAnimation.m in Sources */,
+				EF7C160D1F87443A00624670 /* MessageCell.m in Sources */,
+				EF7C156E1F87435500624670 /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
+				5B9A80411F77696B00671F3B /* main.m in Sources */,
+				EF7C16111F87443A00624670 /* MySavingsCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9A80511F77696B00671F3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B9A805A1F77696B00671F3B /* myCashFlowTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9A805C1F77696B00671F3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B9A80651F77696B00671F3B /* myCashFlowUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B9A80571F77696B00671F3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B9A803B1F77696A00671F3B /* myCashFlow */;
+			targetProxy = 5B9A80561F77696B00671F3B /* PBXContainerItemProxy */;
+		};
+		5B9A80621F77696B00671F3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B9A803B1F77696A00671F3B /* myCashFlow */;
+			targetProxy = 5B9A80611F77696B00671F3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5B9A80481F77696B00671F3B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B9A80491F77696B00671F3B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5B9A804D1F77696B00671F3B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B9A804E1F77696B00671F3B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5B9A80671F77696B00671F3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B9A80681F77696B00671F3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5B9A806A1F77696B00671F3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 321AC9A98572C8C275A853D5 /* Pods-myCashFlow.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BJBHRS3L78;
+				GCC_PREFIX_HEADER = "/Users/parthiban/Desktop/WorkSpace/Parthi-master/myCashFlow/PrefixHeader.pch";
+				INFOPLIST_FILE = myCashFlow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.demoPjt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5B9A806B1F77696B00671F3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 648722BC1DCFAD0FCBFE99D5 /* Pods-myCashFlow.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BJBHRS3L78;
+				GCC_PREFIX_HEADER = "/Users/parthiban/Desktop/WorkSpace/Parthi-master/myCashFlow/PrefixHeader.pch";
+				INFOPLIST_FILE = myCashFlow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.demoPjt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5B9A806D1F77696B00671F3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = myCashFlowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.myCashFlowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myCashFlow.app/myCashFlow";
+			};
+			name = Debug;
+		};
+		5B9A806E1F77696B00671F3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = myCashFlowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.myCashFlowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myCashFlow.app/myCashFlow";
+			};
+			name = Release;
+		};
+		5B9A80701F77696B00671F3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = myCashFlowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.myCashFlowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = myCashFlow;
+			};
+			name = Debug;
+		};
+		5B9A80711F77696B00671F3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = myCashFlowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.myCashFlowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = myCashFlow;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B9A80371F77696A00671F3B /* Build configuration list for PBXProject "myCashFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B9A80671F77696B00671F3B /* Debug */,
+				5B9A80681F77696B00671F3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B9A80691F77696B00671F3B /* Build configuration list for PBXNativeTarget "myCashFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B9A806A1F77696B00671F3B /* Debug */,
+				5B9A806B1F77696B00671F3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B9A806C1F77696B00671F3B /* Build configuration list for PBXNativeTarget "myCashFlowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B9A806D1F77696B00671F3B /* Debug */,
+				5B9A806E1F77696B00671F3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B9A806F1F77696B00671F3B /* Build configuration list for PBXNativeTarget "myCashFlowUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B9A80701F77696B00671F3B /* Debug */,
+				5B9A80711F77696B00671F3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B9A80341F77696A00671F3B /* Project object */;
+}

@@ -1,0 +1,64 @@
+[
+   {
+      "ProductName":"HDFC Life Insurce Max Plus",
+      "Type":"General Insurance",
+      "PolicyNo":"PN13243453",
+      "CompanyName":"HDFC",
+      "CompanyLogo":"http://image3.mouthshut.com/images/imagesp/925004501s.png",
+      "StartDate":"20-03-2017",
+      "EndDate":"21-03-2018",
+      "Premium":"CHF 5000",
+      "Tenure":"Monthly",
+      "OtherFields":[
+         {
+            "Name":"Field1",
+            "Values":"test"
+         },
+         {
+            "Name":"Field2",
+            "Values":"test"
+         }
+      ],
+      "DocumentList":[
+         {
+            "FileName":"Document1",
+            "URL":"/Document/32132"
+         },
+         {
+            "FileName":"Document2",
+            "URL":"/Document/32132"
+         }
+      ]
+   },
+   {
+      "ProductName":"HDFC Life Insurce Max Plus",
+      "Type":"General Insurance",
+      "PolicyNo":"PN13243453",
+      "CompanyName":"HDFC",
+      "CompanyLogo":"http://image3.mouthshut.com/images/imagesp/925004501s.png",
+      "StartDate":"20-03-2017",
+      "EndDate":"21-03-2018",
+      "Premium":"CHF 5000",
+      "Tenure":"Monthly",
+      "OtherFields":[
+         {
+            "Name":"Field1",
+            "Values":"test"
+         },
+         {
+            "Name":"Field2",
+            "Values":"test"
+         }
+      ],
+      "DocumentList":[
+         {
+            "FileName":"Document1",
+            "URL":"/Document/32132"
+         },
+         {
+            "FileName":"Document2",
+            "URL":"/Document/32132"
+         }
+      ]
+   }
+]

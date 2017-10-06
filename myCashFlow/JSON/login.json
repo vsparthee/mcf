@@ -1,0 +1,18 @@
+{
+   "ID":9,
+   "CustomerID":"CUS100001",
+   "Firstname":"Naresh",
+   "Lastname":"Kumar",
+   "ConsultantName":"Rajesh",
+   "DOB":"25-03-1987",
+   "Gender":"Male",
+   "Nationality":"Indian",
+   "Occupation":"Software Engg",
+   "Address":"3 1b Maruthi Nagar 2nd street, Old perugungalthur, chennai",
+   "postcode":"600062",
+   "landlineNo":"07677567576",
+   "Emailid":"naresh@gmail.com",
+   "Phoneno":"97989787674",
+   "Password":"test",
+   "ConsultantID":5
+}
