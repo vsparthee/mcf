@@ -14,12 +14,44 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Firebase/Core (4.3.0):
+    - FirebaseAnalytics (= 4.0.4)
+    - FirebaseCore (= 4.0.8)
+  - Firebase/Messaging (4.3.0):
+    - Firebase/Core
+    - FirebaseMessaging (= 2.0.4)
+  - FirebaseAnalytics (4.0.4):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.8):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseInstanceID (2.0.4)
+  - FirebaseMessaging (2.0.4):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/Logger (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - IQKeyboardManager (5.0.3)
   - KIF (3.6.0):
     - KIF/Core (= 3.6.0)
   - KIF/Core (3.6.0)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
   - PNChart (0.8.9):
     - UICountingLabel (~> 1.2.0)
+  - Protobuf (3.4.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -29,6 +61,8 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - Firebase/Core
+  - Firebase/Messaging
   - IQKeyboardManager
   - KIF (~> 3.0)
   - PNChart
@@ -38,14 +72,22 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Firebase: 83283761a1ef6dc9846e03d08059f51421afbd65
+  FirebaseAnalytics: 722b53c7b32bfc7806b06e0093a2f5180d4f2c5a
+  FirebaseCore: 69b1a5ac5f857ba6d5fd9d5fe794f4786dd5e579
+  FirebaseInstanceID: 70c2b877e9338971b2429ea5a4293df6961aa44e
+  FirebaseMessaging: 3dd86bfda2acb680b05c97f3f8ac566e9bb87b2a
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   IQKeyboardManager: dc5b18b47e5170e4d150bb86dbee8c8a2fc48997
   KIF: bd770edd8ce49bc7308501e4871e58a02d137be3
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
+  Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
   XCDYouTubeKit: dccfe0c17dd5c5187969ec27e93069573badb08f
 
-PODFILE CHECKSUM: 2e66517795ad512abf76059e2acac0a0dfb33c01
+PODFILE CHECKSUM: c06c977b266fc18011a30769c625e7a708dae9de
 
 COCOAPODS: 1.3.1

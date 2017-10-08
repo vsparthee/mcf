@@ -51,10 +51,26 @@ static const NSInteger VENTouchLockViewControllerPasscodeLength = 4;
     }
 }
 
+
+
+
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:false];
 
+    //[self.navigationController setNavigationBarHidden:YES animated:YES];
+    self.navigationController.navigationBar.hidden = false;
+    self.navigationController.navigationBar.tintColor = [UIColor clearColor];
+    [self.navigationController.navigationBar
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    self.navigationController.navigationBar.barTintColor = DARK_BG;
+    
+    // [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -10) forBarMetrics:UIBarMetricsDefault];
+    
+    self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor whiteColor]
+       }];
     [super viewWillAppear:animated];
     if (![self.invisiblePasscodeField isFirstResponder]) {
         [self.invisiblePasscodeField becomeFirstResponder];
@@ -64,6 +80,8 @@ static const NSInteger VENTouchLockViewControllerPasscodeLength = 4;
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:true];
+
     if ([self.invisiblePasscodeField isFirstResponder]) {
         [self.invisiblePasscodeField resignFirstResponder];
     }
@@ -105,10 +123,23 @@ static const NSInteger VENTouchLockViewControllerPasscodeLength = 4;
 - (void)finishWithResult:(BOOL)success animated:(BOOL)animated
 {
     [self.invisiblePasscodeField resignFirstResponder];
-    if (self.willFinishWithResult) {
+    if (self.willFinishWithResult)
+    {
         self.willFinishWithResult(success);
-    } else {
+    }
+    else
+    {
         [self dismissViewControllerAnimated:animated completion:nil];
+        NSUserDefaults *userdefaults=[NSUserDefaults standardUserDefaults];
+        if ([[userdefaults valueForKey:@"isResetPwd"] boolValue]==YES)
+        {
+            [userdefaults setBool:NO forKey:@"isResetPwd"];
+            
+        }
+        else{
+            [userdefaults setBool:YES forKey:@"isResetPwd"];
+            
+        }
     }
 }
 

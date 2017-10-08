@@ -23,7 +23,8 @@
 #import "TaxFolderVC.h"
 #import "MessageVC.h"
 #import "VENTouchLock.h"
-
+#import "SettingVC.h"
+#import "DocumentList.h"
 @interface LeftMenuVC ()
 {
     NSString *newsID;
@@ -40,6 +41,8 @@
     UserProfileVC *profile;
     TaxFolderVC *tax;
     MessageVC *msg;
+    SettingVC *setting;
+    DocumentList *doc;
 }
 @end
 
@@ -58,8 +61,8 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.allowsMultipleSelection = NO;
     //self.view.backgroundColor = theme_color;
-    _titleArry = [NSArray arrayWithObjects:@"Home", @"Finance Folder", @"Taxes Folder", @"Budget & Save-Rate", @"Message Notification", @"Consultur Profile", @"Recommandation",@"Contracts Appointments",@"Videos",@"Accident Reporting",@"Numbers",@"Product Solutions",@"Discounts",@"My Accounts",@"Setting",@"Signout", nil];
-    _imageArry = [NSArray arrayWithObjects:@"Home",@"Finance", @"Tax", @"Budget",@"Message", @"User", @"Recommandation",@"Contracts", @"Videos", @"heart",@"User", @"User", @"Recommandation",@"User",@"User",@"User", nil];
+    _titleArry = [NSArray arrayWithObjects:@"Home", @"Finance Folder", @"Taxes Folder", @"Budget and Saverate",@"Numbers",@"Accident Reporting", @"Message & Notification",@"Contracts Appointments",@"Product Solutions",@"Videos",@"Discount",@"Recommandation", @"Documents",@"Consulter Profile",@"My Accounts", @"Setting", @"Signout", nil];
+    _imageArry = [NSArray arrayWithObjects:@"Home",@"Finance", @"Tax", @"Budget",@"phone",@"Accident Menu",@"Message", @"Contracts",@"User",@"Videos",@"offer",@"Recommandation",@"Document", @"User",@"User",@"settings", @"Sign Out Fill", nil];
     [self.tableView reloadData];
     
     
@@ -132,28 +135,27 @@
     
     if(indexPath.row == 4)
     {
-        msg = [storyboard instantiateViewControllerWithIdentifier:@"MessageVC"];
-        msg.parent=self;
-        [self.sideMenuController setRootViewController:msg];
+        number = [storyboard instantiateViewControllerWithIdentifier:@"NumbersVC"];
+        number.parent=self;
+        [self.sideMenuController setRootViewController:number];
         [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
     }
     
     if(indexPath.row == 5)
     {
-        consultor = [storyboard instantiateViewControllerWithIdentifier:@"ConsultorProfileVC"];
-        consultor.parent=self;
-        [self.sideMenuController setRootViewController:consultor];
+        accreport = [storyboard instantiateViewControllerWithIdentifier:@"AccidentReportVC"];
+        accreport.parent=self;
+        [self.sideMenuController setRootViewController:accreport];
         [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
     }
     
     if(indexPath.row == 6)
     {
-        recommandation = [storyboard instantiateViewControllerWithIdentifier:@"RecommandationVC"];
-        recommandation.parent=self;
-        [self.sideMenuController setRootViewController:recommandation];
+        msg = [storyboard instantiateViewControllerWithIdentifier:@"MessageVC"];
+        msg.parent=self;
+        [self.sideMenuController setRootViewController:msg];
         [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
     }
-    
     
     if(indexPath.row == 7)
     {
@@ -163,7 +165,16 @@
         [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
     }
     
+    
     if(indexPath.row == 8)
+    {
+        product = [storyboard instantiateViewControllerWithIdentifier:@"ProductSolutionsVC"];
+        product.parent=self;
+        [self.sideMenuController setRootViewController:product];
+        [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
+    }
+    
+    if(indexPath.row == 9)
     {
         video = [storyboard instantiateViewControllerWithIdentifier:@"VideoVC"];
         video.parent=self;
@@ -171,31 +182,8 @@
         [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
     }
     
-    if(indexPath.row == 9)
-    {
-        accreport = [storyboard instantiateViewControllerWithIdentifier:@"AccidentReportVC"];
-        accreport.parent=self;
-        [self.sideMenuController setRootViewController:accreport];
-        [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
-    }
+    
     if(indexPath.row == 10)
-    {
-        number = [storyboard instantiateViewControllerWithIdentifier:@"NumbersVC"];
-        number.parent=self;
-        [self.sideMenuController setRootViewController:number];
-        [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
-    }
-    
-    if(indexPath.row == 11)
-    {
-        product = [storyboard instantiateViewControllerWithIdentifier:@"ProductSolutionsVC"];
-        product.parent=self;
-        [self.sideMenuController setRootViewController:product];
-        [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
-    }
-
-    
-    if(indexPath.row == 12)
     {
         offer = [storyboard instantiateViewControllerWithIdentifier:@"OffersVC"];
         offer.parent=self;
@@ -203,7 +191,34 @@
         [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
     }
     
+    
+    if(indexPath.row == 11)
+    {
+        recommandation = [storyboard instantiateViewControllerWithIdentifier:@"RecommandationVC"];
+        recommandation.parent=self;
+        [self.sideMenuController setRootViewController:recommandation];
+        [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
+    }
+    
+    
+    
+    if(indexPath.row == 12)
+    {
+        doc = [storyboard instantiateViewControllerWithIdentifier:@"DocumentList"];
+        doc.parent=self;
+        [self.sideMenuController setRootViewController:doc];
+        [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
+    }
+
     if(indexPath.row == 13)
+    {
+        consultor = [storyboard instantiateViewControllerWithIdentifier:@"ConsultorProfileVC"];
+        consultor.parent=self;
+        [self.sideMenuController setRootViewController:consultor];
+        [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
+    }
+    
+    if(indexPath.row == 14)
     {
         profile = [storyboard instantiateViewControllerWithIdentifier:@"UserProfileVC"];
         profile.parent=self;
@@ -211,7 +226,15 @@
         [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
     }
     
+    
     if(indexPath.row == 15)
+    {
+        setting = [storyboard instantiateViewControllerWithIdentifier:@"SettingVC"];
+        setting.parent=self;
+        [self.sideMenuController setRootViewController:setting];
+        [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
+    }
+    if(indexPath.row == 16)
     {
         [self logout];
     }
@@ -250,6 +273,16 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self tableView:self.tableView didSelectRowAtIndexPath:indexPath];
 }
+
+-(void)selectrow:(int)rowNum withTag:(int)tag withData:(NSString*)data
+{
+    newsID = data;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:rowNum inSection:0];
+    [self tableView:_tableView didSelectRowAtIndexPath:indexPath];
+}
+
+
+
 - (IBAction)homeAction:(id)sender {
     
   

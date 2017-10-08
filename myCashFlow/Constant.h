@@ -18,6 +18,7 @@
 //DARK_BG       #0F1A26
 //THEME_COLOR   #2FC5CC
 
+#define THEME_FONT      @"Century Gothic-Regular"
 
 #define BASE_URL                        @"http://mycash.ccflow.ch/Customer/"
 #define ImageBaseURL                    @"http://172.16.40.247/opencart/upload/image/cache/"

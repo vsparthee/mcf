@@ -23,6 +23,7 @@
     self.tblTax.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tblTax.HVTableViewDelegate = self;
     self.tblTax.HVTableViewDataSource = self;
+
     self.tblTax.expandOnlyOneCell = true;
     self.tblTax.enableAutoScroll = true;
     self.tblTax.estimatedRowHeight = 2500;
@@ -103,7 +104,6 @@
 }
 
 #pragma Mark - Expandable Uitableview
-
 -(void)tableView:(UITableView *)tableView expandCell:(TaxFolderCell *)cell withIndexPath:(NSIndexPath *)indexPath
 {
     [UIView animateWithDuration:.5 animations:^{
@@ -183,9 +183,6 @@
     return cell;
 }
 
-
-
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath isExpanded:(BOOL)isexpanded
 {
     if(isexpanded)
@@ -219,5 +216,25 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+- (IBAction)action_Appointment:(UIButton *)sender
+{
+    [General startLoader:self.view];
+    APIHandler *api = [[APIHandler alloc]init];
+    [api api_taxAppoinment:^(id result)
+    {
+         if ([[result valueForKey:@"status"] boolValue]==true)
+         {
+             [General makeToast:@"Your appoinment registered successfully" withToastView:self.view];
+         }
+         else
+         {
+             [General makeToast:@"Something went wrong. Please try again later" withToastView:self.view];
+         }
+         [General stopLoader];
+     }
+    failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         [General stopLoader];
+     }];
+}
 @end

@@ -23,6 +23,7 @@
 {
     [super viewDidLoad];
     self.tblPrivate.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tblCompany.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     self.tblPrivate.frame=CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-114);
     [self.tblView addSubview:self.tblPrivate];

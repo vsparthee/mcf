@@ -85,15 +85,8 @@
 }
 - (IBAction)action_Setting:(UIButton *)sender
 {
-    if (self.settingView.hidden)
-    {
-        self.settingView.hidden=NO;
-    }
-    else
-    {
-        self.settingView.hidden=YES;
+    [[IQKeyboardManager sharedManager] resignFirstResponder];
 
-    }
 }
 - (IBAction)action_ChangePwd:(UIButton *)sender {
 }

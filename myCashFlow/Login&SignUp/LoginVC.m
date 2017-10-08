@@ -18,7 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.txtUserName.text=@"naresh@gmail.com";
+    self.txtUserName.text=@"speak2naresh87@gmail.com";
     self.txtPassword.text = @"test";
 }
 
@@ -98,7 +98,8 @@
                  NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
 
                  [userDefaults setValue:[self CheckDictionary:[dic mutableCopy]] forKey:@"userInfo"];
-                
+                 [[VENTouchLock sharedInstance] deletePasscode];
+
                  [self setPasscode];
                  
              }

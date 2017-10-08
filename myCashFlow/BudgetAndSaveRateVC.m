@@ -16,7 +16,6 @@
     CGRect baseViewRect;
     NSMutableArray *mySavingArr,*pieChartArr,*budgetArr,*myExpenseArr,*newArr;
     NSMutableDictionary *settingDic;
-    UILabel *nodata;
     int total;
     UIDatePicker *datePicker;
     UIBarButtonItem *rightBtn;
@@ -42,11 +41,6 @@
     self.lblBudget.textColor=THEME_COLOR;
     self.imgbudget.tintColor=THEME_COLOR;
     
-    nodata  = [[UILabel alloc]initWithFrame:CGRectMake(16, self.view.frame.size.height/2 - 65, self.view.frame.size.width-32, 30)];
-    nodata.text = @"No data founds in product solution";
-    nodata.textAlignment = NSTextAlignmentCenter;
-    nodata.font = [UIFont fontWithName:@"" size:16];
-    nodata.textColor = THEME_COLOR;
     
     [self.btnMyBudget setBackgroundColor:THEME_COLOR];
     [self.btnMySavings setBackgroundColor:[UIColor lightGrayColor]];
@@ -85,9 +79,15 @@
 }
 -(void)setupBudgetView:(NSString*)datestr
 {
-    //[General startLoader:self.view];
+    [General startLoader:self.view];
     total=0;
-    
+    self.lblMyBudget.text=@"Please Wait...";
+    self.lblSaving.text=@"Please Wait...";
+    self.lblMyBudget.hidden=NO;
+    self.lblSaving.hidden=NO;
+    [self.pieChartbase setHidden:YES];
+    [self.legendbase setHidden:YES];
+
     pieChartArr = [[NSMutableArray alloc]init];
     NSMutableDictionary *apiDic = [[NSMutableDictionary alloc]init];
     NSDictionary *userInfo = (NSDictionary*)[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
@@ -152,12 +152,7 @@
         
         self.pieChart.legendStyle = PNLegendItemStyleStacked;
         self.pieChart.legendFont = [UIFont fontWithName:@"Century Gothic" size:15];
-       /* UIView *legend;
-        [legend removeFromSuperview];
-        legend=[[UIView alloc]init];
-        legend = [self.pieChart getLegendWithMaxWidth:SCREEN_WIDTH-60];
-        [legend setFrame:CGRectMake(24, 0, SCREEN_WIDTH-48, legend.frame.size.height)];
-        [self.legendbase addSubview:legend];*/
+
         
         [self.tblBudget reloadData];
         
@@ -166,22 +161,26 @@
         [self.pieChartbase addSubview:self.pieChart];
         
         self.lblTotal.text =[NSString stringWithFormat:@"Total\n%d",total];
+        self.lblMyBudget.hidden=YES;
+
     }
     else
     {
         [self.pieChartbase setHidden:YES];
         [self.legendbase setHidden:YES];
         self.budgetheight.constant = 360;
+        self.lblMyBudget.text=@"No data found in My Budget";
+
 
     }
   
     if (mySavingArr.count>0)
     {
-        [nodata removeFromSuperview];
+        self.lblSaving.hidden=YES;
     }
     else
     {
-        [self.tblSavings addSubview:nodata];
+        self.lblSaving.text=@"No data found in My Savings";
     }
     [self.tblSavings reloadData];
     [General stopLoader];
@@ -198,6 +197,9 @@
 
 -(void)setupExpenseApi:(NSString*)datestr
 {
+    self.lblExp.text=@"Please Wait...";
+    self.lblExp.hidden=NO;
+
     NSMutableDictionary *apiDic = [[NSMutableDictionary alloc]init];
     NSDictionary *userInfo = (NSDictionary*)[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
     [apiDic setValue:[userInfo valueForKey:@"CustomerID"] forKey:@"CustomerID"];
@@ -209,11 +211,11 @@
          myExpenseArr = [result valueForKey:@"data"];
          if (myExpenseArr.count>0)
          {
-             [nodata removeFromSuperview];
+             self.lblExp.hidden=YES;
          }
          else
          {
-             [self.tblSavings addSubview:nodata];
+             self.lblExp.text=@"No data found in Expense";
          }
          [self.tblExpense reloadData];
      }
@@ -272,8 +274,14 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:false];
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:true];
 }
 
 - (IBAction)action_Menu:(UIButton *)sender
@@ -532,6 +540,8 @@
     _txtSelectMonth.text = [NSString stringWithFormat: @"%@-%@", month, year];
     [self setupBudgetView:[NSString stringWithFormat: @"%@-%@", month, year]];
     [self setupExpenseApi:[NSString stringWithFormat: @"%@-%@", month, year]];
+    [_txtSelectMonth resignFirstResponder];
+
 
 }
 

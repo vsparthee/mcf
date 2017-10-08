@@ -20,8 +20,9 @@
             <rect key="frame" x="0.0" y="0.0" width="430" height="604"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1100_1950.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="Hhf-S7-NB4">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hhf-S7-NB4">
                     <rect key="frame" x="0.0" y="0.0" width="430" height="604"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmH-B4-kMw">
                     <rect key="frame" x="145.5" y="245" width="140" height="20"/>
@@ -67,7 +68,7 @@
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.96470588239999999" green="0.94901960780000005" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.058823529409999999" green="0.1019607843" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="KFE-J2-zjL" firstAttribute="centerX" secondItem="bdw-Aj-hKx" secondAttribute="centerX" id="8Tk-BB-pa7"/>
                 <constraint firstItem="Hhf-S7-NB4" firstAttribute="leading" secondItem="bdw-Aj-hKx" secondAttribute="leading" id="G4s-Wt-3tx"/>
@@ -93,7 +94,6 @@
         </view>
     </objects>
     <resources>
-        <image name="1100_1950.JPG" width="1100" height="1950"/>
         <image name="Logo 510_300.PNG" width="510" height="300"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

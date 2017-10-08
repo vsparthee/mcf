@@ -7,6 +7,8 @@
 //
 
 #import "DashboardVC.h"
+#import "VENTouchLock.h"
+#import "SampleLockSplashViewController.h"
 @interface DashboardVC ()
 {
     float height;
@@ -17,6 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([[defaults valueForKey:@"setpwd"]boolValue] == YES)
+    {
+        [[VENTouchLock sharedInstance] setKeychainService:@"testService"
+                                          keychainAccount:@"testAccount"
+                                            touchIDReason:@"Scan your fingerprint to use the app."
+                                     passcodeAttemptLimit:500
+                                splashViewControllerClass:[SampleLockSplashViewController class]];
+        
+    }
     
     if ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height)
     {

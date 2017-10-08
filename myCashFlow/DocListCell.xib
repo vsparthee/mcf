@@ -12,6 +12,9 @@
         <array key="GOTHIC.TTF">
             <string>CenturyGothic</string>
         </array>
+        <array key="GOTHICB.TTF">
+            <string>CenturyGothic-Bold</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -26,41 +29,44 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xF8-JE-NXu">
                         <rect key="frame" x="0.0" y="0.0" width="328" height="52.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Document List" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9n-SB-SBS">
-                                <rect key="frame" x="8" y="4" width="96" height="44.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Document List" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="f9n-SB-SBS">
+                                <rect key="frame" x="8" y="4" width="177" height="44.5"/>
                                 <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.10085036610000001" green="0.16104510429999999" blue="0.24159738419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnA-wW-ke3">
-                                <rect key="frame" x="270.5" y="16" width="33.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View PDF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnA-wW-ke3">
+                                <rect key="frame" x="244" y="16.5" width="57.5" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="83w-G0-Msi"/>
+                                    <constraint firstAttribute="width" constant="57.5" id="Oli-CL-mSm"/>
+                                    <constraint firstAttribute="height" constant="21" id="eae-fa-Qep"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="13"/>
+                                <color key="textColor" red="0.10085036610000001" green="0.16104510429999999" blue="0.24159738419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Download 32_32.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="kdn-l2-8de">
-                                <rect key="frame" x="241.5" y="16" width="21" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Download 32_32.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="kdn-l2-8de">
+                                <rect key="frame" x="215" y="16" width="21" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="1Di-MH-kQj"/>
-                                    <constraint firstAttribute="width" constant="21" id="gYl-Ga-TAU"/>
+                                    <constraint firstAttribute="width" constant="21" id="CE4-tN-jW2"/>
+                                    <constraint firstAttribute="height" constant="21" id="n0i-hX-OzZ"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzO-bV-so1">
-                                <rect key="frame" x="226" y="11.5" width="90" height="30"/>
+                                <rect key="frame" x="201" y="11.5" width="115" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ohe-Aj-8dA"/>
-                                    <constraint firstAttribute="width" constant="90" id="yYB-Ah-TSt"/>
+                                    <constraint firstAttribute="width" constant="115" id="yYB-Ah-TSt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="15"/>
-                                <state key="normal" title="View PDF">
+                                <state key="normal">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="11"/>
+                                        <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -72,20 +78,22 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UnA-wW-ke3" firstAttribute="top" secondItem="xF8-JE-NXu" secondAttribute="top" constant="16" id="1bj-0q-nvg"/>
-                            <constraint firstItem="kdn-l2-8de" firstAttribute="top" secondItem="xF8-JE-NXu" secondAttribute="top" constant="16" id="9Id-h6-8ez"/>
+                            <constraint firstItem="UnA-wW-ke3" firstAttribute="centerY" secondItem="xF8-JE-NXu" secondAttribute="centerY" id="06A-Bc-RhB"/>
                             <constraint firstItem="f9n-SB-SBS" firstAttribute="top" secondItem="xF8-JE-NXu" secondAttribute="top" constant="4" id="EEQ-tP-iV0"/>
                             <constraint firstItem="f9n-SB-SBS" firstAttribute="leading" secondItem="xF8-JE-NXu" secondAttribute="leading" constant="8" id="NFV-sA-lu6"/>
-                            <constraint firstItem="UnA-wW-ke3" firstAttribute="leading" secondItem="kdn-l2-8de" secondAttribute="trailing" constant="8" id="ZN8-pd-0JU"/>
+                            <constraint firstItem="pzO-bV-so1" firstAttribute="leading" secondItem="f9n-SB-SBS" secondAttribute="trailing" constant="16" id="Q2b-2H-qbR"/>
+                            <constraint firstItem="UnA-wW-ke3" firstAttribute="leading" secondItem="kdn-l2-8de" secondAttribute="trailing" constant="8" id="Vbz-x1-tUg"/>
                             <constraint firstAttribute="bottom" secondItem="f9n-SB-SBS" secondAttribute="bottom" constant="4" id="hR8-ey-ZkZ"/>
+                            <constraint firstItem="kdn-l2-8de" firstAttribute="centerY" secondItem="xF8-JE-NXu" secondAttribute="centerY" id="iag-4X-6nF"/>
                             <constraint firstItem="pzO-bV-so1" firstAttribute="centerY" secondItem="xF8-JE-NXu" secondAttribute="centerY" id="lxG-RM-gaE"/>
                             <constraint firstAttribute="trailing" secondItem="pzO-bV-so1" secondAttribute="trailing" constant="12" id="p5t-mv-vh3"/>
-                            <constraint firstAttribute="trailing" secondItem="UnA-wW-ke3" secondAttribute="trailing" constant="24" id="pmZ-Vd-6dc"/>
+                            <constraint firstAttribute="trailing" secondItem="UnA-wW-ke3" secondAttribute="trailing" constant="26.5" id="qMg-la-0op"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="xF8-JE-NXu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Hrt-Wm-eVh"/>
                     <constraint firstAttribute="trailing" secondItem="xF8-JE-NXu" secondAttribute="trailing" id="OnJ-pP-rly"/>
@@ -93,6 +101,7 @@
                     <constraint firstAttribute="bottom" secondItem="xF8-JE-NXu" secondAttribute="bottom" id="wVv-zd-Hux"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="btndownload" destination="pzO-bV-so1" id="skx-QA-qGj"/>
                 <outlet property="lblTitle" destination="f9n-SB-SBS" id="R1D-7S-rTI"/>

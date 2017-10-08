@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		28FFAFE4C365621B77B91D64 /* libPods-myCashFlow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43AB9928CC482C2064040461 /* libPods-myCashFlow.a */; };
+		5B0B7D5C1F8A7D5500EF9375 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D5B1F8A7D5500EF9375 /* GoogleService-Info.plist */; };
+		5B0B7D6A1F8ABCE600EF9375 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D601F8ABCE600EF9375 /* .gitkeep */; };
+		5B0B7D6B1F8ABCE600EF9375 /* alert-round.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D611F8ABCE600EF9375 /* alert-round.png */; };
+		5B0B7D6C1F8ABCE600EF9375 /* checkmark-round.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D621F8ABCE600EF9375 /* checkmark-round.png */; };
+		5B0B7D6D1F8ABCE600EF9375 /* close-round.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D631F8ABCE600EF9375 /* close-round.png */; };
+		5B0B7D6E1F8ABCE600EF9375 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D641F8ABCE600EF9375 /* heart.png */; };
+		5B0B7D6F1F8ABCE600EF9375 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D651F8ABCE600EF9375 /* star.png */; };
+		5B0B7D701F8ABCE600EF9375 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D671F8ABCE600EF9375 /* .gitkeep */; };
+		5B0B7D711F8ABCE600EF9375 /* FCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B7D691F8ABCE600EF9375 /* FCAlertView.m */; };
 		5B349D2D1F87D91A00D884D2 /* UIViewController+VENTouchLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D171F87D91A00D884D2 /* UIViewController+VENTouchLock.m */; };
 		5B349D2E1F87D91A00D884D2 /* VENTouchLockCreatePasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D1A1F87D91A00D884D2 /* VENTouchLockCreatePasscodeViewController.m */; };
 		5B349D2F1F87D91A00D884D2 /* VENTouchLockEnterPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D1C1F87D91A00D884D2 /* VENTouchLockEnterPasscodeViewController.m */; };
@@ -21,6 +30,10 @@
 		5B349D371F87D91A00D884D2 /* VENTouchLockPasscodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B349D2C1F87D91A00D884D2 /* VENTouchLockPasscodeView.xib */; };
 		5B349D3B1F87D9FB00D884D2 /* SampleLockSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D391F87D9FB00D884D2 /* SampleLockSplashViewController.m */; };
 		5B349D3C1F87D9FB00D884D2 /* SampleLockSplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B349D3A1F87D9FB00D884D2 /* SampleLockSplashViewController.xib */; };
+		5B58FF771F894AB900645C21 /* DocumentList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B58FF761F894AB900645C21 /* DocumentList.m */; };
+		5B58FF7D1F894E3800645C21 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B58FF7C1F894E3800645C21 /* SettingVC.m */; };
+		5B58FF811F894E5000645C21 /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B58FF7F1F894E5000645C21 /* SettingsCell.m */; };
+		5B58FF821F894E5000645C21 /* SettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B58FF801F894E5000645C21 /* SettingsCell.xib */; };
 		5B9A80411F77696B00671F3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80401F77696B00671F3B /* main.m */; };
 		5B9A80441F77696B00671F3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80431F77696B00671F3B /* AppDelegate.m */; };
 		5B9A80471F77696B00671F3B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80461F77696B00671F3B /* ViewController.m */; };
@@ -214,6 +227,17 @@
 		321AC9A98572C8C275A853D5 /* Pods-myCashFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myCashFlow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myCashFlow/Pods-myCashFlow.debug.xcconfig"; sourceTree = "<group>"; };
 		43AB9928CC482C2064040461 /* libPods-myCashFlow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myCashFlow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B0796C3E1ABAD4AB7AB492 /* libPods-myCashFlowUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myCashFlowUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B0B7D5B1F8A7D5500EF9375 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5B0B7D5D1F8AB00200EF9375 /* myCashFlow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = myCashFlow.entitlements; sourceTree = "<group>"; };
+		5B0B7D601F8ABCE600EF9375 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		5B0B7D611F8ABCE600EF9375 /* alert-round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert-round.png"; sourceTree = "<group>"; };
+		5B0B7D621F8ABCE600EF9375 /* checkmark-round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark-round.png"; sourceTree = "<group>"; };
+		5B0B7D631F8ABCE600EF9375 /* close-round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-round.png"; sourceTree = "<group>"; };
+		5B0B7D641F8ABCE600EF9375 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		5B0B7D651F8ABCE600EF9375 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		5B0B7D671F8ABCE600EF9375 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		5B0B7D681F8ABCE600EF9375 /* FCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCAlertView.h; sourceTree = "<group>"; };
+		5B0B7D691F8ABCE600EF9375 /* FCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCAlertView.m; sourceTree = "<group>"; };
 		5B349D161F87D91A00D884D2 /* UIViewController+VENTouchLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+VENTouchLock.h"; sourceTree = "<group>"; };
 		5B349D171F87D91A00D884D2 /* UIViewController+VENTouchLock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+VENTouchLock.m"; sourceTree = "<group>"; };
 		5B349D191F87D91A00D884D2 /* VENTouchLockCreatePasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENTouchLockCreatePasscodeViewController.h; sourceTree = "<group>"; };
@@ -237,6 +261,13 @@
 		5B349D381F87D9FB00D884D2 /* SampleLockSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleLockSplashViewController.h; sourceTree = "<group>"; };
 		5B349D391F87D9FB00D884D2 /* SampleLockSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleLockSplashViewController.m; sourceTree = "<group>"; };
 		5B349D3A1F87D9FB00D884D2 /* SampleLockSplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleLockSplashViewController.xib; sourceTree = "<group>"; };
+		5B58FF751F894AB900645C21 /* DocumentList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentList.h; sourceTree = "<group>"; };
+		5B58FF761F894AB900645C21 /* DocumentList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentList.m; sourceTree = "<group>"; };
+		5B58FF7B1F894E3800645C21 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		5B58FF7C1F894E3800645C21 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		5B58FF7E1F894E4F00645C21 /* SettingsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsCell.h; sourceTree = "<group>"; };
+		5B58FF7F1F894E5000645C21 /* SettingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsCell.m; sourceTree = "<group>"; };
+		5B58FF801F894E5000645C21 /* SettingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
 		5B9A803C1F77696B00671F3B /* myCashFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCashFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9A80401F77696B00671F3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5B9A80421F77696B00671F3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -553,6 +584,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5B0B7D5E1F8ABCE600EF9375 /* FCAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				5B0B7D5F1F8ABCE600EF9375 /* Assets */,
+				5B0B7D661F8ABCE600EF9375 /* Classes */,
+			);
+			path = FCAlertView;
+			sourceTree = "<group>";
+		};
+		5B0B7D5F1F8ABCE600EF9375 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5B0B7D601F8ABCE600EF9375 /* .gitkeep */,
+				5B0B7D611F8ABCE600EF9375 /* alert-round.png */,
+				5B0B7D621F8ABCE600EF9375 /* checkmark-round.png */,
+				5B0B7D631F8ABCE600EF9375 /* close-round.png */,
+				5B0B7D641F8ABCE600EF9375 /* heart.png */,
+				5B0B7D651F8ABCE600EF9375 /* star.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5B0B7D661F8ABCE600EF9375 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5B0B7D671F8ABCE600EF9375 /* .gitkeep */,
+				5B0B7D681F8ABCE600EF9375 /* FCAlertView.h */,
+				5B0B7D691F8ABCE600EF9375 /* FCAlertView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		5B349D141F87D91A00D884D2 /* VENTouchLock */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +675,31 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5B58FF781F894ABF00645C21 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				5B58FF751F894AB900645C21 /* DocumentList.h */,
+				5B58FF761F894AB900645C21 /* DocumentList.m */,
+			);
+			name = Document;
+			sourceTree = "<group>";
+		};
+		5B58FF7A1F894E1B00645C21 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C15931F87443A00624670 /* ChangePinVC.h */,
+				EF7C15941F87443A00624670 /* ChangePinVC.m */,
+				EF7C15951F87443A00624670 /* ChangePwdVC.h */,
+				EF7C15961F87443A00624670 /* ChangePwdVC.m */,
+				5B58FF7B1F894E3800645C21 /* SettingVC.h */,
+				5B58FF7C1F894E3800645C21 /* SettingVC.m */,
+				5B58FF7E1F894E4F00645C21 /* SettingsCell.h */,
+				5B58FF7F1F894E5000645C21 /* SettingsCell.m */,
+				5B58FF801F894E5000645C21 /* SettingsCell.xib */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 		5B9A80331F77696A00671F3B = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +725,7 @@
 		5B9A803E1F77696B00671F3B /* myCashFlow */ = {
 			isa = PBXGroup;
 			children = (
+				5B0B7D5D1F8AB00200EF9375 /* myCashFlow.entitlements */,
 				EF7C14F91F87427900624670 /* Font */,
 				EF7C14631F87424600624670 /* Image */,
 				EF7C14881F87424600624670 /* JSON */,
@@ -657,6 +746,7 @@
 		5B9A803F1F77696B00671F3B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5B0B7D5B1F8A7D5500EF9375 /* GoogleService-Info.plist */,
 				EF7C15801F87437D00624670 /* APIHandler.h */,
 				EF7C15811F87437D00624670 /* APIHandler.m */,
 				EF7C15821F87437D00624670 /* Constant.h */,
@@ -813,6 +903,7 @@
 				EF7C15031F87435500624670 /* DGActivityIndicatorView */,
 				EF7C154C1F87435500624670 /* LGSlideMenu */,
 				EF7C15551F87435500624670 /* Toast */,
+				5B0B7D5E1F8ABCE600EF9375 /* FCAlertView */,
 			);
 			path = ThirdPartyLibrary;
 			sourceTree = "<group>";
@@ -935,6 +1026,7 @@
 				5B349D3A1F87D9FB00D884D2 /* SampleLockSplashViewController.xib */,
 				EF7C16331F8745E600624670 /* DashBoard */,
 				EF7C163F1F87481700624670 /* FinanceFolder */,
+				EF7C16351F8746E300624670 /* TaxFolder */,
 				EF7C16411F87485200624670 /* Appoinment */,
 				EF7C16401F87483C00624670 /* BudgetAndSaving */,
 				EF7C16421F8748EA00624670 /* ConsultorProfile */,
@@ -943,14 +1035,14 @@
 				EF7C163E1F8747E000624670 /* PDFView */,
 				EF7C16341F8746D200624670 /* ProductSolutions */,
 				EF7C163D1F8747D900624670 /* Recommand */,
-				EF7C16351F8746E300624670 /* TaxFolder */,
 				EF7C16391F87479000624670 /* Profile */,
 				EF7C16361F8746F200624670 /* Videos */,
 				EF7C14141F87424600624670 /* AccidentReport */,
 				EF7C14951F87424600624670 /* Login&SignUp */,
 				EF7C163C1F8747C700624670 /* Message */,
-				EF7C16431F87490C00624670 /* Setting */,
 				EF7C16441F874E1300624670 /* LeftMenu */,
+				5B58FF781F894ABF00645C21 /* Document */,
+				5B58FF7A1F894E1B00645C21 /* Setting */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -1161,17 +1253,6 @@
 			name = ConsultorProfile;
 			sourceTree = "<group>";
 		};
-		EF7C16431F87490C00624670 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				EF7C15931F87443A00624670 /* ChangePinVC.h */,
-				EF7C15941F87443A00624670 /* ChangePinVC.m */,
-				EF7C15951F87443A00624670 /* ChangePwdVC.h */,
-				EF7C15961F87443A00624670 /* ChangePwdVC.m */,
-			);
-			name = Setting;
-			sourceTree = "<group>";
-		};
 		EF7C16441F874E1300624670 /* LeftMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1258,6 +1339,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = JENKDMBQBJ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					5B9A80541F77696B00671F3B = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -1299,6 +1385,7 @@
 				EF7C14FE1F87427900624670 /* GOTHIC.TTF in Resources */,
 				EF7C16251F87443A00624670 /* VideosCell.xib in Resources */,
 				EF7C14C91F87424600624670 /* bg.jpg in Resources */,
+				5B0B7D6B1F8ABCE600EF9375 /* alert-round.png in Resources */,
 				EF7C14D21F87424600624670 /* Consultor Image 384_384.PNG in Resources */,
 				EF7C16191F87443A00624670 /* OffersCell.xib in Resources */,
 				EF7C14E11F87424600624670 /* Report Car 144_144.PNG in Resources */,
@@ -1316,6 +1403,8 @@
 				EF7C14CF1F87424600624670 /* Car front 70_60.PNG in Resources */,
 				EF7C14C31F87424600624670 /* 1100_1950.JPG in Resources */,
 				EF7C14C41F87424600624670 /* 1500_2600.JPG in Resources */,
+				5B0B7D6F1F8ABCE600EF9375 /* star.png in Resources */,
+				5B0B7D6E1F8ABCE600EF9375 /* heart.png in Resources */,
 				EF7C14E01F87424600624670 /* Remar gray 32_32.PNG in Resources */,
 				EF7C14CA1F87424600624670 /* Budget 72_72.PNG in Resources */,
 				EF7C160E1F87443A00624670 /* MessageCell.xib in Resources */,
@@ -1323,6 +1412,8 @@
 				EF7C14EA1F87424600624670 /* doc.json in Resources */,
 				EF7C14CE1F87424600624670 /* Car Back 70_60.PNG in Resources */,
 				EF7C15FE1F87443A00624670 /* ExpenseCell.xib in Resources */,
+				5B0B7D701F8ABCE600EF9375 /* .gitkeep in Resources */,
+				5B0B7D6A1F8ABCE600EF9375 /* .gitkeep in Resources */,
 				EF7C16061F87443A00624670 /* FurterInfoCell.xib in Resources */,
 				EF7C14CB1F87424600624670 /* Calendar 32_32.PNG in Resources */,
 				5B9A804F1F77696B00671F3B /* LaunchScreen.storyboard in Resources */,
@@ -1331,6 +1422,7 @@
 				5B349D3C1F87D9FB00D884D2 /* SampleLockSplashViewController.xib in Resources */,
 				EF7C14E21F87424600624670 /* Report Health 144_144.png in Resources */,
 				EF7C16211F87443A00624670 /* TaxFolderCell.xib in Resources */,
+				5B58FF821F894E5000645C21 /* SettingsCell.xib in Resources */,
 				EF7C14F01F87424600624670 /* recommand.json in Resources */,
 				EF7C14D71F87424600624670 /* Financefolder.png in Resources */,
 				EF7C14CC1F87424600624670 /* Camera 32_32.PNG in Resources */,
@@ -1338,6 +1430,7 @@
 				5B9A804C1F77696B00671F3B /* Assets.xcassets in Resources */,
 				EF7C14C51F87424600624670 /* 750_1300.JPG in Resources */,
 				EF7C14E31F87424600624670 /* Report Home 144_144.png in Resources */,
+				5B0B7D5C1F8A7D5500EF9375 /* GoogleService-Info.plist in Resources */,
 				EF7C15011F87427900624670 /* GOTHICI.TTF in Resources */,
 				EF7C14E81F87424600624670 /* consultant.json in Resources */,
 				EF7C14D81F87424600624670 /* Logo 510_300.PNG in Resources */,
@@ -1364,8 +1457,10 @@
 				EF7C14EE1F87424600624670 /* number.json in Resources */,
 				EF7C15FC1F87443A00624670 /* DocListCell.xib in Resources */,
 				EF7C14C71F87424600624670 /* Addres gray 32_32.PNG in Resources */,
+				5B0B7D6C1F8ABCE600EF9375 /* checkmark-round.png in Resources */,
 				EF7C14CD1F87424600624670 /* Cancel.png in Resources */,
 				EF7C14EB1F87424600624670 /* financefolder.json in Resources */,
+				5B0B7D6D1F8ABCE600EF9375 /* close-round.png in Resources */,
 				EF7C14F21F87424600624670 /* video.json in Resources */,
 				EF7C14E71F87424600624670 /* appointment.json in Resources */,
 			);
@@ -1565,6 +1660,7 @@
 				EF7C15F61F87443A00624670 /* ChangePinVC.m in Sources */,
 				EF7C161F1F87443A00624670 /* RecommandationVC.m in Sources */,
 				EF7C15781F87435500624670 /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
+				5B58FF811F894E5000645C21 /* SettingsCell.m in Sources */,
 				EF7C157A1F87435500624670 /* DGActivityIndicatorView.m in Sources */,
 				EF7C16171F87443A00624670 /* NumbersVC.m in Sources */,
 				EF7C15F01F87443A00624670 /* AddHealthInsVC.m in Sources */,
@@ -1588,9 +1684,11 @@
 				EF7C15691F87435500624670 /* DGActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
 				EF7C15681F87435500624670 /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				EF7C15F21F87443A00624670 /* AppoinmentCell.m in Sources */,
+				5B58FF771F894AB900645C21 /* DocumentList.m in Sources */,
 				EF7C16071F87443A00624670 /* General.m in Sources */,
 				EF7C15F71F87443A00624670 /* ChangePwdVC.m in Sources */,
 				EF7C16001F87443A00624670 /* FinanceFolderCell.m in Sources */,
+				5B0B7D711F8ABCE600EF9375 /* FCAlertView.m in Sources */,
 				EF7C16301F87447D00624670 /* ACFloatingTextField.m in Sources */,
 				EF7C16281F87443A00624670 /* ViewHealthInsVC.m in Sources */,
 				EF7C16181F87443A00624670 /* OffersCell.m in Sources */,
@@ -1603,6 +1701,7 @@
 				EF7C16321F87447D00624670 /* LTHMonthYearPickerView.m in Sources */,
 				EF7C15731F87435500624670 /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
 				EF7C16271F87443A00624670 /* ViewCarAccident.m in Sources */,
+				5B58FF7D1F894E3800645C21 /* SettingVC.m in Sources */,
 				EF7C15601F87435500624670 /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
 				EF7C157F1F87435500624670 /* UIView+Toast.m in Sources */,
 				EF7C15611F87435500624670 /* DGActivityIndicatorBallRotateAnimation.m in Sources */,
@@ -1768,12 +1867,13 @@
 			baseConfigurationReference = 321AC9A98572C8C275A853D5 /* Pods-myCashFlow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = myCashFlow/myCashFlow.entitlements;
 				DEVELOPMENT_TEAM = JENKDMBQBJ;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/myCashFlow/PrefixHeader.pch";
 				INFOPLIST_FILE = myCashFlow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.myCashflow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myCashflowDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1783,12 +1883,13 @@
 			baseConfigurationReference = 648722BC1DCFAD0FCBFE99D5 /* Pods-myCashFlow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = myCashFlow/myCashFlow.entitlements;
 				DEVELOPMENT_TEAM = JENKDMBQBJ;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/myCashFlow/PrefixHeader.pch";
 				INFOPLIST_FILE = myCashFlow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.myCashflow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myCashflowDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

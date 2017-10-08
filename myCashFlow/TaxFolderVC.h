@@ -13,5 +13,7 @@
 @property (weak, nonatomic) LeftMenuVC *parent;
 @property (weak, nonatomic) IBOutlet HVTableView *tblTax;
 -(IBAction)viewPDF:(UIButton*)sender;
-
+@property (strong, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UIButton *btnAppointment;
+- (IBAction)action_Appointment:(UIButton *)sender;
 @end

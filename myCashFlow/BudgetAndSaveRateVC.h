@@ -63,5 +63,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblSetting;
 @property (weak, nonatomic) IBOutlet UIImageView *imgSetting;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblMyBudget;
+@property (weak, nonatomic) IBOutlet UILabel *lblSaving;
+@property (weak, nonatomic) IBOutlet UILabel *lblExp;
 
 @end
