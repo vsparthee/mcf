@@ -34,6 +34,23 @@
     self.tblSavings.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     [self.tblBudget setContentOffset:self.tblBudget.contentOffset animated:NO];
+    self.lblExp.text=[TSLanguageManager localizedString:@"Please Wait..."];
+    self.lblMyBudget.text=[TSLanguageManager localizedString:@"Please Wait..."];
+    self.lblSaving.text=[TSLanguageManager localizedString:@"Please Wait..."];
+
+    [self.btnExpense setTitle:[TSLanguageManager localizedString:@"Add New Expense"] forState:UIControlStateNormal];
+    [self.btnMyBudget setTitle:[TSLanguageManager localizedString:@"My Budgets"] forState:UIControlStateNormal];
+    [self.btnMySavings setTitle:[TSLanguageManager localizedString:@"My Savings"] forState:UIControlStateNormal];
+    [self.btnSettingCancel setTitle:[TSLanguageManager localizedString:@"Cancel"] forState:UIControlStateNormal];
+    [self.btnSettingSubmit setTitle:[TSLanguageManager localizedString:@"Submit"] forState:UIControlStateNormal];
+
+    self.earnlbl.text=[TSLanguageManager localizedString:@"Total Earning"];
+    self.rentlbl.text=[TSLanguageManager localizedString:@"House Rent"];
+    self.insurancelbl.text=[TSLanguageManager localizedString:@"Insurance"];
+    self.taxlbl.text=[TSLanguageManager localizedString:@"Tax"];
+    self.expenselbl.text=[TSLanguageManager localizedString:@"Daily Expense"];
+    self.titlelbl.text=[TSLanguageManager localizedString:@"Budget and Saverate"];
+    
     
     baseViewRect=CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height-124);
     self.budgetView.frame=baseViewRect;
@@ -48,7 +65,9 @@
     formatter.dateFormat = @"MM-yyyy";
     NSString *dateStr = [formatter stringFromDate:[NSDate date]];
     self.txtSelectMonth.text=dateStr;
-   
+    [self setupBudgetView:dateStr];
+    [self setupExpenseApi:dateStr];
+
     self.txtSelectMonth.delegate=self;
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateFormat:@"MM / yyyy"];
@@ -81,8 +100,8 @@
 {
     [General startLoader:self.view];
     total=0;
-    self.lblMyBudget.text=@"Please Wait...";
-    self.lblSaving.text=@"Please Wait...";
+    self.lblMyBudget.text=[TSLanguageManager localizedString:@"Please Wait..."];
+    self.lblSaving.text=[TSLanguageManager localizedString:@"Please Wait..."];
     self.lblMyBudget.hidden=NO;
     self.lblSaving.hidden=NO;
     [self.pieChartbase setHidden:YES];
@@ -103,6 +122,8 @@
          mySavingArr = [[result valueForKey:@"MySaving"] mutableCopy];
          [self setupBudgetPieView];
          [General stopLoader];
+         [_txtSelectMonth setUserInteractionEnabled:YES];
+
      }
     failure:^(NSURLSessionTask *operation, NSError *error)
      {
@@ -159,8 +180,8 @@
         self.budgetheight.constant = newArr.count*60+360;
         
         [self.pieChartbase addSubview:self.pieChart];
-        
-        self.lblTotal.text =[NSString stringWithFormat:@"Total\n%d",total];
+        NSString *temp=[TSLanguageManager localizedString:@"Total"];
+        self.lblTotal.text =[NSString stringWithFormat:@"%@\n%d",temp,total];
         self.lblMyBudget.hidden=YES;
 
     }
@@ -169,7 +190,7 @@
         [self.pieChartbase setHidden:YES];
         [self.legendbase setHidden:YES];
         self.budgetheight.constant = 360;
-        self.lblMyBudget.text=@"No data found in My Budget";
+        self.lblMyBudget.text=[TSLanguageManager localizedString:@"No data found in My Budget"];
 
 
     }
@@ -180,7 +201,7 @@
     }
     else
     {
-        self.lblSaving.text=@"No data found in My Savings";
+        self.lblSaving.text=[TSLanguageManager localizedString:@"No data found in My Savings"];
     }
     [self.tblSavings reloadData];
     [General stopLoader];
@@ -197,7 +218,7 @@
 
 -(void)setupExpenseApi:(NSString*)datestr
 {
-    self.lblExp.text=@"Please Wait...";
+    self.lblExp.text=[TSLanguageManager localizedString:@"Please Wait..."];
     self.lblExp.hidden=NO;
 
     NSMutableDictionary *apiDic = [[NSMutableDictionary alloc]init];
@@ -215,7 +236,7 @@
          }
          else
          {
-             self.lblExp.text=@"No data found in Expense";
+             self.lblExp.text=[TSLanguageManager localizedString:@"No data found in Expense"];
          }
          [self.tblExpense reloadData];
      }
@@ -357,6 +378,11 @@
         cell.lblDate.text = [NSString stringWithFormat:@"%@",[expense valueForKey:@"ExpenseDate"]];
         cell.lblAmount.text = [NSString stringWithFormat:@"%@",[expense valueForKey:@"Amount"]];
         cell.lblDesc.text = [NSString stringWithFormat:@"%@",[expense valueForKey:@"Description"]];
+        
+        cell.datelbl.text=[TSLanguageManager localizedString:@"Date"];
+        cell.desclbl.text=[TSLanguageManager localizedString:@"Description"];
+        cell.amtlbl.text=[TSLanguageManager localizedString:@"Amount"];
+
         
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
         return cell;
@@ -512,7 +538,10 @@
 
 - (void)pickerDidPressDoneWithMonth:(NSString *)month andYear:(NSString *)year {
     _txtSelectMonth.text = [NSString stringWithFormat: @"%@-%@", month, year];
+    [self setupBudgetView:[NSString stringWithFormat: @"%@-%@", month, year]];
+    [self setupExpenseApi:[NSString stringWithFormat: @"%@-%@", month, year]];
     [_txtSelectMonth resignFirstResponder];
+    [_txtSelectMonth setUserInteractionEnabled:NO];
 }
 
 
@@ -538,9 +567,6 @@
 
 - (void)pickerDidSelectMonth:(NSString *)month andYear:(NSString *)year {
     _txtSelectMonth.text = [NSString stringWithFormat: @"%@-%@", month, year];
-    [self setupBudgetView:[NSString stringWithFormat: @"%@-%@", month, year]];
-    [self setupExpenseApi:[NSString stringWithFormat: @"%@-%@", month, year]];
-    [_txtSelectMonth resignFirstResponder];
 
 
 }

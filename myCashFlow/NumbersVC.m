@@ -20,13 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupAPI];
-    
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Numbers"];
+    self.lbltitle.textAlignment=NSTextAlignmentCenter;
 }
 
 -(void)setupAPI
 {
+    
     nodata  = [[UILabel alloc]initWithFrame:CGRectMake(16, self.view.frame.size.height/2 - 65, self.view.frame.size.width-32, 30)];
-    nodata.text = @"No data founds in product solution";
+    nodata.text = [TSLanguageManager localizedString:@"No data found in List"];
     nodata.textAlignment = NSTextAlignmentCenter;
     nodata.font = [UIFont fontWithName:@"" size:16];
     nodata.textColor = THEME_COLOR;

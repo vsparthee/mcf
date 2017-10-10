@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Message & Notification"];
+
     self.tblTax.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tblTax.HVTableViewDelegate = self;
     self.tblTax.HVTableViewDataSource = self;

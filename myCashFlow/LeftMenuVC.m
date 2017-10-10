@@ -61,8 +61,25 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.allowsMultipleSelection = NO;
     //self.view.backgroundColor = theme_color;
-    _titleArry = [NSArray arrayWithObjects:@"Home", @"Finance Folder", @"Taxes Folder", @"Budget and Saverate",@"Numbers",@"Accident Reporting", @"Message & Notification",@"Contracts Appointments",@"Product Solutions",@"Videos",@"Discount",@"Recommandation", @"Documents",@"Consulter Profile",@"My Accounts", @"Setting", @"Signout", nil];
-    _imageArry = [NSArray arrayWithObjects:@"Home",@"Finance", @"Tax", @"Budget",@"phone",@"Accident Menu",@"Message", @"Contracts",@"User",@"Videos",@"offer",@"Recommandation",@"Document", @"User",@"User",@"settings", @"Sign Out Fill", nil];
+    _titleArry = [NSArray arrayWithObjects:
+                  [TSLanguageManager localizedString:@"Home"],
+                  [TSLanguageManager localizedString:@"Finance Folder"],
+                  [TSLanguageManager localizedString:@"Taxes Folder"],
+                  [TSLanguageManager localizedString: @"Budget and Saverate"],
+                  [TSLanguageManager localizedString:@"Numbers"],
+                  [TSLanguageManager localizedString:@"Accident Reporting"],
+                  [TSLanguageManager localizedString: @"Message & Notification"],
+                  [TSLanguageManager localizedString:@"Contracts Appointments"],
+                  [TSLanguageManager localizedString:@"Product Solutions"],
+                  [TSLanguageManager localizedString:@"Videos"],
+                  [TSLanguageManager localizedString:@"Discount"],
+                  [TSLanguageManager localizedString:@"Recommandation"],
+                  [TSLanguageManager localizedString: @"Documents"],
+                  [TSLanguageManager localizedString:@"Consulter Profile"],
+                  [TSLanguageManager localizedString:@"My Accounts"],
+                  [TSLanguageManager localizedString: @"Setting"],
+                  [TSLanguageManager localizedString:@"Signout"], nil];
+    _imageArry = [NSArray arrayWithObjects:@"Home",@"Finance", @"Tax", @"Budget",@"phone",@"Accident Menu",@"Message", @"Contracts",@"Product",@"Videos",@"offer",@"Recommandation",@"Document", @"User",@"User",@"settings", @"Sign Out Fill", nil];
     [self.tableView reloadData];
     
     
@@ -262,7 +279,7 @@
     
     rootViewController.leftViewPresentationStyle = LGSideMenuPresentationStyleSlideAbove;
     [[UIApplication sharedApplication].keyWindow setRootViewController:rootViewController];
-    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"setpwd"];
+    [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"setpwd"];
     [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userInfo"];
     [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"isLogin"];
     [[VENTouchLock sharedInstance] deletePasscode];

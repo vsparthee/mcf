@@ -90,14 +90,14 @@
                                         <rect key="frame" x="103" y="52" width="91" height="21"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar 32_32.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="foL-nD-cEA">
-                                                <rect key="frame" x="5.5" y="3" width="15" height="15"/>
+                                                <rect key="frame" x="6" y="3" width="15" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="15" id="8fi-7W-oGZ"/>
                                                     <constraint firstAttribute="height" constant="15" id="a33-1K-9Rx"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15-12-2017" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ll7-ls-cvb">
-                                                <rect key="frame" x="20.5" y="0.0" width="66.5" height="21"/>
+                                                <rect key="frame" x="21" y="0.0" width="66.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -173,8 +173,10 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="btnView" destination="5We-GJ-WUZ" id="PWv-dF-qEn"/>
+                <outlet property="datelbl" destination="Zfg-3U-T1j" id="F2v-66-Vx2"/>
                 <outlet property="lblDate" destination="Ll7-ls-cvb" id="e0C-pk-gbe"/>
                 <outlet property="lblPolicyNum" destination="yH9-oc-yOT" id="Toe-fr-8Wn"/>
+                <outlet property="policylbl" destination="lsr-Is-G30" id="WNB-kJ-iek"/>
             </connections>
             <point key="canvasLocation" x="44" y="-7"/>
         </tableViewCell>

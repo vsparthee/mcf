@@ -20,4 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIView *privateView;
 @property (weak, nonatomic) IBOutlet UIView *companyView;
 
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+
 @end

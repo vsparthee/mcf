@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Documents"];
+
     self.tblDocList.separatorStyle = UITableViewCellSeparatorStyleNone;
     nodata  = [[UILabel alloc]initWithFrame:CGRectMake(16, self.view.frame.size.height/2 - 65, self.view.frame.size.width-32, 30)];
     nodata.text = @"Please Wait";

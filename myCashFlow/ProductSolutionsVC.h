@@ -11,5 +11,6 @@
 @interface ProductSolutionsVC : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tblProduct;
 @property (weak, nonatomic) LeftMenuVC *parent;
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
 
 @end

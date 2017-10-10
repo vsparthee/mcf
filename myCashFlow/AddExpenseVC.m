@@ -9,7 +9,9 @@
 #import "AddExpenseVC.h"
 
 @interface AddExpenseVC ()
-
+{
+    UIDatePicker *datePicker;
+}
 @end
 
 @implementation AddExpenseVC
@@ -17,9 +19,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view.
+    [self.btnCancel setTitle:[TSLanguageManager localizedString:@"Cancel"] forState:UIControlStateNormal];
+    [self.btnSubmit setTitle:[TSLanguageManager localizedString:@"Submit"] forState:UIControlStateNormal];
+    
+    self.datelbl.text=[TSLanguageManager localizedString:@"Date"];
+    self.desclbl.text=[TSLanguageManager localizedString:@"Description"];
+    self.amtlbl.text=[TSLanguageManager localizedString:@"Amount"];
+    self.titlelbl.text=[TSLanguageManager localizedString:@"Add Expense"];
+
+    datePicker=[[UIDatePicker alloc]init];
+    datePicker.datePickerMode=UIDatePickerModeDate;
+    [self.txtDate setInputView:datePicker];
+    UIToolbar *toolBar=[[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
+    [toolBar setTintColor:[UIColor grayColor]];
+    UIBarButtonItem *doneBtn=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(ShowSelectedDate)];
+    UIBarButtonItem *space=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *cancelBtn=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelDate)];
+
+    [toolBar setItems:[NSArray arrayWithObjects:cancelBtn,space,doneBtn, nil]];
+    [self.txtDate setInputAccessoryView:toolBar];
 }
 
+-(void)ShowSelectedDate
+{   NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"dd-MM-YYYY"];
+    self.txtDate.text=[NSString stringWithFormat:@"%@",[formatter stringFromDate:datePicker.date]];
+    [self.txtDate resignFirstResponder];
+}
+
+
+-(void)cancelDate
+{
+    [self.txtDate resignFirstResponder];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -44,7 +76,7 @@
     }
     else
     {
-        //[self.parent home];
+        [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
     }
 }
 
@@ -70,7 +102,7 @@
     APIHandler *api = [[APIHandler alloc]init];
     [api api_MyBudgetDailyExpenseCreate:apiDic withSuccess:^(id result)
     {
-        [General makeToast:@"Your expense added successfully" withToastView:self.view];
+        [General makeToast:[TSLanguageManager localizedString:@"Your expense added successfully"] withToastView:self.view];
         int64_t delayInSeconds = 2;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void)

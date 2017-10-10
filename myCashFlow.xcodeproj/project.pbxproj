@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		28FFAFE4C365621B77B91D64 /* libPods-myCashFlow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43AB9928CC482C2064040461 /* libPods-myCashFlow.a */; };
+		5B01B2CB1F8BC38A0047618E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B01B2CD1F8BC38A0047618E /* Localizable.strings */; };
+		5B01B2D41F8BCA950047618E /* TSLanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B01B2D31F8BCA950047618E /* TSLanguageManager.m */; };
+		5B01B2D81F8BCBD60047618E /* langCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B01B2D61F8BCBD60047618E /* langCell.m */; };
+		5B01B2D91F8BCBD60047618E /* langCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B01B2D71F8BCBD60047618E /* langCell.xib */; };
 		5B0B7D5C1F8A7D5500EF9375 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D5B1F8A7D5500EF9375 /* GoogleService-Info.plist */; };
 		5B0B7D6A1F8ABCE600EF9375 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D601F8ABCE600EF9375 /* .gitkeep */; };
 		5B0B7D6B1F8ABCE600EF9375 /* alert-round.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D611F8ABCE600EF9375 /* alert-round.png */; };
@@ -227,6 +231,14 @@
 		321AC9A98572C8C275A853D5 /* Pods-myCashFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myCashFlow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myCashFlow/Pods-myCashFlow.debug.xcconfig"; sourceTree = "<group>"; };
 		43AB9928CC482C2064040461 /* libPods-myCashFlow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myCashFlow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B0796C3E1ABAD4AB7AB492 /* libPods-myCashFlowUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myCashFlowUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B01B2CE1F8BC3A20047618E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		5B01B2CF1F8BC3A20047618E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5B01B2D01F8BC3A30047618E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B01B2D21F8BCA950047618E /* TSLanguageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLanguageManager.h; sourceTree = "<group>"; };
+		5B01B2D31F8BCA950047618E /* TSLanguageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLanguageManager.m; sourceTree = "<group>"; };
+		5B01B2D51F8BCBD60047618E /* langCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = langCell.h; sourceTree = "<group>"; };
+		5B01B2D61F8BCBD60047618E /* langCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = langCell.m; sourceTree = "<group>"; };
+		5B01B2D71F8BCBD60047618E /* langCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = langCell.xib; sourceTree = "<group>"; };
 		5B0B7D5B1F8A7D5500EF9375 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B0B7D5D1F8AB00200EF9375 /* myCashFlow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = myCashFlow.entitlements; sourceTree = "<group>"; };
 		5B0B7D601F8ABCE600EF9375 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -268,6 +280,7 @@
 		5B58FF7E1F894E4F00645C21 /* SettingsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsCell.h; sourceTree = "<group>"; };
 		5B58FF7F1F894E5000645C21 /* SettingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsCell.m; sourceTree = "<group>"; };
 		5B58FF801F894E5000645C21 /* SettingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
+		5B6D25041F8D23D000253489 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5B9A803C1F77696B00671F3B /* myCashFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCashFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9A80401F77696B00671F3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5B9A80421F77696B00671F3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -696,6 +709,9 @@
 				5B58FF7E1F894E4F00645C21 /* SettingsCell.h */,
 				5B58FF7F1F894E5000645C21 /* SettingsCell.m */,
 				5B58FF801F894E5000645C21 /* SettingsCell.xib */,
+				5B01B2D51F8BCBD60047618E /* langCell.h */,
+				5B01B2D61F8BCBD60047618E /* langCell.m */,
+				5B01B2D71F8BCBD60047618E /* langCell.xib */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -703,6 +719,7 @@
 		5B9A80331F77696A00671F3B = {
 			isa = PBXGroup;
 			children = (
+				5B01B2CD1F8BC38A0047618E /* Localizable.strings */,
 				5B9A803E1F77696B00671F3B /* myCashFlow */,
 				5B9A80581F77696B00671F3B /* myCashFlowTests */,
 				5B9A80631F77696B00671F3B /* myCashFlowUITests */,
@@ -791,13 +808,13 @@
 		EF7C14141F87424600624670 /* AccidentReport */ = {
 			isa = PBXGroup;
 			children = (
+				EF7C14151F87424600624670 /* AccidentReportVC.h */,
+				EF7C14161F87424600624670 /* AccidentReportVC.m */,
+				EF7C15B61F87443A00624670 /* InsuranceReportVC.h */,
+				EF7C15B71F87443A00624670 /* InsuranceReportVC.m */,
 				EF7C15B31F87443A00624670 /* InsuranceReportCell.h */,
 				EF7C15B41F87443A00624670 /* InsuranceReportCell.m */,
 				EF7C15B51F87443A00624670 /* InsuranceReportCell.xib */,
-				EF7C15B61F87443A00624670 /* InsuranceReportVC.h */,
-				EF7C15B71F87443A00624670 /* InsuranceReportVC.m */,
-				EF7C14151F87424600624670 /* AccidentReportVC.h */,
-				EF7C14161F87424600624670 /* AccidentReportVC.m */,
 				EF7C16371F87472300624670 /* ADD */,
 				EF7C16381F87477A00624670 /* View */,
 			);
@@ -893,6 +910,8 @@
 		EF7C15021F87435500624670 /* ThirdPartyLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				5B01B2D21F8BCA950047618E /* TSLanguageManager.h */,
+				5B01B2D31F8BCA950047618E /* TSLanguageManager.m */,
 				5B349D141F87D91A00D884D2 /* VENTouchLock */,
 				EF7C162A1F87447D00624670 /* ACFloatingTextField.h */,
 				EF7C162B1F87447D00624670 /* ACFloatingTextField.m */,
@@ -1027,22 +1046,22 @@
 				EF7C16331F8745E600624670 /* DashBoard */,
 				EF7C163F1F87481700624670 /* FinanceFolder */,
 				EF7C16351F8746E300624670 /* TaxFolder */,
-				EF7C16411F87485200624670 /* Appoinment */,
 				EF7C16401F87483C00624670 /* BudgetAndSaving */,
-				EF7C16421F8748EA00624670 /* ConsultorProfile */,
 				EF7C163B1F8747AA00624670 /* Numbers */,
-				EF7C163A1F87479D00624670 /* Offers */,
-				EF7C163E1F8747E000624670 /* PDFView */,
+				EF7C14141F87424600624670 /* AccidentReport */,
+				EF7C163C1F8747C700624670 /* Message */,
+				EF7C16411F87485200624670 /* Appoinment */,
 				EF7C16341F8746D200624670 /* ProductSolutions */,
+				EF7C16361F8746F200624670 /* Videos */,
+				EF7C163A1F87479D00624670 /* Offers */,
+				EF7C16421F8748EA00624670 /* ConsultorProfile */,
+				EF7C163E1F8747E000624670 /* PDFView */,
 				EF7C163D1F8747D900624670 /* Recommand */,
 				EF7C16391F87479000624670 /* Profile */,
-				EF7C16361F8746F200624670 /* Videos */,
-				EF7C14141F87424600624670 /* AccidentReport */,
 				EF7C14951F87424600624670 /* Login&SignUp */,
-				EF7C163C1F8747C700624670 /* Message */,
 				EF7C16441F874E1300624670 /* LeftMenu */,
-				5B58FF781F894ABF00645C21 /* Document */,
 				5B58FF7A1F894E1B00645C21 /* Setting */,
+				5B58FF781F894ABF00645C21 /* Document */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -1193,21 +1212,21 @@
 		EF7C163F1F87481700624670 /* FinanceFolder */ = {
 			isa = PBXGroup;
 			children = (
-				EF7C159D1F87443A00624670 /* DocListCell.h */,
-				EF7C159E1F87443A00624670 /* DocListCell.m */,
-				EF7C159F1F87443A00624670 /* DocListCell.xib */,
-				EF7C15AE1F87443A00624670 /* FurterInfoCell.h */,
-				EF7C15AF1F87443A00624670 /* FurterInfoCell.m */,
-				EF7C15B01F87443A00624670 /* FurterInfoCell.xib */,
-				EF7C15A31F87443A00624670 /* FinanceDetailsVC.h */,
-				EF7C15A41F87443A00624670 /* FinanceDetailsVC.m */,
+				EF7C15A81F87443A00624670 /* FinanceFolderVC.h */,
+				EF7C15A91F87443A00624670 /* FinanceFolderVC.m */,
 				EF7C15A51F87443A00624670 /* FinanceFolderCell.h */,
 				EF7C15A61F87443A00624670 /* FinanceFolderCell.m */,
 				EF7C15A71F87443A00624670 /* FinanceFolderCell.xib */,
-				EF7C15A81F87443A00624670 /* FinanceFolderVC.h */,
-				EF7C15A91F87443A00624670 /* FinanceFolderVC.m */,
+				EF7C15A31F87443A00624670 /* FinanceDetailsVC.h */,
+				EF7C15A41F87443A00624670 /* FinanceDetailsVC.m */,
+				EF7C159D1F87443A00624670 /* DocListCell.h */,
+				EF7C159E1F87443A00624670 /* DocListCell.m */,
+				EF7C159F1F87443A00624670 /* DocListCell.xib */,
 				EF7C15AA1F87443A00624670 /* FinanceFurtherInfo.h */,
 				EF7C15AB1F87443A00624670 /* FinanceFurtherInfo.m */,
+				EF7C15AE1F87443A00624670 /* FurterInfoCell.h */,
+				EF7C15AF1F87443A00624670 /* FurterInfoCell.m */,
+				EF7C15B01F87443A00624670 /* FurterInfoCell.xib */,
 			);
 			name = FinanceFolder;
 			sourceTree = "<group>";
@@ -1364,6 +1383,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 5B9A80331F77696A00671F3B;
 			productRefGroup = 5B9A803D1F77696B00671F3B /* Products */;
@@ -1438,6 +1458,7 @@
 				EF7C16091F87443A00624670 /* InsuranceReportCell.xib in Resources */,
 				EF7C14ED1F87424600624670 /* message.json in Resources */,
 				EF7C15F31F87443A00624670 /* AppoinmentCell.xib in Resources */,
+				5B01B2D91F8BCBD60047618E /* langCell.xib in Resources */,
 				5B349D321F87D91A00D884D2 /* Info.plist in Resources */,
 				EF7C16011F87443A00624670 /* FinanceFolderCell.xib in Resources */,
 				5B349D371F87D91A00D884D2 /* VENTouchLockPasscodeView.xib in Resources */,
@@ -1455,6 +1476,7 @@
 				EF7C14E61F87424600624670 /* User gray 32_32.PNG in Resources */,
 				EF7C14C61F87424600624670 /* Accident.png in Resources */,
 				EF7C14EE1F87424600624670 /* number.json in Resources */,
+				5B01B2CB1F8BC38A0047618E /* Localizable.strings in Resources */,
 				EF7C15FC1F87443A00624670 /* DocListCell.xib in Resources */,
 				EF7C14C71F87424600624670 /* Addres gray 32_32.PNG in Resources */,
 				5B0B7D6C1F8ABCE600EF9375 /* checkmark-round.png in Resources */,
@@ -1679,11 +1701,13 @@
 				EF7C149E1F87424600624670 /* AccidentReportVC.m in Sources */,
 				EF7C160C1F87443A00624670 /* LeftMenuVC.m in Sources */,
 				EF7C15841F87437D00624670 /* APIHandler.m in Sources */,
+				5B01B2D41F8BCA950047618E /* TSLanguageManager.m in Sources */,
 				EF7C16241F87443A00624670 /* VideosCell.m in Sources */,
 				EF7C15741F87435500624670 /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
 				EF7C15691F87435500624670 /* DGActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
 				EF7C15681F87435500624670 /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				EF7C15F21F87443A00624670 /* AppoinmentCell.m in Sources */,
+				5B01B2D81F8BCBD60047618E /* langCell.m in Sources */,
 				5B58FF771F894AB900645C21 /* DocumentList.m in Sources */,
 				EF7C16071F87443A00624670 /* General.m in Sources */,
 				EF7C15F71F87443A00624670 /* ChangePwdVC.m in Sources */,
@@ -1751,10 +1775,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5B01B2CD1F8BC38A0047618E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B01B2D01F8BC3A30047618E /* de */,
+				5B6D25041F8D23D000253489 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		5B9A80481F77696B00671F3B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5B9A80491F77696B00671F3B /* Base */,
+				5B01B2CE1F8BC3A20047618E /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1763,6 +1797,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5B9A804E1F77696B00671F3B /* Base */,
+				5B01B2CF1F8BC3A20047618E /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1774,6 +1809,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1823,6 +1859,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1875,6 +1912,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.myCashflowDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1891,6 +1929,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.myCashflowDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -20,20 +20,20 @@
             <rect key="frame" x="0.0" y="0.0" width="341" height="261"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="341" height="261"/>
+                <rect key="frame" x="0.0" y="0.0" width="341" height="260.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hn-WK-3ll">
                         <rect key="frame" x="16" y="12" width="309" height="236.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Century Gothic 15.0Century Gothic 15.0Century Gothic 15.0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enH-o2-8MH">
-                                <rect key="frame" x="8" y="8" width="179" height="67"/>
+                                <rect key="frame" x="8" y="8" width="168" height="67"/>
                                 <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Policy Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1d-pP-bc9">
-                                <rect key="frame" x="8" y="89" width="92.5" height="21"/>
+                                <rect key="frame" x="8" y="89" width="98.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="rXG-lh-5rF"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="DFSE45546564" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67T-1j-HdE">
-                                <rect key="frame" x="116.5" y="89" width="98" height="21"/>
+                                <rect key="frame" x="122.5" y="89" width="94" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="CNb-dq-Wxh"/>
                                 </constraints>
@@ -51,7 +51,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Premium" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er4-Gs-Nd2">
-                                <rect key="frame" x="8" y="117.5" width="56" height="21"/>
+                                <rect key="frame" x="8" y="117.5" width="59.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="d8T-VN-uem"/>
                                 </constraints>
@@ -60,7 +60,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="0000000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8H-bn-r5v">
-                                <rect key="frame" x="79.5" y="117.5" width="54.5" height="21"/>
+                                <rect key="frame" x="83" y="117.5" width="54.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="uEs-MA-Ugv"/>
                                 </constraints>
@@ -69,7 +69,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General Insurance" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7e-1O-Ybu">
-                                <rect key="frame" x="195" y="34" width="106" height="16"/>
+                                <rect key="frame" x="184" y="34" width="117" height="16"/>
                                 <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="13"/>
                                 <color key="textColor" red="0.96545559169999995" green="0.3007364777" blue="0.33894872749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -85,7 +85,7 @@
                                 <rect key="frame" x="8" y="146.5" width="126.5" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12-12-2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O20-69-N6W">
-                                        <rect key="frame" x="41" y="4" width="73.5" height="21"/>
+                                        <rect key="frame" x="42" y="4" width="71.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="yMd-Fr-kk4"/>
                                         </constraints>
@@ -94,7 +94,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar 32_32.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="xzL-qi-Osz">
-                                        <rect key="frame" x="22" y="7" width="15" height="15"/>
+                                        <rect key="frame" x="23" y="7" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="A8y-dl-gFB"/>
                                             <constraint firstAttribute="height" constant="15" id="cLx-vf-t0M"/>
@@ -114,7 +114,7 @@
                                 <rect key="frame" x="174.5" y="146.5" width="126.5" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12-12-2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAY-aP-jWg">
-                                        <rect key="frame" x="41" y="4" width="73.5" height="21"/>
+                                        <rect key="frame" x="42" y="4" width="71.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="FoY-ik-ohu"/>
                                         </constraints>
@@ -123,7 +123,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar 32_32.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="Y07-2L-aHU">
-                                        <rect key="frame" x="22" y="7" width="15" height="15"/>
+                                        <rect key="frame" x="23" y="7" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="8J3-4v-cbD"/>
                                             <constraint firstAttribute="width" constant="15" id="pae-k7-Y5d"/>
@@ -223,6 +223,8 @@
                 <outlet property="lblStartDate" destination="O20-69-N6W" id="hZw-U9-66E"/>
                 <outlet property="lblTitle" destination="enH-o2-8MH" id="Vti-D6-UXF"/>
                 <outlet property="lblType" destination="n7e-1O-Ybu" id="GF7-hL-lcn"/>
+                <outlet property="policylbl" destination="u1d-pP-bc9" id="Iwr-4R-0AX"/>
+                <outlet property="premiumlbl" destination="er4-Gs-Nd2" id="kfC-vh-ik8"/>
             </connections>
             <point key="canvasLocation" x="35.5" y="160.5"/>
         </tableViewCell>

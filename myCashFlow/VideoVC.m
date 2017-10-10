@@ -23,7 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Videos"];
+
+    self.tblVideo.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     if ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height)
     {
         height=[UIScreen mainScreen].bounds.size.width/2.2;
@@ -168,7 +171,7 @@
         height=[UIScreen mainScreen].bounds.size.height/2.2;
         [self.tblVideo reloadData];
     }
-    else if(toInterfaceOrientation == UIInterfaceOrientationPortrait || toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
+    else if(toInterfaceOrientation == UIInterfaceOrientationPortrait)
     {
         height=[UIScreen mainScreen].bounds.size.width/3;
         [self.tblVideo reloadData];

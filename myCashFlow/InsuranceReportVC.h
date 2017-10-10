@@ -16,5 +16,6 @@
 - (IBAction)action_Menu:(UIButton *)sender;
 - (IBAction)action_Back:(UIButton *)sender;
 @property (assign, nonatomic) int type;
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
 
 @end

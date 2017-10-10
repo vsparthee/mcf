@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Numbers"];
+    self.lbltitle.textAlignment=NSTextAlignmentCenter;
+
     [self.tblNumberList reloadData];
     self.tblNumberList.estimatedRowHeight = 200;
     self.tblNumberList.rowHeight = 200;

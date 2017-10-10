@@ -16,4 +16,6 @@
 @property (strong, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UIButton *btnAppointment;
 - (IBAction)action_Appointment:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+
 @end

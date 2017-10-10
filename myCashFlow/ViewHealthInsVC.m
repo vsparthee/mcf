@@ -18,6 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.lbltitle.text=[TSLanguageManager localizedString:@"View Report"];
+    self.lblpolicynum.text=[TSLanguageManager localizedString:@"Policy No"];
+    self.lbldoc.text=[TSLanguageManager localizedString:@"Document"];
+
     if ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height)
     {
         height=[UIScreen mainScreen].bounds.size.width;

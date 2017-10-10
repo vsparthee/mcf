@@ -138,6 +138,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="amtlbl" destination="8wB-SH-ncu" id="3RQ-vt-QTs"/>
+                <outlet property="datelbl" destination="avv-hi-N47" id="uoI-o1-2RG"/>
+                <outlet property="desclbl" destination="pvu-WR-gtH" id="amx-In-Cne"/>
                 <outlet property="lblAmount" destination="L7y-A1-zsa" id="Es1-e7-qhA"/>
                 <outlet property="lblDate" destination="skg-dj-BxE" id="aS1-Ez-ul8"/>
                 <outlet property="lblDesc" destination="amg-s0-Je1" id="6tc-G8-6b1"/>

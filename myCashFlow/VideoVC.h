@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tblVideo;
 @property (weak, nonatomic) LeftMenuVC *parent;
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
 
 @end

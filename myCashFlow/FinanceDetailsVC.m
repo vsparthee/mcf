@@ -19,6 +19,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Finance Folder"];
+    self.lblPolicynum.text=[TSLanguageManager localizedString:@"Policy Number"];
+    self.lblstartdate.text=[TSLanguageManager localizedString:@"Start Date"];
+    self.lblenddate.text=[TSLanguageManager localizedString:@"End Date"];
+    self.lblpremium.text=[TSLanguageManager localizedString:@"Annual Premium"];
+    self.lblcategory.text=[TSLanguageManager localizedString:@"Category"];
+    self.lbltenure.text=[TSLanguageManager localizedString:@"Tenure"];
+    [self.btnFurtherInfo setTitle:[TSLanguageManager localizedString:@"Further Information"] forState:UIControlStateNormal];
+
+    
+    
     
     
     self.lblTenure.text = [NSString stringWithFormat:@"%@",[self.selectedFinance valueForKey:@"Tenure"]];

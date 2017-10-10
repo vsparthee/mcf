@@ -17,4 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgDoc1;
 @property (weak, nonatomic) IBOutlet UIImageView *imgDoc2;
 
+
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblpolicynum;
+@property (weak, nonatomic) IBOutlet UILabel *lbldoc;
 @end

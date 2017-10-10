@@ -17,6 +17,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Insurance Report"];
+
     self.btnReport.layer.cornerRadius=self.btnReport.bounds.size.height/2;
     self.btnReport.clipsToBounds=YES;
     self.tblReport.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -24,17 +26,17 @@
     
     if (self.type==1)
     {
-        [self.btnReport setTitle:@"Report New Accident" forState:UIControlStateNormal];
+        [self.btnReport setTitle:[TSLanguageManager localizedString:@"Report New Accident"] forState:UIControlStateNormal];
     }
     
     if (self.type==2)
     {
-        [self.btnReport setTitle:@"Send New Request" forState:UIControlStateNormal];
+        [self.btnReport setTitle:[TSLanguageManager localizedString:@"Send New Request"] forState:UIControlStateNormal];
     }
     
     if (self.type==3)
     {
-        [self.btnReport setTitle:@"Send New Request" forState:UIControlStateNormal];
+        [self.btnReport setTitle:[TSLanguageManager localizedString:@"Send New Request"] forState:UIControlStateNormal];
     }
     // Do any additional setup after loading the view.
 }
@@ -91,6 +93,10 @@
     InsuranceReportCell *cell = [nib objectAtIndex:0];
     cell.btnView.layer.cornerRadius=cell.btnView.bounds.size.height/2;
     cell.btnView.clipsToBounds=YES;
+    cell.policylbl.text=[TSLanguageManager localizedString:@"Policy No"];
+    cell.datelbl.text=[TSLanguageManager localizedString:@"Report Date"];
+
+    [cell.btnView setTitle:[TSLanguageManager localizedString:@"View"] forState:UIControlStateNormal];
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
 }

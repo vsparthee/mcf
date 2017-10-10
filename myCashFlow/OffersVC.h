@@ -11,5 +11,6 @@
 @interface OffersVC : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tblOfferList;
 @property (weak, nonatomic) LeftMenuVC *parent;
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
 
 @end

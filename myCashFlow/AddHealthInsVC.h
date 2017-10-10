@@ -16,4 +16,13 @@
 - (IBAction)action_img:(UIButton *)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtPolicyNum;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnSubmit;
+@property (weak, nonatomic) IBOutlet UIButton *btnCancel;
+
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblpolicynum;
+@property (weak, nonatomic) IBOutlet UILabel *lbldoc;
+- (IBAction)action_Submit:(UIButton *)sender;
+- (IBAction)action_Cancel:(UIButton *)sender;
 @end

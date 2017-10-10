@@ -20,4 +20,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblPolicyNum;
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
 
+
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblpolicynum;
+@property (weak, nonatomic) IBOutlet UILabel *lblcardoc;
+@property (weak, nonatomic) IBOutlet UILabel *lblfront;
+@property (weak, nonatomic) IBOutlet UILabel *lblback;
+@property (weak, nonatomic) IBOutlet UILabel *lblleg;
+@property (weak, nonatomic) IBOutlet UILabel *lblright;
+
+
 @end

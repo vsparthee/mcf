@@ -13,4 +13,7 @@
 @property (strong,nonatomic) NSMutableDictionary *selectedFinance;
 @property (weak, nonatomic) IBOutlet UITableView *tblFurtherInfo;
 
+
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+
 @end

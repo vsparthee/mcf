@@ -131,15 +131,19 @@ static const NSInteger VENTouchLockViewControllerPasscodeLength = 4;
     {
         [self dismissViewControllerAnimated:animated completion:nil];
         NSUserDefaults *userdefaults=[NSUserDefaults standardUserDefaults];
-        if ([[userdefaults valueForKey:@"isResetPwd"] boolValue]==YES)
-        {
-            [userdefaults setBool:NO forKey:@"isResetPwd"];
-            
-        }
-        else{
-            [userdefaults setBool:YES forKey:@"isResetPwd"];
-            
-        }
+         if ([[userdefaults valueForKey:@"doResetPwd"] boolValue]==YES)
+         {
+             if ([[userdefaults valueForKey:@"isResetPwd"] boolValue]==YES)
+             {
+                 [userdefaults setBool:NO forKey:@"isResetPwd"];
+                 [userdefaults setBool:NO forKey:@"doResetPwd"];
+             }
+             else{
+                 [userdefaults setBool:YES forKey:@"isResetPwd"];
+                 
+             }
+
+         }
     }
 }
 

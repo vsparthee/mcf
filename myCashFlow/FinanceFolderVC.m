@@ -25,6 +25,10 @@
     self.tblPrivate.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tblCompany.separatorStyle = UITableViewCellSeparatorStyleNone;
 
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Finance Folder"];
+    [self.btnCompany setTitle:[TSLanguageManager localizedString:@"Company"] forState:UIControlStateNormal];
+    [self.btnPrivate setTitle:[TSLanguageManager localizedString:@"Private"] forState:UIControlStateNormal];
+
     self.tblPrivate.frame=CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-114);
     [self.tblView addSubview:self.tblPrivate];
     self.privateView.backgroundColor = THEME_COLOR;
@@ -38,7 +42,7 @@
 -(void)setupAPI
 {
     nodata  = [[UILabel alloc]initWithFrame:CGRectMake(16, self.view.frame.size.height/2 - 65, self.view.frame.size.width-32, 30)];
-    nodata.text = @"No data founds in product solution";
+    nodata.text = @"No data found in product solution";
     nodata.textAlignment = NSTextAlignmentCenter;
     nodata.font = [UIFont fontWithName:@"" size:16];
     nodata.textColor = THEME_COLOR;
@@ -139,6 +143,15 @@
         cell.lblType.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"Type"]];
         cell.lblAmount.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"Premium"]];
         cell.lblTenure.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"Tenure"]];
+        if ([[finance valueForKey:@"Tenure"]isEqualToString:@"Monthly"])
+        {
+            cell.lblTenure.backgroundColor=[UIColor colorWithRed:0.00 green:0.84 blue:0.00 alpha:1.0];
+        }
+        else
+        {
+            cell.lblTenure.backgroundColor=[UIColor colorWithRed:0.96 green:0.30 blue:0.34 alpha:1.0];
+
+        }
         NSString *strURL = [NSString stringWithFormat:@"%@",[finance valueForKey:@"CompanyLogo"]];
         NSURL *url = [NSURL URLWithString:strURL];
         [cell.imgLogo setShowActivityIndicatorView:YES];
@@ -159,6 +172,15 @@
         cell.lblAmount.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"Premium"]];
         cell.lblTenure.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"Tenure"]];
         NSString *strURL = [NSString stringWithFormat:@"%@",[finance valueForKey:@"CompanyLogo"]];
+        if ([[finance valueForKey:@"Tenure"]isEqualToString:@"Monthly"])
+        {
+            cell.lblTenure.backgroundColor=[UIColor colorWithRed:0.00 green:0.84 blue:0.00 alpha:1.0];
+        }
+        else
+        {
+            cell.lblTenure.backgroundColor=[UIColor colorWithRed:0.96 green:0.30 blue:0.34 alpha:1.0];
+            
+        }
         NSURL *url = [NSURL URLWithString:strURL];
         [cell.imgLogo setShowActivityIndicatorView:YES];
         [cell.imgLogo setIndicatorStyle:UIActivityIndicatorViewStyleGray];

@@ -12,5 +12,6 @@
 @interface MessageVC : UIViewController
 @property (weak, nonatomic) LeftMenuVC *parent;
 @property (weak, nonatomic) IBOutlet HVTableView *tblTax;
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
 
 @end

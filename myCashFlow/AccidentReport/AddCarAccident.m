@@ -20,6 +20,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Add Report"];
+    self.lblpolicynum.text=[TSLanguageManager localizedString:@"Policy No"];
+    self.lblcardoc.text=[TSLanguageManager localizedString:@"Car Document"];
+    self.lblfront.text=[TSLanguageManager localizedString:@"Front Side"];
+    self.lblback.text=[TSLanguageManager localizedString:@"Back Side"];
+    self.lblright.text=[TSLanguageManager localizedString:@"Left Side"];
+    self.lblleg.text=[TSLanguageManager localizedString:@"Right Side"];
+    [self.btnSubmit setTitle:[TSLanguageManager localizedString:@"Submit"] forState:UIControlStateNormal];
+    [self.btnCancel setTitle:[TSLanguageManager localizedString:@"Cancel"] forState:UIControlStateNormal];
+
     if ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height)
     {
         height=[UIScreen mainScreen].bounds.size.width;

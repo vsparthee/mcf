@@ -16,4 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIView *docDownloadView;
 @property (weak, nonatomic) IBOutlet UIButton *btndownload;
 
+@property (weak, nonatomic) IBOutlet UILabel *yrlbl;
+@property (weak, nonatomic) IBOutlet UILabel *filldatelbl;
+@property (weak, nonatomic) IBOutlet UILabel *viewpdflbl;
+
 @end

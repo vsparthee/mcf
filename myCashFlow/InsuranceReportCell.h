@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblPolicyNum;
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
 
+@property (weak, nonatomic) IBOutlet UILabel *policylbl;
+@property (weak, nonatomic) IBOutlet UILabel *datelbl;
 
 
 @end

@@ -18,6 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Add Report"];
+    self.lblpolicynum.text=[TSLanguageManager localizedString:@"Policy No"];
+    self.lbldoc.text=[TSLanguageManager localizedString:@"Document"];
+    [self.btnSubmit setTitle:[TSLanguageManager localizedString:@"Submit"] forState:UIControlStateNormal];
+    [self.btnCancel setTitle:[TSLanguageManager localizedString:@"Cancel"] forState:UIControlStateNormal];
     if ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height)
     {
         height=[UIScreen mainScreen].bounds.size.width;
@@ -184,4 +189,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     return imageData;
 }
 
+- (IBAction)action_Submit:(UIButton *)sender {
+}
+
+- (IBAction)action_Cancel:(UIButton *)sender {
+}
 @end

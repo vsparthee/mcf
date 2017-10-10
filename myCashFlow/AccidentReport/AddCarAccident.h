@@ -28,5 +28,16 @@
 - (IBAction)action_Doc:(UIButton *)sender;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblpolicynum;
+@property (weak, nonatomic) IBOutlet UILabel *lblcardoc;
+@property (weak, nonatomic) IBOutlet UILabel *lblfront;
+@property (weak, nonatomic) IBOutlet UILabel *lblback;
+@property (weak, nonatomic) IBOutlet UILabel *lblleg;
+@property (weak, nonatomic) IBOutlet UILabel *lblright;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnSubmit;
+@property (weak, nonatomic) IBOutlet UIButton *btnCancel;
+
 
 @end

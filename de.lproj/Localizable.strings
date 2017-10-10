@@ -1,0 +1,97 @@
+/* 
+  Localizable.strings
+  testlang
+
+  Created by Parthiban on 18/09/17.
+  Copyright © 2017 Parthiban. All rights reserved.
+*/
+"Accident Reporting"="Unfall berichterstattung";
+"Numbers"="Nummern";
+"Offers"="Bietet an";
+"Make an Appointment"="Einen Termin machen";
+"Finance Folder"="Finanzordner";
+"Tax Folder"="Steuer Ordner";
+"Taxes Folder"="Steuer Ordner";
+"Home"="Zuhause";
+"Budget and Saverate"="Budget- und Sparrate";
+"Message & Notification"="Nachricht und Benachrichtigung";
+"Contracts Appointments"="Verträge Termine";
+"Product Solutions"="Produktlösungen";
+"Discount"="Rabatt";
+"Recommandation"="Empfehlung";
+"Documents"="Unterlagen";
+"Consulter Profile"="Profil anzeigen";
+"My Accounts"="Meine Accounts";
+"Setting"="Rahmen";
+"Signout"="Abmeldung";
+"Finance Folder"="Finanzordner";
+"Company"="Unternehmen";
+"Private"="Privatgelände";
+"Policy Number"="Versicherungsnummer";
+"Start Date"="Anfangsdatum";
+"End Date"="Enddatum";
+"Annual Premium"="Jahresprämie";
+"Category"="Kategorie";
+"Tenure"="Amtszeit";
+"Further Information"="Weitere Informationen";
+"Click to Book Appointment"="Klicken Sie auf Termin buchen";
+"Tax Year"="Steuerjahr";
+"Tax Filling Date"="Steuerfülldatum";
+"View PDF"="PDF anzeigen";
+"Make Appointment"="Einen Termin machen";
+"Premium"="Prämie";
+"Book For Renewal Appointment"="Buch zur Verlängerung";
+"Your appointment registered successfully"="Ihr Termin wurde erfolgreich registriert";
+"Something went wrong. Please try again later"="Etwas ist schief gelaufen. Bitte versuche es später noch einmal.";
+"No data found in Tax Folder"="Keine Daten in Steuerordner gefunden";
+"No data found in product solution"="Keine Daten in der Produktlösung gefunden";
+"Please Wait..."="Warten Sie mal...";
+"Total"="Gesamt";
+"No data found in My Budget"="Keine Daten in Mein Budget gefunden";
+"No data found in My Savings"="Keine Daten in Meine Einsparungen gefunden";
+"No data found in Expense"="Keine Daten in Kosten gefunden";
+"Add New Expense"="Neue Kosten hinzufügen";
+"My Budgets"="Meine Budgets";
+"My Savings"="Meine Einsparungen";
+"Cancel"="Stornieren";
+"Submit"="Einreichen";
+"Total Earning"="Gesamter Verdienst";
+"House Rent"="Hausmiete";
+"Insurance"="Versicherung";
+"Tax"="Steuer";
+"Daily Expense"="Tägliche Ausgaben";
+"Date"="Datum";
+"Description"="Beschreibung";
+"Amount"="Menge";
+"Add Expense"="Kosten hinzufügen";
+"Your expense added successfully"="Ihre Kosten wurden erfolgreich hinzugefügt";
+"No data found in List"="Keine Daten in Liste";
+"Report Car Accident"="Autounfall melden";
+"Report Health Insurance"="Bericht Krankenversicherung";
+"Report Home Insurance"="Bericht Hausversicherung";
+"Insurance Report"="Versicherungsbericht";
+"Report New Accident"="Neuen Unfall melden";
+"Send New Request"="Neuen Antrag senden";
+"Add Report"="Bericht hinzufügen";
+"Policy No"="Versicherungsnummer";
+"Document"="Dokument";
+"View Report"="Zeige Bericht";
+"Report Date"="Berichtsdatum";
+"View"="Aussicht";
+"Front Side"="Vorderseite";
+"Back Side"="Rückseite";
+"Left Side"="Linke Seite";
+"Right Side"="Rechte Seite";
+"Car Document"="Autodokument";
+""="";
+""="";
+""="";
+""="";
+""="";
+""="";
+
+
+
+
+
+

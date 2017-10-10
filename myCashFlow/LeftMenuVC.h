@@ -14,5 +14,6 @@
 @property (strong, nonatomic) NSArray *imageArry;
 - (IBAction)homeAction:(id)sender;
 -(void)home;
+-(void)setupVC;
 -(void)selectrow:(int)rowNum withTag:(int)tag withData:(NSString*)data;
 @end

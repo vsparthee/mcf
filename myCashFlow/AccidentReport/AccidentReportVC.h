@@ -14,4 +14,13 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imghome;
 @property (weak, nonatomic) LeftMenuVC *parent;
 - (IBAction)action_Insurance:(UIButton *)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblcar;
+@property (weak, nonatomic) IBOutlet UILabel *lblhealth;
+@property (weak, nonatomic) IBOutlet UILabel *lblhome;
+
+
+
+
 @end

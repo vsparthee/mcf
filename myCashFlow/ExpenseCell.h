@@ -11,6 +11,10 @@
 @interface ExpenseCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
 @property (weak, nonatomic) IBOutlet UILabel *lblAmount;
-
 @property (weak, nonatomic) IBOutlet UILabel *lblDesc;
+
+@property (weak, nonatomic) IBOutlet UILabel *datelbl;
+@property (weak, nonatomic) IBOutlet UILabel *desclbl;
+@property (weak, nonatomic) IBOutlet UILabel *amtlbl;
+
 @end

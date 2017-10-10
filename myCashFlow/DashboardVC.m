@@ -44,8 +44,14 @@
     NSDictionary *userInfo = (NSDictionary*)[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
     
     self.lblProfileTitle.text = [NSString stringWithFormat:@"%@ %@",[userInfo valueForKey:@"Firstname"],[userInfo valueForKey:@"Lastname"]];
+    _lblAcc.text = [TSLanguageManager localizedString:@"Accident Reporting"];
+    _lblnum.text = [TSLanguageManager localizedString:@"Numbers"];
+    _lbloffer.text = [TSLanguageManager localizedString:@"Offers"];
+    _lbltax.text = [TSLanguageManager localizedString:@"Tax Folder"];
+    _lblappoint.text = [TSLanguageManager localizedString:@"Make an Appointment"];
+    _lblfinance.text = [TSLanguageManager localizedString:@"Finance Folder"];
 
-    // Do any additional setup after loading the view.
+ 
     
 }
 -(void)viewWillAppear:(BOOL)animated

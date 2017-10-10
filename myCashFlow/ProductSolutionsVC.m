@@ -23,7 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tblProduct.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Product Solutions"];
+
     if ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height)
     {
         height=[UIScreen mainScreen].bounds.size.width/2.2;

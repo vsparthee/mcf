@@ -66,5 +66,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblMyBudget;
 @property (weak, nonatomic) IBOutlet UILabel *lblSaving;
 @property (weak, nonatomic) IBOutlet UILabel *lblExp;
+@property (weak, nonatomic) IBOutlet UILabel *earnlbl;
+@property (weak, nonatomic) IBOutlet UILabel *rentlbl;
+@property (weak, nonatomic) IBOutlet UILabel *insurancelbl;
+@property (weak, nonatomic) IBOutlet UILabel *taxlbl;
+@property (weak, nonatomic) IBOutlet UILabel *expenselbl;
+@property (weak, nonatomic) IBOutlet UILabel *titlelbl;
+
+
 
 @end

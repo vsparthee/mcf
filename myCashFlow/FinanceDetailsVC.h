@@ -29,4 +29,14 @@
 - (IBAction)action_CloseDoc:(UIButton *)sender;
 
 @property (strong,nonatomic) NSMutableDictionary *selectedFinance;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblenddate;
+@property (weak, nonatomic) IBOutlet UILabel *lblpremium;
+@property (weak, nonatomic) IBOutlet UILabel *lblcategory;
+@property (weak, nonatomic) IBOutlet UILabel *lbltenure;
+
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblPolicynum;
+@property (weak, nonatomic) IBOutlet UILabel *lblstartdate;
+
 @end

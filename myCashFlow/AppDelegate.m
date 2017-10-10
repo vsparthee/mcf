@@ -92,7 +92,7 @@ FCAlertView *alert;
         screenWidth=[UIScreen mainScreen].bounds.size.width/3;
     }
     container.leftViewWidth = screenWidth *2.4;
-    container.leftViewPresentationStyle = LGSideMenuPresentationStyleScaleFromBig;
+    container.leftViewPresentationStyle = LGSideMenuPresentationStyleSlideAbove;
    /*
     LGSideMenuPresentationStyleSlideBelow      = 1,
     LGSideMenuPresentationStyleScaleFromBig    = 2,
@@ -215,6 +215,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     }
     else
     {
+        [UIApplication sharedApplication].applicationIconBadgeNumber=[UIApplication sharedApplication].applicationIconBadgeNumber+1;
         [(LeftMenuVC*)leftMenuVC selectrow:6 withTag:0 withData:@"test"];
     }
 
@@ -242,13 +243,13 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     alert.firstButtonTitleColor = [UIColor whiteColor];
     alert.secondButtonTitleColor = [UIColor whiteColor];
     alert.colorScheme = DARK_BG;
-    alert.avoidCustomImageTint = 0;
+    alert.avoidCustomImageTint = 1;
     
     
     [alert showAlertInView:self.window.rootViewController
                  withTitle:@"myCashFlow"
               withSubtitle:message
-           withCustomImage:[UIImage imageNamed:@"Logo 510_300.PNG"]
+           withCustomImage:[UIImage imageNamed:@"icon"]
        withDoneButtonTitle:nil
                 andButtons:@[@"Open", @"Close"]];
 

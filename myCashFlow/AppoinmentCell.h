@@ -17,4 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnBookAppointment;
 @property (weak, nonatomic) IBOutlet UILabel *lblPremium;
 
+@property (weak, nonatomic) IBOutlet UILabel *policylbl;
+@property (weak, nonatomic) IBOutlet UILabel *premiumlbl;
+
+
 @end

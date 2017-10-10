@@ -20,6 +20,10 @@
 @implementation TaxFolderVC
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.btnAppointment setTitle:[TSLanguageManager localizedString:@"Click to Book Appointment"] forState:UIControlStateNormal];
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Tax Folder"];
+
     self.tblTax.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tblTax.HVTableViewDelegate = self;
     self.tblTax.HVTableViewDataSource = self;
@@ -37,7 +41,7 @@
 {
     
     nodata  = [[UILabel alloc]initWithFrame:CGRectMake(16, self.view.frame.size.height/2 - 65, self.view.frame.size.width-32, 30)];
-    nodata.text = @"No data founds in product solution";
+    nodata.text = [TSLanguageManager localizedString:@"No data found in Tax Folder"];
     nodata.textAlignment = NSTextAlignmentCenter;
     nodata.font = [UIFont fontWithName:@"" size:16];
     nodata.textColor = THEME_COLOR;
@@ -176,7 +180,11 @@
     
     [cell.btndownload addTarget:self action:@selector(viewPDF:) forControlEvents:UIControlEventTouchUpInside];
     cell.btndownload.tag=indexPath.row;
-     
+    
+    cell.yrlbl.text=[TSLanguageManager localizedString:@"Tax Year"];
+    cell.filldatelbl.text=[TSLanguageManager localizedString:@"Tax Filling Date"];
+    cell.viewpdflbl.text=[TSLanguageManager localizedString:@"View PDF"];
+
     cell.selectionStyle = UITableViewCellSeparatorStyleNone;
     
     

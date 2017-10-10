@@ -19,7 +19,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Accident Reporting"];
+    self.lblcar.text=[TSLanguageManager localizedString:@"Report Car Accident"];
+    self.lblhealth.text=[TSLanguageManager localizedString:@"Report Health Insurance"];
+    self.lblhome.text=[TSLanguageManager localizedString:@"Report Home Insurance"];
+
     self.imgcar.layer.cornerRadius=self.imgcar.bounds.size.height/2;
     self.imgcar.clipsToBounds=YES;
     self.imghealth.layer.cornerRadius=self.imgcar.bounds.size.height/2;

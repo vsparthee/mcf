@@ -21,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Make Appointment"];
+
     self.tblAppointment.estimatedRowHeight = 2500;
     self.tblAppointment.rowHeight = 200;
     self.tblAppointment.rowHeight = UITableViewAutomaticDimension;
@@ -119,7 +121,11 @@
 
     cell.btnBookAppointment.tag=indexPath.row;
     [cell.btnBookAppointment addTarget:self action:@selector(action_bookAppoinment:) forControlEvents:UIControlEventTouchUpInside];
-   
+    cell.policylbl.text=[TSLanguageManager localizedString:@"Policy Number"];
+    cell.premiumlbl.text=[TSLanguageManager localizedString:@"Premium"];
+
+    [cell.btnBookAppointment setTitle:[TSLanguageManager localizedString:@"Book For Renewal Appointment"] forState:UIControlStateNormal];
+
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
     
@@ -153,11 +159,12 @@
     {
         if ([[result valueForKey:@"status"] intValue]==1 )
         {
-            [General makeToast:@"Your appoinment registered successfully" withToastView:self.view];
+            [General makeToast:[TSLanguageManager localizedString:@"Your appointment registered successfully"] withToastView:self.view];
+            
         }
         else
         {
-            [General makeToast:@"Something went wrong. Please try again later" withToastView:self.view];
+            [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later" ]withToastView:self.view];
         }
         [General stopLoader];
 

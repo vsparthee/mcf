@@ -20,5 +20,6 @@
 #import "PdfViewerVC.h"
 #import "IQKeyboardManager.h"
 #import "FCAlertView.h"
+#import "TSLanguageManager.h"
 
 #endif /* PrefixHeader_pch */

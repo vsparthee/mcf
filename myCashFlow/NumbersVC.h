@@ -11,4 +11,6 @@
 @interface NumbersVC : UIViewController
 @property (weak, nonatomic) IBOutlet UICollectionView *tblnumber;
 @property (weak, nonatomic) LeftMenuVC *parent;
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+
 @end
