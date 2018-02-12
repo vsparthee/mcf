@@ -24,17 +24,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"doResetPwd"];
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"isResetPwd"];
+
     self.tblSetting.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tblLang.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Setting"];
 
     self.tblSetting.allowsMultipleSelection = NO;
     //self.view.backgroundColor = theme_color;
-    _titleArry = [NSArray arrayWithObjects:@"Change PIN", @"Change Password", @"Change Language", nil];
+    _titleArry = [NSArray arrayWithObjects:
+                  [TSLanguageManager localizedString:@"Change PIN"],
+                  [TSLanguageManager localizedString:@"Change Password"],
+                  [TSLanguageManager localizedString:@"Change Language"], nil];
+    
     _imageArry = [NSArray arrayWithObjects:@"passcode",@"PasswordLock", @"language", nil];
+    
+    /*_titleArry = [NSArray arrayWithObjects:
+                  [TSLanguageManager localizedString:@"Change Password"],
+                  [TSLanguageManager localizedString:@"Change Language"], nil];
+
+    _imageArry = [NSArray arrayWithObjects:@"PasswordLock", @"language", nil];
+*/
     [self.tblSetting reloadData];
     
-    langlist = [[NSMutableArray alloc]initWithObjects:@"English",@"German", nil];
-    langCode = [[NSMutableArray alloc]initWithObjects:kLMDefaultLanguage,kLMGerman, nil];
+    langlist = [[NSMutableArray alloc]initWithObjects:[TSLanguageManager localizedString:@"German"],[TSLanguageManager localizedString:@"French"],[TSLanguageManager localizedString:@"Italy"],[TSLanguageManager localizedString:@"English"], nil];
+    langCode = [[NSMutableArray alloc]initWithObjects:kLMGerman,kLMFrench,kLMItaly,kLMDefaultLanguage, nil];
     
     langArr = [[NSMutableArray alloc]init];
     for (int i =0; i<langlist.count; i++)
@@ -57,8 +72,9 @@
     loadingLabel.backgroundColor = [UIColor clearColor];
     loadingLabel.textColor = [UIColor whiteColor];
     loadingLabel.adjustsFontSizeToFitWidth = YES;
-    loadingLabel.textAlignment = UITextAlignmentCenter;
-    loadingLabel.text = @"Setup Language...";
+    loadingLabel.font = [UIFont fontWithName:THEME_FONT size:15];
+    loadingLabel.textAlignment = NSTextAlignmentCenter;
+    loadingLabel.text = [TSLanguageManager localizedString:@"Setup Language..."];
     [loadingView addSubview:loadingLabel];
     [self.tblLang reloadData];
 
@@ -67,14 +83,19 @@
 {
     [super viewWillAppear:animated];
     
-    if ([[[NSUserDefaults standardUserDefaults]valueForKey:@"isResetPwd"] boolValue]==YES)
+    if ([[[NSUserDefaults standardUserDefaults]valueForKey:@"doResetPwd"] boolValue]==YES)
     {
 
         VENTouchLockCreatePasscodeViewController *createPasscodeVC = [[VENTouchLockCreatePasscodeViewController alloc] init];
         [self presentViewController:[createPasscodeVC embeddedInNavigationController] animated:YES completion:nil];
     }
 }
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
 
+    
+}
 - (IBAction)action_Menu:(UIButton *)sender
 {
     [self.sideMenuController showLeftViewAnimated:YES completionHandler:nil];
@@ -122,14 +143,12 @@
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SettingsCell" owner:self options:nil];
         SettingsCell *cell = [nib objectAtIndex:0];
-        NSUserDefaults *userdefaults=[NSUserDefaults standardUserDefaults];
-        [userdefaults setBool:YES forKey:@"doResetPwd"];
 
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.menuTitle.text = [_titleArry objectAtIndex:indexPath.row];
         cell.menuImg.image = [UIImage imageNamed:[_imageArry objectAtIndex:indexPath.row]];
         cell.menuImg.tintColor = DARK_BG;
-        
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
         return cell;
     }
     else
@@ -156,13 +175,14 @@
     {
         if(indexPath.row == 0)
         {
-            
+
              VENTouchLockEnterPasscodeViewController *showPasscodeVC = [[VENTouchLockEnterPasscodeViewController alloc] init];
              [self presentViewController:[showPasscodeVC embeddedInNavigationController] animated:YES completion:nil];
         }
         
         if(indexPath.row == 1)
         {
+
             [self performSegueWithIdentifier:@"setting_to_changepwd" sender:self];
         }
         
@@ -178,8 +198,9 @@
         NSDictionary *temp = [langArr objectAtIndex:indexPath.row];
         [self.view addSubview:loadingView];
         [TSLanguageManager setSelectedLanguage:[temp valueForKey:@"language_code"]];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLangChanged"];
         [activityView startAnimating];
-        int64_t delayInSeconds = 5;
+        int64_t delayInSeconds = 2;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
                        {

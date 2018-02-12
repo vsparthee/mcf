@@ -358,6 +358,20 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic // Here you can pass array or dictionary
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    NSString *jsonString;
+    if (jsonData) {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        //This is your JSON String
+        //NSUTF8StringEncoding encodes special characters using an escaping scheme
+    } else {
+        NSLog(@"Got an error: %@", error);
+        jsonString = @"";
+    }
+    NSLog(@"Your JSON String is %@", jsonString);
     [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
      {
          NSError *error;
@@ -433,6 +447,21 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic // Here you can pass array or dictionary
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    NSString *jsonString;
+    if (jsonData) {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        //This is your JSON String
+        //NSUTF8StringEncoding encodes special characters using an escaping scheme
+    } else {
+        NSLog(@"Got an error: %@", error);
+        jsonString = @"";
+    }
+    NSLog(@"Your JSON String is %@", jsonString);
+
     [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
      {
          NSError *error;
@@ -494,6 +523,344 @@
 {
     
     NSString * url = [NSString stringWithFormat:API_MyBudget,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+         NSLog(@"JSON %@",JSON);
+         success(JSON);     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+-(void)api_ChangePassword: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+            failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    NSString * url = [NSString stringWithFormat:API_ChangePassword,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+         NSLog(@"JSON %@",JSON);
+         success(JSON);     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+-(void)api_ForgetPassword: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                  failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    NSString * url = [NSString stringWithFormat:API_ForgetPassword,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+         NSLog(@"JSON %@",JSON);
+         success(JSON);     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+-(void)api_ProfileUpdate: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                  failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    NSString * url = [NSString stringWithFormat:API_ProfileUpdate,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+         NSLog(@"JSON %@",JSON);
+         success(JSON);     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+-(void)api_GetCarAccidentReport:(void (^)(id result))success
+                    failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    
+    NSDictionary *userInfo = (NSDictionary*)[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    [dic setValue:[userInfo valueForKey:@"CustomerID"] forKey:@"CustomerID"];
+    NSString * url = [NSString stringWithFormat:API_GetCarAccidentReport ,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+         
+         //NSLog(@"JSON %@",JSON);
+         success(JSON);     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+-(void)api_GetHomeAccidentReport:(void (^)(id result))success
+                    failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    
+    NSDictionary *userInfo = (NSDictionary*)[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    [dic setValue:[userInfo valueForKey:@"CustomerID"] forKey:@"CustomerID"];
+    NSString * url = [NSString stringWithFormat:API_GetHomeAccidentReport,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+         
+         //NSLog(@"JSON %@",JSON);
+         success(JSON);     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+-(void)api_GetHealthAccidentReport:(void (^)(id result))success
+                    failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    
+    NSDictionary *userInfo = (NSDictionary*)[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    [dic setValue:[userInfo valueForKey:@"CustomerID"] forKey:@"CustomerID"];
+    NSString * url = [NSString stringWithFormat:API_GetHealthAccidentReport,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+         
+         //NSLog(@"JSON %@",JSON);
+         success(JSON);     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+-(void)api_CreateCarAccident: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                 failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    NSString * url = [NSString stringWithFormat:API_CreateCarAccident,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+         NSLog(@"JSON %@",JSON);
+         success(JSON);     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+-(void)api_CreateHomeAccident: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                 failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    NSString * url = [NSString stringWithFormat:API_CreateHomeAccident,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+         NSLog(@"JSON %@",JSON);
+         success(JSON);     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+-(void)api_CreateHealthAccident: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                 failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    NSString * url = [NSString stringWithFormat:API_CreateHealthAccident,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+         NSLog(@"JSON %@",JSON);
+         success(JSON);     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+
+-(void)api_GetNotification:(void (^)(id result))success
+                           failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    
+    NSDictionary *userInfo = (NSDictionary*)[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    [dic setValue:[userInfo valueForKey:@"CustomerID"] forKey:@"cusomerID"];
+    NSString * url = [NSString stringWithFormat:API_GetNotification,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+                  success(JSON);
+     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+-(void)api_GetPolicyType:(void (^)(id result))success
+                   failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    
+    NSString * url = [NSString stringWithFormat:API_GetPolicyType,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+         success(JSON);
+     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+
+-(void)api_GetOfferFieldByPolicyType: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                        failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    NSString * url = [NSString stringWithFormat:API_GetOfferFieldByPolicyType,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+         NSLog(@"JSON %@",JSON);
+         success(JSON);     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+
+-(void)api_NewOfferRequest: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                        failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    NSString * url = [NSString stringWithFormat:API_NewOfferRequest,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+         NSLog(@"JSON %@",JSON);
+         success(JSON);     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+-(void)api_ConsultantComments: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                        failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    NSString * url = [NSString stringWithFormat:API_ConsultantComments,BASE_URL];
+    NSLog(@"%@",url);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSError *error;
+         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+         NSLog(@"JSON %@",JSON);
+         success(JSON);     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         failure(operation, error);
+     }];
+    
+}
+
+-(void)api_MyBudgetDeleteEntity: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                      failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure
+{
+    NSString * url = [NSString stringWithFormat:API_MyBudgetDeleteEntity,BASE_URL];
     NSLog(@"%@",url);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];

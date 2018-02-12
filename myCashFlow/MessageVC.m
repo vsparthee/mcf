@@ -44,24 +44,38 @@
     nodata.font = [UIFont fontWithName:@"" size:16];
     nodata.textColor = THEME_COLOR;
     [General startLoader:self.view];
+    
+    
+    
+    
+    
 
     APIHandler *api = [[APIHandler alloc]init];
     [api api_Message_Notifcation:^(id result)
      {
-         NSDictionary *temp =[result mutableCopy];
-         msgArr = [temp valueForKey:@"data"];
-         
-         if (msgArr.count>0)
+         @try
          {
-             [nodata removeFromSuperview];
+             NSDictionary *temp =[result mutableCopy];
+             msgArr = [temp valueForKey:@"data"];
+             
+             if (msgArr.count>0)
+             {
+                 [nodata removeFromSuperview];
+             }
+             else
+             {
+                 [self.tblTax addSubview:nodata];
+             }
+             
+             [self.tblTax reloadData];
          }
-         else
+         @catch (NSException *exception)
          {
-             [self.tblTax addSubview:nodata];
+             [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+             
          }
-         
-         [self.tblTax reloadData];
          [General stopLoader];
+         
 
      }
      failure:^(NSURLSessionTask *operation, NSError *error)

@@ -15,9 +15,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnRegister;
 @property (weak, nonatomic) IBOutlet UIButton *btnForgot;
 @property (weak, nonatomic) IBOutlet UIButton *btnLogin;
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
 
 - (IBAction)action_Login:(UIButton *)sender;
 - (IBAction)action_Forget:(UIButton *)sender;
 - (IBAction)action_Register:(UIButton *)sender;
 
 @end
+
+

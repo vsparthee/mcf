@@ -18,4 +18,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnSend;
 @property (weak, nonatomic) IBOutlet UIImageView *imgProfile;
 
+
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+@property (weak, nonatomic) IBOutlet UILabel *namelbl;
+
+@property (weak, nonatomic) IBOutlet UILabel *numlbl;
+@property (weak, nonatomic) IBOutlet UILabel *maillbl;
+@property (weak, nonatomic) IBOutlet UILabel *msglbl;
+
 @end

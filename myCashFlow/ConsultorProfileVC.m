@@ -18,30 +18,67 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Consultor Profile"];
+    self.namelbl.text=[TSLanguageManager localizedString:@"Name"];
+    self.numlbl.text=[TSLanguageManager localizedString:@"Contact Number"];
+    self.maillbl.text=[TSLanguageManager localizedString:@"Email Address"];
+    self.msglbl.text=[TSLanguageManager localizedString:@"Enter Your Message"];
+    [self.btnSend setTitle:[TSLanguageManager localizedString:@"Send Message"] forState:UIControlStateNormal];
+
+    self.lblName.text = @"";
+    self.lblNumber.text = @"";
+    self.lblEmail.text = @"";
+
     [self setupAPI];
     
 }
 
 -(void)setupAPI
 {
+   
+    [General startLoader:self.view];
     
     APIHandler *api = [[APIHandler alloc]init];
     [api api_ConsulterDetails:^(id result)
      {
-         profileDic = [result mutableCopy];
+         @try
+         {
+             profileDic = (NSMutableDictionary*)[result mutableCopy];
+             self.lblName.text = [NSString stringWithFormat:@"%@",[profileDic valueForKey:@"Name"]];
+             self.lblNumber.text = [NSString stringWithFormat:@"%@",[profileDic valueForKey:@"PhoneNo"]];
+             self.lblEmail.text = [NSString stringWithFormat:@"%@",[profileDic valueForKey:@"EmailID"]];
+             [[SDImageCache sharedImageCache] removeImageForKey:[profileDic valueForKey:@"photoimg"] fromDisk:YES];
+
+             if ([[profileDic valueForKey:@"photoimg"] isKindOfClass:[NSNull class]])
+             {
+                 self.imgProfile.image = [UIImage imageNamed:@"Consultor Image 384_384.PNG"];
+             }
+             else
+             {
+                 NSString *strURL = [NSString stringWithFormat:@"%@",[profileDic valueForKey:@"photoimg"]];
+                 NSURL *url = [NSURL URLWithString:strURL];
+                 [self.imgProfile setShowActivityIndicatorView:YES];
+                 [self.imgProfile setIndicatorStyle:UIActivityIndicatorViewStyleGray];
+                 [self.imgProfile sd_setImageWithURL:url
+                              placeholderImage:nil
+                                       options:SDWebImageRefreshCached];
+             }
+         }
+         @catch (NSException *exception)
+         {
+             [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+             
+         }
+         [General stopLoader];
      }
     failure:^(NSURLSessionTask *operation, NSError *error)
      {
-         
+         [General stopLoader];
+
      }];
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"consultant" ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-    profileDic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
-    self.lblName.text = [NSString stringWithFormat:@"%@",[profileDic valueForKey:@"Name"]];
-    self.lblNumber.text = [NSString stringWithFormat:@"%@",[profileDic valueForKey:@"PhoneNo"]];
-    self.lblEmail.text = [NSString stringWithFormat:@"%@",[profileDic valueForKey:@"EmailID"]];
+    NSLog(@"%@",profileDic);
     self.txtMessage.text = @"Enter Message Here";
     self.txtMessage.textColor = [UIColor lightGrayColor];
     self.txtMessage.delegate=self;
@@ -137,9 +174,68 @@
 
 
 
+-(BOOL)validateRequest
+{
+    BOOL validation = FALSE;
+    
+    if(self.txtMessage.text == NULL || [self.txtMessage.text isEqualToString:@""])
+    {
+        return validation;
+    }
+    else
+    {
+        validation = true;
+        return validation;
+    }
+    return validation;
+}
 
 
+- (IBAction)action_Send:(UIButton *)sender
+{
+    if ([self validateRequest])
+    {
+        [General startLoader:self.view];
+        
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        NSDictionary *userInfo = (NSDictionary*)[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+        [dic setValue:[userInfo valueForKey:@"CustomerID"] forKey:@"customerID"];
+        [dic setObject:[userInfo valueForKey:@"ConsultantID"] forKey:@"consultantID"];
+        [dic setObject:[NSString stringWithFormat:@"%@",self.txtMessage.text] forKey:@"remarks"];
+        
+        APIHandler *api = [[APIHandler alloc]init];
+        
+        [api api_ConsultantComments:dic withSuccess:^(id result)
+        {
+            @try
+            {
+                if ([result[@"Status"]boolValue]==true)
+                {
+                    [General makeToast:[TSLanguageManager localizedString:@"Success"] withToastView:self.view];
+                    self.txtMessage.text = @"Enter Message Here";
+                    self.txtMessage.textColor = [UIColor lightGrayColor];
 
-- (IBAction)action_Send:(UIButton *)sender {
+                }
+                else
+                {
+                    [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+
+                }
+            }
+            @catch (NSException *exception)
+            {
+                [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+                
+            }
+            [General stopLoader];
+            
+        }
+        failure:^(NSURLSessionTask *operation, NSError *error)
+        {
+            [General stopLoader];
+
+        }];
+    }
+
 }
 @end

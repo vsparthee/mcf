@@ -12,7 +12,6 @@
 		5B01B2D41F8BCA950047618E /* TSLanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B01B2D31F8BCA950047618E /* TSLanguageManager.m */; };
 		5B01B2D81F8BCBD60047618E /* langCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B01B2D61F8BCBD60047618E /* langCell.m */; };
 		5B01B2D91F8BCBD60047618E /* langCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B01B2D71F8BCBD60047618E /* langCell.xib */; };
-		5B0B7D5C1F8A7D5500EF9375 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D5B1F8A7D5500EF9375 /* GoogleService-Info.plist */; };
 		5B0B7D6A1F8ABCE600EF9375 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D601F8ABCE600EF9375 /* .gitkeep */; };
 		5B0B7D6B1F8ABCE600EF9375 /* alert-round.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D611F8ABCE600EF9375 /* alert-round.png */; };
 		5B0B7D6C1F8ABCE600EF9375 /* checkmark-round.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D621F8ABCE600EF9375 /* checkmark-round.png */; };
@@ -21,6 +20,12 @@
 		5B0B7D6F1F8ABCE600EF9375 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D651F8ABCE600EF9375 /* star.png */; };
 		5B0B7D701F8ABCE600EF9375 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 5B0B7D671F8ABCE600EF9375 /* .gitkeep */; };
 		5B0B7D711F8ABCE600EF9375 /* FCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B7D691F8ABCE600EF9375 /* FCAlertView.m */; };
+		5B1E63EB1F93587900A7D6B6 /* RequsetOfferVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E63EA1F93587900A7D6B6 /* RequsetOfferVC.m */; };
+		5B1E63EF1F935D8700A7D6B6 /* ReqOfferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E63ED1F935D8700A7D6B6 /* ReqOfferCell.m */; };
+		5B1E63F01F935D8700A7D6B6 /* ReqOfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B1E63EE1F935D8700A7D6B6 /* ReqOfferCell.xib */; };
+		5B2F55A21F9144B900475893 /* PopoverAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2F559D1F9144B900475893 /* PopoverAction.m */; };
+		5B2F55A31F9144B900475893 /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2F559F1F9144B900475893 /* PopoverView.m */; };
+		5B2F55A41F9144B900475893 /* PopoverViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2F55A11F9144B900475893 /* PopoverViewCell.m */; };
 		5B349D2D1F87D91A00D884D2 /* UIViewController+VENTouchLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D171F87D91A00D884D2 /* UIViewController+VENTouchLock.m */; };
 		5B349D2E1F87D91A00D884D2 /* VENTouchLockCreatePasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D1A1F87D91A00D884D2 /* VENTouchLockCreatePasscodeViewController.m */; };
 		5B349D2F1F87D91A00D884D2 /* VENTouchLockEnterPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D1C1F87D91A00D884D2 /* VENTouchLockEnterPasscodeViewController.m */; };
@@ -34,10 +39,29 @@
 		5B349D371F87D91A00D884D2 /* VENTouchLockPasscodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B349D2C1F87D91A00D884D2 /* VENTouchLockPasscodeView.xib */; };
 		5B349D3B1F87D9FB00D884D2 /* SampleLockSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B349D391F87D9FB00D884D2 /* SampleLockSplashViewController.m */; };
 		5B349D3C1F87D9FB00D884D2 /* SampleLockSplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B349D3A1F87D9FB00D884D2 /* SampleLockSplashViewController.xib */; };
+		5B36B87A1FC70B7A004AB0CE /* est.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36B8791FC70B7A004AB0CE /* est.swift */; };
+		5B36B8BC1FC71278004AB0CE /* DateValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B36B8B11FC71278004AB0CE /* DateValueFormatter.m */; };
+		5B36B8BD1FC71278004AB0CE /* DayAxisValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B36B8B31FC71278004AB0CE /* DayAxisValueFormatter.m */; };
+		5B36B8BE1FC71278004AB0CE /* IntAxisValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B36B8B51FC71278004AB0CE /* IntAxisValueFormatter.m */; };
+		5B36B8BF1FC71278004AB0CE /* LargeValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36B8B61FC71278004AB0CE /* LargeValueFormatter.swift */; };
+		5B36B8C01FC71278004AB0CE /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36B8B81FC71278004AB0CE /* BalloonMarker.swift */; };
+		5B36B8C11FC71278004AB0CE /* RadarMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36B8B91FC71278004AB0CE /* RadarMarkerView.swift */; };
+		5B36B8C21FC71278004AB0CE /* RadarMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B36B8BA1FC71278004AB0CE /* RadarMarkerView.xib */; };
+		5B36B8C31FC71278004AB0CE /* XYMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36B8BB1FC71278004AB0CE /* XYMarkerView.swift */; };
+		5B36B8C61FC7325E004AB0CE /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B36B8A81FC70F96004AB0CE /* Charts.framework */; };
+		5B36B8C71FC7325E004AB0CE /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B36B8A81FC70F96004AB0CE /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B3C1DF01F8EA7790086A5E4 /* Menu 192_1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 5B3C1DEF1F8EA7790086A5E4 /* Menu 192_1.PNG */; };
 		5B58FF771F894AB900645C21 /* DocumentList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B58FF761F894AB900645C21 /* DocumentList.m */; };
 		5B58FF7D1F894E3800645C21 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B58FF7C1F894E3800645C21 /* SettingVC.m */; };
 		5B58FF811F894E5000645C21 /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B58FF7F1F894E5000645C21 /* SettingsCell.m */; };
 		5B58FF821F894E5000645C21 /* SettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B58FF801F894E5000645C21 /* SettingsCell.xib */; };
+		5B66ED1F1FBC94DC0042AE55 /* JTSAnimatedGIFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B66ED141FBC94DC0042AE55 /* JTSAnimatedGIFUtility.m */; };
+		5B66ED201FBC94DC0042AE55 /* JTSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B66ED161FBC94DC0042AE55 /* JTSImageInfo.m */; };
+		5B66ED211FBC94DC0042AE55 /* JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B66ED181FBC94DC0042AE55 /* JTSImageViewController.m */; };
+		5B66ED221FBC94DC0042AE55 /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B66ED1A1FBC94DC0042AE55 /* JTSSimpleImageDownloader.m */; };
+		5B66ED231FBC94DC0042AE55 /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B66ED1C1FBC94DC0042AE55 /* UIApplication+JTSImageViewController.m */; };
+		5B66ED241FBC94DC0042AE55 /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B66ED1E1FBC94DC0042AE55 /* UIImage+JTSImageEffects.m */; };
+		5B7A360A1FBA1EB700C61837 /* bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5B7A36091FBA1EB600C61837 /* bg1.jpg */; };
 		5B9A80411F77696B00671F3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80401F77696B00671F3B /* main.m */; };
 		5B9A80441F77696B00671F3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80431F77696B00671F3B /* AppDelegate.m */; };
 		5B9A80471F77696B00671F3B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80461F77696B00671F3B /* ViewController.m */; };
@@ -46,7 +70,10 @@
 		5B9A804F1F77696B00671F3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9A804D1F77696B00671F3B /* LaunchScreen.storyboard */; };
 		5B9A805A1F77696B00671F3B /* myCashFlowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80591F77696B00671F3B /* myCashFlowTests.m */; };
 		5B9A80651F77696B00671F3B /* myCashFlowUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A80641F77696B00671F3B /* myCashFlowUITests.m */; };
+		5BAC446B1F9D0FC400C1326D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BAC446A1F9D0FC400C1326D /* GoogleService-Info.plist */; };
 		8C585E5F69E6BB82A63E4C9A /* libPods-myCashFlowUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B0796C3E1ABAD4AB7AB492 /* libPods-myCashFlowUITests.a */; };
+		EF1CA1F31FCBF19300BAB497 /* BudgetSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1CA1F11FCBF19300BAB497 /* BudgetSettingCell.m */; };
+		EF1CA1F41FCBF19300BAB497 /* BudgetSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF1CA1F21FCBF19300BAB497 /* BudgetSettingCell.xib */; };
 		EF7C149E1F87424600624670 /* AccidentReportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C14161F87424600624670 /* AccidentReportVC.m */; };
 		EF7C149F1F87424600624670 /* AddCarAccident.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C14181F87424600624670 /* AddCarAccident.m */; };
 		EF7C14C31F87424600624670 /* 1100_1950.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF7C14641F87424600624670 /* 1100_1950.JPG */; };
@@ -211,6 +238,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5B36B8A71FC70F96004AB0CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B36B8A21FC70F95004AB0CE /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		5B36B8A91FC70F96004AB0CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B36B8A21FC70F95004AB0CE /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		5B36B8C81FC7325E004AB0CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B36B8A21FC70F95004AB0CE /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 		5B9A80561F77696B00671F3B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5B9A80341F77696A00671F3B /* Project object */;
@@ -227,19 +275,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5B36B8CA1FC7325E004AB0CE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5B36B8C71FC7325E004AB0CE /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		321AC9A98572C8C275A853D5 /* Pods-myCashFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myCashFlow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myCashFlow/Pods-myCashFlow.debug.xcconfig"; sourceTree = "<group>"; };
 		43AB9928CC482C2064040461 /* libPods-myCashFlow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myCashFlow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B0796C3E1ABAD4AB7AB492 /* libPods-myCashFlowUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myCashFlowUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B01B2CE1F8BC3A20047618E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		5B01B2CF1F8BC3A20047618E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		5B01B2D01F8BC3A30047618E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5B01B2D21F8BCA950047618E /* TSLanguageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLanguageManager.h; sourceTree = "<group>"; };
 		5B01B2D31F8BCA950047618E /* TSLanguageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLanguageManager.m; sourceTree = "<group>"; };
 		5B01B2D51F8BCBD60047618E /* langCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = langCell.h; sourceTree = "<group>"; };
 		5B01B2D61F8BCBD60047618E /* langCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = langCell.m; sourceTree = "<group>"; };
 		5B01B2D71F8BCBD60047618E /* langCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = langCell.xib; sourceTree = "<group>"; };
-		5B0B7D5B1F8A7D5500EF9375 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B0B7D5D1F8AB00200EF9375 /* myCashFlow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = myCashFlow.entitlements; sourceTree = "<group>"; };
 		5B0B7D601F8ABCE600EF9375 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		5B0B7D611F8ABCE600EF9375 /* alert-round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert-round.png"; sourceTree = "<group>"; };
@@ -250,6 +310,23 @@
 		5B0B7D671F8ABCE600EF9375 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		5B0B7D681F8ABCE600EF9375 /* FCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCAlertView.h; sourceTree = "<group>"; };
 		5B0B7D691F8ABCE600EF9375 /* FCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCAlertView.m; sourceTree = "<group>"; };
+		5B1E63E21F926DAA00A7D6B6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		5B1E63E31F926DAA00A7D6B6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5B1E63E41F926DAB00A7D6B6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B1E63E51F926DC700A7D6B6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		5B1E63E61F926DC700A7D6B6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5B1E63E71F926DC700A7D6B6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B1E63E91F93587900A7D6B6 /* RequsetOfferVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequsetOfferVC.h; sourceTree = "<group>"; };
+		5B1E63EA1F93587900A7D6B6 /* RequsetOfferVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequsetOfferVC.m; sourceTree = "<group>"; };
+		5B1E63EC1F935D8700A7D6B6 /* ReqOfferCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReqOfferCell.h; sourceTree = "<group>"; };
+		5B1E63ED1F935D8700A7D6B6 /* ReqOfferCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReqOfferCell.m; sourceTree = "<group>"; };
+		5B1E63EE1F935D8700A7D6B6 /* ReqOfferCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReqOfferCell.xib; sourceTree = "<group>"; };
+		5B2F559C1F9144B900475893 /* PopoverAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverAction.h; sourceTree = "<group>"; };
+		5B2F559D1F9144B900475893 /* PopoverAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverAction.m; sourceTree = "<group>"; };
+		5B2F559E1F9144B900475893 /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
+		5B2F559F1F9144B900475893 /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
+		5B2F55A01F9144B900475893 /* PopoverViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewCell.h; sourceTree = "<group>"; };
+		5B2F55A11F9144B900475893 /* PopoverViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewCell.m; sourceTree = "<group>"; };
 		5B349D161F87D91A00D884D2 /* UIViewController+VENTouchLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+VENTouchLock.h"; sourceTree = "<group>"; };
 		5B349D171F87D91A00D884D2 /* UIViewController+VENTouchLock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+VENTouchLock.m"; sourceTree = "<group>"; };
 		5B349D191F87D91A00D884D2 /* VENTouchLockCreatePasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENTouchLockCreatePasscodeViewController.h; sourceTree = "<group>"; };
@@ -273,6 +350,21 @@
 		5B349D381F87D9FB00D884D2 /* SampleLockSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleLockSplashViewController.h; sourceTree = "<group>"; };
 		5B349D391F87D9FB00D884D2 /* SampleLockSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleLockSplashViewController.m; sourceTree = "<group>"; };
 		5B349D3A1F87D9FB00D884D2 /* SampleLockSplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleLockSplashViewController.xib; sourceTree = "<group>"; };
+		5B36B8781FC70B73004AB0CE /* myCashFlow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "myCashFlow-Bridging-Header.h"; sourceTree = "<group>"; };
+		5B36B8791FC70B7A004AB0CE /* est.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = est.swift; sourceTree = "<group>"; };
+		5B36B8A21FC70F95004AB0CE /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-3.0.2/Charts.xcodeproj"; sourceTree = "<group>"; };
+		5B36B8B01FC71278004AB0CE /* DateValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateValueFormatter.h; sourceTree = "<group>"; };
+		5B36B8B11FC71278004AB0CE /* DateValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateValueFormatter.m; sourceTree = "<group>"; };
+		5B36B8B21FC71278004AB0CE /* DayAxisValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayAxisValueFormatter.h; sourceTree = "<group>"; };
+		5B36B8B31FC71278004AB0CE /* DayAxisValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayAxisValueFormatter.m; sourceTree = "<group>"; };
+		5B36B8B41FC71278004AB0CE /* IntAxisValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntAxisValueFormatter.h; sourceTree = "<group>"; };
+		5B36B8B51FC71278004AB0CE /* IntAxisValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntAxisValueFormatter.m; sourceTree = "<group>"; };
+		5B36B8B61FC71278004AB0CE /* LargeValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeValueFormatter.swift; sourceTree = "<group>"; };
+		5B36B8B81FC71278004AB0CE /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		5B36B8B91FC71278004AB0CE /* RadarMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarMarkerView.swift; sourceTree = "<group>"; };
+		5B36B8BA1FC71278004AB0CE /* RadarMarkerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadarMarkerView.xib; sourceTree = "<group>"; };
+		5B36B8BB1FC71278004AB0CE /* XYMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYMarkerView.swift; sourceTree = "<group>"; };
+		5B3C1DEF1F8EA7790086A5E4 /* Menu 192_1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu 192_1.PNG"; sourceTree = "<group>"; };
 		5B58FF751F894AB900645C21 /* DocumentList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentList.h; sourceTree = "<group>"; };
 		5B58FF761F894AB900645C21 /* DocumentList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentList.m; sourceTree = "<group>"; };
 		5B58FF7B1F894E3800645C21 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
@@ -280,7 +372,20 @@
 		5B58FF7E1F894E4F00645C21 /* SettingsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsCell.h; sourceTree = "<group>"; };
 		5B58FF7F1F894E5000645C21 /* SettingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsCell.m; sourceTree = "<group>"; };
 		5B58FF801F894E5000645C21 /* SettingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
+		5B66ED131FBC94DC0042AE55 /* JTSAnimatedGIFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSAnimatedGIFUtility.h; sourceTree = "<group>"; };
+		5B66ED141FBC94DC0042AE55 /* JTSAnimatedGIFUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSAnimatedGIFUtility.m; sourceTree = "<group>"; };
+		5B66ED151FBC94DC0042AE55 /* JTSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageInfo.h; sourceTree = "<group>"; };
+		5B66ED161FBC94DC0042AE55 /* JTSImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageInfo.m; sourceTree = "<group>"; };
+		5B66ED171FBC94DC0042AE55 /* JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageViewController.h; sourceTree = "<group>"; };
+		5B66ED181FBC94DC0042AE55 /* JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageViewController.m; sourceTree = "<group>"; };
+		5B66ED191FBC94DC0042AE55 /* JTSSimpleImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSSimpleImageDownloader.h; sourceTree = "<group>"; };
+		5B66ED1A1FBC94DC0042AE55 /* JTSSimpleImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSSimpleImageDownloader.m; sourceTree = "<group>"; };
+		5B66ED1B1FBC94DC0042AE55 /* UIApplication+JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JTSImageViewController.h"; sourceTree = "<group>"; };
+		5B66ED1C1FBC94DC0042AE55 /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
+		5B66ED1D1FBC94DC0042AE55 /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
+		5B66ED1E1FBC94DC0042AE55 /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
 		5B6D25041F8D23D000253489 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B7A36091FBA1EB600C61837 /* bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg1.jpg; sourceTree = "<group>"; };
 		5B9A803C1F77696B00671F3B /* myCashFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCashFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9A80401F77696B00671F3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5B9A80421F77696B00671F3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -297,9 +402,14 @@
 		5B9A80601F77696B00671F3B /* myCashFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myCashFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9A80641F77696B00671F3B /* myCashFlowUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myCashFlowUITests.m; sourceTree = "<group>"; };
 		5B9A80661F77696B00671F3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BAC446A1F9D0FC400C1326D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		648722BC1DCFAD0FCBFE99D5 /* Pods-myCashFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myCashFlow.release.xcconfig"; path = "Pods/Target Support Files/Pods-myCashFlow/Pods-myCashFlow.release.xcconfig"; sourceTree = "<group>"; };
 		8EA573630E7C975F46B83748 /* Pods-myCashFlowUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myCashFlowUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-myCashFlowUITests/Pods-myCashFlowUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CE53ED2FFB869B17EF9EBB10 /* Pods-myCashFlowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myCashFlowUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myCashFlowUITests/Pods-myCashFlowUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EF1CA1F01FCBF19300BAB497 /* BudgetSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BudgetSettingCell.h; sourceTree = "<group>"; };
+		EF1CA1F11FCBF19300BAB497 /* BudgetSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BudgetSettingCell.m; sourceTree = "<group>"; };
+		EF1CA1F21FCBF19300BAB497 /* BudgetSettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BudgetSettingCell.xib; sourceTree = "<group>"; };
+		EF4C68381FC832690083F135 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EF7C14151F87424600624670 /* AccidentReportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccidentReportVC.h; sourceTree = "<group>"; };
 		EF7C14161F87424600624670 /* AccidentReportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccidentReportVC.m; sourceTree = "<group>"; };
 		EF7C14171F87424600624670 /* AddCarAccident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddCarAccident.h; path = AccidentReport/AddCarAccident.h; sourceTree = "<group>"; };
@@ -567,6 +677,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28FFAFE4C365621B77B91D64 /* libPods-myCashFlow.a in Frameworks */,
+				5B36B8C61FC7325E004AB0CE /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +740,31 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		5B1E63E81F93583100A7D6B6 /* RequestOffer */ = {
+			isa = PBXGroup;
+			children = (
+				5B1E63E91F93587900A7D6B6 /* RequsetOfferVC.h */,
+				5B1E63EA1F93587900A7D6B6 /* RequsetOfferVC.m */,
+				5B1E63EC1F935D8700A7D6B6 /* ReqOfferCell.h */,
+				5B1E63ED1F935D8700A7D6B6 /* ReqOfferCell.m */,
+				5B1E63EE1F935D8700A7D6B6 /* ReqOfferCell.xib */,
+			);
+			name = RequestOffer;
+			sourceTree = "<group>";
+		};
+		5B2F559B1F9144B900475893 /* PopoverView */ = {
+			isa = PBXGroup;
+			children = (
+				5B2F559C1F9144B900475893 /* PopoverAction.h */,
+				5B2F559D1F9144B900475893 /* PopoverAction.m */,
+				5B2F559E1F9144B900475893 /* PopoverView.h */,
+				5B2F559F1F9144B900475893 /* PopoverView.m */,
+				5B2F55A01F9144B900475893 /* PopoverViewCell.h */,
+				5B2F55A11F9144B900475893 /* PopoverViewCell.m */,
+			);
+			path = PopoverView;
+			sourceTree = "<group>";
+		};
 		5B349D141F87D91A00D884D2 /* VENTouchLock */ = {
 			isa = PBXGroup;
 			children = (
@@ -688,6 +824,40 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5B36B8A31FC70F95004AB0CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B36B8A81FC70F96004AB0CE /* Charts.framework */,
+				5B36B8AA1FC70F96004AB0CE /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B36B8AF1FC71278004AB0CE /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				5B36B8B01FC71278004AB0CE /* DateValueFormatter.h */,
+				5B36B8B11FC71278004AB0CE /* DateValueFormatter.m */,
+				5B36B8B21FC71278004AB0CE /* DayAxisValueFormatter.h */,
+				5B36B8B31FC71278004AB0CE /* DayAxisValueFormatter.m */,
+				5B36B8B41FC71278004AB0CE /* IntAxisValueFormatter.h */,
+				5B36B8B51FC71278004AB0CE /* IntAxisValueFormatter.m */,
+				5B36B8B61FC71278004AB0CE /* LargeValueFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		5B36B8B71FC71278004AB0CE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5B36B8B81FC71278004AB0CE /* BalloonMarker.swift */,
+				5B36B8B91FC71278004AB0CE /* RadarMarkerView.swift */,
+				5B36B8BA1FC71278004AB0CE /* RadarMarkerView.xib */,
+				5B36B8BB1FC71278004AB0CE /* XYMarkerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		5B58FF781F894ABF00645C21 /* Document */ = {
 			isa = PBXGroup;
 			children = (
@@ -716,16 +886,40 @@
 			name = Setting;
 			sourceTree = "<group>";
 		};
+		5B66ED121FBC94DC0042AE55 /* ImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				5B66ED131FBC94DC0042AE55 /* JTSAnimatedGIFUtility.h */,
+				5B66ED141FBC94DC0042AE55 /* JTSAnimatedGIFUtility.m */,
+				5B66ED151FBC94DC0042AE55 /* JTSImageInfo.h */,
+				5B66ED161FBC94DC0042AE55 /* JTSImageInfo.m */,
+				5B66ED171FBC94DC0042AE55 /* JTSImageViewController.h */,
+				5B66ED181FBC94DC0042AE55 /* JTSImageViewController.m */,
+				5B66ED191FBC94DC0042AE55 /* JTSSimpleImageDownloader.h */,
+				5B66ED1A1FBC94DC0042AE55 /* JTSSimpleImageDownloader.m */,
+				5B66ED1B1FBC94DC0042AE55 /* UIApplication+JTSImageViewController.h */,
+				5B66ED1C1FBC94DC0042AE55 /* UIApplication+JTSImageViewController.m */,
+				5B66ED1D1FBC94DC0042AE55 /* UIImage+JTSImageEffects.h */,
+				5B66ED1E1FBC94DC0042AE55 /* UIImage+JTSImageEffects.m */,
+			);
+			path = ImageViewer;
+			sourceTree = "<group>";
+		};
 		5B9A80331F77696A00671F3B = {
 			isa = PBXGroup;
 			children = (
 				5B01B2CD1F8BC38A0047618E /* Localizable.strings */,
+				5B36B8791FC70B7A004AB0CE /* est.swift */,
+				5B36B8A21FC70F95004AB0CE /* Charts.xcodeproj */,
+				5B36B8AF1FC71278004AB0CE /* Formatters */,
+				5B36B8B71FC71278004AB0CE /* Components */,
 				5B9A803E1F77696B00671F3B /* myCashFlow */,
 				5B9A80581F77696B00671F3B /* myCashFlowTests */,
 				5B9A80631F77696B00671F3B /* myCashFlowUITests */,
 				5B9A803D1F77696B00671F3B /* Products */,
 				931DA447071F84341C5DC501 /* Pods */,
 				408C0305527A34905CC9D0D2 /* Frameworks */,
+				5B36B8781FC70B73004AB0CE /* myCashFlow-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -763,7 +957,7 @@
 		5B9A803F1F77696B00671F3B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5B0B7D5B1F8A7D5500EF9375 /* GoogleService-Info.plist */,
+				5BAC446A1F9D0FC400C1326D /* GoogleService-Info.plist */,
 				EF7C15801F87437D00624670 /* APIHandler.h */,
 				EF7C15811F87437D00624670 /* APIHandler.m */,
 				EF7C15821F87437D00624670 /* Constant.h */,
@@ -831,6 +1025,7 @@
 				EF7C14681F87424600624670 /* Addres gray 32_32.PNG */,
 				EF7C14691F87424600624670 /* Appointment.png */,
 				EF7C146A1F87424600624670 /* bg.jpg */,
+				5B7A36091FBA1EB600C61837 /* bg1.jpg */,
 				EF7C146B1F87424600624670 /* Budget 72_72.PNG */,
 				EF7C146C1F87424600624670 /* Calendar 32_32.PNG */,
 				EF7C146D1F87424600624670 /* Camera 32_32.PNG */,
@@ -860,6 +1055,7 @@
 				EF7C14851F87424600624670 /* Settings 72_72.PNG */,
 				EF7C14861F87424600624670 /* Taxfolder.png */,
 				EF7C14871F87424600624670 /* User gray 32_32.PNG */,
+				5B3C1DEF1F8EA7790086A5E4 /* Menu 192_1.PNG */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -910,6 +1106,8 @@
 		EF7C15021F87435500624670 /* ThirdPartyLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				5B66ED121FBC94DC0042AE55 /* ImageViewer */,
+				5B2F559B1F9144B900475893 /* PopoverView */,
 				5B01B2D21F8BCA950047618E /* TSLanguageManager.h */,
 				5B01B2D31F8BCA950047618E /* TSLanguageManager.m */,
 				5B349D141F87D91A00D884D2 /* VENTouchLock */,
@@ -1040,6 +1238,7 @@
 		EF7C15851F8743A600624670 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				5B1E63E81F93583100A7D6B6 /* RequestOffer */,
 				5B349D381F87D9FB00D884D2 /* SampleLockSplashViewController.h */,
 				5B349D391F87D9FB00D884D2 /* SampleLockSplashViewController.m */,
 				5B349D3A1F87D9FB00D884D2 /* SampleLockSplashViewController.xib */,
@@ -1054,14 +1253,14 @@
 				EF7C16341F8746D200624670 /* ProductSolutions */,
 				EF7C16361F8746F200624670 /* Videos */,
 				EF7C163A1F87479D00624670 /* Offers */,
-				EF7C16421F8748EA00624670 /* ConsultorProfile */,
-				EF7C163E1F8747E000624670 /* PDFView */,
 				EF7C163D1F8747D900624670 /* Recommand */,
+				5B58FF781F894ABF00645C21 /* Document */,
+				EF7C16421F8748EA00624670 /* ConsultorProfile */,
 				EF7C16391F87479000624670 /* Profile */,
 				EF7C14951F87424600624670 /* Login&SignUp */,
 				EF7C16441F874E1300624670 /* LeftMenu */,
 				5B58FF7A1F894E1B00645C21 /* Setting */,
-				5B58FF781F894ABF00645C21 /* Document */,
+				EF7C163E1F8747E000624670 /* PDFView */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -1247,6 +1446,9 @@
 				EF7C16451F875B8700624670 /* MyBudgetCell.h */,
 				EF7C16461F875B8700624670 /* MyBudgetCell.m */,
 				EF7C16471F875B8700624670 /* MyBudgetCell.xib */,
+				EF1CA1F01FCBF19300BAB497 /* BudgetSettingCell.h */,
+				EF1CA1F11FCBF19300BAB497 /* BudgetSettingCell.m */,
+				EF1CA1F21FCBF19300BAB497 /* BudgetSettingCell.xib */,
 			);
 			name = BudgetAndSaving;
 			sourceTree = "<group>";
@@ -1296,10 +1498,12 @@
 				5B9A803A1F77696A00671F3B /* Resources */,
 				A3130753B4D9A10CE5A60673 /* [CP] Embed Pods Frameworks */,
 				C69DFB0DE7E0698DEE9D961D /* [CP] Copy Pods Resources */,
+				5B36B8CA1FC7325E004AB0CE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5B36B8C91FC7325E004AB0CE /* PBXTargetDependency */,
 			);
 			name = myCashFlow;
 			productName = myCashFlow;
@@ -1356,7 +1560,8 @@
 				TargetAttributes = {
 					5B9A803B1F77696A00671F3B = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = JENKDMBQBJ;
+						DevelopmentTeam = HV9VZJAHR5;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1366,6 +1571,7 @@
 					};
 					5B9A80541F77696B00671F3B = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = HV9VZJAHR5;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5B9A803B1F77696A00671F3B;
 					};
@@ -1376,7 +1582,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5B9A80371F77696A00671F3B /* Build configuration list for PBXProject "myCashFlow" */;
+			buildConfigurationList = 5B9A80371F77696A00671F3B /* Build configuration list for PBXProject "myCashflow" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1384,10 +1590,18 @@
 				en,
 				Base,
 				de,
+				it,
+				fr,
 			);
 			mainGroup = 5B9A80331F77696A00671F3B;
 			productRefGroup = 5B9A803D1F77696B00671F3B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5B36B8A31FC70F95004AB0CE /* Products */;
+					ProjectRef = 5B36B8A21FC70F95004AB0CE /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5B9A803B1F77696A00671F3B /* myCashFlow */,
@@ -1397,11 +1611,29 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		5B36B8A81FC70F96004AB0CE /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 5B36B8A71FC70F96004AB0CE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B36B8AA1FC70F96004AB0CE /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 5B36B8A91FC70F96004AB0CE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		5B9A803A1F77696A00671F3B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B7A360A1FBA1EB700C61837 /* bg1.jpg in Resources */,
 				EF7C14FE1F87427900624670 /* GOTHIC.TTF in Resources */,
 				EF7C16251F87443A00624670 /* VideosCell.xib in Resources */,
 				EF7C14C91F87424600624670 /* bg.jpg in Resources */,
@@ -1412,7 +1644,9 @@
 				EF7C14E41F87424600624670 /* Settings 72_72.PNG in Resources */,
 				EF7C14E91F87424600624670 /* discount.json in Resources */,
 				EF7C14EF1F87424600624670 /* product.json in Resources */,
+				5B1E63F01F935D8700A7D6B6 /* ReqOfferCell.xib in Resources */,
 				EF7C14D91F87424600624670 /* Numbers.png in Resources */,
+				5BAC446B1F9D0FC400C1326D /* GoogleService-Info.plist in Resources */,
 				EF7C16141F87443A00624670 /* NumberListCell.xib in Resources */,
 				EF7C14D51F87424600624670 /* Download 32_32.PNG in Resources */,
 				EF7C14D31F87424600624670 /* Daily Expenses 72_72.PNG in Resources */,
@@ -1434,6 +1668,7 @@
 				EF7C15FE1F87443A00624670 /* ExpenseCell.xib in Resources */,
 				5B0B7D701F8ABCE600EF9375 /* .gitkeep in Resources */,
 				5B0B7D6A1F8ABCE600EF9375 /* .gitkeep in Resources */,
+				5B36B8C21FC71278004AB0CE /* RadarMarkerView.xib in Resources */,
 				EF7C16061F87443A00624670 /* FurterInfoCell.xib in Resources */,
 				EF7C14CB1F87424600624670 /* Calendar 32_32.PNG in Resources */,
 				5B9A804F1F77696B00671F3B /* LaunchScreen.storyboard in Resources */,
@@ -1450,7 +1685,6 @@
 				5B9A804C1F77696B00671F3B /* Assets.xcassets in Resources */,
 				EF7C14C51F87424600624670 /* 750_1300.JPG in Resources */,
 				EF7C14E31F87424600624670 /* Report Home 144_144.png in Resources */,
-				5B0B7D5C1F8A7D5500EF9375 /* GoogleService-Info.plist in Resources */,
 				EF7C15011F87427900624670 /* GOTHICI.TTF in Resources */,
 				EF7C14E81F87424600624670 /* consultant.json in Resources */,
 				EF7C14D81F87424600624670 /* Logo 510_300.PNG in Resources */,
@@ -1462,6 +1696,7 @@
 				5B349D321F87D91A00D884D2 /* Info.plist in Resources */,
 				EF7C16011F87443A00624670 /* FinanceFolderCell.xib in Resources */,
 				5B349D371F87D91A00D884D2 /* VENTouchLockPasscodeView.xib in Resources */,
+				EF1CA1F41FCBF19300BAB497 /* BudgetSettingCell.xib in Resources */,
 				EF7C14C81F87424600624670 /* Appointment.png in Resources */,
 				EF7C14FF1F87427900624670 /* GOTHICB.TTF in Resources */,
 				EF7C161D1F87443A00624670 /* ProductSolutionsCell.xib in Resources */,
@@ -1472,6 +1707,7 @@
 				EF7C14D41F87424600624670 /* demo.png in Resources */,
 				EF7C14DE1F87424600624670 /* Play.png in Resources */,
 				EF7C16121F87443A00624670 /* MySavingsCell.xib in Resources */,
+				5B3C1DF01F8EA7790086A5E4 /* Menu 192_1.PNG in Resources */,
 				EF7C14D61F87424600624670 /* Email gray 32_32.PNG in Resources */,
 				EF7C14E61F87424600624670 /* User gray 32_32.PNG in Resources */,
 				EF7C14C61F87424600624670 /* Accident.png in Resources */,
@@ -1520,7 +1756,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		35D7739E5A2048E65124E9BC /* [CP] Embed Pods Frameworks */ = {
@@ -1601,7 +1837,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FBC0A86222DCF3B000CE09F2 /* [CP] Copy Pods Resources */ = {
@@ -1627,16 +1863,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF7C16081F87443A00624670 /* InsuranceReportCell.m in Sources */,
+				5B36B8C31FC71278004AB0CE /* XYMarkerView.swift in Sources */,
 				EF7C16231F87443A00624670 /* UserProfileVC.m in Sources */,
 				EF7C15621F87435500624670 /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
+				5B1E63EB1F93587900A7D6B6 /* RequsetOfferVC.m in Sources */,
 				EF7C16221F87443A00624670 /* TaxFolderVC.m in Sources */,
 				EF7C16161F87443A00624670 /* NumbersCell.m in Sources */,
+				5B36B8BF1FC71278004AB0CE /* LargeValueFormatter.swift in Sources */,
 				EF7C155D1F87435500624670 /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
 				EF7C160A1F87443A00624670 /* InsuranceReportVC.m in Sources */,
 				EF7C16051F87443A00624670 /* FurterInfoCell.m in Sources */,
 				EF7C161C1F87443A00624670 /* ProductSolutionsCell.m in Sources */,
 				EF7C16311F87447D00624670 /* HVTableView.m in Sources */,
 				EF7C160B1F87443A00624670 /* LeftMenuCell.m in Sources */,
+				5B66ED201FBC94DC0042AE55 /* JTSImageInfo.m in Sources */,
 				EF7C15FB1F87443A00624670 /* DocListCell.m in Sources */,
 				EF7C155E1F87435500624670 /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
 				5B349D2F1F87D91A00D884D2 /* VENTouchLockEnterPasscodeViewController.m in Sources */,
@@ -1646,17 +1886,23 @@
 				EF7C15701F87435500624670 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 				EF7C156D1F87435500624670 /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
 				EF7C156A1F87435500624670 /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
+				5B36B8BD1FC71278004AB0CE /* DayAxisValueFormatter.m in Sources */,
 				EF7C156C1F87435500624670 /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
 				EF7C15F51F87443A00624670 /* BudgetAndSaveRateVC.m in Sources */,
+				5B36B8BE1FC71278004AB0CE /* IntAxisValueFormatter.m in Sources */,
 				EF7C15761F87435500624670 /* DGActivityIndicatorTriangleSkewSpinAnimation.m in Sources */,
+				5B66ED231FBC94DC0042AE55 /* UIApplication+JTSImageViewController.m in Sources */,
 				EF7C15F11F87443A00624670 /* AddHomeInsVC.m in Sources */,
 				EF7C160F1F87443A00624670 /* MessageVC.m in Sources */,
 				EF7C156F1F87435500624670 /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
 				EF7C16041F87443A00624670 /* ForgotPwdVC.m in Sources */,
+				5B66ED221FBC94DC0042AE55 /* JTSSimpleImageDownloader.m in Sources */,
 				EF7C15F81F87443A00624670 /* ConsultorProfileVC.m in Sources */,
 				EF7C161B1F87443A00624670 /* PdfViewerVC.m in Sources */,
 				EF7C16131F87443A00624670 /* NumberListCell.m in Sources */,
 				EF7C155B1F87435500624670 /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
+				5B66ED1F1FBC94DC0042AE55 /* JTSAnimatedGIFUtility.m in Sources */,
+				5B36B8C11FC71278004AB0CE /* RadarMarkerView.swift in Sources */,
 				EF7C157C1F87435500624670 /* LGSideMenuControllerGesturesHandler.m in Sources */,
 				EF7C157D1F87435500624670 /* LGSideMenuView.m in Sources */,
 				EF7C155A1F87435500624670 /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
@@ -1665,12 +1911,15 @@
 				EF7C161E1F87443A00624670 /* ProductSolutionsVC.m in Sources */,
 				5B349D2D1F87D91A00D884D2 /* UIViewController+VENTouchLock.m in Sources */,
 				EF7C15791F87435500624670 /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
+				5B2F55A41F9144B900475893 /* PopoverViewCell.m in Sources */,
 				EF7C15FF1F87443A00624670 /* FinanceDetailsVC.m in Sources */,
+				5B66ED211FBC94DC0042AE55 /* JTSImageViewController.m in Sources */,
 				5B349D2E1F87D91A00D884D2 /* VENTouchLockCreatePasscodeViewController.m in Sources */,
 				EF7C155F1F87435500624670 /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
 				EF7C161A1F87443A00624670 /* OffersVC.m in Sources */,
 				EF7C157B1F87435500624670 /* LGSideMenuController.m in Sources */,
 				EF7C156B1F87435500624670 /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
+				5B66ED241FBC94DC0042AE55 /* UIImage+JTSImageEffects.m in Sources */,
 				5B349D351F87D91A00D884D2 /* VENTouchLockPasscodeCharacterView.m in Sources */,
 				EF7C15711F87435500624670 /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
 				5B349D341F87D91A00D884D2 /* VENTouchLock.m in Sources */,
@@ -1684,6 +1933,7 @@
 				EF7C15781F87435500624670 /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
 				5B58FF811F894E5000645C21 /* SettingsCell.m in Sources */,
 				EF7C157A1F87435500624670 /* DGActivityIndicatorView.m in Sources */,
+				5B2F55A31F9144B900475893 /* PopoverView.m in Sources */,
 				EF7C16171F87443A00624670 /* NumbersVC.m in Sources */,
 				EF7C15F01F87443A00624670 /* AddHealthInsVC.m in Sources */,
 				EF7C16151F87443A00624670 /* NumberListVC.m in Sources */,
@@ -1701,6 +1951,7 @@
 				EF7C149E1F87424600624670 /* AccidentReportVC.m in Sources */,
 				EF7C160C1F87443A00624670 /* LeftMenuVC.m in Sources */,
 				EF7C15841F87437D00624670 /* APIHandler.m in Sources */,
+				5B2F55A21F9144B900475893 /* PopoverAction.m in Sources */,
 				5B01B2D41F8BCA950047618E /* TSLanguageManager.m in Sources */,
 				EF7C16241F87443A00624670 /* VideosCell.m in Sources */,
 				EF7C15741F87435500624670 /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
@@ -1708,6 +1959,7 @@
 				EF7C15681F87435500624670 /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				EF7C15F21F87443A00624670 /* AppoinmentCell.m in Sources */,
 				5B01B2D81F8BCBD60047618E /* langCell.m in Sources */,
+				5B36B8BC1FC71278004AB0CE /* DateValueFormatter.m in Sources */,
 				5B58FF771F894AB900645C21 /* DocumentList.m in Sources */,
 				EF7C16071F87443A00624670 /* General.m in Sources */,
 				EF7C15F71F87443A00624670 /* ChangePwdVC.m in Sources */,
@@ -1720,12 +1972,15 @@
 				EF7C14F71F87424600624670 /* LoginVC.m in Sources */,
 				EF7C15771F87435500624670 /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
 				EF7C16031F87443A00624670 /* FinanceFurtherInfo.m in Sources */,
+				5B36B87A1FC70B7A004AB0CE /* est.swift in Sources */,
 				EF7C16201F87443A00624670 /* TaxFolderCell.m in Sources */,
+				5B36B8C01FC71278004AB0CE /* BalloonMarker.swift in Sources */,
 				EF7C157E1F87435500624670 /* UIViewController+LGSideMenuController.m in Sources */,
 				EF7C16321F87447D00624670 /* LTHMonthYearPickerView.m in Sources */,
 				EF7C15731F87435500624670 /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
 				EF7C16271F87443A00624670 /* ViewCarAccident.m in Sources */,
 				5B58FF7D1F894E3800645C21 /* SettingVC.m in Sources */,
+				5B1E63EF1F935D8700A7D6B6 /* ReqOfferCell.m in Sources */,
 				EF7C15601F87435500624670 /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
 				EF7C157F1F87435500624670 /* UIView+Toast.m in Sources */,
 				EF7C15611F87435500624670 /* DGActivityIndicatorBallRotateAnimation.m in Sources */,
@@ -1740,6 +1995,7 @@
 				EF7C16111F87443A00624670 /* MySavingsCell.m in Sources */,
 				5B349D301F87D91A00D884D2 /* VENTouchLockPasscodeViewController.m in Sources */,
 				5B349D311F87D91A00D884D2 /* VENTouchLockSplashViewController.m in Sources */,
+				EF1CA1F31FCBF19300BAB497 /* BudgetSettingCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1762,6 +2018,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5B36B8C91FC7325E004AB0CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 5B36B8C81FC7325E004AB0CE /* PBXContainerItemProxy */;
+		};
 		5B9A80571F77696B00671F3B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5B9A803B1F77696A00671F3B /* myCashFlow */;
@@ -1778,8 +2039,10 @@
 		5B01B2CD1F8BC38A0047618E /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5B01B2D01F8BC3A30047618E /* de */,
 				5B6D25041F8D23D000253489 /* en */,
+				5B1E63E41F926DAB00A7D6B6 /* it */,
+				5B1E63E71F926DC700A7D6B6 /* fr */,
+				EF4C68381FC832690083F135 /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1789,6 +2052,8 @@
 			children = (
 				5B9A80491F77696B00671F3B /* Base */,
 				5B01B2CE1F8BC3A20047618E /* de */,
+				5B1E63E21F926DAA00A7D6B6 /* it */,
+				5B1E63E51F926DC700A7D6B6 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1798,6 +2063,8 @@
 			children = (
 				5B9A804E1F77696B00671F3B /* Base */,
 				5B01B2CF1F8BC3A20047618E /* de */,
+				5B1E63E31F926DAA00A7D6B6 /* it */,
+				5B1E63E61F926DC700A7D6B6 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1847,7 +2114,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1891,7 +2158,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1903,15 +2170,22 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 321AC9A98572C8C275A853D5 /* Pods-myCashFlow.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = myCashFlow/myCashFlow.entitlements;
-				DEVELOPMENT_TEAM = JENKDMBQBJ;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = HV9VZJAHR5;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/myCashFlow/PrefixHeader.pch";
 				INFOPLIST_FILE = myCashFlow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.myCashflowDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cashflow.myCashflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "myCashFlow-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1920,15 +2194,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 648722BC1DCFAD0FCBFE99D5 /* Pods-myCashFlow.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = myCashFlow/myCashFlow.entitlements;
-				DEVELOPMENT_TEAM = JENKDMBQBJ;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = HV9VZJAHR5;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/myCashFlow/PrefixHeader.pch";
 				INFOPLIST_FILE = myCashFlow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.myCashflowDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cashflow.myCashflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "myCashFlow-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1936,24 +2216,28 @@
 		5B9A806D1F77696B00671F3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HV9VZJAHR5;
 				INFOPLIST_FILE = myCashFlowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.myCashFlowTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myCashFlow.app/myCashFlow";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myCashflow.temp_caseinsensitive_rename.app/myCashflow.temp_caseinsensitive_rename";
 			};
 			name = Debug;
 		};
 		5B9A806E1F77696B00671F3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HV9VZJAHR5;
 				INFOPLIST_FILE = myCashFlowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.myCashFlowTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myCashFlow.app/myCashFlow";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myCashflow.temp_caseinsensitive_rename.app/myCashflow.temp_caseinsensitive_rename";
 			};
 			name = Release;
 		};
@@ -1961,6 +2245,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE53ED2FFB869B17EF9EBB10 /* Pods-myCashFlowUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = myCashFlowUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.myCashFlowUITests;
@@ -1973,6 +2258,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8EA573630E7C975F46B83748 /* Pods-myCashFlowUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = myCashFlowUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.myCashFlowUITests;
@@ -1984,7 +2270,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5B9A80371F77696A00671F3B /* Build configuration list for PBXProject "myCashFlow" */ = {
+		5B9A80371F77696A00671F3B /* Build configuration list for PBXProject "myCashflow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B9A80671F77696B00671F3B /* Debug */,

@@ -40,21 +40,34 @@
     nodata.textColor = THEME_COLOR;
 
     [General startLoader:self.view];
+    
+    
+    
+    
 
     APIHandler *api = [[APIHandler alloc]init];
     [api api_ContractAppoinmentList:^(id result)
      {
-         NSDictionary *temp =[result mutableCopy];
-         appoinmentArr = [temp valueForKey:@"data"];
-         if (appoinmentArr.count>0)
+         @try
          {
-             [nodata removeFromSuperview];
+             NSDictionary *temp =[result mutableCopy];
+             appoinmentArr = [temp valueForKey:@"data"];
+             if (appoinmentArr.count>0)
+             {
+                 [nodata removeFromSuperview];
+             }
+             else
+             {
+                 [self.tblAppointment addSubview:nodata];
+             }
+             [self.tblAppointment reloadData];
+
          }
-         else
+         @catch (NSException *exception)
          {
-             [self.tblAppointment addSubview:nodata];
+             [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+             
          }
-         [self.tblAppointment reloadData];
          [General stopLoader];
 
      }
@@ -153,18 +166,32 @@
     [apiDic setObject:[appoinment valueForKey:@"PolicyNo"] forKey:@"PolicyNo"];
     [apiDic setValue:[userInfo valueForKey:@"CustomerID"] forKey:@"CustomerID"];
     
+    
+  
+    
+    
+
     APIHandler *api = [[APIHandler alloc]init];
     
     [api api_BookContractAppoinmentList:apiDic withSuccess:^(id result)
     {
-        if ([[result valueForKey:@"status"] intValue]==1 )
+        @try
         {
-            [General makeToast:[TSLanguageManager localizedString:@"Your appointment registered successfully"] withToastView:self.view];
-            
+            if ([[result valueForKey:@"status"] intValue]==1 )
+            {
+                [General makeToast:[TSLanguageManager localizedString:@"Your appointment registered successfully"] withToastView:self.view];
+                
+            }
+            else
+            {
+                [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later" ]withToastView:self.view];
+            }
+
         }
-        else
+        @catch (NSException *exception)
         {
-            [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later" ]withToastView:self.view];
+            [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+            
         }
         [General stopLoader];
 

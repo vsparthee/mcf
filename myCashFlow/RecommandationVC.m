@@ -9,6 +9,7 @@
 #import "RecommandationVC.h"
 
 @interface RecommandationVC ()
+@property (weak, nonatomic) IBOutlet UIImageView *homeimg;
 
 @end
 
@@ -16,6 +17,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.homeimg.tintColor = [UIColor colorWithRed:0.47 green:0.47 blue:0.47 alpha:1.0];
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Recommendation"];
+    self.rcctolbl.text=[TSLanguageManager localizedString:@"Recommendation To"];
+    self.numlbl.text=[TSLanguageManager localizedString:@"Mobile Number"];
+    self.maillbl.text=[TSLanguageManager localizedString:@"Email Address"];
+    self.addrlbl.text=[TSLanguageManager localizedString:@"Address"];
+    self.remarklbl.text=[TSLanguageManager localizedString:@"Remark"];
+    [self.btnShare setTitle:[TSLanguageManager localizedString:@"Share the myCashflow App on Social Media"] forState:UIControlStateNormal];
+    [self.btnUpdate setTitle:[TSLanguageManager localizedString:@"Update"] forState:UIControlStateNormal];
+
     // Do any additional setup after loading the view.
 }
 
@@ -57,7 +68,44 @@
 }
 */
 
-- (IBAction)action_Share:(UIButton *)sender {
+- (IBAction)action_Share:(UIButton *)sender
+{
+    
+    [General startLoader:self.view];
+    UIImage *myIcon = [UIImage imageNamed:@"Menu 192_1.PNG"];
+    
+    UIImageView *imgView = [[UIImageView alloc]init];
+    
+    imgView.image =myIcon;
+    imgView.contentMode = UIViewContentModeScaleAspectFit;
+    
+    imgView.frame = CGRectMake(0, 0, 618,450);
+    NSString *dec = @"Hört jetzt auf mit dem unnötigen Papierkrieg!\nBenutzt die myCashflow App um eure Versicherungspolicen, Steuerdokumente und Finanzdokumente ganz einfach auf eurem Smartphone aufzurufen und jederzeit den Überblick zu halten!\nMeldet Schadenmeldungen der Autoversicherung wie auch Leistungsmeldungen der Krankenkasse direkt über die App und spart euch Portokosten!\nIn eurem App- und Googleplay store erhältlich!";
+    
+    NSString *urlstr = @"http://ccflow.ch/";
+    
+    
+    NSData *data1 = UIImagePNGRepresentation(myIcon);
+    
+    NSArray * shareItems = @[dec,urlstr,data1];
+    
+    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+    
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self presentViewController:avc animated:YES completion:nil];
+        [General stopLoader];
+    }
+    else {
+        
+        avc.modalPresentationStyle                   = UIModalPresentationPopover;
+        avc.popoverPresentationController.sourceView = self.view;
+        avc.popoverPresentationController.sourceRect = CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/4, 0, 0);
+        [self presentViewController:avc animated:YES completion:nil];
+        [General stopLoader];
+
+    }
+
 }
 - (IBAction)action_Update:(UIButton *)sender
 {
@@ -73,15 +121,38 @@
         [apiDic setObject:[NSString stringWithFormat:@"%@",self.txtAddress.text] forKey:@"Address"];
         [apiDic setObject:[NSString stringWithFormat:@"%@",self.txtRemark.text] forKey:@"Remarks"];
         
+        
+        
+
         APIHandler *api = [[APIHandler alloc]init];
         
         [api api_Recommendation: apiDic withSuccess:^(id result)
          {
+             @try
+             {
+                 if ([[result valueForKey:@"Status"]boolValue]==true)
+                 {
+                     [General makeToast:[TSLanguageManager localizedString:@"Successfully Updated"] withToastView:self.view];
+                 }
+                 else
+                 {
+                     [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+                 }
+
+             }
+             @catch (NSException *exception)
+             {
+                 [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+                 
+             }
+             [General stopLoader];
              
+
          }
         failure:^(NSURLSessionTask *operation, NSError *error)
          {
-             
+             [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+             [General stopLoader];
          }];
 
     }
@@ -93,30 +164,36 @@
     
     if(self.txtRecommandationTo.text == NULL || [self.txtRecommandationTo.text isEqualToString:@""])
     {
-        [self.txtRecommandationTo showErrorWithText:@"Enter Your Recommand Name"];
+        [General makeToast:[TSLanguageManager localizedString:@"Enter Your Recommand Name"] withToastView:self.view];
+
         return validation;
     }
     
-    else if(self.txtMobile.text == NULL || [self.txtMobile.text isEqualToString:@""])
+    /*else if(self.txtMobile.text == NULL || [self.txtMobile.text isEqualToString:@""])
     {
-        [self.txtMobile showErrorWithText:@"Enter Your Mobile Number"];
+        [General makeToast:[TSLanguageManager localizedString:@"Enter Your Mobile Number"] withToastView:self.view];
+
         return validation;
     }
 
     else if(self.txtEmail.text == NULL || [self.txtEmail.text isEqualToString:@""])
     {
-        [self.txtEmail showErrorWithText:@"Enter Your Email ID"];
+        [General makeToast:[TSLanguageManager localizedString:@"Enter Your Email ID"] withToastView:self.view];
+
         return validation;
     }
     
     else if(![self validateEmailWithString:self.txtEmail.text])
     {
-        [self.txtEmail showErrorWithText:@"Enter Valid Email ID"];
+        [General makeToast:[TSLanguageManager localizedString:@"Enter Valid Email ID"] withToastView:self.view];
+
         return validation;
     }
-    
+    */
     else if(self.txtRemark.text == NULL || [self.txtRemark.text isEqualToString:@""])
     {
+        [General makeToast:[TSLanguageManager localizedString:@"Please Enter Remark"] withToastView:self.view];
+
         [self.remarkBtmView setBackgroundColor:[UIColor redColor]];
         self.remarkheight.constant=2;
         return validation;

@@ -17,5 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnAppointment;
 - (IBAction)action_Appointment:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+@property (weak, nonatomic) IBOutlet UITableView *tblDocList;
+@property (strong, nonatomic) IBOutlet UIView *docView;
+- (IBAction)action_CloseDoc:(UIButton *)sender;
 
 @end

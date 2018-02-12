@@ -16,5 +16,6 @@
 @property (strong, nonatomic) NSArray *titleArry;
 @property (strong, nonatomic) NSArray *imageArry;
 @property (weak, nonatomic) LeftMenuVC *parent;
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
 
 @end

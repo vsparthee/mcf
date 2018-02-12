@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PNChart.h"
+//#import "PNChart.h"
 #import "LeftMenuVC.h"
-@interface BudgetAndSaveRateVC : UIViewController
+#import <Charts/Charts.h>
+#import "myCashFlow-Swift.h"
+
+@interface BudgetAndSaveRateVC : UIViewController<ChartViewDelegate>
+
+@property (nonatomic, strong) IBOutlet PieChartView *chartView;
+
 @property (weak, nonatomic) IBOutlet UIView *baseView;
 @property (strong, nonatomic) IBOutlet UIView *budgetView;
-@property (nonatomic) PNPieChart *pieChart;
+//@property (nonatomic) PNPieChart *pieChart;
 @property (nonatomic) IBOutlet UIView *pieChartbase;
 @property (weak, nonatomic) IBOutlet UIView *legendbase;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *budgetheight;
@@ -30,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblMonth;
 @property (weak, nonatomic) IBOutlet UILabel *lblTotal;
 @property (weak, nonatomic) IBOutlet UITextField *txtSelectMonth;
+@property (weak, nonatomic) IBOutlet UITextField *txtSelectMonthExpence;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *btnExpense;
@@ -74,5 +81,22 @@
 @property (weak, nonatomic) IBOutlet UILabel *titlelbl;
 
 
+@property (weak, nonatomic) IBOutlet UITableView *tblSetting;
+@property (weak, nonatomic) IBOutlet UIButton *btnSaveSetting;
+@property (weak, nonatomic) IBOutlet UIButton *btnCancelSetting;
+@property (strong, nonatomic) IBOutlet UIView *addsettingsView;
+@property (weak, nonatomic) IBOutlet UIButton *btnAddSetting;
+- (IBAction)action_AddSetting:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UITextView *txtSettingName;
+@property (weak, nonatomic) IBOutlet UITextField *txtSettingValue;
+- (IBAction)action_Add:(UIButton *)sender;
+- (IBAction)action_CloseDoc:(UIButton *)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblValue;
+@property (weak, nonatomic) IBOutlet UIButton *btnAdd;
+@property (weak, nonatomic) IBOutlet UIButton *btnEdit;
+- (IBAction)action_Setting_Delete:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnDelete;
 
 @end

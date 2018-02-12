@@ -38,6 +38,12 @@
     if ( [language isEqualToString:kLMGerman] ) {
         return YES;
     }
+    if ( [language isEqualToString:kLMItaly] ) {
+        return YES;
+    }
+    if ( [language isEqualToString:kLMFrench] ) {
+        return YES;
+    }
     return NO;
 }
 

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0B1FBB38C22A201BE19B9ECB87290489CB43EA6B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "788EE938F8D2445C3A70843CD798CC66F31EB5CD" : 9223372036854775807,
+    "0B1FBB38C22A201BE19B9ECB87290489CB43EA6B" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "58AFC9FA-CBB8-456B-9F27-F97BCA61DBB9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "788EE938F8D2445C3A70843CD798CC66F31EB5CD" : "MyCashFlow\/Pods\/",
+    "0B1FBB38C22A201BE19B9ECB87290489CB43EA6B" : "MyCashFlow\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "myCashflow",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "myCashflow.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/vsparthee\/myCashflow.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0B1FBB38C22A201BE19B9ECB87290489CB43EA6B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/vsparthee\/ParthiDemoProject.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "788EE938F8D2445C3A70843CD798CC66F31EB5CD"
+    }
+  ]
+}

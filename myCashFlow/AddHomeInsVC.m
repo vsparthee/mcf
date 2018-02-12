@@ -7,11 +7,13 @@
 //
 
 #import "AddHomeInsVC.h"
+@interface AddHomeInsVC ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UITextViewDelegate>
 
-@interface AddHomeInsVC ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
 {
     float height;
     int cameraTag;
+    NSString *imgPath1,*imgPath2,*selectedID,*imgPath3,*imgPath4;
+    NSData *data1,*data2,*data3,*data4;
 }
 @end
 
@@ -19,9 +21,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.txtPolicyNum.userInteractionEnabled=NO;
+
     self.lbltitle.text=[TSLanguageManager localizedString:@"Add Report"];
+    self.lbldoc2.text=[TSLanguageManager localizedString:@"Document2"];
+    self.lblimg1.text=[TSLanguageManager localizedString:@"Image1"];
+    self.lblimg2.text=[TSLanguageManager localizedString:@"Image2"];
+
     self.lblpolicynum.text=[TSLanguageManager localizedString:@"Policy No"];
-    self.lbldoc.text=[TSLanguageManager localizedString:@"Document"];
+    self.lbldoc.text=[TSLanguageManager localizedString:@"Document1"];
     [self.btnSubmit setTitle:[TSLanguageManager localizedString:@"Submit"] forState:UIControlStateNormal];
     [self.btnCancel setTitle:[TSLanguageManager localizedString:@"Cancel"] forState:UIControlStateNormal];
 
@@ -34,7 +42,134 @@
         height=[UIScreen mainScreen].bounds.size.height;
     }
     self.viewHeight.constant=height-64;
+    self.pickerArr=[[NSMutableArray alloc]init];
+    [General startLoader:self.view];
+    
+    self.picker = [[UIPickerView alloc]init];
+    self.picker.delegate = self;
+    self.picker.dataSource = self;
+    self.picker.hidden = NO;
+    self.picker.showsSelectionIndicator = YES;
+    self.picker.tag = 0;
+    self.txtPolicyNum.inputView = self.picker;
+    self.txtPolicyNum.inputView.backgroundColor =[UIColor whiteColor];
+    self.txtPolicyNum.delegate = self;
+    self.txtPolicyNum.delegate = self;
+    
+    self.txtMessage.text = [TSLanguageManager localizedString:@"Enter Comment Here"];
+    self.txtMessage.textColor = [UIColor lightGrayColor];
+    self.txtMessage.delegate=self;
+
+    
+    
+APIHandler *api = [[APIHandler alloc]init];
+    [api api_financeFolder:^(id result)
+     {
+         @try
+         {
+             NSMutableArray *finalarr=[result valueForKey:@"data"];
+             if (finalarr.count>0)
+             {
+                 for (NSDictionary *dic in finalarr)
+                 {
+                     if (!([[dic valueForKey:@"Type"]rangeOfString:@"home" options:NSCaseInsensitiveSearch].location == NSNotFound))
+                     {
+                         NSMutableDictionary *temp=[[NSMutableDictionary alloc]init];
+                         [temp setObject:[dic valueForKey:@"Policy_id"] forKey:@"Policy_id"];
+                         [temp setObject:[dic valueForKey:@"PolicyNo"] forKey:@"PolicyNo"];
+                         [temp setObject:[dic valueForKey:@"ProductName"] forKey:@"ProductName"];
+                         [self.pickerArr addObject:temp];
+                     }
+                 }
+             }
+             if (self.pickerArr.count>0)
+             {
+                 NSDictionary *temp=[self.pickerArr objectAtIndex:0];
+                 selectedID=[NSString stringWithFormat:@"%@",[temp valueForKey:@"Policy_id"]];
+                 
+                 self.txtPolicyNum.userInteractionEnabled=YES;
+                 
+             }
+             else
+             {
+                 self.txtPolicyNum.userInteractionEnabled=NO;
+             }
+
+         }
+         @catch (NSException *exception)
+         {
+             [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+             
+         }
+         [General stopLoader];
+
+              }
+                   failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         [General stopLoader];
+         
+     }];
+    
+    
 }
+- (BOOL) textViewShouldBeginEditing:(UITextView *)textView
+{
+    if (self.txtMessage.textColor == [UIColor lightGrayColor]) {
+        self.txtMessage.text = @"";
+        self.txtMessage.textColor = [UIColor blackColor];
+    }
+    
+    return YES;
+}
+
+-(BOOL)textViewShouldEndEditing:(UITextView *)textView
+{
+    if(self.txtMessage.text.length == 0 || [self.txtMessage.text isEqualToString:@""] || self.txtMessage == NULL)
+    {
+        self.txtMessage.textColor = [UIColor lightGrayColor];
+        self.txtMessage.text = [TSLanguageManager localizedString:@"Enter Comment Here"];
+        [self.txtMessage resignFirstResponder];
+        
+    }
+    return YES;
+    
+}
+-(void) textViewDidChange:(UITextView *)textView
+{
+    if(self.txtMessage.text.length == 0 || [self.txtMessage.text isEqualToString:@""] || self.txtMessage == NULL)
+    {
+        self.txtMessage.textColor = [UIColor lightGrayColor];
+        self.txtMessage.text = [TSLanguageManager localizedString:@"Enter Comment Here"];
+        [self.txtMessage resignFirstResponder];
+    }
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    NSUInteger newLength = [self.txtMessage.text length] + [text length] - range.length;
+    
+    if([text isEqualToString:@"\n"] || newLength == 0)
+    {
+        [textView resignFirstResponder];
+        if(self.txtMessage.text.length == 0 || newLength == 0)
+        {
+            self.txtMessage.textColor = [UIColor lightGrayColor];
+            self.txtMessage.text = [TSLanguageManager localizedString:@"Enter Comment Here"];
+            [self.txtMessage resignFirstResponder];
+            
+            return NO;
+            
+        }
+        else
+        {
+            return YES;
+            
+        }
+    }
+    return YES;
+}
+
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -93,14 +228,28 @@
 {
     cameraTag=2;
     [self changePhoto];
+}
 
+- (IBAction)action_img3:(UIButton *)sender
+{
+    cameraTag=3;
+    [self changePhoto];
+
+}
+- (IBAction)action_img4:(UIButton *)sender
+{
+    cameraTag=4;
+    [self changePhoto];
 
 }
 
-- (void)changePhoto{
+
+- (void)changePhoto
+{
     
     NSLog(@"Inside Image Change...");
-    UIActionSheet  *webSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Albums", nil),NSLocalizedString(@"Take a Photo", nil), nil];
+    UIActionSheet  *webSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:NSLocalizedString([TSLanguageManager localizedString:@"Cancel"], nil) destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString([TSLanguageManager localizedString:@"Albums"], nil),NSLocalizedString([TSLanguageManager localizedString:@"Take a Photo"], nil), nil];
+
     [webSheet showInView:self.view];
 }
 
@@ -150,17 +299,40 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
     UIImage *imagee =  [self normalizedImage:chosenImage];
     
-    float imgheight = 512;
-    float width = 512;
     
     if (cameraTag==1)
     {
-        self.imgDoc1.image = [self imageWithImage:imagee scaledToFillSize:CGSizeMake(width, imgheight)];
+        self.imgDoc1.image = imagee;
+        imgPath1 = [NSString stringWithFormat:@"%@",[info valueForKey:UIImagePickerControllerReferenceURL]];
+        data1= [self compressImage:imagee];
+    }
+    else if (cameraTag==2)
+    {
+        self.imgDoc2.image = imagee;
+        imgPath2 = [NSString stringWithFormat:@"%@",[info valueForKey:UIImagePickerControllerReferenceURL]];
+        data2= [self compressImage:imagee];
+
+
+    }
+    else if (cameraTag==3)
+    {
+        
+        self.imgDoc3.image = imagee;
+        imgPath3 = [NSString stringWithFormat:@"%@",[info valueForKey:UIImagePickerControllerReferenceURL]];
+        data3= [self compressImage:imagee];
+        
+        
     }
     else
     {
-        self.imgDoc2.image = [self imageWithImage:imagee scaledToFillSize:CGSizeMake(width, imgheight)];
+        
+        self.imgDoc4.image = imagee;
+        imgPath4 = [NSString stringWithFormat:@"%@",[info valueForKey:UIImagePickerControllerReferenceURL]];
+        data4= [self compressImage:imagee];
+        
+        
     }
+
     
     [picker dismissViewControllerAnimated:YES completion:nil];
     
@@ -205,9 +377,243 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     return imageData;
 }
 
-- (IBAction)action_Submit:(UIButton *)sender {
+- (IBAction)action_Submit:(UIButton *)sender
+{
+    if ([self imageValidation])
+    {
+        [General startLoader:self.view];
+        NSString * url = [NSString stringWithFormat:API_CreateHomeAccident,BASE_URL];
+        NSDictionary *userInfo = (NSDictionary*)[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        [dic setValue:[userInfo valueForKey:@"CustomerID"] forKey:@"CustomerID"];
+        [dic setValue:[NSString stringWithFormat:@"%@",selectedID] forKey:@"policyNo"];
+        if (![_txtMessage.text isEqualToString:[TSLanguageManager localizedString:@"Enter Comment Here"]])
+        {
+            [dic setValue:[NSString stringWithFormat:@"%@",_txtMessage.text] forKey:@"Comments"];
+            
+        }
+        else
+        {
+            [dic setValue:[NSString stringWithFormat:@""] forKey:@"Comments"];
+        }
+
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        
+        [manager POST:url parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            if (data1!=nil)
+            {
+                [formData appendPartWithFileData:data1
+                                            name:@"Document1"
+                                        fileName:@"Document1.jpeg" mimeType:@"image/jpeg"];
+            }
+            if (data2!=nil)
+            {
+                [formData appendPartWithFileData:data2
+                                            name:@"Document2"
+                                        fileName:@"Document2.jpeg" mimeType:@"image/jpeg"];
+            }
+            if (data3!=nil)
+            {
+                [formData appendPartWithFileData:data3
+                                            name:@"ImageDoc1"
+                                        fileName:@"ImageDoc1.jpeg" mimeType:@"image/jpeg"];
+            }
+            if (data4!=nil)
+            {
+                [formData appendPartWithFileData:data4
+                                            name:@"ImageDoc2"
+                                        fileName:@"ImageDoc2.jpeg" mimeType:@"image/jpeg"];
+            }
+
+        } progress:nil success:^(NSURLSessionDataTask *task, id responseObject)
+         {
+             @try
+             {
+                 if ([[responseObject valueForKey:@"status"] boolValue]==true)
+                 {
+                     [General makeToast:@"Document/Images added successfully" withToastView:self.view];
+                     self.imgDoc1.image=[UIImage imageNamed:@"bg.jpg"];
+                     self.imgDoc2.image=[UIImage imageNamed:@"bg.jpg"];
+                     self.imgDoc3.image=[UIImage imageNamed:@"bg.jpg"];
+                     self.imgDoc4.image=[UIImage imageNamed:@"bg.jpg"];
+                     self.txtMessage.text = [TSLanguageManager localizedString:@"Enter Comment Here"];
+                     self.txtMessage.textColor = [UIColor lightGrayColor];
+
+                     imgPath1=nil;
+                     imgPath2=nil;
+                     imgPath3=nil;
+                     imgPath4=nil;
+                     
+                 }
+                 else
+                 {
+                     [General makeToast:@"Something went wrong. Please try again later" withToastView:self.view];
+                 }
+                 [General stopLoader];
+             }
+             @catch (NSException *exception)
+             {
+                 [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+             }
+             
+            
+
+        } failure:^(NSURLSessionDataTask *task, NSError *error)
+        {
+            [General makeToast:@"Something went wrong. Please try again later" withToastView:self.view];
+            [General stopLoader];
+
+        }];
+
+    }
+    
 }
 
-- (IBAction)action_Cancel:(UIButton *)sender {
+
+-(BOOL)imageValidation
+{
+    BOOL validation = FALSE;
+    if(selectedID == NULL || [selectedID isEqualToString:@""])
+    {
+        [General makeToast:@"Please enter policy number" withToastView:self.view];
+
+        return validation;
+    }
+    
+//    else if(imgPath1 == NULL || [imgPath1 isEqualToString:@""])
+//    {
+//        [General makeToast:@"Please add images before submit" withToastView:self.view];
+//        return validation;
+//    }
+//    
+//    else if(imgPath2 == NULL || [imgPath2 isEqualToString:@""])
+//    {
+//        [General makeToast:@"Please add images before submit" withToastView:self.view];
+//        return validation;
+//    }
+    else if (data1 || data2 || data3 || data4)
+    {
+        validation = true;
+        return validation;
+        
+    }
+    else
+    {
+        [General makeToast:@"Please add images before submit" withToastView:self.view];
+        return validation;
+    }
+    return validation;
 }
+
+- (IBAction)action_Cancel:(UIButton *)sender
+{
+    if( [self navigationController])
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else
+    {
+        [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+#pragma mark PICKERVIEW
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    
+    if([_pickerArr count] == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return _pickerArr.count;
+    }
+    
+}
+
+/*- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+ {
+ if(pickerView.tag==0)
+ {
+ if(_countryArr.count == 0)
+ {
+ return @"No data available";
+ }
+ else
+ {
+ return [_countryArr objectAtIndex:row];
+ }
+ }
+ else  if(pickerView.tag==1)
+ {
+ if(_stateArr.count == 0)
+ {
+ return @"No data available";
+ }
+ else
+ {
+ return [_stateArr objectAtIndex:row];
+ }
+ }
+ else
+ {
+ return 0;
+ }
+ }
+ */
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    NSDictionary *temp=[_pickerArr objectAtIndex:row];
+    self.txtPolicyNum.text = [NSString stringWithFormat:@"%@ (%@)",[temp valueForKey:@"ProductName"],[temp valueForKey:@"PolicyNo"]];
+    selectedID=[NSString stringWithFormat:@"%@",[temp valueForKey:@"Policy_id"]];
+
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    NSDictionary *temp=[_pickerArr objectAtIndex:row];
+    
+    NSString *title;
+    if(_pickerArr.count == 0)
+    {
+        title =   @"No data available";
+    }
+    else
+    {
+        title = [NSString stringWithFormat:@"%@ (%@)",[temp valueForKey:@"ProductName"],[temp valueForKey:@"PolicyNo"]];
+        self.txtPolicyNum.text=title;
+    }
+    
+    
+    UILabel* tView = (UILabel*)view;
+    if (!tView)
+    {
+        tView = [[UILabel alloc] init];
+        [tView setFont:[UIFont fontWithName:THEME_FONT size:18]];
+        [tView setTextAlignment:NSTextAlignmentCenter];
+        [tView setTextColor:[UIColor darkGrayColor]];
+        tView.numberOfLines=3;
+    }
+    tView.text=title;
+    return tView;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if([textField isEqual:self.txtPolicyNum])
+    {
+        return NO;
+    }
+    return YES;
+}
+
 @end

@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tblDocList;
 @property (weak, nonatomic) LeftMenuVC *parent;
 @property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segment_docType;
+- (IBAction)action_Doc_type:(UISegmentedControl *)sender;
 
 @end

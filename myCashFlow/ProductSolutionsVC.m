@@ -32,7 +32,7 @@
     }
     else
     {
-        height=[UIScreen mainScreen].bounds.size.height/3;
+        height=[UIScreen mainScreen].bounds.size.height/2;
     }
     nodata  = [[UILabel alloc]initWithFrame:CGRectMake(16, self.view.frame.size.height/2 - 65, self.view.frame.size.width-32, 30)];
     nodata.text = @"No data founds in product solution";
@@ -46,22 +46,35 @@
 
 -(void)setupAPI
 {
+    
+    
+
     [General startLoader:self.view];
     APIHandler *api = [[APIHandler alloc]init];
     [api api_ProductSolution:^(id result)
      {
-         NSDictionary *temp =[result mutableCopy];
-         productArr = [temp valueForKey:@"data"];
-         if (productArr.count>0)
+         @try
          {
-             [nodata removeFromSuperview];
+             NSDictionary *temp =[result mutableCopy];
+             productArr = [temp valueForKey:@"data"];
+             if (productArr.count>0)
+             {
+                 [nodata removeFromSuperview];
+             }
+             else
+             {
+                 [self.tblProduct addSubview:nodata];
+             }
+             [self.tblProduct reloadData];
          }
-         else
+         @catch (NSException *exception)
          {
-             [self.tblProduct addSubview:nodata];
+             [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+             
          }
-         [self.tblProduct reloadData];
          [General stopLoader];
+         
+    
      }
     failure:^(NSURLSessionTask *operation, NSError *error)
      {
@@ -122,32 +135,147 @@
     [cell.img2 setShowActivityIndicatorView:YES];
     [cell.img2 setIndicatorStyle:UIActivityIndicatorViewStyleGray];
     //[cell.img2 sd_setImageWithURL:url placeholderImage:nil options:SDWebImageRefreshCached];
-    [cell.img2 sd_setImageWithURL:url placeholderImage:nil options:SDWebImageRefreshCached completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        [cell.videologo setHidden:NO];
-    }];
+    UITapGestureRecognizer *tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bigButtonTapped:)];
+    cell.img1.tag=indexPath.row+100;
+    cell.img1.userInteractionEnabled = YES;
     
+    [cell.img1 addGestureRecognizer:tapped];
+
+    
+    UITapGestureRecognizer *videotapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(videoButtonTapped:)];
+    cell.img2.tag=indexPath.row+100;
+    cell.img2.userInteractionEnabled = YES;
+    
+    [cell.img2 addGestureRecognizer:videotapped];
+
     NSString *strURL1 = [NSString stringWithFormat:@"%@",[product valueForKey:@"ProductPhoto"]];
     NSURL *url1 = [NSURL URLWithString:strURL1];
-    [cell.img1 setShowActivityIndicatorView:YES];
-    [cell.img1 setIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    [cell.img1 sd_setImageWithURL:url1
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    [cell.btnDocument addTarget:self action:@selector(viewPDF:) forControlEvents:UIControlEventTouchUpInside];
+    cell.btnDocument.tag=indexPath.row+100;
+    NSString *pdfurl = [NSString stringWithFormat:@"%@",[product valueForKey:@"PDFURL"]];
+    if (pdfurl.length<10 || pdfurl==nil || pdfurl == NULL)
+    {
+        cell.pdfView.hidden=YES;
+    }
+    else
+    {
+        cell.pdfView.hidden=NO;
+    }
+    float width = [UIScreen mainScreen].bounds.size.width-16;
+    NSString *videourl = [General extractYoutubeIdFromLink:[NSString stringWithFormat:@"%@",[product valueForKey:@"VideoURL"]]];
+
+    if (![[product valueForKey:@"ProductPhoto"]isKindOfClass:[NSNull class]] && ![[product valueForKey:@"VideoURL"]isKindOfClass:[NSNull class]] && videourl!=nil)
+    {
+        cell.img1Width.constant=width/2;
+        cell.imageView.hidden=NO;
+        cell.videologo.hidden=NO;
+        [cell.img1 setShowActivityIndicatorView:YES];
+        [cell.img1 setIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [cell.img1 sd_setImageWithURL:url1
                      placeholderImage:nil
                               options:SDWebImageRefreshCached];
-    
-    
-     cell.selectionStyle=UITableViewCellSelectionStyleNone;
+
+        [cell.img2 setShowActivityIndicatorView:YES];
+        [cell.img2 setIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [cell.img2 sd_setImageWithURL:url placeholderImage:nil options:SDWebImageRefreshCached completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            [cell.videologo setHidden:NO];
+        }];
+
+    }
+    else
+    {
+        if (![[product valueForKey:@"ProductPhoto"]isKindOfClass:[NSNull class]])
+        {
+            [cell.img1 setShowActivityIndicatorView:YES];
+            [cell.img1 setIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            [cell.img1 sd_setImageWithURL:url1
+                         placeholderImage:nil
+                                  options:SDWebImageRefreshCached];
+
+            cell.img1Width.constant=width;
+            cell.imageView.hidden=NO;
+            cell.videologo.hidden=YES;
+        }
+        else if (![[product valueForKey:@"VideoURL"]isKindOfClass:[NSNull class]] && videourl!=nil)
+        {
+            cell.img1Width.constant=0;
+            cell.imageView.hidden=NO;
+            cell.videologo.hidden=NO;
+            [cell.img2 setShowActivityIndicatorView:YES];
+            [cell.img2 setIndicatorStyle:UIActivityIndicatorViewStyleGray];
+
+            [cell.img2 sd_setImageWithURL:url placeholderImage:nil options:SDWebImageRefreshCached completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                [cell.videologo setHidden:NO];
+            }];
+
+        }
+        else
+        {
+            cell.imageView.hidden=YES;
+            cell.videologo.hidden=YES;
+        }
+    }
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+-(IBAction)viewPDF:(UIButton*)sender
 {
-    NSDictionary *product = [productArr objectAtIndex:indexPath.row];
+    @try
+    {
+        NSDictionary *product = [productArr objectAtIndex:sender.tag-100];
+        
+        NSString *url = [NSString stringWithFormat:@"%@",[product valueForKey:@"PDFURL"]];
+        
+        if (url.length>5)
+        {
+            PdfViewerVC  *wc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"PdfViewerVC"];
+            wc.titleStr=[NSString stringWithFormat:@"%@",[product valueForKey:@"PDFName"]];
+            wc.urlStr=[NSString stringWithFormat:@"%@",[product valueForKey:@"PDFURL"]];
+            
+            [self presentViewController:wc animated:YES completion:nil];
 
+        }
+    }
+    @catch (NSException *exception)
+    {
+        [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+        
+    }
+    
+}
+- (void)videoButtonTapped:(UITapGestureRecognizer *)sender
+{
+    NSDictionary *product = [productArr objectAtIndex:sender.view.tag-100];
+    
     XCDYouTubeVideoPlayerViewController *videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:[General extractYoutubeIdFromLink:[NSString stringWithFormat:@"%@",[product valueForKey:@"VideoURL"]]]];
     videoPlayerViewController.moviePlayer.backgroundPlaybackEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:@"PlayVideoInBackground"];
     videoPlayerViewController.preferredVideoQualities =  @[@(XCDYouTubeVideoQualityMedium360)];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayerPlaybackDidFinish:) name:MPMoviePlayerPlaybackDidFinishNotification object:videoPlayerViewController.moviePlayer];
     [self presentMoviePlayerViewControllerAnimated:videoPlayerViewController];
+}
+- (void)bigButtonTapped:(UITapGestureRecognizer *)sender
+{
+    
+    UIImageView *myImageView = (UIImageView *)[self.tblProduct viewWithTag:sender.view.tag];
+
+    JTSImageInfo *imageInfo = [[JTSImageInfo alloc] init];
+    
+    imageInfo.image = myImageView.image;
+    imageInfo.referenceRect = myImageView.frame;
+    imageInfo.referenceView = myImageView.superview;
+    imageInfo.referenceContentMode = myImageView.contentMode;
+    imageInfo.referenceCornerRadius = myImageView.layer.cornerRadius;
+    
+    JTSImageViewController *imageViewer = [[JTSImageViewController alloc]
+                                           initWithImageInfo:imageInfo
+                                           mode:JTSImageViewControllerMode_Image
+                                           backgroundStyle:JTSImageViewControllerBackgroundOption_Scaled];
+    [imageViewer showFromViewController:self transition:JTSImageViewControllerTransition_FromOriginalPosition];
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   /* */
 }
 
 #pragma mark - Notifications
@@ -169,7 +297,16 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSDictionary *product = [productArr objectAtIndex:indexPath.row];
+    if ([[product valueForKey:@"ProductPhoto"]isKindOfClass:[NSNull class]]&&[[product valueForKey:@"VideoURL"]isKindOfClass:[NSNull class]])
+    {
+        return 160;
+        
+    }
+    else
+    {
     return height;
+    }
 }
 
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration

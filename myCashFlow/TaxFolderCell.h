@@ -19,5 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *yrlbl;
 @property (weak, nonatomic) IBOutlet UILabel *filldatelbl;
 @property (weak, nonatomic) IBOutlet UILabel *viewpdflbl;
+@property (weak, nonatomic) IBOutlet UILabel *doclbl;
+@property (weak, nonatomic) IBOutlet UIImageView *docimage;
 
 @end

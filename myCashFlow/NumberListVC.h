@@ -11,5 +11,6 @@
 @interface NumberListVC : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tblNumberList;
 @property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+@property (strong, nonatomic) NSDictionary *selectedDic;
 
 @end

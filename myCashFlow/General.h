@@ -33,7 +33,7 @@ withShadowRadius:(float)shadow_radius;
 +(void)animateViewWitView :(UIView *)view;
 +(void)makeToast:(NSString *)msg withToastView:(id)toastView;
 
-+(void)json:(NSDictionary*)dic;
++(NSString*)json:(NSDictionary*)dic;
 
 +(NSString *)extractYoutubeIdFromLink:(NSString *)link;
 

@@ -45,24 +45,40 @@
 
 -(void)setupAPI
 {
+    
+    
+    
+    
+
     [General startLoader:self.view];
 
     APIHandler *api = [[APIHandler alloc]init];
     [api api_VideosList:^(id result)
      {
-         NSDictionary *temp =[result mutableCopy];
-         videoArr = [temp valueForKey:@"data"];
-         
-         if (videoArr.count>0)
+         @try
          {
-             [nodata removeFromSuperview];
+             NSDictionary *temp =[result mutableCopy];
+             videoArr = [temp valueForKey:@"data"];
+             
+             if (videoArr.count>0)
+             {
+                 [nodata removeFromSuperview];
+             }
+             else
+             {
+                 [self.tblVideo addSubview:nodata];
+             }
+             [self.tblVideo reloadData];
          }
-         else
+         @catch (NSException *exception)
          {
-             [self.tblVideo addSubview:nodata];
+             [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+             
          }
          [General stopLoader];
-         [self.tblVideo reloadData];
+
+         
+         
 
      }
     failure:^(NSURLSessionTask *operation, NSError *error)

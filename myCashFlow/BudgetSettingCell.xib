@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="17B1003" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHIC.TTF">
+            <string>CenturyGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="94" id="KGk-i7-Jjw" customClass="BudgetSettingCell">
+            <rect key="frame" x="0.0" y="0.0" width="384" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="384" height="93.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yd0-4w-qYn">
+                        <rect key="frame" x="0.0" y="0.0" width="384" height="93.5"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mEs-GA-ALf">
+                                <rect key="frame" x="252" y="32" width="90" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="2vg-bN-mrT"/>
+                                    <constraint firstAttribute="height" constant="30" id="cGE-z6-MGq"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjH-dT-qj4">
+                                <rect key="frame" x="8" y="8" width="228" height="77.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbq-dT-CeF">
+                                <rect key="frame" x="346" y="31" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="JDD-UA-Z7c"/>
+                                    <constraint firstAttribute="height" constant="30" id="VpR-MQ-xM0"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="delete"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pbq-dT-CeF" firstAttribute="centerY" secondItem="Yd0-4w-qYn" secondAttribute="centerY" id="5wU-l4-FPi"/>
+                            <constraint firstItem="mEs-GA-ALf" firstAttribute="leading" secondItem="pjH-dT-qj4" secondAttribute="trailing" constant="16" id="JAt-zE-rgc"/>
+                            <constraint firstItem="pjH-dT-qj4" firstAttribute="top" secondItem="Yd0-4w-qYn" secondAttribute="top" constant="8" id="U8D-XD-Owi"/>
+                            <constraint firstItem="pjH-dT-qj4" firstAttribute="leading" secondItem="Yd0-4w-qYn" secondAttribute="leading" constant="8" id="XmE-Ii-Uke"/>
+                            <constraint firstItem="pbq-dT-CeF" firstAttribute="leading" secondItem="mEs-GA-ALf" secondAttribute="trailing" constant="4" id="bz7-vJ-XVB"/>
+                            <constraint firstItem="mEs-GA-ALf" firstAttribute="centerY" secondItem="Yd0-4w-qYn" secondAttribute="centerY" id="pyd-lU-lq4"/>
+                            <constraint firstAttribute="bottom" secondItem="pjH-dT-qj4" secondAttribute="bottom" constant="8" id="tLg-zD-fSe"/>
+                            <constraint firstAttribute="trailing" secondItem="pbq-dT-CeF" secondAttribute="trailing" constant="8" id="v6G-OD-Diz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Yd0-4w-qYn" secondAttribute="trailing" id="Jmm-TC-JJE"/>
+                    <constraint firstItem="Yd0-4w-qYn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fm4-Ng-4BD"/>
+                    <constraint firstItem="Yd0-4w-qYn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="h0N-Wz-aqZ"/>
+                    <constraint firstAttribute="bottom" secondItem="Yd0-4w-qYn" secondAttribute="bottom" id="yMQ-AP-u6b"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="btnDelete" destination="pbq-dT-CeF" id="kuK-og-ij7"/>
+                <outlet property="lblAmount" destination="mEs-GA-ALf" id="40x-Tu-ydh"/>
+                <outlet property="lblTitle" destination="pjH-dT-qj4" id="cyP-aD-PeF"/>
+            </connections>
+            <point key="canvasLocation" x="105" y="85"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="delete" width="32" height="32"/>
+    </resources>
+</document>

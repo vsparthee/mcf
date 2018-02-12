@@ -22,4 +22,11 @@
 @property (weak, nonatomic) IBOutlet UIView *remarkBtmView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *remarkheight;
 
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+@property (weak, nonatomic) IBOutlet UILabel *rcctolbl;
+@property (weak, nonatomic) IBOutlet UILabel *numlbl;
+@property (weak, nonatomic) IBOutlet UILabel *maillbl;
+@property (weak, nonatomic) IBOutlet UILabel *addrlbl;
+@property (weak, nonatomic) IBOutlet UILabel *remarklbl;
+
 @end

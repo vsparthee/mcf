@@ -25,6 +25,7 @@
 #import "VENTouchLock.h"
 #import "SettingVC.h"
 #import "DocumentList.h"
+#import "RequsetOfferVC.h"
 @interface LeftMenuVC ()
 {
     NSString *newsID;
@@ -43,6 +44,7 @@
     MessageVC *msg;
     SettingVC *setting;
     DocumentList *doc;
+    RequsetOfferVC *reqOffer;
 }
 @end
 
@@ -68,18 +70,21 @@
                   [TSLanguageManager localizedString: @"Budget and Saverate"],
                   [TSLanguageManager localizedString:@"Numbers"],
                   [TSLanguageManager localizedString:@"Accident Reporting"],
+                  [TSLanguageManager localizedString:@"Offers"],
                   [TSLanguageManager localizedString: @"Message & Notification"],
                   [TSLanguageManager localizedString:@"Contracts Appointments"],
                   [TSLanguageManager localizedString:@"Product Solutions"],
                   [TSLanguageManager localizedString:@"Videos"],
                   [TSLanguageManager localizedString:@"Discount"],
-                  [TSLanguageManager localizedString:@"Recommandation"],
+                  [TSLanguageManager localizedString:@"Recommendation"],
                   [TSLanguageManager localizedString: @"Documents"],
-                  [TSLanguageManager localizedString:@"Consulter Profile"],
-                  [TSLanguageManager localizedString:@"My Accounts"],
+                  [TSLanguageManager localizedString:@"Consultor Profile"],
+                  [TSLanguageManager localizedString:@"My Account"],
                   [TSLanguageManager localizedString: @"Setting"],
                   [TSLanguageManager localizedString:@"Signout"], nil];
-    _imageArry = [NSArray arrayWithObjects:@"Home",@"Finance", @"Tax", @"Budget",@"phone",@"Accident Menu",@"Message", @"Contracts",@"Product",@"Videos",@"offer",@"Recommandation",@"Document", @"User",@"User",@"settings", @"Sign Out Fill", nil];
+    
+    
+    _imageArry = [NSArray arrayWithObjects:@"Home",@"Finance", @"Tax", @"Budget",@"phone",@"Accident Menu",@"offers",@"Message", @"Contracts",@"Product",@"Videos",@"discount",@"Recommandation",@"Document", @"consulter",@"User",@"settings", @"Sign Out Fill", nil];
     [self.tableView reloadData];
     
     
@@ -110,7 +115,7 @@
     cell.menuTitle.text = [_titleArry objectAtIndex:indexPath.row];
     cell.menuImg.image = [UIImage imageNamed:[_imageArry objectAtIndex:indexPath.row]];
     cell.menuImg.tintColor = BG_COLOR;
-
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -165,8 +170,15 @@
         [self.sideMenuController setRootViewController:accreport];
         [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
     }
-    
     if(indexPath.row == 6)
+    {
+        reqOffer = [storyboard instantiateViewControllerWithIdentifier:@"RequsetOfferVC"];
+        reqOffer.parent=self;
+        [self.sideMenuController setRootViewController:reqOffer];
+        [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
+    }
+
+    if(indexPath.row == 7)
     {
         msg = [storyboard instantiateViewControllerWithIdentifier:@"MessageVC"];
         msg.parent=self;
@@ -174,7 +186,7 @@
         [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
     }
     
-    if(indexPath.row == 7)
+    if(indexPath.row == 8)
     {
         appoinment = [storyboard instantiateViewControllerWithIdentifier:@"AppointmentVC"];
         appoinment.parent=self;
@@ -183,7 +195,7 @@
     }
     
     
-    if(indexPath.row == 8)
+    if(indexPath.row == 9)
     {
         product = [storyboard instantiateViewControllerWithIdentifier:@"ProductSolutionsVC"];
         product.parent=self;
@@ -191,7 +203,7 @@
         [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
     }
     
-    if(indexPath.row == 9)
+    if(indexPath.row == 10)
     {
         video = [storyboard instantiateViewControllerWithIdentifier:@"VideoVC"];
         video.parent=self;
@@ -200,7 +212,7 @@
     }
     
     
-    if(indexPath.row == 10)
+    if(indexPath.row == 11)
     {
         offer = [storyboard instantiateViewControllerWithIdentifier:@"OffersVC"];
         offer.parent=self;
@@ -209,7 +221,7 @@
     }
     
     
-    if(indexPath.row == 11)
+    if(indexPath.row == 12)
     {
         recommandation = [storyboard instantiateViewControllerWithIdentifier:@"RecommandationVC"];
         recommandation.parent=self;
@@ -219,7 +231,7 @@
     
     
     
-    if(indexPath.row == 12)
+    if(indexPath.row == 13)
     {
         doc = [storyboard instantiateViewControllerWithIdentifier:@"DocumentList"];
         doc.parent=self;
@@ -227,7 +239,7 @@
         [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
     }
 
-    if(indexPath.row == 13)
+    if(indexPath.row == 14)
     {
         consultor = [storyboard instantiateViewControllerWithIdentifier:@"ConsultorProfileVC"];
         consultor.parent=self;
@@ -235,7 +247,7 @@
         [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
     }
     
-    if(indexPath.row == 14)
+    if(indexPath.row == 15)
     {
         profile = [storyboard instantiateViewControllerWithIdentifier:@"UserProfileVC"];
         profile.parent=self;
@@ -244,28 +256,45 @@
     }
     
     
-    if(indexPath.row == 15)
+    if(indexPath.row == 16)
     {
         setting = [storyboard instantiateViewControllerWithIdentifier:@"SettingVC"];
         setting.parent=self;
         [self.sideMenuController setRootViewController:setting];
         [self.sideMenuController hideLeftViewAnimated:YES completionHandler:nil];
     }
-    if(indexPath.row == 16)
+    if(indexPath.row == 17)
     {
-        [self logout];
-    }
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"myCashflow"
+                                                                       message:[TSLanguageManager localizedString:@"Do you want logout?"]
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *firstAction = [UIAlertAction actionWithTitle:[TSLanguageManager localizedString:@"Ok"]
+                                                              style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
+                                                                  [self logout];
 
+                                                              }];
+        UIAlertAction *secondAction = [UIAlertAction actionWithTitle:[TSLanguageManager localizedString:@"Cancel"]
+                                                               style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                               }];
+        
+        [alert addAction:firstAction];
+        [alert addAction:secondAction];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+   
 }
 -(void)logout
 {
+    [[VENTouchLock sharedInstance] deletePasscode];
+
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     LGSideMenuController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"LGSideMenuController"];
     UINavigationController *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginNC"];
     UIViewController *leftMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"LeftMenuVC"];
     [rootViewController setRootViewController:homeVC];
     [rootViewController setLeftViewController:leftMenuVC];
-    [rootViewController setLeftViewDisabled:FALSE];
+    [rootViewController setLeftViewDisabled:true];
     CGFloat screenWidth = 0.0;
     if ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height)
     {
@@ -282,7 +311,10 @@
     [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"setpwd"];
     [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userInfo"];
     [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"isLogin"];
-    [[VENTouchLock sharedInstance] deletePasscode];
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"profileImage"];
+
+    
+    
 
 }
 -(void)home

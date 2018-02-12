@@ -21,5 +21,8 @@
 #import "IQKeyboardManager.h"
 #import "FCAlertView.h"
 #import "TSLanguageManager.h"
+#import <AFNetworking.h>
+#import "JTSImageViewController.h"
+#import "JTSImageInfo.h"
 
 #endif /* PrefixHeader_pch */

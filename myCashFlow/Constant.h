@@ -18,10 +18,9 @@
 //DARK_BG       #0F1A26
 //THEME_COLOR   #2FC5CC
 
-#define THEME_FONT      @"Century Gothic-Regular"
+#define THEME_FONT      @"Century Gothic"
 
-#define BASE_URL                        @"http://mycash.ccflow.ch/Customer/"
-#define ImageBaseURL                    @"http://172.16.40.247/opencart/upload/image/cache/"
+#define BASE_URL                        @"http://my-cashflow.ch/Customer/"
 
 #define LOGIN                           @"%@Customer/Login"
 #define REGISTER                        @"%@Customer/Register"
@@ -43,6 +42,21 @@
 #define API_MyBudgetDailyExpense        @"%@Customer/MyBudgetDailyExpense"
 #define API_MyBudgetDailyExpenseCreate  @"%@Customer/MyBudgetDailyExpenseCreate"
 #define API_MyBudget                    @"%@Customer/MyBudget"
+#define API_ChangePassword              @"%@Customer/ChangePassword"
+#define API_ForgetPassword              @"%@Customer/ForgetPassword"
+#define API_ProfileUpdate               @"%@Customer/ProfileUpdate"
+#define API_GetCarAccidentReport        @"%@Customer/GetCarAccidentReport"
+#define API_GetHomeAccidentReport       @"%@Customer/GetHomeAccidentReport"
+#define API_GetHealthAccidentReport     @"%@Customer/GetHealthAccidentReport"
+#define API_CreateCarAccident           @"%@Customer/CreateCarAccident"
+#define API_CreateHomeAccident          @"%@Customer/CreateHomeAccident"
+#define API_CreateHealthAccident        @"%@Customer/CreateHealthAccident"
+#define API_GetNotification             @"%@Customer/GetNotification"
+#define API_GetPolicyType               @"%@Customer/GetPolicyType"
+#define API_GetOfferFieldByPolicyType   @"%@Customer/GetOfferFieldByPolicyType"
+#define API_NewOfferRequest             @"%@Customer/NewOfferRequest"
+#define API_ConsultantComments          @"%@Customer/ConsultantComments"
+#define API_MyBudgetDeleteEntity        @"%@Customer/mybudgetdeleteentity"
 
 
 #endif /* Constant_h */

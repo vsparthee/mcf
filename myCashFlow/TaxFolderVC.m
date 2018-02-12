@@ -9,9 +9,10 @@
 #import "TaxFolderVC.h"
 #import "TaxFolderCell.h"
 #import "HVTableView.h"
-@interface TaxFolderVC ()<HVTableViewDelegate,HVTableViewDataSource>
+#import "DocListCell.h"
+@interface TaxFolderVC ()<HVTableViewDelegate,HVTableViewDataSource,UITableViewDelegate,UITableViewDataSource>
 {
-    NSMutableArray *taxArr;
+    NSMutableArray *taxArr,*pdfArr;
     UILabel *nodata;
 }
 
@@ -33,6 +34,8 @@
     self.tblTax.estimatedRowHeight = 2500;
     self.tblTax.contentInset = UIEdgeInsetsMake(0, 0, 45, 0);
 
+    self.tblDocList.delegate = self;
+    self.tblDocList.dataSource = self;
     [self setupAPI];
     
 }
@@ -47,23 +50,35 @@
     nodata.textColor = THEME_COLOR;
     
     [General startLoader:self.view];
+    
+    
+    
     APIHandler *api = [[APIHandler alloc]init];
     [api api_taxFolder:^(id result)
      {
-         NSDictionary *temp =[result mutableCopy];
-         taxArr = [temp valueForKey:@"data"];
-         if (taxArr.count>0)
+         @try
          {
-             [nodata removeFromSuperview];
+             NSDictionary *temp =[result mutableCopy];
+             taxArr = [temp valueForKey:@"data"];
+             if (taxArr.count>0)
+             {
+                 [nodata removeFromSuperview];
+             }
+             else
+             {
+                 [self.tblTax addSubview:nodata];
+                 
+             }
+             
+             [self.tblTax reloadData];
          }
-         else
+         @catch (NSException *exception)
          {
-             [self.tblTax addSubview:nodata];
+             [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
              
          }
-         
-         [self.tblTax reloadData];
          [General stopLoader];
+         
      }
     failure:^(NSURLSessionTask *operation, NSError *error)
      {
@@ -114,7 +129,8 @@
         cell.arrowBtn.transform = CGAffineTransformMakeRotation(0);
     }];
     
-    /*cell.questionView.backgroundColor = theme_color;
+    /*
+    cell.questionView.backgroundColor = theme_color;
     [UIView animateWithDuration:.5 animations:^{
         NSMutableDictionary *dic = (NSMutableDictionary*)[self.otherPgmArr objectAtIndex:indexPath.row];
         NSString *date = [GeneralVC MMMM_dd_yyyy_dateConvertor:[dic valueForKey:@"progStartDate"]];
@@ -124,19 +140,21 @@
         
         cell.arrowBtn.transform = CGAffineTransformMakeRotation(0);
         
-    }];*/
+    }];
+     */
 }
 
 -(void)tableView:(UITableView *)tableView collapseCell:(TaxFolderCell *)cell withIndexPath:(NSIndexPath *)indexPath{
     
-   /* cell.questionView.backgroundColor = theme_color;
+   /* 
+    cell.questionView.backgroundColor = theme_color;
     
     NSMutableDictionary *dic = (NSMutableDictionary*)[self.otherPgmArr objectAtIndex:indexPath.row];
     NSString *date = [GeneralVC MMMM_dd_yyyy_dateConvertor:[dic valueForKey:@"progStartDate"]];
     date = [date stringByAppendingString:[NSString stringWithFormat:@"  %@",[GeneralVC convertTimeFromMileSecond:[dic valueForKey:@"progStartTime"]]]];
     cell.questionLbl.text = date;
         cell.img.hidden = YES;
-        */
+    */
     cell.arrowBtn.transform = CGAffineTransformMakeRotation(0);
 
     [UIView animateWithDuration:0.5 animations:^{
@@ -155,40 +173,72 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    if (tableView.tag == 100)
+    {
+        return taxArr.count;
+    }
+    else
+    {
+        return pdfArr.count;
+    }
     
-    return taxArr.count;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath isExpanded:(BOOL)isExpanded
 {
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TaxFolderCell" owner:self options:nil];
-    TaxFolderCell *cell = [nib objectAtIndex:0];
-    NSDictionary *tax = [taxArr objectAtIndex:indexPath.row];
-
-    if (!isExpanded)
+      NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TaxFolderCell" owner:self options:nil];
+        TaxFolderCell *cell = [nib objectAtIndex:0];
+        NSDictionary *tax = [taxArr objectAtIndex:indexPath.row];
+        
+        if (!isExpanded)
+        {
+            cell.arrowBtn.transform = CGAffineTransformMakeRotation(M_PI);
+        }
+        else
+        {
+            cell.arrowBtn.transform = CGAffineTransformMakeRotation(0);
+        }
+        cell.lblTaxYear.text=[NSString stringWithFormat:@"%@",[tax valueForKey:@"TaxYear"]];
+        cell.lblStatus.text=[NSString stringWithFormat:@"%@",[tax valueForKey:@"Status"]];
+        cell.lblFilingDate.text=[NSString stringWithFormat:@"%@",[tax valueForKey:@"TaxFillingDate"]];
+        
+        if (!([[tax valueForKey:@"Status"]rangeOfString:@"done" options:NSCaseInsensitiveSearch].location == NSNotFound))
+        {
+            cell.lblStatus.backgroundColor = [UIColor colorWithRed:0.00 green:0.90 blue:0.46 alpha:1.0];
+        }
+    NSMutableArray *temparr = [[tax valueForKey:@"FileList"] mutableCopy];
+    
+    if (temparr.count>0)
     {
-        cell.arrowBtn.transform = CGAffineTransformMakeRotation(M_PI);
+        [cell.btndownload addTarget:self action:@selector(viewPDF:) forControlEvents:UIControlEventTouchUpInside];
+        cell.btndownload.tag=indexPath.row;
+        cell.btndownload.alpha = 1.0;
+        cell.viewpdflbl.alpha = 1.0;
+        cell.docimage.alpha = 1.0;
+        cell.btndownload.userInteractionEnabled=YES;
     }
     else
     {
-        cell.arrowBtn.transform = CGAffineTransformMakeRotation(0);
+        cell.btndownload.alpha = 0.4;
+        cell.viewpdflbl.alpha = 0.4;
+        cell.docimage.alpha = 0.4;
+        cell.btndownload.userInteractionEnabled=NO;
     }
-    cell.lblTaxYear.text=[NSString stringWithFormat:@"%@",[tax valueForKey:@"TaxYear"]];
-    cell.lblStatus.text=[NSString stringWithFormat:@"%@",[tax valueForKey:@"Status"]];
-    cell.lblFilingDate.text=[NSString stringWithFormat:@"%@",[tax valueForKey:@"TaxFillingDate"]];
-    
-    [cell.btndownload addTarget:self action:@selector(viewPDF:) forControlEvents:UIControlEventTouchUpInside];
-    cell.btndownload.tag=indexPath.row;
-    
-    cell.yrlbl.text=[TSLanguageManager localizedString:@"Tax Year"];
-    cell.filldatelbl.text=[TSLanguageManager localizedString:@"Tax Filling Date"];
-    cell.viewpdflbl.text=[TSLanguageManager localizedString:@"View PDF"];
 
-    cell.selectionStyle = UITableViewCellSeparatorStyleNone;
-    
-    
-    return cell;
+   // [cell.btndownload addTarget:self action:@selector(viewPDF:) forControlEvents:UIControlEventTouchUpInside];
+  //  cell.btndownload.tag=indexPath.row;
+
+        cell.yrlbl.text=[TSLanguageManager localizedString:@"Tax Year"];
+        cell.filldatelbl.text=[TSLanguageManager localizedString:@"Tax Filling Date"];
+        cell.viewpdflbl.text=[TSLanguageManager localizedString:@"View PDF"];
+        cell.doclbl.text=[TSLanguageManager localizedString:@"Document List"];
+        
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
+        
+        
+        return cell;
+        
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath isExpanded:(BOOL)isexpanded
@@ -204,16 +254,47 @@
     }
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DocListCell" owner:self options:nil];
+    DocListCell *cell = [nib objectAtIndex:0];
+    NSDictionary *finance = [pdfArr objectAtIndex:indexPath.row];
+    cell.lblTitle.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"filename"]];
+    [cell.btndownload addTarget:self action:@selector(openPDF:) forControlEvents:UIControlEventTouchUpInside];
+    cell.btndownload.tag=indexPath.row;
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+
+    return cell;
+}
 -(IBAction)viewPDF:(UIButton*)sender
 {
-    NSDictionary *tax = [taxArr objectAtIndex:sender.tag];
 
+    self.docView.frame=[UIScreen mainScreen].bounds;
+    [self.view addSubview:self.docView];
+
+    
+    NSDictionary *tax = [taxArr objectAtIndex:sender.tag];
+    
+    pdfArr = [[tax valueForKey:@"FileList"] mutableCopy];
+    
+    [self.tblDocList reloadData];
+
+    
+}
+
+-(IBAction)openPDF:(UIButton*)sender
+{
+    
+    NSDictionary *tax = [pdfArr objectAtIndex:sender.tag];
+    
     PdfViewerVC  *wc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"PdfViewerVC"];
     
     //wc.urlStr=[NSString stringWithFormat:@"www.inkwelleditorial.com/pdfSample.pdf"];
+    wc.titleStr=[NSString stringWithFormat:@"%@",[tax valueForKey:@"filename"]];
     wc.urlStr=[NSString stringWithFormat:@"%@",[tax valueForKey:@"URL"]];
     [self presentViewController:wc animated:YES completion:nil];
 }
+
 
 /*
 #pragma mark - Navigation
@@ -230,19 +311,34 @@
     APIHandler *api = [[APIHandler alloc]init];
     [api api_taxAppoinment:^(id result)
     {
-         if ([[result valueForKey:@"status"] boolValue]==true)
-         {
-             [General makeToast:@"Your appoinment registered successfully" withToastView:self.view];
-         }
-         else
-         {
-             [General makeToast:@"Something went wrong. Please try again later" withToastView:self.view];
-         }
-         [General stopLoader];
+        @try
+        {
+            if ([[result valueForKey:@"status"] boolValue]==true)
+            {
+                [General makeToast:[TSLanguageManager localizedString:@"Your appoinment registered successfully"] withToastView:self.view];
+            }
+            else
+            {
+                [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+            }
+
+        }
+        @catch (NSException *exception)
+        {
+            [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+            
+        }
+        [General stopLoader];
      }
     failure:^(NSURLSessionTask *operation, NSError *error)
      {
          [General stopLoader];
      }];
 }
+
+- (IBAction)action_CloseDoc:(UIButton *)sender
+{
+    [self.docView removeFromSuperview];
+}
+
 @end

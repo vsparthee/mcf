@@ -8,8 +8,7 @@
 
 #import "ViewHealthInsVC.h"
 
-@interface ViewHealthInsVC ()
-{
+@interface ViewHealthInsVC (){
     float height;
 }
 @end
@@ -21,6 +20,7 @@
     self.lbltitle.text=[TSLanguageManager localizedString:@"View Report"];
     self.lblpolicynum.text=[TSLanguageManager localizedString:@"Policy No"];
     self.lbldoc.text=[TSLanguageManager localizedString:@"Document"];
+    self.lblcmt.text=[TSLanguageManager localizedString:@"Comments"];
 
     if ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height)
     {
@@ -31,6 +31,46 @@
         height=[UIScreen mainScreen].bounds.size.height;
     }
     self.viewHeight.constant=height-64;
+    
+    self.lblPolicyNum.text=[NSString stringWithFormat:@"%@",[self.selectedDic valueForKey:@"PolicyNo"]];
+    self.lblDate.text=[NSString stringWithFormat:@"%@",[self.selectedDic valueForKey:@"ReportedDate"]];
+    UITapGestureRecognizer *tapped1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bigButtonTapped:)];
+    
+    UITapGestureRecognizer *tapped2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bigButtonTapped:)];
+
+    NSString *strURL = [NSString stringWithFormat:@"%@",[self.selectedDic valueForKey:@"HealthDocument1URL"]];
+    NSURL *url = [NSURL URLWithString:strURL];
+    [self.imgDoc1 setShowActivityIndicatorView:YES];
+    [self.imgDoc1 setIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [self.imgDoc1 sd_setImageWithURL:url
+                    placeholderImage:nil
+                             options:SDWebImageRefreshCached];
+    self.imgDoc1.tag=100;
+    self.imgDoc1.userInteractionEnabled = YES;
+    
+    [self.imgDoc1 addGestureRecognizer:tapped1];
+
+    NSString *strURL1 = [NSString stringWithFormat:@"%@",[self.selectedDic valueForKey:@"HealthDocument2URL"]];
+    NSURL *url1 = [NSURL URLWithString:strURL1];
+    [self.imgDoc2 setShowActivityIndicatorView:YES];
+    [self.imgDoc2 setIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [self.imgDoc2 sd_setImageWithURL:url1
+                    placeholderImage:nil
+                             options:SDWebImageRefreshCached];
+    self.imgDoc2.tag=101;
+    self.imgDoc2.userInteractionEnabled = YES;
+    
+    [self.imgDoc2 addGestureRecognizer:tapped2];
+
+    self.lblComment.text=[NSString stringWithFormat:@"%@",[self.selectedDic valueForKey:@"Comments"]];
+    self.lblComment.editable = FALSE;
+    self.lblComment.selectable = FALSE;
+    self.lblComment.scrollEnabled =TRUE;
+    self.lblComment.textAlignment = NSTextAlignmentNatural;
+    self.lblComment.textColor = [UIColor grayColor];
+    self.lblComment.backgroundColor = [UIColor clearColor];
+    self.lblComment.userInteractionEnabled = TRUE;
+
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -80,5 +120,38 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)bigButtonTapped:(UITapGestureRecognizer *)sender
+{
+    
+    
+    UIImageView *temp = [[UIImageView alloc]init];
+    if (sender.view.tag == 100)
+    {
+        temp=self.imgDoc1;
+    }
+    else
+    {
+        temp=self.imgDoc2;
+    }
+    
+    
+    
+    
+    JTSImageInfo *imageInfo = [[JTSImageInfo alloc] init];
+    
+    imageInfo.image = temp.image;
+    imageInfo.referenceRect = temp.frame;
+    imageInfo.referenceView = temp.superview;
+    imageInfo.referenceContentMode = temp.contentMode;
+    imageInfo.referenceCornerRadius = temp.layer.cornerRadius;
+    
+    JTSImageViewController *imageViewer = [[JTSImageViewController alloc]
+                                           initWithImageInfo:imageInfo
+                                           mode:JTSImageViewControllerMode_Image
+                                           backgroundStyle:JTSImageViewControllerBackgroundOption_Scaled];
+    [imageViewer showFromViewController:self transition:JTSImageViewControllerTransition_FromOriginalPosition];
+}
+
 
 @end

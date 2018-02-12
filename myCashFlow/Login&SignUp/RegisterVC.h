@@ -42,5 +42,8 @@
 
 - (IBAction)action_Register:(UIButton *)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+@property (weak, nonatomic) IBOutlet UILabel *malelbl;
+@property (weak, nonatomic) IBOutlet UILabel *femalelbl;
 
 @end

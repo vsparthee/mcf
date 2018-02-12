@@ -8,7 +8,8 @@
 
 #import "LoginVC.h"
 #import "VENTouchLock.h"
-
+#import <LocalAuthentication/LocalAuthentication.h>
+#import "SampleLockSplashViewController.h"
 @interface LoginVC ()
 
 @end
@@ -18,11 +19,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.txtUserName.text=@"speak2naresh87@gmail.com";
-    self.txtPassword.text = @"test";
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Login"];
+    self.txtUserName.placeholder=[TSLanguageManager localizedString:@"User Name"];
+    self.txtPassword.placeholder=[TSLanguageManager localizedString:@"Password"];
+    [self.btnRegister setTitle:[TSLanguageManager localizedString:@"Register"] forState:UIControlStateNormal];
+    [self.btnForgot setTitle:[TSLanguageManager localizedString:@"Forgot Password"] forState:UIControlStateNormal];
+    [self.btnLogin setTitle:[TSLanguageManager localizedString:@"Login"] forState:UIControlStateNormal];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -30,12 +36,20 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    /********/
     NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
-
+    
     if ([[userDefaults valueForKey:@"setpwd"]boolValue] == YES)
     {
+        [General stopLoader];
+        
+        [[VENTouchLock sharedInstance] setKeychainService:@"myCashFlow"
+                                          keychainAccount:@"myCashFlow"
+                                            touchIDReason:@"Scan your fingerprint to use the app."
+                                     passcodeAttemptLimit:500000
+                                splashViewControllerClass:[SampleLockSplashViewController class]];
         [userDefaults setBool:TRUE forKey:@"isLogin"];
-
+        
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         LGSideMenuController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"LGSideMenuController"];
         UINavigationController *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"DashboardNC"];
@@ -56,62 +70,128 @@
         
         rootViewController.leftViewPresentationStyle = LGSideMenuPresentationStyleSlideAbove;
         [[UIApplication sharedApplication].keyWindow setRootViewController:rootViewController];
+        
+   
     }
+   
 }
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (IBAction)action_Login:(UIButton *)sender
 {
     if ([self validateRequest])
     {
+        [self.view endEditing:YES];
         [General startLoader:self.view];
+
+        NSString *pushNotiToken = [NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] valueForKey:@"FIREBASE_TOKEN"]];
         
         NSMutableDictionary *userdic = [[NSMutableDictionary alloc]init];
         
         [userdic setObject:[NSString stringWithFormat:@"%@",self.txtUserName.text] forKey:@"Username"];
         [userdic setObject:[NSString stringWithFormat:@"%@",self.txtPassword.text] forKey:@"Password"];
-        
+        [userdic setObject:pushNotiToken forKey:@"DeviceKey"];
+
         
         APIHandler *api = [[APIHandler alloc]init];
         [api userLogin:userdic withSuccess:^(id result)
          {
-             if ([[result valueForKey:@"status"]isEqualToString:@"Success"])
+             @try
              {
-                 NSMutableDictionary *dic=[result valueForKey:@"data"];
-                 
-                 NSMutableDictionary *temp=[[NSMutableDictionary alloc]init];
-                 //[temp setObject:[NSNumber numberWithInt:[[dic valueForKey:@"CustomerID"] intValue]]  forKey:@"CustomerID"];
-                 [temp setObject:[NSNumber numberWithInt:4]  forKey:@"CustomerID"];
-                 [temp setObject:[dic valueForKey:@"Firstname"]  forKey:@"Firstname"];
-                 [temp setObject:[dic valueForKey:@"Lastname"]  forKey:@"Lastname"];
-                 [temp setObject:[dic valueForKey:@"Emailid"]  forKey:@"Emailid"];
-                 [temp setObject:[dic valueForKey:@"Phoneno"]  forKey:@"Phoneno"];
-                 [temp setObject:[dic valueForKey:@"Password"]  forKey:@"Password"];
-                 NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
+                 if ([[result valueForKey:@"status"]isEqualToString:@"Success"])
+                 {
+                     [[VENTouchLock sharedInstance] setKeychainService:@"myCashFlow"
+                                                       keychainAccount:@"myCashFlow"
+                                                         touchIDReason:@"Scan your fingerprint to use the app."
+                                                  passcodeAttemptLimit:500000
+                                             splashViewControllerClass:[SampleLockSplashViewController class]];
+                     
+                     NSMutableDictionary *dic=[result valueForKey:@"data"];
+                     
+                     NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
+                     
+                     [userDefaults setValue:[self CheckDictionary:[dic mutableCopy]] forKey:@"userInfo"];
+                     
+                     [userDefaults setValue:[NSString stringWithFormat:@"%@",_txtPassword.text] forKey:@"password"];
+                     
+                    LAContext *context = [[LAContext alloc] init];
+                      NSError *error = nil;
+                      NSString *reason = [TSLanguageManager localizedString:@"Please authenticate using TouchID."];
+                      
+                      if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
+                      [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
+                      localizedReason:reason
+                      reply:^(BOOL success, NSError *error) {
+                      if (success) {
+                         // [[VENTouchLock sharedInstance] deletePasscode];
 
-                 [userDefaults setValue:[self CheckDictionary:[dic mutableCopy]] forKey:@"userInfo"];
-                 [[VENTouchLock sharedInstance] deletePasscode];
+                      [self setPasscode];
+                      }
+                      else {
+                      NSLog(@"Error received: %@", error);
+                      [General stopLoader];
+                      
+                      }
+                      }];
+                      }
+                      else
+                      {
 
-                 [self setPasscode];
+                      [self setPasscode];
+                      }
+                     
+                     
+                     [userDefaults setBool:TRUE forKey:@"isLogin"];
+                     
+                     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                     LGSideMenuController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"LGSideMenuController"];
+                     UINavigationController *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"DashboardNC"];
+                     UIViewController *leftMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"LeftMenuVC"];
+                     [rootViewController setRootViewController:homeVC];
+                     [rootViewController setLeftViewController:leftMenuVC];
+                     [rootViewController setLeftViewDisabled:FALSE];
+                     CGFloat screenWidth = 0.0;
+                     if ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height)
+                     {
+                         screenWidth=[UIScreen mainScreen].bounds.size.height/3;
+                     }
+                     else
+                     {
+                         screenWidth=[UIScreen mainScreen].bounds.size.width/3;
+                     }
+                     rootViewController.leftViewWidth = screenWidth *2.4;
+                     
+                     rootViewController.leftViewPresentationStyle = LGSideMenuPresentationStyleSlideAbove;
+                     [[UIApplication sharedApplication].keyWindow setRootViewController:rootViewController];
+                     
+                     
+                     
+                 }
+                 else
+                 {
+                     [General makeToast:[result valueForKey:@"status"] withToastView:self.view];
+                     [General stopLoader];
+                     
+                 }
+             }
+             @catch (NSException *exception)
+             {
+                 [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
                  
              }
-             else
-             {
-                 [General makeToast:[result valueForKey:@"status"] withToastView:self.view];
-             }
-             
+             [General stopLoader];
+            
+         } failure:^(NSURLSessionTask *operation, NSError *error) {
              [General stopLoader];
 
-         } failure:^(NSURLSessionTask *operation, NSError *error) {
-             
          }];
     }
 }
@@ -158,23 +238,22 @@
     BOOL validation = FALSE;
     if(self.txtUserName.text == NULL || [self.txtUserName.text isEqualToString:@""])
     {
-        [self.txtUserName showErrorWithText:@"Enter Your Email ID"];
+        [self.txtUserName showErrorWithText:[TSLanguageManager localizedString:@"Enter Your Email ID"]];
         return validation;
     }
     
     else if(![self validateEmailWithString:self.txtUserName.text])
     {
-        [self.txtUserName showErrorWithText:@"Enter Valid Email ID"];
+        [self.txtUserName showErrorWithText:[TSLanguageManager localizedString:@"Enter Valid Email ID"]];
         return validation;
     }
     else if(self.txtPassword.text == NULL || [self.txtPassword.text isEqualToString:@""])
     {
-        [self.txtPassword showErrorWithText:@"Enter Your Password"];
+        [self.txtPassword showErrorWithText:[TSLanguageManager localizedString:@"Enter Your Password"]];
         return validation;
     }
     else
     {
-        
         validation = true;
         return validation;
     }
@@ -190,12 +269,16 @@
 
 -(void)setPasscode
 {
+    if ([[VENTouchLock sharedInstance] isPasscodeSet])
+    {
+        [[VENTouchLock sharedInstance] deletePasscode];
+   }
+    
+
     [VENTouchLock setShouldUseTouchID:YES];
     
     VENTouchLockCreatePasscodeViewController *createPasscodeVC = [[VENTouchLockCreatePasscodeViewController alloc] init];
     [self presentViewController:[createPasscodeVC embeddedInNavigationController] animated:YES completion:nil];
-    
-    
 }
 
 - (IBAction)action_Forget:(UIButton *)sender {

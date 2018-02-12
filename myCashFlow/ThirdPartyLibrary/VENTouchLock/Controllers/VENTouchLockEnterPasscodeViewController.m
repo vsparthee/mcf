@@ -39,6 +39,8 @@ NSString *const VENTouchLockEnterPasscodeUserDefaultsKeyNumberOfConsecutivePassc
     if ([self.touchLock isPasscodeValid:passcode]) {
         [[self class] resetPasscodeAttemptHistory];
         [self finishWithResult:YES animated:YES];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"doResetPwd"];
+
     }
     else {
         [self.passcodeView shakeAndVibrateCompletion:^{

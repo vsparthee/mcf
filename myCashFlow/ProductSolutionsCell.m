@@ -12,7 +12,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    self.lblviewdoc.text=[TSLanguageManager localizedString:@"View Document"];    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -98,6 +98,7 @@
     {
         cell.backgroundColor=[UIColor whiteColor];
     }
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
     
     

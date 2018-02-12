@@ -28,6 +28,13 @@
 @property (weak, nonatomic) IBOutlet ACFloatingTextField *txtMobile;
 @property (weak, nonatomic) IBOutlet ACFloatingTextField *txtPostal;
 @property (weak, nonatomic) IBOutlet ACFloatingTextField *txtAddress;
+@property (weak, nonatomic) IBOutlet ACFloatingTextField *txtxCity;
+@property (weak, nonatomic) IBOutlet ACFloatingTextField *txtSecEmail;
+
+@property (weak, nonatomic) IBOutlet UIView *baseview;
+
+
+
 @property (weak, nonatomic) IBOutlet UIButton *action_Update;
 @property (weak, nonatomic) IBOutlet UIButton *btnUpdate;
 @property (weak, nonatomic) IBOutlet UIView *settingView;
@@ -40,5 +47,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btnMenu;
 
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+@property (weak, nonatomic) IBOutlet UILabel *malelbl;
+@property (weak, nonatomic) IBOutlet UILabel *femalelbl;
+- (IBAction)action_upt:(id)sender;
 
 @end

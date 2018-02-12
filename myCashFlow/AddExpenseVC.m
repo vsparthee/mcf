@@ -99,24 +99,36 @@
     [apiDic setObject:[NSString stringWithFormat:@"%@",self.txtDesc.text] forKey:@"Description"];
     [apiDic setObject:[NSString stringWithFormat:@"%@",self.txtAmount.text] forKey:@"Amount"];
 
+    
+    [General startLoader:self.view];
     APIHandler *api = [[APIHandler alloc]init];
     [api api_MyBudgetDailyExpenseCreate:apiDic withSuccess:^(id result)
     {
-        [General makeToast:[TSLanguageManager localizedString:@"Your expense added successfully"] withToastView:self.view];
-        int64_t delayInSeconds = 2;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
-                       {
-                           if( [self navigationController])
+        @try
+        {
+            [General makeToast:[TSLanguageManager localizedString:@"Your expense added successfully"] withToastView:self.view];
+            int64_t delayInSeconds = 2;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
                            {
-                               [self.navigationController popViewControllerAnimated:YES];
-                           }
-                           else
-                           {
-                               [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
-                           }
-
-                       });
+                               if( [self navigationController])
+                               {
+                                   [self.navigationController popViewControllerAnimated:YES];
+                               }
+                               else
+                               {
+                                   [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
+                               }
+                               
+                           });
+        }
+        @catch (NSException *exception)
+        {
+            [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+            
+        }
+        [General stopLoader];
+        
     }
     failure:^(NSURLSessionTask *operation, NSError *error)
     {

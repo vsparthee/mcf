@@ -46,7 +46,8 @@ static const NSInteger VENTouchLockViewControllerPasscodeLength = 4;
 
 - (void)handleSingleTapOnView:(id)sender
 {
-    if (![self.invisiblePasscodeField isFirstResponder]) {
+    if (![self.invisiblePasscodeField isFirstResponder])
+    {
         [self.invisiblePasscodeField becomeFirstResponder];
     }
 }
@@ -56,7 +57,7 @@ static const NSInteger VENTouchLockViewControllerPasscodeLength = 4;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:false];
+    //[[IQKeyboardManager sharedManager] setEnableAutoToolbar:false];
 
     //[self.navigationController setNavigationBarHidden:YES animated:YES];
     self.navigationController.navigationBar.hidden = false;
@@ -72,15 +73,20 @@ static const NSInteger VENTouchLockViewControllerPasscodeLength = 4;
      @{NSForegroundColorAttributeName:[UIColor whiteColor]
        }];
     [super viewWillAppear:animated];
-    if (![self.invisiblePasscodeField isFirstResponder]) {
+    /*
+    if (![self.invisiblePasscodeField isFirstResponder])
+    {
         [self.invisiblePasscodeField becomeFirstResponder];
     }
+     */
+    [self.invisiblePasscodeField becomeFirstResponder];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:true];
+    //[[IQKeyboardManager sharedManager] setEnableAutoToolbar:true];
 
     if ([self.invisiblePasscodeField isFirstResponder]) {
         [self.invisiblePasscodeField resignFirstResponder];
@@ -100,6 +106,7 @@ static const NSInteger VENTouchLockViewControllerPasscodeLength = 4;
 - (void)configureNavigationItems
 {
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[self.touchLock appearance].cancelBarButtonItemTitle style:UIBarButtonItemStylePlain target:self action:@selector(userTappedCancel)];
+    self.navigationItem.rightBarButtonItem.tintColor= [UIColor whiteColor];
 }
 
 - (void)configurePasscodeView
@@ -117,6 +124,9 @@ static const NSInteger VENTouchLockViewControllerPasscodeLength = 4;
     if (self.willFinishWithResult) {
         self.willFinishWithResult(NO);
     }
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"doResetPwd"];
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"isResetPwd"];
+
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -129,21 +139,25 @@ static const NSInteger VENTouchLockViewControllerPasscodeLength = 4;
     }
     else
     {
-        [self dismissViewControllerAnimated:animated completion:nil];
-        NSUserDefaults *userdefaults=[NSUserDefaults standardUserDefaults];
-         if ([[userdefaults valueForKey:@"doResetPwd"] boolValue]==YES)
-         {
-             if ([[userdefaults valueForKey:@"isResetPwd"] boolValue]==YES)
-             {
-                 [userdefaults setBool:NO forKey:@"isResetPwd"];
-                 [userdefaults setBool:NO forKey:@"doResetPwd"];
-             }
-             else{
-                 [userdefaults setBool:YES forKey:@"isResetPwd"];
-                 
-             }
+        [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"doResetPwd"];
+        [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"isResetPwd"];
 
-         }
+        [self dismissViewControllerAnimated:animated completion:nil];
+//        NSUserDefaults *userdefaults=[NSUserDefaults standardUserDefaults];
+//         if ([[userdefaults valueForKey:@"doResetPwd"] boolValue]==YES)
+//         {
+//             if ([[userdefaults valueForKey:@"isResetPwd"] boolValue]==YES)
+//             {
+//                 [userdefaults setBool:NO forKey:@"isResetPwd"];
+//                 [userdefaults setBool:NO forKey:@"doResetPwd"];
+//             }
+//             else{
+//                 [userdefaults setBool:YES forKey:@"isResetPwd"];
+//                 
+//             }
+//
+//         }
+        
     }
 }
 

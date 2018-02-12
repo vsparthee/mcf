@@ -29,11 +29,11 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5U-dv-M2n">
                         <rect key="frame" x="8" y="12" width="334" height="93"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="471-Lg-72P">
-                                <rect key="frame" x="8" y="21.5" width="50" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="471-Lg-72P">
+                                <rect key="frame" x="8" y="6.5" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="3ip-7s-YmH"/>
-                                    <constraint firstAttribute="height" constant="50" id="SKh-Fb-lSI">
+                                    <constraint firstAttribute="width" constant="80" id="3ip-7s-YmH"/>
+                                    <constraint firstAttribute="height" constant="80" id="SKh-Fb-lSI">
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="25"/>
@@ -44,7 +44,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6j-Yd-c0U">
-                                <rect key="frame" x="66" y="8" width="260" height="21"/>
+                                <rect key="frame" x="96" y="8" width="230" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4UA-X2-whp"/>
                                 </constraints>
@@ -53,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puM-Ke-g7X">
-                                <rect key="frame" x="66" y="37" width="172" height="21"/>
+                                <rect key="frame" x="96" y="37" width="142" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="uN9-hC-lWw"/>
                                 </constraints>
@@ -62,7 +62,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKJ-sm-b5j">
-                                <rect key="frame" x="66" y="64" width="260" height="21"/>
+                                <rect key="frame" x="96" y="64" width="230" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="amd-Dk-1jW"/>
                                 </constraints>
@@ -70,19 +70,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2Q-jZ-PXd">
-                                <rect key="frame" x="246" y="33" width="80" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="r2Q-jZ-PXd">
+                                <rect key="frame" x="246" y="33" width="80" height="20"/>
                                 <color key="backgroundColor" red="0.0023716682270265264" green="0.83524760649288976" blue="0.0036798591956547187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="EW2-jc-5yN"/>
-                                    <constraint firstAttribute="height" constant="30" id="bNl-lP-b4I"/>
+                                    <constraint firstAttribute="height" constant="20" id="bNl-lP-b4I"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="15"/>
+                                        <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -97,12 +97,12 @@
                             <constraint firstAttribute="trailing" secondItem="A6j-Yd-c0U" secondAttribute="trailing" constant="8" id="UNw-u0-KhJ"/>
                             <constraint firstItem="A6j-Yd-c0U" firstAttribute="top" secondItem="D5U-dv-M2n" secondAttribute="top" constant="8" id="Zmw-sA-Wo6"/>
                             <constraint firstItem="vKJ-sm-b5j" firstAttribute="top" secondItem="puM-Ke-g7X" secondAttribute="bottom" constant="6" id="dNZ-KY-sxh"/>
-                            <constraint firstItem="A6j-Yd-c0U" firstAttribute="leading" secondItem="D5U-dv-M2n" secondAttribute="leading" constant="66" id="gMv-5S-I2p"/>
+                            <constraint firstItem="A6j-Yd-c0U" firstAttribute="leading" secondItem="D5U-dv-M2n" secondAttribute="leading" constant="96" id="gMv-5S-I2p"/>
                             <constraint firstItem="471-Lg-72P" firstAttribute="leading" secondItem="D5U-dv-M2n" secondAttribute="leading" constant="8" id="gTK-c2-ZPm"/>
                             <constraint firstItem="puM-Ke-g7X" firstAttribute="leading" secondItem="471-Lg-72P" secondAttribute="trailing" constant="8" id="h4x-AY-MWC"/>
                             <constraint firstAttribute="trailing" secondItem="vKJ-sm-b5j" secondAttribute="trailing" constant="8" id="idO-SE-8ay"/>
                             <constraint firstItem="471-Lg-72P" firstAttribute="centerY" secondItem="D5U-dv-M2n" secondAttribute="centerY" id="mbc-lH-Qmy"/>
-                            <constraint firstItem="vKJ-sm-b5j" firstAttribute="leading" secondItem="D5U-dv-M2n" secondAttribute="leading" constant="66" id="rEv-IE-YNt"/>
+                            <constraint firstItem="vKJ-sm-b5j" firstAttribute="leading" secondItem="D5U-dv-M2n" secondAttribute="leading" constant="96" id="rEv-IE-YNt"/>
                             <constraint firstItem="r2Q-jZ-PXd" firstAttribute="leading" secondItem="puM-Ke-g7X" secondAttribute="trailing" constant="8" id="usE-Hh-yy8"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>

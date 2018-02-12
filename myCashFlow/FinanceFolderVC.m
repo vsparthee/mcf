@@ -11,9 +11,9 @@
 #import "FinanceDetailsVC.h"
 @interface FinanceFolderVC ()
 {
-    NSMutableArray *financeArr;
+    NSMutableArray *financeArr,*compArr,*privateArr;
     NSMutableDictionary *selectedFinance;
-    UILabel *nodata;
+    UILabel *nodata,*nodata_Comp;
 }
 @end
 
@@ -42,33 +42,87 @@
 -(void)setupAPI
 {
     nodata  = [[UILabel alloc]initWithFrame:CGRectMake(16, self.view.frame.size.height/2 - 65, self.view.frame.size.width-32, 30)];
-    nodata.text = @"No data found in product solution";
+    nodata.text = [TSLanguageManager localizedString:@"No data founds"];
     nodata.textAlignment = NSTextAlignmentCenter;
     nodata.font = [UIFont fontWithName:@"" size:16];
     nodata.textColor = THEME_COLOR;
     
+    nodata_Comp = [[UILabel alloc]initWithFrame:CGRectMake(16, self.view.frame.size.height/2 - 65, self.view.frame.size.width-32, 30)];
+    nodata_Comp.text = [TSLanguageManager localizedString:@"No data founds"];
+    nodata_Comp.textAlignment = NSTextAlignmentCenter;
+    nodata_Comp.font = [UIFont fontWithName:@"" size:16];
+    nodata_Comp.textColor = THEME_COLOR;
+    
     [General startLoader:self.view];
     
-    APIHandler *api = [[APIHandler alloc]init];
+    
+    
+    
+    
+ APIHandler *api = [[APIHandler alloc]init];
     [api api_financeFolder:^(id result)
     {
-        NSDictionary *temp= [result mutableCopy];
-        financeArr=[temp valueForKey:@"data"];
-        
-        if (financeArr.count>0)
+        @try
         {
-            [nodata removeFromSuperview];
+            NSDictionary *temp= [result mutableCopy];
+            financeArr=[temp valueForKey:@"data"];
+            compArr=[[NSMutableArray alloc]init];
+            privateArr=[[NSMutableArray alloc]init];
+            
+            if (financeArr.count>0)
+            {
+                [nodata removeFromSuperview];
+                
+                for (NSDictionary *dic in financeArr)
+                {
+                    if ([[dic valueForKey:@"PolicyType"]isEqualToString:@"Private"])
+                    {
+                        [privateArr addObject:dic];
+                    }
+                    else
+                    {
+                        [compArr addObject:dic];
+                    }
+                }
+                
+                if (privateArr.count>0)
+                {
+                    [nodata removeFromSuperview];
+                }
+                else
+                {
+                    [self.tblPrivate addSubview:nodata];
+                }
+                
+                if (compArr.count>0)
+                {
+                    [nodata_Comp removeFromSuperview];
+                }
+                else
+                {
+                    [self.tblCompany addSubview:nodata_Comp];
+                }
+                
+                
+            }
+            else
+            {
+                [self.tblPrivate addSubview:nodata];
+                [self.tblCompany addSubview:nodata_Comp];
+                
+            }
+            
+            [self.tblPrivate reloadData];
+            [self.tblCompany reloadData];
+
         }
-        else
+        @catch (NSException *exception)
         {
-            [self.tblPrivate addSubview:nodata];
-            [self.tblCompany addSubview:nodata];
+            [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
             
         }
-        
-        [self.tblPrivate reloadData];
-        [self.tblCompany reloadData];
         [General stopLoader];
+
     }
     failure:^(NSURLSessionTask *operation, NSError *error)
     {
@@ -113,6 +167,40 @@
         [self.parent home];
     }
 }
+- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
+    {
+        if ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height)
+        {
+            self.tblPrivate.frame=CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height-114);
+            self.tblCompany.frame=CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height-114);
+
+            
+            nodata_Comp.frame = CGRectMake(16, [UIScreen mainScreen].bounds.size.height/2 - 65, [UIScreen mainScreen].bounds.size.width-32, 30);
+
+
+        }
+        else
+        {
+            self.tblPrivate.frame=CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.height,[UIScreen mainScreen].bounds.size.width-114);
+            self.tblCompany.frame=CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.height,[UIScreen mainScreen].bounds.size.width-114);
+            
+            nodata_Comp.frame = CGRectMake(16, [UIScreen mainScreen].bounds.size.width/2 - 65, [UIScreen mainScreen].bounds.size.height-32, 30);
+
+
+        }
+        
+    }
+    else if(toInterfaceOrientation == UIInterfaceOrientationPortrait || toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
+    {
+        self.tblPrivate.frame=CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.height,[UIScreen mainScreen].bounds.size.width-114);
+        self.tblCompany.frame=CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.height,[UIScreen mainScreen].bounds.size.width-114);
+        nodata_Comp.frame = CGRectMake(16, [UIScreen mainScreen].bounds.size.width/2 - 65, [UIScreen mainScreen].bounds.size.height-32, 30);
+
+
+    }
+}
 
 #pragma mark - TableView
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -124,11 +212,11 @@
 {
     if (tableView.tag==100)
     {
-        return financeArr.count;
+        return privateArr.count;
     }
     else
     {
-        return financeArr.count;
+        return compArr.count;
     }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -137,13 +225,13 @@
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FinanceFolderCell" owner:self options:nil];
         FinanceFolderCell *cell = [nib objectAtIndex:0];
-        NSDictionary *finance = [financeArr objectAtIndex:indexPath.row];
+        NSDictionary *finance = [privateArr objectAtIndex:indexPath.row];
         
         cell.lblTitle.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"ProductName"]];
         cell.lblType.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"Type"]];
         cell.lblAmount.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"Premium"]];
         cell.lblTenure.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"Tenure"]];
-        if ([[finance valueForKey:@"Tenure"]isEqualToString:@"Monthly"])
+      /*  if ([[finance valueForKey:@"Tenure"]isEqualToString:@"Monthly"]||[[finance valueForKey:@"Tenure"]isEqualToString:@"Montly"])
         {
             cell.lblTenure.backgroundColor=[UIColor colorWithRed:0.00 green:0.84 blue:0.00 alpha:1.0];
         }
@@ -151,28 +239,30 @@
         {
             cell.lblTenure.backgroundColor=[UIColor colorWithRed:0.96 green:0.30 blue:0.34 alpha:1.0];
 
-        }
+        }*/
+         cell.lblTenure.backgroundColor=[UIColor colorWithRed:0.00 green:0.84 blue:0.00 alpha:1.0];
         NSString *strURL = [NSString stringWithFormat:@"%@",[finance valueForKey:@"CompanyLogo"]];
         NSURL *url = [NSURL URLWithString:strURL];
         [cell.imgLogo setShowActivityIndicatorView:YES];
         [cell.imgLogo setIndicatorStyle:UIActivityIndicatorViewStyleGray];
         [cell.imgLogo sd_setImageWithURL:url
                         placeholderImage:nil
-                                 options:SDWebImageRefreshCached];    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+                                 options:SDWebImageRefreshCached];
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
         return cell;
     }
     else
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FinanceFolderCell" owner:self options:nil];
         FinanceFolderCell *cell = [nib objectAtIndex:0];
-        NSDictionary *finance = [financeArr objectAtIndex:indexPath.row];
+        NSDictionary *finance = [compArr objectAtIndex:indexPath.row];
         
         cell.lblTitle.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"ProductName"]];
         cell.lblType.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"Type"]];
         cell.lblAmount.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"Premium"]];
         cell.lblTenure.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"Tenure"]];
         NSString *strURL = [NSString stringWithFormat:@"%@",[finance valueForKey:@"CompanyLogo"]];
-        if ([[finance valueForKey:@"Tenure"]isEqualToString:@"Monthly"])
+        if ([[finance valueForKey:@"Tenure"]isEqualToString:@"Monthly"]||[[finance valueForKey:@"Tenure"]isEqualToString:@"Montly"])
         {
             cell.lblTenure.backgroundColor=[UIColor colorWithRed:0.00 green:0.84 blue:0.00 alpha:1.0];
         }
@@ -186,7 +276,8 @@
         [cell.imgLogo setIndicatorStyle:UIActivityIndicatorViewStyleGray];
         [cell.imgLogo sd_setImageWithURL:url
                         placeholderImage:nil
-                                 options:SDWebImageRefreshCached];    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+                                 options:SDWebImageRefreshCached];
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
         return cell;
     }
     
@@ -197,11 +288,11 @@
 {
     if (tableView.tag==100)
     {
-        selectedFinance = [financeArr objectAtIndex:indexPath.row];
+        selectedFinance = [privateArr objectAtIndex:indexPath.row];
     }
     else
     {
-        selectedFinance = [financeArr objectAtIndex:indexPath.row];
+        selectedFinance = [compArr objectAtIndex:indexPath.row];
     }
     [self performSegueWithIdentifier:@"financeList_to_Details" sender:self];
     

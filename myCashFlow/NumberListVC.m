@@ -9,7 +9,9 @@
 #import "NumberListVC.h"
 #import "NumberListCell.h"
 @interface NumberListVC ()
-
+{
+    NSArray *contact;
+}
 @end
 
 @implementation NumberListVC
@@ -18,7 +20,7 @@
     [super viewDidLoad];
     self.lbltitle.text=[TSLanguageManager localizedString:@"Numbers"];
     self.lbltitle.textAlignment=NSTextAlignmentCenter;
-
+    contact=[self.selectedDic valueForKey:@"Contacts"];
     [self.tblNumberList reloadData];
     self.tblNumberList.estimatedRowHeight = 200;
     self.tblNumberList.rowHeight = 200;
@@ -64,17 +66,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return contact.count;
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NumberListCell" owner:self options:nil];
     NumberListCell *cell = [nib objectAtIndex:0];
-   // cell.btnView.layer.cornerRadius=cell.btnView.bounds.size.height/2;
-    //cell.btnView.clipsToBounds=YES;
+    NSDictionary *dic=[contact objectAtIndex:indexPath.row];
+    cell.lblNumber.text=[NSString stringWithFormat:@"%@",[dic valueForKey:@"PhoneNo"]];
+    cell.lblTitle.text=[NSString stringWithFormat:@"%@",[dic valueForKey:@"Name"]];
+    [cell.btnCall addTarget:self action:@selector(callAction:) forControlEvents:UIControlEventTouchUpInside];
+    cell.btnCall.tag=indexPath.row;
+
+    
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -89,7 +94,16 @@
     return  UITableViewAutomaticDimension;
 }
 
+-(IBAction)callAction:(UIButton*)sender
+{
+    NSDictionary *dic = [contact objectAtIndex:sender.tag];
+    NSString *tempPhoneNumber = [NSString stringWithFormat:@"%@",[dic valueForKey:@"PhoneNo"]];
 
+   tempPhoneNumber= [tempPhoneNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
+
+    NSString *phoneNumber = [@"telprompt://" stringByAppendingString:[NSString stringWithFormat:@"%@",tempPhoneNumber]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+}
 /*
 #pragma mark - Navigation
 

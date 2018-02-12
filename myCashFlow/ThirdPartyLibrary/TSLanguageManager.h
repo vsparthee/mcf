@@ -30,6 +30,8 @@
 #define kLMDefaultLanguage  @"en"
 #define kLMEnglish          @"en"
 #define kLMGerman          @"de"
+#define kLMItaly          @"it"
+#define kLMFrench         @"fr"
 
 
 

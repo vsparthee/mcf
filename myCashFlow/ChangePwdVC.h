@@ -10,5 +10,10 @@
 
 @interface ChangePwdVC : UIViewController
 - (IBAction)action_ChangePwd:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet ACFloatingTextField *txtoldpwd;
+@property (weak, nonatomic) IBOutlet ACFloatingTextField *txtnewpwd;
+@property (weak, nonatomic) IBOutlet ACFloatingTextField *txtconfirmpwd;
+@property (weak, nonatomic) IBOutlet UILabel *lbltitle;
+@property (weak, nonatomic) IBOutlet UIButton *btnchange;
 
 @end

@@ -11,6 +11,8 @@
 @interface RegisterVC ()
 {
     BOOL ismale;
+    UIDatePicker *datePicker;
+
 }
 @end
 
@@ -19,13 +21,57 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.lbltitle.text=[TSLanguageManager localizedString:@"Login"];
+    
+
+    self.txtAddress.placeholder=[TSLanguageManager localizedString:@"Address"];
+    self.txtDOB.placeholder=[TSLanguageManager localizedString:@"DOB"];
+    self.txtEmail.placeholder=[TSLanguageManager localizedString:@"Email"];
+    self.txtFirstName.placeholder=[TSLanguageManager localizedString:@"First Name"];
+    self.txtLastName.placeholder=[TSLanguageManager localizedString:@"Last Name"];
+    self.txtPhone.placeholder=[TSLanguageManager localizedString:@"Phone Number"];
+    self.txtOccupation.placeholder=[TSLanguageManager localizedString:@"Occupation"];
+    self.txtMobile.placeholder=[TSLanguageManager localizedString:@"Mobile Number"];
+    self.txtPostal.placeholder=[TSLanguageManager localizedString:@"Postal Code"];
+    self.txtNationality.placeholder=[TSLanguageManager localizedString:@"Nationality"];
+    self.txtPassword.placeholder=[TSLanguageManager localizedString:@"Password"];
+    self.txtRepassword.placeholder=[TSLanguageManager localizedString:@"Confirm Password"];
+    self.malelbl.text=[TSLanguageManager localizedString:@"Male"];
+    self.femalelbl.text=[TSLanguageManager localizedString:@"Female"];
+
+    [self.btnRegister setTitle:[TSLanguageManager localizedString:@"Register"] forState:UIControlStateNormal];
+    [self.btnAlreadyMember setTitle:[TSLanguageManager localizedString:@"Already Member? Login"] forState:UIControlStateNormal];
+
     self.imgMale.tintColor = THEME_COLOR;
     self.imgFemale.tintColor = [UIColor lightGrayColor];
     self.imgMale.image = [UIImage imageNamed:@"checked"];
     self.imgFemale.image = [UIImage imageNamed:@"unchecked"];
     ismale = YES;
+    
+    datePicker=[[UIDatePicker alloc]init];
+    datePicker.datePickerMode=UIDatePickerModeDate;
+    [self.txtDOB setInputView:datePicker];
+    UIToolbar *toolBar=[[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
+    [toolBar setTintColor:[UIColor grayColor]];
+    UIBarButtonItem *doneBtn=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(ShowSelectedDate)];
+    UIBarButtonItem *space=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *cancelBtn=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelDate)];
+    
+    [toolBar setItems:[NSArray arrayWithObjects:cancelBtn,space,doneBtn, nil]];
+    [self.txtDOB setInputAccessoryView:toolBar];
+    
 }
 
+-(void)ShowSelectedDate
+{   NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"dd.MM.YYYY"];
+    self.txtDOB.text=[NSString stringWithFormat:@"%@",[formatter stringFromDate:datePicker.date]];
+    [self.txtDOB resignFirstResponder];
+}
+-(void)cancelDate
+{
+    [self.txtDOB resignFirstResponder];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -56,38 +102,62 @@
 {
     if ([self validateRequest])
     {
+        [self.view endEditing:YES];
+
+        [General startLoader:self.view];
         NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
         
         [dic setObject:[NSString stringWithFormat:@"%@",self.txtFirstName.text] forKey:@"Firstname"];
         [dic setObject:[NSString stringWithFormat:@"%@",self.txtLastName.text] forKey:@"Lastname"];
-        [dic setObject:[NSString stringWithFormat:@"%@",self.txtDOB.text] forKey:@"DOB"];
-        if (ismale == YES)
+       // [dic setObject:[NSString stringWithFormat:@"%@",self.txtDOB.text] forKey:@"DOB"];
+       /* if (ismale == YES)
         {
             [dic setObject:@"Male" forKey:@"Gender"];
         }
         else
         {
             [dic setObject:@"Female" forKey:@"Gender"];
-        }
-        [dic setObject:[NSString stringWithFormat:@"%@",self.txtNationality.text] forKey:@"Nationality"];
-        [dic setObject:[NSString stringWithFormat:@"%@",self.txtOccupation.text] forKey:@"Occupation"];
-        [dic setObject:[NSString stringWithFormat:@"%@",self.txtAddress.text] forKey:@"Address"];
-        [dic setObject:[NSString stringWithFormat:@"%@",self.txtPostal.text] forKey:@"postcode"];
-        [dic setObject:[NSString stringWithFormat:@"%@",self.txtPhone.text] forKey:@"landlineNo"];
+        }*/
+        //[dic setObject:[NSString stringWithFormat:@"%@",self.txtNationality.text] forKey:@"Nationality"];
+       // [dic setObject:[NSString stringWithFormat:@"%@",self.txtOccupation.text] forKey:@"Occupation"];
+      //  [dic setObject:[NSString stringWithFormat:@"%@",self.txtAddress.text] forKey:@"Address1"];
+      //  [dic setObject:[NSString stringWithFormat:@"%@",self.txtPostal.text] forKey:@"postcode"];
+      //  [dic setObject:[NSString stringWithFormat:@"%@",self.txtPhone.text] forKey:@"landlineNo"];
         [dic setObject:[NSString stringWithFormat:@"%@",self.txtEmail.text] forKey:@"Emailid"];
         [dic setObject:[NSString stringWithFormat:@"%@",self.txtMobile.text] forKey:@"Phoneno"];
         [dic setObject:[NSString stringWithFormat:@"%@",self.txtPassword.text] forKey:@"Password"];
         
+        
+        
+
         APIHandler *api = [[APIHandler alloc]init];
         
         [api userRegister:dic withSuccess:^(id result)
         {
-            [self.navigationController popViewControllerAnimated:YES];
-
+            @try
+            {
+                NSString *str = @"Herzlichen Glückwunsch, Sie haben sich erfolgreich für die myCashflow App registriert.\n            Sobald die App verfügbar ist, können Sie Ihre MyCashflow App nutzen.";
+                [General makeToast:str withToastView:self.view];
+                int64_t delayInSeconds = 5;
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
+                               {
+                                   [self.navigationController popViewControllerAnimated:YES];
+                               });
+            }
+            @catch (NSException *exception)
+            {
+                [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+                
+            }
+            [General stopLoader];
+            
+            
         }
         failure:^(NSURLSessionTask *operation, NSError *error)
         {
-            
+            [General stopLoader];
+
         }];
     }
     
@@ -99,75 +169,66 @@
     
     if(self.txtFirstName.text == NULL || [self.txtFirstName.text isEqualToString:@""])
     {
-        [self.txtFirstName showErrorWithText:@"Enter Your First Name"];
+        [self.txtFirstName showErrorWithText:[TSLanguageManager localizedString:@"Enter Your First Name"]];
         return validation;
     }
     
     else if(self.txtLastName.text == NULL || [self.txtLastName.text isEqualToString:@""])
     {
-        [self.txtLastName showErrorWithText:@"Enter Your Last Name"];
+        [self.txtLastName showErrorWithText:[TSLanguageManager localizedString:@"Enter Your Last Name"]];
         return validation;
     }
     
-    else if(self.txtDOB.text == NULL || [self.txtDOB.text isEqualToString:@""])
+   /* else if(self.txtDOB.text == NULL || [self.txtDOB.text isEqualToString:@""])
     {
-        [self.txtDOB showErrorWithText:@"Select Your DOB"];
+        [self.txtDOB showErrorWithText:[TSLanguageManager localizedString:@"Select Your DOB"]];
         return validation;
     }
     
     else if(self.txtNationality.text == NULL || [self.txtNationality.text isEqualToString:@""])
     {
-        [self.txtNationality showErrorWithText:@"Enter Your Nationality"];
+        [self.txtNationality showErrorWithText:[TSLanguageManager localizedString:@"Enter Your Nationality"]];
         return validation;
     }
     
-    else if(self.txtOccupation.text == NULL || [self.txtOccupation.text isEqualToString:@""])
+    else if(self.txtPhone.text == NULL || [self.txtPhone.text isEqualToString:@""])
     {
-        [self.txtOccupation showErrorWithText:@"Enter Your Occupation"];
+        [self.txtPhone showErrorWithText:[TSLanguageManager localizedString:@"Enter Your Phone Number"]];
         return validation;
     }
+    */
+    else if(self.txtMobile.text == NULL || [self.txtMobile.text isEqualToString:@""])
+    {
+        [self.txtMobile showErrorWithText:[TSLanguageManager localizedString:@"Enter Your Mobile Number"]];
+        return validation;
+    }
+    
+   
 
     
     else if(self.txtEmail.text == NULL || [self.txtEmail.text isEqualToString:@""])
     {
-        [self.txtEmail showErrorWithText:@"Enter Your Email ID"];
+        [self.txtEmail showErrorWithText:[TSLanguageManager localizedString:@"Enter Your Email ID"]];
         return validation;
     }
     
     else if(![self validateEmailWithString:self.txtEmail.text])
     {
-        [self.txtEmail showErrorWithText:@"Enter Valid Email ID"];
+        [self.txtEmail showErrorWithText:[TSLanguageManager localizedString:@"Enter Valid Email ID"]];
         return validation;
     }
    
-    else if(self.txtPhone.text == NULL || [self.txtPhone.text isEqualToString:@""])
-    {
-        [self.txtPhone showErrorWithText:@"Enter Your Phone Number"];
-        return validation;
-    }
-    
-    else if(self.txtMobile.text == NULL || [self.txtMobile.text isEqualToString:@""])
-    {
-        [self.txtMobile showErrorWithText:@"Enter Your Mobile Number"];
-        return validation;
-    }
-    
-    else if(self.txtPostal.text == NULL || [self.txtPostal.text isEqualToString:@""])
-    {
-        [self.txtPostal showErrorWithText:@"Enter Your Postal"];
-        return validation;
-    }
     
     
     else if(self.txtPassword.text == NULL || [self.txtPassword.text isEqualToString:@""])
     {
-        [self.txtPassword showErrorWithText:@"Enter Password"];
+        [self.txtPassword showErrorWithText:[TSLanguageManager localizedString:@"Enter Password"]];
         return validation;
     }
     
     else if(self.txtRepassword.text == NULL || [self.txtRepassword.text isEqualToString:@""])
     {
-        [self.txtRepassword showErrorWithText:@"Enter Confirm Password"];
+        [self.txtRepassword showErrorWithText:[TSLanguageManager localizedString:@"Enter Confirm Password"]];
         return validation;
     }
     
@@ -179,16 +240,27 @@
     
     else if(![self.txtRepassword.text isEqualToString:self.txtPassword.text])
     {
-        [self.txtRepassword showErrorWithText:@"Password Mismatch"];
+        [self.txtRepassword showErrorWithText:[TSLanguageManager localizedString:@"Password Mismatch"]];
         return validation;
     }
-    
+    /*
     else if(self.txtAddress.text == NULL || [self.txtAddress.text isEqualToString:@""])
     {
-        [self.txtAddress showErrorWithText:@"Enter Your Address"];
+        [self.txtAddress showErrorWithText:[TSLanguageManager localizedString:@"Enter Your Address"]];
+        return validation;
+    }
+    else if(self.txtOccupation.text == NULL || [self.txtOccupation.text isEqualToString:@""])
+    {
+        [self.txtOccupation showErrorWithText:[TSLanguageManager localizedString:@"Enter Your Occupation"]];
         return validation;
     }
     
+    else if(self.txtPostal.text == NULL || [self.txtPostal.text isEqualToString:@""])
+    {
+        [self.txtPostal showErrorWithText:[TSLanguageManager localizedString:@"Enter Your Postal"]];
+        return validation;
+    }
+*/
     else
     {
         

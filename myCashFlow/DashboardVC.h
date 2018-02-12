@@ -20,6 +20,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblfinance;
 @property (weak, nonatomic) IBOutlet UILabel *lbltax;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblCount;
+@property (weak, nonatomic) IBOutlet UIButton *btnNotification;
+
+- (IBAction)action_Notification:(UIButton *)sender;
 
 
 

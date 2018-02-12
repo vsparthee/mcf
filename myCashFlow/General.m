@@ -165,7 +165,7 @@ withShadowRadius:(float)shadow_radius
               completion:nil];
 }
 
-+(void)json:(NSDictionary*)dic
++(NSString*)json:(NSDictionary*)dic
 {
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic
@@ -174,9 +174,11 @@ withShadowRadius:(float)shadow_radius
     
     if (! jsonData) {
         NSLog(@"Got an error: %@", error);
+        return error.localizedDescription;
     } else {
         NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
         NSLog(@"JSON : %@",jsonString);
+        return jsonString;
     }
 
 }

@@ -27,8 +27,14 @@ FCAlertView *alert;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"isLangChanged"] boolValue]==NO)
+    {
+        [TSLanguageManager setSelectedLanguage:kLMGerman];
+    }
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [FIRApp configure];
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"doResetPwd"];
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"isResetPwd"];
 
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max) {
         UIUserNotificationType allNotificationTypes =
@@ -101,8 +107,8 @@ FCAlertView *alert;
     */
     if ([[defaults valueForKey:@"setpwd"]boolValue] == YES)
     {
-        [[VENTouchLock sharedInstance] setKeychainService:@"testService"
-                                          keychainAccount:@"testAccount"
+        [[VENTouchLock sharedInstance] setKeychainService:@"myCashFlow"
+                                          keychainAccount:@"myCashFlow"
                                             touchIDReason:@"Scan your fingerprint to use the app."
                                      passcodeAttemptLimit:500000
                                 splashViewControllerClass:[SampleLockSplashViewController class]];
@@ -123,17 +129,19 @@ FCAlertView *alert;
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"doResetPwd"];
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"isResetPwd"];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    if ([[defaults valueForKey:@"setpwd"]boolValue] == YES)
-    {
-        [[VENTouchLock sharedInstance] setKeychainService:@"testService"
-                                          keychainAccount:@"testAccount"
-                                            touchIDReason:@"Scan your fingerprint to use the app."
-                                     passcodeAttemptLimit:5
-                                splashViewControllerClass:[SampleLockSplashViewController class]];
-        
-    }
+//    if ([[defaults valueForKey:@"setpwd"]boolValue] == YES)
+//    {
+//        [[VENTouchLock sharedInstance] setKeychainService:@"myCashflowService"
+//                                          keychainAccount:@"myCashflowAccount"
+//                                            touchIDReason:@"Scan your fingerprint to use the app."
+//                                     passcodeAttemptLimit:500000
+//                                splashViewControllerClass:[SampleLockSplashViewController class]];
+//        
+//    }
 
 }
 
@@ -142,15 +150,15 @@ FCAlertView *alert;
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    if ([[defaults valueForKey:@"setpwd"]boolValue] == YES)
-    {
-        [[VENTouchLock sharedInstance] setKeychainService:@"testService"
-                                          keychainAccount:@"testAccount"
-                                            touchIDReason:@"Scan your fingerprint to use the app."
-                                     passcodeAttemptLimit:5
-                                splashViewControllerClass:[SampleLockSplashViewController class]];
-        
-    }
+//    if ([[defaults valueForKey:@"setpwd"]boolValue] == YES)
+//    {
+//        [[VENTouchLock sharedInstance] setKeychainService:@"myCashflowService"
+//                                          keychainAccount:@"myCashflowAccount"
+//                                            touchIDReason:@"Scan your fingerprint to use the app."
+//                                     passcodeAttemptLimit:500000
+//                                splashViewControllerClass:[SampleLockSplashViewController class]];
+//        
+//    }
 
 }
 
@@ -179,6 +187,9 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
    
     [FIRMessaging messaging].APNSToken = deviceToken;
+    NSString *refreshedToken = [[FIRInstanceID instanceID] token];
+    [[NSUserDefaults standardUserDefaults] setObject:refreshedToken forKey:@"FIREBASE_TOKEN"];
+    NSLog(@"refreshedToken: %@", refreshedToken);
 
 }
 
@@ -216,7 +227,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     else
     {
         [UIApplication sharedApplication].applicationIconBadgeNumber=[UIApplication sharedApplication].applicationIconBadgeNumber+1;
-        [(LeftMenuVC*)leftMenuVC selectrow:6 withTag:0 withData:@"test"];
+        //[(LeftMenuVC*)leftMenuVC selectrow:6 withTag:0 withData:@"test"];
     }
 
 
@@ -251,7 +262,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
               withSubtitle:message
            withCustomImage:[UIImage imageNamed:@"icon"]
        withDoneButtonTitle:nil
-                andButtons:@[@"Open", @"Close"]];
+                andButtons:@[@"Ok"]];//@[@"Open", @"Close"]];
 
     
 }

@@ -1,0 +1,195 @@
+/* 
+  Localizable.strings
+  testlang
+
+  Created by Parthiban on 18/09/17.
+  Copyright © 2017 Parthiban. All rights reserved.
+*/
+"Accident Reporting"="Segnalazione di infortuni";
+"Numbers"="Numeri";
+"Offers"="offerte";
+"Make an Appointment"="Fare un appuntamento";
+"Finance Folder"="Finestra di finanziamento";
+"Tax Folder"="Cartella fiscale";
+"Taxes Folder"="Cartella fiscale";
+"Home"="Casa";
+"Budget and Save rate"="Budget e tasso di risparmio";
+"Budget and Saverate"="Budget e tasso di risparmio";
+"Budget&Save"="Budget e tasso di risparmio";
+
+"Message & Notification"="Messaggio e notifica";
+"Contracts Appointments"="Appuntamenti contratti";
+"Product Solutions"="Soluzioni di prodotto";
+"Discount"="Sconto";
+"Recommendation"="Raccomandazione";
+"Documents"="Documenti";
+"Consultor Profile"="Profilo del consulente";
+"My Account"="Il mio account";
+"Setting"="Ambientazione";
+"Signout"="disconnessione";
+"Finance Folder"="Finestra di finanziamento";
+"Company"="Azienda";
+"Private"="Privato";
+"Policy Number"="Numero di polizza";
+"Start Date"="Data d'inizio";
+"End Date"="Data di fine";
+"Annual Premium"="Premio annuale";
+"Category"="Categoria";
+"Tenure"="possesso";
+"Further Information"="Ulteriori informazioni";
+"Click to Book Appointment"="Clicca per prenotare Appuntamento";
+"Tax Year"="Anno fiscale";
+"Tax Filling Date"="Data di riempimento fiscale";
+"View PDF"="Visualizza PDF";
+"Make Appointment"="Prendere appuntamento";
+"Premium"="premio";
+"Book For Renewal Appointment"="Libro per la nomina del rinnovo";
+"Your appointment registered successfully"="La tua nomina è stata registrata correttamente";
+"Something went wrong. Please try again later"="Qualcosa è andato storto. Per favore riprova più tardi.";
+"No data found in Tax Folder"="Nessun dato trovato nella cartella imposte";
+"No data found in product solution"="Nessun dato trovato nella soluzione del prodotto";
+"Please Wait..."="Attendere prego...";
+"Total"="Totale";
+"No data found in My Budget"="Nessun dato trovato nel mio budget";
+"No data found in My Savings"="Nessun dato trovato nei miei risparmi";
+"No data found in Expense"="Nessun dato trovato in spesa";
+"Add New Expense"="Aggiungi nuova spesa";
+"My Budgets"="Il mio budget";
+"My Savings"="I miei risparmi";
+"Cancel"="Annulla";
+"Submit"="Sottoscrivi";
+"Total Earning"="Guadagno totale";
+"House Rent"="Affitto della casa";
+"Insurance"="Assicurazione";
+"Tax"="Imposta";
+"Daily Expense"="Spese giornaliere";
+"Date"="Data";
+"Description"="Descrizione";
+"Amount"="Quantità";
+"Add Expense"="Aggiungi spese";
+"Your expense added successfully"="La tua spesa è stata aggiunta con successo";
+"No data found in List"="Nessun dato trovato nell'elenco";
+"Report Car Accident"="Segnala l'incidente d'auto";
+"Report Health Insurance"="Segnala l'assicurazione sanitaria";
+"Report Home Insurance"="Segnala l'assicurazione sulla casa";
+"Insurance Report"="Rapporto sull'assicurazione";
+"Report New Accident"="Segnala nuovo incidente";
+"Send New Request"="Invia nuova richiesta";
+"Add Report"="Aggiungi rapporto";
+"Policy No"="Politica n";
+"Document"="Documento";
+"View Report"="View Report";
+"Report Date"="Data del rapporto";
+"View"="vista";
+"Front Side"="Fronte";
+"Back Side"="Lato posteriore";
+"Left Side"="Lato sinistro";
+"Right Side"="Lato destro";
+"Car Document"="Car Documento";
+"Your appoinment registered successfully"="I Il tuo appoinment è stato registrato correttamente";
+"Recommendation To"="Raccomandazione a";
+"Mobile Number"="Numero di cellulare";
+"Email Address"="Indirizzo email";
+"Address"="Indirizzo";
+"Remark"="osservazione";
+"Share on Social Media"="Condividi su Social Media";
+"Update"="Aggiornare";
+"Name"="Nome";
+"Contact Number"="Numero di contatto";
+"Enter Your Message"="Inserisci il tuo messaggio";
+"Send Message"="Invia messaggio";
+"Male"="Maschio";
+"Female"="Femmina";
+"Update Profile"="Aggiorna il profilo";
+"First Name"="nome di battesimo";
+"Last Name"="Cognome";
+"Phone Number"="Numero di telefono";
+"Occupation"="Occupazione";
+"Mobile Number"="Numero di cellulare";
+"Postal Code"="codice postale";
+"Change PIN"="Modifica PIN";
+"Change Password"="Cambia la password";
+"Change Language"="Sprache ändern";
+"English"="Inglese";
+"German"="Tedesco";
+"Setup Language..."="Lingua di impostazione...";
+"Nationality"="Nazionalità";
+"Login"="Accesso";
+"Password"="Parola d'ordine";
+"Confirm Password"="conferma password";
+"User Name"="Nome utente";
+"Register"="Registrare";
+"Already Member? Login"="Già membro? Accesso";
+"Get Password"="Ottenere la password";
+"Albums"="Album";
+"Take a Photo"="Fare una foto";
+"New Password"="nuova password";
+"Old Password"="vecchia password";
+"Forgot Password"="Ha dimenticato la password";
+"Document List"="Elenco documenti";
+"Enter a new passcode"="Inserisci un nuovo codice di accesso ";
+"Please re-enter your passcode"="Inserisci nuovamente il codice di accesso";
+"Passcodes did not match. Try again"="I codici passati non corrispondono. Riprova";
+"Set Passcode"="Imposta codice di accesso";
+"Enter your passcode"="Inserisci il codice di accesso";
+"Incorrect passcode. Try again."="Codice di accesso non corretto. Riprova.";
+"Enter Passcode"="Inserire il codice di accesso";
+
+
+
+"Password changed Successfully"="Password cambiata con successo";
+"Enter Current Password"="Immetti la password corrente";
+"Enter New Password"="Inserire una nuova password";
+"Enter Confirm Password"="Immettere la conferma della password";
+"Password Mismatch"="Password non corrispondente";
+"Invalid Old Password"="Vecchia password non valida";
+"Mismatch Current And New Password"="Mancata corrispondenza attuale e nuova password";
+"Italy"="Italia";
+"French"="francese";
+"Enter Your Email ID"="Inserisci il tuo indirizzo e-mail";
+"Enter Valid Email ID"="Inserisci l'ID di posta valida";
+"Enter Your Password"="Inserisci la tua password";
+"Please authenticate using TouchID."="Autenticare con TouchID.";
+"Enter Your First Name"="Inserisci il tuo nome di battesimo";
+"Enter Your Last Name"="Inserisci il tuo cognome";
+"Select Your DOB"="Seleziona il tuo DOB";
+"Enter Your Nationality"="Inserisci la tua nazionalità";
+"Enter Your Occupation"="Inserisci la tua occupazione";
+"Enter Your Phone Number"="Inserisci il tuo numero di telefono";
+"Enter Your Mobile Number"="Inserisci il tuo numero di telefono";
+"Enter Your Postal"="Inserisci il tuo postale";
+"Enter Password"="Inserire la password";
+"Enter Your Address"="Inserisci il tuo indirizzo";
+"Profile Successfully updated"="Profilo Aggiornato con successo";
+"Please select policy number"="Seleziona il numero della politica";
+"Please add images before submit"="Aggiungi immagini prima di inviare";
+
+
+
+
+"Landline Number"="Numero di rete fissa";
+"Secondary Email"="Email secondaria";
+"City/Village"="Città / Villaggio";
+"No data found"="Nessun dato trovato";
+"Insurance Card"="Tessera dell'assicurazione";
+"Enter Comment Here "="Inserisci il commento qui";
+"Document1"="Documento1";
+"Document2"="Documento2";
+"Image1"="Image1";
+"Image2"="Image2";
+"Select Policy Type"="Seleziona il tipo di politica";
+"View Document"="Visualizza documento";
+"Share the myCashflow App on Social Media"="Condividi l'app myCashflow sui social media";
+"Do you want logout?"="vuoi uscire?";
+"Ok"="Ok";
+"CANCEL "="Annulla";
+"Title"="Titolo";
+"Value"="Valore";
+"Add"="Inserisci";
+"Can you describe the damage"="Puoi descrivere il danno";
+
+
+
+
+
+

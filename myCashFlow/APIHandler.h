@@ -56,5 +56,42 @@
                               failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
 -(void)api_MyBudget: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
             failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
+-(void)api_ChangePassword: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                  failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
+-(void)api_ForgetPassword: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                  failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
+-(void)api_ProfileUpdate: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                 failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
+-(void)api_GetCarAccidentReport:(void (^)(id result))success
+                          failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
+-(void)api_GetHomeAccidentReport:(void (^)(id result))success
+                          failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
+-(void)api_GetHealthAccidentReport:(void (^)(id result))success
+                            failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
 
+-(void)api_CreateCarAccident: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                     failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
+
+-(void)api_CreateHomeAccident: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                      failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
+-(void)api_CreateHealthAccident: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                        failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
+-(void)api_GetNotification:(void (^)(id result))success
+                   failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
+
+-(void)api_GetPolicyType:(void (^)(id result))success
+                 failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
+
+
+-(void)api_GetOfferFieldByPolicyType: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                             failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
+
+-(void)api_NewOfferRequest: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                   failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
+
+-(void)api_ConsultantComments: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                      failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
+
+-(void)api_MyBudgetDeleteEntity: (NSMutableDictionary *)dic  withSuccess: (void (^)(id result))success
+                        failure:(void (^)(NSURLSessionTask *operation, NSError *error))failure;
 @end

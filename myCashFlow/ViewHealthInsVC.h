@@ -15,10 +15,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblPolicyNum;
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
 @property (weak, nonatomic) IBOutlet UIImageView *imgDoc;
+@property (weak, nonatomic) IBOutlet UIImageView *imgDoc1;
+@property (weak, nonatomic) IBOutlet UIImageView *imgDoc2;
+@property (weak, nonatomic) IBOutlet UITextView *lblComment;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblcmt;
 
 @property (weak, nonatomic) IBOutlet UILabel *lbltitle;
 @property (weak, nonatomic) IBOutlet UILabel *lblpolicynum;
 @property (weak, nonatomic) IBOutlet UILabel *lbldoc;
+@property (strong,nonatomic) NSMutableDictionary *selectedDic;
 
 @end

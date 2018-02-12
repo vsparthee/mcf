@@ -50,16 +50,16 @@
                                     </constraint>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMm-Xr-IxK">
-                                <rect key="frame" x="64" y="4" width="173" height="40.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="vMm-Xr-IxK">
+                                <rect key="frame" x="64" y="4" width="158" height="40.5"/>
                                 <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="15"/>
                                 <color key="textColor" red="0.083458669479999997" green="0.12554022670000001" blue="0.1740419865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CFH 1200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kN2-B3-7fN">
-                                <rect key="frame" x="245" y="4" width="75" height="40.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CFH 1200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kN2-B3-7fN">
+                                <rect key="frame" x="230" y="4" width="90" height="40.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="cee-DL-wkT"/>
+                                    <constraint firstAttribute="width" constant="90" id="cee-DL-wkT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="15"/>
                                 <color key="textColor" red="0.18459716440000001" green="0.77256822589999996" blue="0.80073785779999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

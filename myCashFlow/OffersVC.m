@@ -48,21 +48,34 @@
     nodata.textColor = THEME_COLOR;
 
     [General startLoader:self.view];
+    
+    
+    
+    
+    
 
     APIHandler *api = [[APIHandler alloc]init];
     [api api_Discount:^(id result)
      {
-         NSDictionary *temp =[result mutableCopy];
-         offerArr = [temp valueForKey:@"data"];
-         if (offerArr.count>0)
+         @try
          {
-             [nodata removeFromSuperview];
+             NSDictionary *temp =[result mutableCopy];
+             offerArr = [temp valueForKey:@"data"];
+             if (offerArr.count>0)
+             {
+                 [nodata removeFromSuperview];
+             }
+             else
+             {
+                 [self.tblOfferList addSubview:nodata];
+             }
+             [self.tblOfferList reloadData];
          }
-         else
+         @catch (NSException *exception)
          {
-             [self.tblOfferList addSubview:nodata];
+             [General makeToast:[TSLanguageManager localizedString:@"Something went wrong. Please try again later"] withToastView:self.view];
+             
          }
-         [self.tblOfferList reloadData];
          [General stopLoader];
      }
      failure:^(NSURLSessionTask *operation, NSError *error)
@@ -126,6 +139,12 @@
     [cell.imgOffer sd_setImageWithURL:url
                      placeholderImage:nil
                               options:SDWebImageRefreshCached];
+    UITapGestureRecognizer *tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bigButtonTapped:)];
+    cell.imgOffer.tag=indexPath.row+100;
+    cell.imgOffer.userInteractionEnabled = YES;
+    
+    [cell.imgOffer addGestureRecognizer:tapped];
+
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -154,7 +173,25 @@
     }
 }
 
-
+- (void)bigButtonTapped:(UITapGestureRecognizer *)sender
+{
+    
+    UIImageView *myImageView = (UIImageView *)[self.tblOfferList viewWithTag:sender.view.tag];
+    
+    JTSImageInfo *imageInfo = [[JTSImageInfo alloc] init];
+    
+    imageInfo.image = myImageView.image;
+    imageInfo.referenceRect = myImageView.frame;
+    imageInfo.referenceView = myImageView.superview;
+    imageInfo.referenceContentMode = myImageView.contentMode;
+    imageInfo.referenceCornerRadius = myImageView.layer.cornerRadius;
+    
+    JTSImageViewController *imageViewer = [[JTSImageViewController alloc]
+                                           initWithImageInfo:imageInfo
+                                           mode:JTSImageViewControllerMode_Image
+                                           backgroundStyle:JTSImageViewControllerBackgroundOption_Scaled];
+    [imageViewer showFromViewController:self transition:JTSImageViewControllerTransition_FromOriginalPosition];
+}
 /*
 #pragma mark - Navigation
 

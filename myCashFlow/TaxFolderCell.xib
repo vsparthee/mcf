@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G1036" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -208,9 +208,14 @@
                 <outlet property="arrowBtn" destination="dkS-Yd-5v3" id="i0M-Jg-cap"/>
                 <outlet property="btndownload" destination="HYC-wk-QKp" id="R4A-RP-OMv"/>
                 <outlet property="docDownloadView" destination="nMt-sc-Ci2" id="Yub-oc-DL3"/>
+                <outlet property="docimage" destination="j3e-jV-WmJ" id="a6J-uc-ply"/>
+                <outlet property="doclbl" destination="cQn-oC-bs5" id="YX7-G8-PiJ"/>
+                <outlet property="filldatelbl" destination="P5n-0W-2LY" id="6RW-vJ-5Rd"/>
                 <outlet property="lblFilingDate" destination="q5U-ul-cj7" id="Ly7-pH-1vs"/>
                 <outlet property="lblStatus" destination="Cas-ui-XbX" id="9wk-kD-iwG"/>
                 <outlet property="lblTaxYear" destination="Lip-aR-BzT" id="haJ-8E-oJZ"/>
+                <outlet property="viewpdflbl" destination="JQk-Fl-LOJ" id="8WJ-Ip-Vl1"/>
+                <outlet property="yrlbl" destination="JSp-O1-4hw" id="rFz-Dm-zdb"/>
             </connections>
             <point key="canvasLocation" x="35" y="116.5"/>
         </tableViewCell>

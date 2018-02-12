@@ -60,7 +60,7 @@
     }
     else
     {
-        self.btnPDF.alpha=0.6;
+        self.btnPDF.alpha=0.4;
         self.btnPDF.userInteractionEnabled=NO;
     }
     self.tblDocList.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -139,6 +139,7 @@
     cell.lblTitle.text=[NSString stringWithFormat:@"%@",[finance valueForKey:@"FileName"]];
     [cell.btndownload addTarget:self action:@selector(viewPDF:) forControlEvents:UIControlEventTouchUpInside];
     cell.btndownload.tag=indexPath.row;
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
 
     return cell;
     
@@ -155,7 +156,9 @@
     NSDictionary *tax = [pdfArr objectAtIndex:sender.tag];
     
     PdfViewerVC  *wc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"PdfViewerVC"];
+    wc.titleStr=[NSString stringWithFormat:@"%@",[tax valueForKey:@"FileName"]];
     wc.urlStr=[NSString stringWithFormat:@"%@",[tax valueForKey:@"URL"]];
+
     [self presentViewController:wc animated:YES completion:nil];
 }
 
